@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* Used to hold all custom design elements that are used on multiple pages */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.clearFix:after {
+    /* Fixes alignment issue if float is used */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Font Sizes ( Desktop ) */
+.tagline {
+    font-size: 64px;
+}
+
+.header {
+    font-size: 44px;
+}
+
+.title {
+    font-size: 36px;
+}
+
+.subtitle {
+    font-size: 22px;
+}
+
+.body-text {
+    font-size: 20px;
+}
+
+.details {
+    font-size: 17px;
+}
+
+.small {
+    font-size: 16px;
+}
