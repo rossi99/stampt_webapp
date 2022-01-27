@@ -2,9 +2,9 @@
 /* Used to hold all custom design elements that are used on multiple pages */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');    /* font-family: 'Comfortaa', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');        /* font-family: 'PT Sans Narrow', sans-serif; */
+@import url('https://fonts.googleapis.com/css?family=Nunito');                              /* font-family: "Nunito", sans-serif; */
 
 *,
 *::before,
@@ -16,7 +16,7 @@ body {
     background-color: #141414;
     margin: 0;
     font-family: "Nunito", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.6;
     color: white;
@@ -37,6 +37,22 @@ p {
     background-position: center;
 }
 
+.dark-glass-effect {
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.light-glass-effect {
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
 .clearFix:after {
     /* Fixes alignment issue if float is used */
     content: "";
@@ -44,31 +60,38 @@ p {
     clear: both;
 }
 
+.alignMiddle {
+    display: flex;
+    align-items: center;
+}
+
 /* Font Sizes ( Desktop ) */
 .tagline {
-    font-size: 64px;
+    font-size: 60px;
 }
 
 .header {
-    font-size: 44px;
+    font-size: 30px;
 }
 
 .title {
-    font-size: 36px;
+    font-size: 25px;
 }
 
 .subtitle {
-    font-size: 22px;
-}
-
-.body-text {
     font-size: 20px;
 }
 
 .details {
-    font-size: 17px;
+    font-size: 14px;
 }
 
-.small {
-    font-size: 16px;
+.small-txt {
+    font-size: 10px;
+}
+
+/* All app content */
+.content {
+    width: 90%;
+    margin: auto;
 }

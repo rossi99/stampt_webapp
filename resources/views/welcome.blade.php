@@ -21,10 +21,12 @@
     {{-- Body section --}}
     <body class="antialiased">
         <div id="app" class="app">
-            {{-- Renders Page content --}}
-            <nav-header></nav-header>
+            <div class="content">
+                {{-- Renders Page content --}}
+                <nav-header></nav-header>
 
-            <index></index>
+                <index></index>
+            </div>
         </div>
     </body>
 </html>
