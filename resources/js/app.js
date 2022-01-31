@@ -16,12 +16,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* import specific icons */
 import { faUser, faBars, faXmark} from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 window.Vue = require('vue').default;
-library.add(faUser, faBars, faXmark)
+library.add(faUser, faBars, faXmark, faFacebook, faTwitter, faInstagram)
 window.$ = JQuery;
 
 Vue.config.productionTip = false
