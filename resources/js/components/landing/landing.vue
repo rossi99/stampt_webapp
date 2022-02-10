@@ -1,85 +1,89 @@
 <template>
     <!-- Vue templates need a <div> element to hold all content -->
     <div>
-        <!-- Landing has 2 detail panels and then main info-graphic -->
-        <div class="panel-container">
-            <!-- socials -->
-            <div class="panel-social-links">
-                <div class="icon-container subtitle">
-                    <font-awesome-icon icon="fa-brands fa-facebook" class="icon" />
+        <div class="content">
+            <nav-header></nav-header>
+
+            <!-- Landing has 2 detail panels and then main info-graphic -->
+            <div class="panel-container">
+                <!-- socials -->
+                <div class="panel-social-links">
+                    <div class="icon-container subtitle">
+                        <font-awesome-icon icon="fa-brands fa-facebook" class="icon" />
+                    </div>
+
+                    <div class="icon-container subtitle">
+                        <font-awesome-icon icon="fa-brands fa-twitter" class="icon" />
+                    </div>
+
+                    <div class="icon-container subtitle">
+                        <font-awesome-icon icon="fa-brands fa-instagram" class="icon" />
+                    </div>
                 </div>
 
-                <div class="icon-container subtitle">
-                    <font-awesome-icon icon="fa-brands fa-twitter" class="icon" />
+                <div class="panel-line-container">
+                    <div class="panel-line" style="height: 40px; margin-block: 15px;"></div>
                 </div>
 
-                <div class="icon-container subtitle">
-                    <font-awesome-icon icon="fa-brands fa-instagram" class="icon" />
+                <div class="panel-txt">
+                    <div class="subtitle" style="transform: rotate(180deg);">follow us</div>
                 </div>
             </div>
 
-            <div class="panel-line-container">
-                <div class="panel-line" style="height: 40px; margin-block: 15px;"></div>
-            </div>
+            <div class="info-graphic-container">
+                <!-- Info-graphic showing user image and tagline -->
+                <div class="infographic-content">
+                    <div class="info-txt-container alignMiddle" style="letter-spacing: 15px">
+                        <div id="txt-align" style="width: 100%; text-align: center;">
+                            <div class="tagline" style="font-family: 'Bebas Neue', cursive;">
+                                less stressing
+                            </div>
 
-            <div class="panel-txt">
-                <div class="subtitle" style="transform: rotate(180deg);">follow us</div>
-            </div>
-        </div>
+                            <div class="tagline-plus" style="font-family: 'Bebas Neue', cursive; margin-block-end: 10px;">
+                                more rewarding
+                            </div>
 
-        <div class="info-graphic-container">
-            <!-- Info-graphic showing user image and tagline -->
-            <div class="infographic-content">
-                <div class="info-txt-container alignMiddle" style="letter-spacing: 15px">
-                    <div id="txt-align" style="width: 100%; text-align: center;">
-                        <div class="tagline" style="font-family: 'Bebas Neue', cursive;">
-                            less stressing
-                        </div>
+                            <div class="subtitle sub-tagline" style="font-family: 'Bebas Neue', cursive; letter-spacing: 6px;">
+                                The Last Loyalty Solution You Will Ever Need...
+                            </div>
 
-                        <div class="tagline-plus" style="font-family: 'Bebas Neue', cursive; margin-block-end: 10px;">
-                            more rewarding
-                        </div>
-
-                        <div class="subtitle sub-tagline" style="font-family: 'Bebas Neue', cursive; letter-spacing: 6px;">
-                            The Last Loyalty Solution You Will Ever Need...
-                        </div>
-
-                        <div class="btn-container btn-spacing" style="letter-spacing: 2px;">
-                            <div class="btn" style="width: 30%;">
-                               <div class="btn-txt">
-                                   Join Today
-                               </div>
+                            <div class="btn-container btn-spacing" style="letter-spacing: 2px;">
+                                <div class="btn btn-width">
+                                   <div class="btn-txt">
+                                       Get Started Now!
+                                   </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="info-img-container alignMiddle">
-                    <div id="img-align" style="margin: auto;">
-                        <img src="/img/landing/infographic.png" alt="Rewards Screen" class="info-img">
+                    <div class="info-img-container alignMiddle">
+                        <div id="img-align" style="margin: auto;">
+                            <img src="/img/landing/infographic.png" alt="Rewards Screen" class="info-img">
+                        </div>
                     </div>
+
+                    <div class="clearFix"></div>
+                </div>
+            </div>
+
+            <div class="panel-container">
+                <!-- Developed by panel -->
+                <div class="panel-line-container">
+                    <div class="panel-line" style="height: 50px; margin-block-start: 10px; margin-block-end: 20px;"></div>
                 </div>
 
-                <div class="clearFix"></div>
+                <div class="panel-txt">
+                    <div class="subtitle" style="transform: rotate(0deg);">digitalcore software</div>
+                </div>
+
+                <div class="panel-line-container">
+                    <div class="panel-line" style="height: 50px; margin-block-start: 20px;"></div>
+                </div>
             </div>
+
+            <div class="clearFix"></div>
         </div>
-
-        <div class="panel-container">
-            <!-- Developed by panel -->
-            <div class="panel-line-container">
-                <div class="panel-line" style="height: 50px; margin-block-start: 10px; margin-block-end: 20px;"></div>
-            </div>
-
-            <div class="panel-txt">
-                <div class="subtitle" style="transform: rotate(0deg);">digitalcore software</div>
-            </div>
-
-            <div class="panel-line-container">
-                <div class="panel-line" style="height: 50px; margin-block-start: 20px;"></div>
-            </div>
-        </div>
-
-        <div class="clearFix"></div>
     </div>
 </template>
 
@@ -164,6 +168,10 @@ export default {
     height: 550px;
 }
 
+.btn-width {
+    width: 30%;
+}
+
 /* Responsive */
 @media only screen and (max-width: 900px) {
     .panel-container {
@@ -195,6 +203,24 @@ export default {
 
     .btn-spacing {
         margin-block-start: 20px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .btn-width {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .btn-width {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .info-txt-container {
+        letter-spacing: 10px !important;
     }
 }
 </style>

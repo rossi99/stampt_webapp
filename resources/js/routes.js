@@ -2,12 +2,18 @@ import VueRouter from "vue-router";
 
 // components for routes
 import home from "./components/landing/landing";
+import builder from "./components/card/builder";
 
 const routes = [
     {
         path: "/",
         component: home,
         name: "home",
+    },
+    {
+        path: "/builder",
+        component: builder,
+        name: "builder",
     },
 ];
 

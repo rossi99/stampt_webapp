@@ -5,37 +5,29 @@
         <div class="nav-container desktop-nav alignMiddle">
             <div class="nav-content">
                 <div class="logo-container">
-                    <p class="title logo">stampt</p>
+                    <router-link :to="{ name: 'home' }" class="title logo" style="text-decoration: none; color: white;">stampt</router-link>
                 </div>
 
                 <div class="links-container alignMiddle">
                     <div class="option-container">
                         <div class="nav-option-container subtitle">
                             <!-- The `to=` holds the path of link that is declared in `routes.js` -->
-                            <router-link :to="{ name: 'home' }" class="nav-option">home</router-link>
+                            <router-link :to="{ name: 'builder' }" class="nav-option">builder</router-link>
                         </div>
 
                         <div class="nav-option-container subtitle">
-                            <router-link :to="{ name: 'home' }" class="nav-option">builder</router-link>
+                            <router-link :to="{ name: 'marketplace' }" class="nav-option">marketplace</router-link>
                         </div>
 
                         <div class="nav-option-container subtitle">
-                            <router-link :to="{ name: 'home' }" class="nav-option">marketplace</router-link>
-                        </div>
-
-                        <div class="nav-option-container subtitle">
-                            <router-link :to="{ name: 'home' }" class="nav-option">help</router-link>
-                        </div>
-
-                        <div class="nav-option-container subtitle">
-                            <span class="nav-option">contact</span>
+                            <router-link :to="{ name: 'faqs' }" class="nav-option">help</router-link>
                         </div>
                     </div>
                 </div>
 
                 <div class="action-container alignMiddle">
                     <div class="auth-container subtitle">
-                        <router-link :to="{ name: 'home' }" class="auth-btn">
+                        <router-link :to="{ name: 'login' }" class="auth-btn">
                             <div class="auth-btn-container">
                                 <span class="auth-btn-text">login</span>
                             </div>
@@ -81,7 +73,7 @@
                         <div class="menu-option-container">
                             <div class="menu-option subtitle">
                                 <!-- Provider by Vue router library -->
-                                <router-link :to="{ name: 'card-builder' }" class="nav-option">builder</router-link> <!-- The `to=` holds the path of link that is delcared in `routes.js` -->
+                                <router-link :to="{ name: 'builder' }" class="nav-option">builder</router-link> <!-- The `to=` holds the path of link that is delcared in `routes.js` -->
                             </div>
                         </div>
 
@@ -206,7 +198,7 @@
 }
 
 .nav-option-container {
-    width: calc(100% / 5);
+    width: calc(100% / 3);
     float: left;
 }
 

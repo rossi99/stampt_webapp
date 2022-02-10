@@ -27,12 +27,8 @@
     {{-- Body section --}}
     <body class="antialiased">
         <div id="app" class="app">
-            <div class="content">
-                {{-- Renders Page content --}}
-                <nav-header></nav-header>
-
-                <index></index>
-            </div>
+            {{-- Renders Page content --}}
+            <index></index>
         </div>
     </body>
 </html>
