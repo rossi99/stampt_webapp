@@ -21583,6 +21583,429 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -21590,41 +22013,211 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     $(document).ready(function () {
-      // Showing options helper
-      $('#card-opt-helper-open').click(function () {
-        // fading in helper
-        var helper = $('#card-opt-helper');
-        helper.fadeIn(250);
-      }); // Closing options helper
+      // defining defaults
+      var btn1 = $('#btn-1');
+      var btn2 = $('#btn-2');
+      var btn3 = $('#btn-3');
+      var btn1Txt = $('#btn-1-txt');
+      var btn2Txt = $('#btn-2-txt');
+      var btn3Txt = $('#btn-3-txt');
+      var create = $('.create-container');
+      var build = $('.build-container');
+      var preview = $('.preview-container'); // setting classes
 
-      $('#card-opt-helper-close').click(function () {
-        // fading in helper
-        var helper = $('#card-opt-helper');
-        helper.fadeOut(250);
-      }); // Showing builder helper
+      btn1.addClass('active-btn');
+      btn1Txt.addClass('active-txt');
+      create.fadeIn(250); // Showing create form
 
-      $('#card-builder-helper-open').click(function () {
-        // fading in helper
-        var helper = $('#card-builder-helper');
-        helper.fadeIn(250);
-      }); // Closing options helper
+      btn1.click(function () {
+        // setting correct active button
+        btn1.addClass('active-btn');
+        btn1Txt.addClass('active-txt'); // removing other btn styles
 
-      $('#card-builder-helper-close').click(function () {
-        // fading in helper
-        var helper = $('#card-builder-helper');
-        helper.fadeOut(250);
-      }); // Showing options helper
+        btn2.removeClass('active-btn');
+        btn2Txt.removeClass('active-txt');
+        btn3.removeClass('active-btn');
+        btn3Txt.removeClass('active-txt'); // fade out other elements
 
-      $('#card-preview-helper-open').click(function () {
-        // fading in helper
-        var helper = $('#card-preview-helper');
-        helper.fadeIn(250);
-      }); // Closing options helper
+        build.fadeOut(100);
+        preview.fadeOut(100); // fade in correct element
 
-      $('#card-preview-helper-close').click(function () {
-        // fading in helper
-        var helper = $('#card-preview-helper');
-        helper.fadeOut(250);
+        create.delay(250).fadeIn(100);
+      }); // Showing builder form
+
+      btn2.click(function () {
+        // setting correct active button
+        btn2.addClass('active-btn');
+        btn2Txt.addClass('active-txt'); // removing other btn styles
+
+        btn1.removeClass('active-btn');
+        btn1Txt.removeClass('active-txt');
+        btn3.removeClass('active-btn');
+        btn3Txt.removeClass('active-txt'); // fade out other elements
+
+        create.fadeOut(100);
+        preview.fadeOut(100); // fade in correct element
+
+        build.delay(250).fadeIn(100);
+      }); // Showing builder form
+
+      btn3.click(function () {
+        // setting correct active button
+        btn3.addClass('active-btn');
+        btn3Txt.addClass('active-txt'); // removing other btn styles
+
+        btn1.removeClass('active-btn');
+        btn1Txt.removeClass('active-txt');
+        btn2.removeClass('active-btn');
+        btn2Txt.removeClass('active-txt'); // fade out other elements
+
+        create.fadeOut(100);
+        build.fadeOut(100); // fade in correct element
+
+        preview.delay(250).fadeIn(100);
+      }); // ~ Create
+      // Variables
+
+      var titleHelper = $('#title-helper');
+      var titleHelpShow = $('#title-helper-show');
+      var titleHelpHide = $('#title-helper-close');
+      var titleInput = $('#title-input');
+      var descHelper = $('#desc-helper');
+      var descHelpShow = $('#desc-helper-show');
+      var descHelpHide = $('#desc-helper-close');
+      var descInput = $('#desc-input');
+      var logoHelper = $('#logo-helper');
+      var logoHelpShow = $('#logo-helper-show');
+      var logoHelpHide = $('#logo-helper-close');
+      var colourHelper = $('#colour-helper');
+      var colourHelpShow = $('#colour-helper-show');
+      var colourHelpHide = $('#colour-helper-close');
+      var colourInput = $('#colour-input');
+      var numHelper = $('#num-helper');
+      var numHelpShow = $('#num-helper-show');
+      var numHelpHide = $('#num-helper-close');
+      var numInput = $('#num-input');
+      var alignLeft = $('#align-left-opt');
+      var alignCenter = $('#align-center-opt');
+      var alignRight = $('#align-right-opt');
+      var stamp5 = $('#stamps-5');
+      var stamp10 = $('#stamps-10');
+      var stamp15 = $('#stamps-15');
+      var logTest = $('#log-test'); //  Fading in helpers
+      //      - Card Title
+
+      titleHelpShow.click(function () {
+        titleHelper.fadeIn(200);
+      });
+      titleHelpHide.click(function () {
+        titleHelper.fadeOut(200);
+      });
+      titleInput.click(function () {
+        titleHelper.fadeOut(200);
+      }); //      - Card Description
+
+      descHelpShow.click(function () {
+        descHelper.fadeIn(200);
+      });
+      descHelpHide.click(function () {
+        descHelper.fadeOut(200);
+      });
+      descInput.click(function () {
+        descHelper.fadeOut(200);
+      }); //      - Card Logo
+
+      logoHelpShow.click(function () {
+        logoHelper.fadeIn(200);
+      });
+      logoHelpHide.click(function () {
+        logoHelper.fadeOut(200);
+      });
+      alignLeft.click(function () {
+        logoHelper.fadeOut(200);
+      });
+      alignCenter.click(function () {
+        logoHelper.fadeOut(200);
+      });
+      alignRight.click(function () {
+        logoHelper.fadeOut(200);
+      }); //      - Number of stamps
+
+      numHelpShow.click(function () {
+        numHelper.fadeIn(200);
+      });
+      numHelpHide.click(function () {
+        numHelper.fadeOut(200);
+      });
+      numInput.click(function () {
+        numHelper.fadeOut(200);
+      });
+      stamp5.click(function () {
+        numHelper.fadeOut(200);
+      });
+      stamp10.click(function () {
+        numHelper.fadeOut(200);
+      });
+      stamp15.click(function () {
+        numHelper.fadeOut(200);
+      }); //      - Card Colour
+
+      colourHelpShow.click(function () {
+        colourHelper.fadeIn(200);
+      });
+      colourHelpHide.click(function () {
+        colourHelper.fadeOut(200);
+      });
+      colourInput.click(function () {
+        colourHelper.fadeOut(200);
+      }); // Selecting logo alignment for card
+
+      alignLeft.click(function () {
+        // removing from other buttons
+        alignRight.removeClass('active-btn');
+        alignCenter.removeClass('active-btn'); // adding class to active button
+
+        alignLeft.addClass('active-btn');
+      });
+      alignCenter.click(function () {
+        // removing from other buttons
+        alignRight.removeClass('active-btn');
+        alignLeft.removeClass('active-btn'); // adding class to active button
+
+        alignCenter.addClass('active-btn');
+      });
+      alignRight.click(function () {
+        // removing from other buttons
+        alignLeft.removeClass('active-btn');
+        alignCenter.removeClass('active-btn'); // adding class to active button
+
+        alignRight.addClass('active-btn');
+      }); // Setting number of buckets for card
+
+      stamp5.click(function () {
+        // removing from other buttons
+        stamp10.removeClass('active-btn');
+        stamp15.removeClass('active-btn'); // adding class to active button
+
+        stamp5.addClass('active-btn');
+      });
+      stamp10.click(function () {
+        // removing from other buttons
+        stamp5.removeClass('active-btn');
+        stamp15.removeClass('active-btn'); // adding class to active button
+
+        stamp10.addClass('active-btn');
+      });
+      stamp15.click(function () {
+        // removing from other buttons
+        stamp10.removeClass('active-btn');
+        stamp5.removeClass('active-btn'); // adding class to active button
+
+        stamp15.addClass('active-btn');
+      }); // Testing form data
+
+      logTest.click(function () {
+        // Test
+        var cardTilte = $('#title-input').val();
+        console.log(cardTilte);
       });
     });
   }
@@ -21976,7 +22569,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "sidebar"
 });
@@ -22028,7 +22620,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // standa
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 /* Adding Icons */
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_5__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faXmark, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faTwitter, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faInstagram, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleQuestion, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCreditCard, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faStore, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faQuestionCircle);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_5__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faXmark, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faTwitter, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faInstagram, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleQuestion, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCreditCard, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faStore, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faQuestionCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignCenter, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faSquare, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleRight);
 window.$ = (jquery__WEBPACK_IMPORTED_MODULE_1___default());
 vue__WEBPACK_IMPORTED_MODULE_9__["default"].config.productionTip = false; // global components
 
@@ -27165,7 +27757,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.opts-container[data-v-99f0cd32] {\n    width: 30%;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.card-container[data-v-99f0cd32] {\n    width: 70%;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    background: #141414;\n    border: 1px solid grey;\n    border-radius: 10px;\n    margin: auto;\n}\n.opts-panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 95%;\n    background: #141414;\n    border: 1px solid grey;\n    border-radius: 10px;\n}\n.card-builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 50%;\n}\n.card-preview-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 50%;\n}\n.panel-heading-container[data-v-99f0cd32] {\n    height: 50px;\n    width: calc(100% - 30px);\n    margin-inline: 15px;\n}\n.icon-btn[data-v-99f0cd32] {\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    position: relative;\n}\n.helper-btn[data-v-99f0cd32] {\n    color: grey;\n    transition: all 0.2s;\n}\n.helper-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: white;\n}\n.helper-btn-close[data-v-99f0cd32] {\n    color: #0c548d;\n    opacity: 50%;\n    transition: all 0.2s;\n}\n.helper-btn-close[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 100%;\n}\n.helper-box[data-v-99f0cd32] {\n    position: absolute;\n    top: -10px;\n    left: -10px;\n    width: 300px;\n    min-height: 70px;\n    display: none;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 5px;\n    color: #0c548d;\n}\n.close-container[data-v-99f0cd32] {\n    margin-inline: 7px;\n    margin-block: 7px;\n    width: calc(10% - 14px);\n    float: left;\n}\n.helper-info-container[data-v-99f0cd32] {\n    margin-inline: 7px;\n    margin-block: 7px;\n    width: calc(90% - 14px);\n    float: left;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    margin-block: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 80%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.stamp-illustration[data-v-99f0cd32] {\n    width: 40%;\n    border: 1px solid;\n    border-radius: 5px;\n    margin: auto;\n}\n.form-nav-btn[data-v-99f0cd32] {\n    width: 100%;\n    max-width: 150px;\n    min-height: 45px;\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.form-nav-btn[data-v-99f0cd32]:hover {\n    opacity: 1;\n    cursor: pointer;\n}\n.nav-btn[data-v-99f0cd32] {\n    width: 100%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -56448,9 +57040,1136 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("sidebar")], 1)
+  return _c(
+    "div",
+    [
+      _c("sidebar"),
+      _vm._v(" "),
+      _c("div", { staticClass: "sb-content-container" }, [
+        _c("div", { staticClass: "sb-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "builder-container" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-container" }, [
+              _c("div", { staticClass: "fc create-container" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "fc-description" }, [
+                  _vm._v(
+                    "\n                            Welcome to one of stampt's most defining features to businesses, the card builder. Here is\n                            where your loyalty program can really take off by outlining the basic beginning of you card.\n                            From the background colour or image to the reward and number of stamps required to achieve it,\n                            everything is customizable - giving you full control!\n                        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
+                          "\n                                    Title\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "title-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "title-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "title-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(4),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
+                          "\n                                    Description\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "desc-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "desc-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "desc-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(6),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
+                          "\n                                    Logo Position\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "logo-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "logo-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "logo-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(7),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "stampt-input-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "logo-opt-container alignMiddle" },
+                      [
+                        _c("div", { staticClass: "opt-align" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "opt alignMiddle align-width",
+                              attrs: { id: "align-left-opt" },
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "fa-solid fa-align-left" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "logo-opt-container alignMiddle" },
+                      [
+                        _c("div", { staticClass: "opt-align" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "opt alignMiddle align-width",
+                              attrs: { id: "align-center-opt" },
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "fa-solid fa-align-center" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "logo-opt-container alignMiddle" },
+                      [
+                        _c("div", { staticClass: "opt-align" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "opt alignMiddle align-width",
+                              attrs: { id: "align-right-opt" },
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "fa-solid fa-align-right" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
+                          "\n                                    Card Slots\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "num-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "num-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "num-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "stampt-input-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "stamp-opt-container alignMiddle" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "stamp-opt alignMiddle",
+                            attrs: { id: "stamps-5" },
+                          },
+                          [
+                            _c("div", { staticClass: "stamp-align" }, [
+                              _c("div", { staticClass: "stamp-illustration" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "logo-stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-circle" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "stamp-opt-container alignMiddle" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "stamp-opt alignMiddle",
+                            attrs: { id: "stamps-10" },
+                          },
+                          [
+                            _c("div", { staticClass: "stamp-align" }, [
+                              _c("div", { staticClass: "stamp-illustration" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "logo-stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-circle" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "stamp-opt-container alignMiddle" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "stamp-opt alignMiddle",
+                            attrs: { id: "stamps-15" },
+                          },
+                          [
+                            _c("div", { staticClass: "stamp-align" }, [
+                              _c("div", { staticClass: "stamp-illustration" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "logo-stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-circle" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-row" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("font-awesome-icon", {
+                                      attrs: { icon: "fa-solid fa-square" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
+                          "\n                                    Background Colour\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "colour-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "colour-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "colour-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(9),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(10),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row stampt-font" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "form-nav-btn alignMiddle",
+                      staticStyle: { float: "left" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "nav-btn",
+                          staticStyle: { "text-align": "left" },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "l-icon-spacing",
+                            attrs: { icon: "fa-solid fa-angles-left" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("back")]),
+                        ],
+                        1
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "form-nav-btn alignMiddle",
+                      staticStyle: { float: "right" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "nav-btn",
+                          staticStyle: { "text-align": "right" },
+                        },
+                        [
+                          _c("span", [_vm._v("next")]),
+                          _vm._v(" "),
+                          _c("font-awesome-icon", {
+                            staticClass: "r-icon-spacing",
+                            attrs: { icon: "fa-solid fa-angles-right" },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "clearFix" }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _vm._m(11),
+              _vm._v(" "),
+              _vm._m(12),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "clearFix" }),
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title-container alignMiddle" }, [
+      _c("div", { staticClass: "title" }, [
+        _vm._v("\n                    stampt | card builder\n                "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "steps-container" }, [
+      _c("div", { staticClass: "step-row alignMiddle" }, [
+        _c("div", { staticClass: "step-align stampt-font" }, [
+          _c("div", { staticClass: "step-btn-container" }, [
+            _c(
+              "div",
+              { staticClass: "step-btn alignMiddle", attrs: { id: "btn-1" } },
+              [
+                _c("div", { staticClass: "btn-align" }, [
+                  _c("div", { staticClass: "btn-number" }, [
+                    _vm._v(
+                      "\n                                            1\n                                        "
+                    ),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "step-text-container alignMiddle",
+              attrs: { id: "btn-1-txt" },
+            },
+            [
+              _c("div", { staticClass: "step-txt" }, [
+                _vm._v(
+                  "\n                                    create\n                                "
+                ),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearFix" }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-container" }, [
+        _c("div", { staticClass: "separator" }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step-row alignMiddle" }, [
+        _c("div", { staticClass: "step-align stampt-font" }, [
+          _c("div", { staticClass: "step-btn-container" }, [
+            _c(
+              "div",
+              { staticClass: "step-btn alignMiddle", attrs: { id: "btn-2" } },
+              [
+                _c("div", { staticClass: "btn-align" }, [
+                  _c("div", { staticClass: "btn-number" }, [
+                    _vm._v(
+                      "\n                                            2\n                                        "
+                    ),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "step-text-container alignMiddle",
+              attrs: { id: "btn-2-txt" },
+            },
+            [
+              _c("div", { staticClass: "step-txt" }, [
+                _vm._v(
+                  "\n                                    builder\n                                "
+                ),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearFix" }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-container" }, [
+        _c("div", { staticClass: "separator" }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step-row alignMiddle" }, [
+        _c("div", { staticClass: "step-align stampt-font" }, [
+          _c("div", { staticClass: "step-btn-container" }, [
+            _c(
+              "div",
+              { staticClass: "step-btn alignMiddle", attrs: { id: "btn-3" } },
+              [
+                _c("div", { staticClass: "btn-align" }, [
+                  _c("div", { staticClass: "btn-number" }, [
+                    _vm._v(
+                      "\n                                            3\n                                        "
+                    ),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "step-text-container alignMiddle",
+              attrs: { id: "btn-3-txt" },
+            },
+            [
+              _c("div", { staticClass: "step-txt" }, [
+                _vm._v(
+                  "\n                                    preview\n                                "
+                ),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearFix" }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fc-heading-container alignMiddle" }, [
+      _c("div", { staticClass: "fc-heading subtitle stampt-font" }, [
+        _vm._v(
+          "\n                                Create A Card\n                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
+          "\n                                                The card title will appear at the top of the card, and will be used\n                                                to catch a customers attention when they're browsing the market place,\n                                                make it catchy and unique!\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "stampt-input-container" }, [
+      _c("input", {
+        staticClass: "stampt-input",
+        attrs: {
+          type: "text",
+          id: "title-input",
+          placeholder: "What is your card called?",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
+          "\n                                                A card's description will be read by the user in order for them to get\n                                                all the details they needs about your loyalty program for example, what\n                                                reward comes after all stamps have been collect or when the loyalty card\n                                                is valid too.\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "stampt-input-container" }, [
+      _c("input", {
+        staticClass: "stampt-input",
+        attrs: {
+          type: "text",
+          id: "desc-input",
+          placeholder: "Tell me all about this loyalty card!",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
+          "\n                                                A logo can be placed on the left, middle or right side of a loyalty card.\n                                                The logo used is the one uploaded when creating your business account, to change\n                                                this, simply upload a different image in the profile tab.\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
+          "\n                                                The card slots refer to the number of 'buckets' - a fancy word for areas -\n                                                available to you when in the builder. Each bucket doesn't have to be filled\n                                                with a stamp element, but the more buckets a card has, the more precise a\n                                                design can be! You have the option of 5, 10 or 15 buckets.\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
+          "\n                                                The background of your card is also customisable using the colour\n                                                picker. The default is set to a dark grey in order to match stampt's\n                                                default colour theme, but you can change it to match your business's\n                                                colour scheme - or to your favourite colour, we won't judge!\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "stampt-input-container" }, [
+      _c("div", { staticClass: "colour-opt-container alignMiddle" }, [
+        _c("div", { staticClass: "opt-align" }, [
+          _c(
+            "div",
+            { staticClass: "opt colour-width", attrs: { id: "colour-opt" } },
+            [
+              _c("input", {
+                staticClass: "stampt-input-color",
+                attrs: { type: "color", id: "colour-input", value: "#141414" },
+              }),
+            ]
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fc build-container" }, [
+      _c("div", { staticClass: "fc-heading-container alignMiddle" }, [
+        _c("div", { staticClass: "fc-heading subtitle stampt-font" }, [
+          _vm._v(
+            "\n                                Build Your Card\n                            "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "fc-description" }, [
+        _c("div", { staticClass: "log-test", attrs: { id: "log-test" } }, [
+          _vm._v(
+            "\n                                Log form data\n                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fc preview-container" }, [
+      _c("div", { staticClass: "fc-heading-container alignMiddle" }, [
+        _c("div", { staticClass: "fc-heading subtitle stampt-font" }, [
+          _vm._v(
+            "\n                                Confirm Your Card\n                            "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "fc-description" }),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -57127,6 +58846,8 @@ var render = function () {
             1
           ),
         ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearFix" }),
       ]),
     ]),
   ])

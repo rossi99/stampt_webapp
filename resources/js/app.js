@@ -19,7 +19,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faUser, faBars, faXmark, faCircleQuestion,
     faCircleXmark, faCreditCard, faStore,
-    faQuestionCircle
+    faQuestionCircle, faAlignCenter, faAlignLeft,
+    faAlignRight, faCircle, faSquare,
+    faAngleDoubleLeft, faAngleDoubleRight
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -33,7 +35,9 @@ library.add(
     faUser, faBars, faXmark, faFacebook,
     faTwitter, faInstagram, faCircleQuestion,
     faCircleXmark, faCreditCard, faStore,
-    faQuestionCircle
+    faQuestionCircle, faAlignCenter, faAlignLeft,
+    faAlignRight, faCircle, faSquare,
+    faAngleDoubleLeft, faAngleDoubleRight
 )
 
 window.$ = JQuery;

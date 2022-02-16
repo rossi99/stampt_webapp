@@ -2,7 +2,6 @@
     <div>
         <div class="sidebar-container alignMiddle">
             <div class="sidebar">
-
                 <!-- Logo -->
                 <div class="sb-logo-container">
                     <div class="sb-logo-bg alignMiddle">
@@ -32,7 +31,6 @@
                     </div>
                 </div>
 
-
                 <!-- FAQs -->
                 <div class="sb-btn-container alignMiddle">
                     <div class="sb-btn-align">
@@ -42,7 +40,6 @@
                     </div>
                 </div>
 
-
                 <!-- User -->
                 <div class="sb-btn-container alignMiddle">
                     <div class="sb-btn-align">
@@ -51,6 +48,8 @@
                         </router-link>
                     </div>
                 </div>
+
+                <div class="clearFix"></div>
             </div>
         </div>
     </div>
