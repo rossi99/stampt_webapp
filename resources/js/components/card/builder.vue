@@ -437,25 +437,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Navigation Row -->
-                            <div class="create-row stampt-font">
-                                <div class="form-nav-btn alignMiddle" style="float: left;">
-                                    <div class="nav-btn" style="text-align: left;">
-                                        <font-awesome-icon icon="fa-solid fa-angles-left" class="l-icon-spacing" />
-                                        <span>back</span>
-                                    </div>
-                                </div>
-
-                                <div class="form-nav-btn alignMiddle" style="float: right;">
-                                    <div class="nav-btn" style="text-align: right;">
-                                        <span>next</span>
-                                        <font-awesome-icon icon="fa-solid fa-angles-right" class="r-icon-spacing" />
-                                    </div>
-                                </div>
-
-                                <div class="clearFix"></div>
-                            </div>
                         </div>
 
                         <div class="fc build-container">
@@ -467,8 +448,27 @@
 
                             <div class="fc-description">
                                 <div class="log-test" id="log-test">
-                                    Log form data
+                                    You're almost most done creating your new loyalty card. The last thing to do is
+                                    place stamp elements inside the buckets. After adding a stamp, a customer will see
+                                    a filled stamp element instead of the empty one currently being added. Stampt doesn't
+                                    allow for custom filled stampt elements.
                                 </div>
+                            </div>
+
+                            <div class="build-content">
+                                <div class="stamp-element-container alignMiddle">
+                                    <div class="element-card">
+
+                                    </div>
+                                </div>
+
+                                <div class="card-element-container alignMiddle">
+                                    <div class="element-card">
+
+                                    </div>
+                                </div>
+
+                                <div class="clearFix"></div>
                             </div>
                         </div>
 
@@ -485,6 +485,7 @@
                         </div>
                     </div>
                 </div>
+
 
 
             </div>
@@ -510,6 +511,13 @@ export default {
             let create = $('.create-container')
             let build = $('.build-container')
             let preview = $('.preview-container')
+
+            // Form Variables
+            let cardTitle
+            let cardDescription
+            let logoAlign
+            let cardSlots
+            let cardColour
 
             // setting classes
             btn1.addClass('active-btn')
@@ -612,7 +620,7 @@ export default {
             let stamp10 = $('#stamps-10')
             let stamp15 = $('#stamps-15')
 
-            let logTest = $('#log-test')
+            let colourPicker = $('#colour-input')
 
             //  Fading in helpers
             //      - Card Title
@@ -757,11 +765,52 @@ export default {
                 stamp15.addClass('active-btn')
             });
 
-            // Testing form data
-            logTest.click(function () {
-                // Test
-                let cardTilte = $('#title-input').val()
-                console.log(cardTilte)
+            // ~ Form Handling
+            // store text input
+            titleInput.change(function() {
+                cardTitle = titleInput.val()
+            });
+
+            descInput.change(function() {
+                cardDescription = descInput.val()
+            });
+
+            alignLeft.click(function () {
+                logoAlign = "Left"
+            });
+
+            alignCenter.click(function () {
+                logoAlign = "Center"
+            });
+
+            alignRight.click(function () {
+                logoAlign = "Right"
+            });
+
+            stamp5.click(function () {
+                cardSlots = 5
+            });
+
+            stamp10.click(function () {
+                cardSlots = 10
+            });
+
+            stamp15.click(function () {
+                cardSlots = 15
+            });
+
+            colourPicker.change(function() {
+                cardColour = colourPicker.val()
+            });
+
+            // When move to builder, commit create data
+            btn2.click(function () {
+                // output form data
+                console.log("Title: " + cardTitle)
+                console.log("Description: " + cardDescription)
+                console.log("Logo Alignment: " + logoAlign)
+                console.log("Num of stamps: " + cardSlots)
+                console.log("Background Colour: " + cardColour)
             });
         });
     }
@@ -899,7 +948,8 @@ export default {
 
 .create-row {
     width: 100%;
-    margin-block: 50px;
+    margin-block-start: 50px;
+    margin-block-end: 50px;
 }
 
 .create-row:first-child {
@@ -1037,27 +1087,29 @@ export default {
     text-align: center;
 }
 
-.stamp-illustration {
-    width: 40%;
-    border: 1px solid;
-    border-radius: 5px;
+.build-content {
+    width: 100%;
+}
+
+.stamp-element-container {
+    width: 15%;
+    height: 450px;
+    float: left;
+}
+
+.card-element-container {
+    width: 85%;
+    height: 450px;
+    float: left;
+
+}
+
+.element-card {
+    width: 95%;
+    height: 100%;
     margin: auto;
-}
-
-.form-nav-btn {
-    width: 100%;
-    max-width: 150px;
-    min-height: 45px;
-    opacity: 0.5;
-    transition: all 0.2s;
-}
-
-.form-nav-btn:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.nav-btn {
-    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    border-radius: 12px;
+    background-color: #141414;
 }
 </style>
