@@ -264,6 +264,68 @@
                             </div>
 
 
+                            <!-- Logo Shape -->
+                            <div class="create-row">
+                                <div class="create-label-container">
+                                    <div class="create-label alignMiddle subtitle">
+                                        Logo Shape
+                                    </div>
+
+                                    <div class="create-helper alignMiddle">
+                                        <div style="width: 100%; text-align: center;">
+                                            <font-awesome-icon icon="fa-solid fa-circle-question" class="help-btn" id="logo-shape-helper-show"/>
+                                        </div>
+
+                                        <div class="helper-txt-container" id="logo-shape-helper" style="display: none;">
+                                            <div class="close-container alignMiddle">
+                                                <div style="width: 100%; text-align: center;">
+                                                    <font-awesome-icon icon="fa-solid fa-circle-xmark" class="help-btn" id="logo-shape-helper-close" />
+                                                </div>
+                                            </div>
+
+                                            <div class="text-container details">
+                                                <div style="padding: 5px; letter-spacing: 1px">
+                                                    A logo can be placed on the left, middle or right side of a loyalty card.
+                                                    The logo used is the one uploaded when creating your business account, to change
+                                                    this, simply upload a different image in the profile tab.
+                                                </div>
+                                            </div>
+
+                                            <div class="clearFix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+
+                                <div class="stampt-input-container">
+                                    <!-- Logo Circle -->
+                                    <div class="shape-opt-container alignMiddle">
+                                        <div class="opt-align">
+                                            <div class="opt alignMiddle align-width" id="circle-logo">
+                                                <div class="icon-align">
+                                                    <font-awesome-icon icon="fa-solid fa-circle" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Logo Square -->
+                                    <div class="shape-opt-container alignMiddle">
+                                        <div class="opt-align">
+                                            <div class="opt alignMiddle align-width" id="square-logo">
+                                                <div class="icon-align">
+                                                    <font-awesome-icon icon="fa-solid fa-square" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+                            </div>
+
+
                             <!-- Card Squares -->
                             <div class="create-row">
                                 <div class="create-label-container">
@@ -457,14 +519,178 @@
 
                             <div class="build-content">
                                 <div class="stamp-element-container alignMiddle">
-                                    <div class="element-card">
+                                    <div class="element-card" style="overflow: scroll">
+                                        <!-- Stamp Option 1 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/grey/1.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
 
+                                        <!-- Stamp Option 2 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/grey/2.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 3 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/grey/3.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 4 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/black/1.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 5 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/black/2.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 6 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/black/3.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 7 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/white/1.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 8 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/white/2.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
+
+                                        <!-- Stamp Option 9 -->
+                                        <div class="stamp-element-row">
+                                            <img src="/img/stamps/white/3.png" alt="Stamp Style 3" class="stamp">
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="card-element-container alignMiddle">
-                                    <div class="element-card">
+                                    <div class="element-card alignMiddle">
+                                        <div class="card-holder">
+                                            <div class="builder-card">
+                                                <!-- logo and stamp container -->
+                                                <div class="stamp-logo-holder">
+                                                    <!-- Logo Row -->
+                                                    <div class="stamp-logo-container logo-row" id="logo-row">
+                                                        <div class="logo-align-container alignMiddle">
+                                                            <div class="sample-logo-align">
+                                                                <div class="sample-logo-container">
+                                                                    <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
+                                                    <!-- Stamp Rows -->
+                                                    <div class="stamp-logo-container stamp-bucket-row" id="stamp-row-1">
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="clearFix"></div>
+                                                    </div>
+
+                                                    <div class="stamp-logo-container stamp-bucket-row" id="stamp-row-2">
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="clearFix"></div>
+                                                    </div>
+
+                                                    <div class="stamp-logo-container stamp-bucket-row" id="stamp-row-3">
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bucket-container alignMiddle">
+                                                            <div class="bucket empty">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="clearFix"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearFix"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -516,6 +742,7 @@ export default {
             let cardTitle
             let cardDescription
             let logoAlign
+            let logoShape
             let cardSlots
             let cardColour
 
@@ -602,6 +829,10 @@ export default {
             let logoHelpShow = $('#logo-helper-show')
             let logoHelpHide = $('#logo-helper-close')
 
+            let logoShapeHelper = $('#logo-shape-helper')
+            let logoShapeHelpShow = $('#logo-shape-helper-show')
+            let logoShapeHelpHide = $('#logo-shape-helper-close')
+
             let colourHelper = $('#colour-helper')
             let colourHelpShow = $('#colour-helper-show')
             let colourHelpHide = $('#colour-helper-close')
@@ -615,6 +846,9 @@ export default {
             let alignLeft = $('#align-left-opt')
             let alignCenter = $('#align-center-opt')
             let alignRight = $('#align-right-opt')
+
+            let circleLogo = $('#circle-logo')
+            let squareLogo = $('#square-logo')
 
             let stamp5 = $('#stamps-5')
             let stamp10 = $('#stamps-10')
@@ -668,6 +902,23 @@ export default {
 
             alignRight.click(function () {
                 logoHelper.fadeOut(200)
+            });
+
+            //      - Logo Shape
+            logoShapeHelpShow.click(function () {
+                logoShapeHelper.fadeIn(200)
+            });
+
+            logoShapeHelpHide.click(function () {
+                logoShapeHelper.fadeOut(200)
+            });
+
+            circleLogo.click(function () {
+                logoShapeHelper.fadeOut(200)
+            });
+
+            squareLogo.click(function () {
+                logoShapeHelper.fadeOut(200)
             });
 
             //      - Number of stamps
@@ -737,6 +988,23 @@ export default {
                 alignRight.addClass('active-btn')
             });
 
+            // Setting shape of logo
+            circleLogo.click(function () {
+                // removing from other buttons
+                squareLogo.removeClass('active-btn')
+
+                // adding class to active button
+                circleLogo.addClass('active-btn')
+            });
+
+            squareLogo.click(function () {
+                // removing from other buttons
+                circleLogo.removeClass('active-btn')
+
+                // adding class to active button
+                squareLogo.addClass('active-btn')
+            });
+
             // Setting number of buckets for card
             stamp5.click(function () {
                 // removing from other buttons
@@ -766,7 +1034,15 @@ export default {
             });
 
             // ~ Form Handling
-            // store text input
+            //      set defaults
+            cardTitle = "Untitled Card"
+            cardDescription = "This is the card Description"
+            logoAlign = "Left"
+            logoShape = "Square"
+            cardSlots = 5
+            cardColour = colourPicker.val()
+
+            //      handling changes from user
             titleInput.change(function() {
                 cardTitle = titleInput.val()
             });
@@ -787,6 +1063,14 @@ export default {
                 logoAlign = "Right"
             });
 
+            circleLogo.click(function () {
+                logoShape = "Circle"
+            });
+
+            squareLogo.click(function () {
+                logoShape = "Square"
+            });
+
             stamp5.click(function () {
                 cardSlots = 5
             });
@@ -803,15 +1087,128 @@ export default {
                 cardColour = colourPicker.val()
             });
 
+
+            // ~ Builder
+            // Variables
+            let logo = $('.sample-logo-container')
+            let logoPosition = $('.logo-align-container')
+            let cardHolder = $('.builder-card')
+            let stampRow1 = $('#stamp-row-1')
+            let stampRow2 = $('#stamp-row-2')
+            let stampRow3 = $('#stamp-row-3')
+
+
             // When move to builder, commit create data
             btn2.click(function () {
-                // output form data
+                // output form data (Just output to console)
                 console.log("Title: " + cardTitle)
                 console.log("Description: " + cardDescription)
                 console.log("Logo Alignment: " + logoAlign)
+                console.log("Logo Shape: " + logoShape)
                 console.log("Num of stamps: " + cardSlots)
                 console.log("Background Colour: " + cardColour)
+
+                // Making builder dynamic to create options
+                // ~ Logo Shape
+                if (logoShape === "Square") {
+                    // remove incorrect class
+                    logo.removeClass('circle-logo')
+
+                    // add correct class
+                    logo.addClass('square-logo')
+                }
+
+                if (logoShape === "Circle") {
+                    // remove incorrect class
+                    logo.removeClass('square-logo')
+
+                    // add correct class
+                    logo.addClass('circle-logo')
+                }
+
+                // ~ Logo Align
+                if (logoAlign === "Left") {
+                    // remove incorrect class
+                    logoPosition.removeClass('logo-align-middle')
+                    logoPosition.removeClass('logo-align-right')
+                    logo.removeClass('logo-align-middle')
+                    logo.removeClass('m-inline-e')
+
+                    // add correct classes
+                    logoPosition.addClass('logo-align-left')
+                    logo.addClass('m-inline-s')
+                }
+
+                if (logoAlign === "Center") {
+                    // remove incorrect class
+                    logoPosition.removeClass('logo-align-left')
+                    logoPosition.removeClass('logo-align-right')
+                    logo.removeClass('m-inline-s')
+                    logo.removeClass('m-inline-e')
+
+                    // add correct classes
+                    logoPosition.addClass('logo-align-middle')
+                    logo.addClass('logo-align-middle')
+                }
+
+                if (logoAlign === "Right") {
+                    // remove incorrect class
+                    logoPosition.removeClass('logo-align-left')
+                    logoPosition.removeClass('logo-align-middle')
+                    logo.removeClass('m-inline-s')
+                    logo.removeClass('logo-align-middle')
+
+                    // add correct classes
+                    logoPosition.addClass('logo-align-right')
+                    logo.addClass('m-inline-e')
+                }
+
+                //  ~ Stamp slots
+                if (cardSlots === 5) {
+                    // showing correct rows
+                    stampRow1.show()
+                    stampRow2.hide()
+                    stampRow3.hide()
+
+                    // remove incorrect height class
+                    cardHolder.removeClass('two-stamp-row-height')
+                    cardHolder.removeClass('three-stamp-row-height')
+
+                    // add correct height class
+                    cardHolder.addClass('one-stamp-row-height')
+                }
+
+                if (cardSlots === 10) {
+                    // showing correct rows
+                    stampRow1.show()
+                    stampRow2.show()
+                    stampRow3.hide()
+
+                    // remove incorrect height class
+                    cardHolder.removeClass('one-stamp-row-height')
+                    cardHolder.removeClass('three-stamp-row-height')
+
+                    // add correct height class
+                    cardHolder.addClass('two-stamp-row-height')
+                }
+
+                if (cardSlots === 15) {
+                    // showing correct rows
+                    stampRow1.show()
+                    stampRow2.show()
+                    stampRow3.show()
+
+                    // remove incorrect height class
+                    cardHolder.removeClass('one-stamp-row-height')
+                    cardHolder.removeClass('two-stamp-row-height')
+
+                    // add correct height class
+                    cardHolder.addClass('three-stamp-row-height')
+                }
+
+                cardHolder.css("background-color", cardColour)
             });
+
         });
     }
 };
@@ -973,7 +1370,6 @@ export default {
     float: left;
     margin-inline-start: 15px;
     font-size: 18px;
-
     position: relative;
 }
 
@@ -1012,6 +1408,12 @@ export default {
 
 .logo-opt-container {
     width: calc(100% / 3);
+    height: 85px;
+    float: left;
+}
+
+.shape-opt-container {
+    width: calc(100% / 2);
     height: 85px;
     float: left;
 }
@@ -1092,14 +1494,14 @@ export default {
 }
 
 .stamp-element-container {
-    width: 15%;
-    height: 450px;
+    width: 150px;
+    height: 475px;
     float: left;
 }
 
 .card-element-container {
-    width: 85%;
-    height: 450px;
+    width: calc(100% - 150px);
+    height: 475px;
     float: left;
 
 }
@@ -1111,5 +1513,129 @@ export default {
     border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 12px;
     background-color: #141414;
+}
+
+.stamp-element-row {
+    width: 100%;
+    margin-block-start: 30px;
+    margin-block-end: 30px;
+    text-align: center;
+}
+
+.stamp {
+    width: 60px;
+    height: 60px;
+}
+
+.stamp:hover {
+    cursor: pointer;
+}
+
+.card-holder {
+    width: 100%;
+}
+
+.builder-card {
+    width: 500px;
+    min-height: 150px;
+    background: #141414;
+    border-radius: 20px;
+    border: 3px solid rgb(44, 44, 44);
+    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);
+    margin: auto;
+    position: relative;
+}
+
+.one-stamp-row-height {
+    height: 150px;
+}
+
+.two-stamp-row-height {
+    height: 250px;
+}
+
+.three-stamp-row-height {
+    height: 350px;
+}
+
+.stamp-logo-holder {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.stamp-logo-container {
+    width: 100%;
+    height: 100px;
+}
+
+.logo-align-container {
+    width: calc(100% / 3);
+    height: 100px;
+}
+
+.logo-align-left {
+    float: left;
+}
+
+.logo-align-middle {
+    margin: auto;
+}
+
+.logo-align-right {
+    float: right;
+}
+
+.sample-logo-container {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border: 3px solid rgb(44, 44, 44);
+}
+
+.sample-logo {
+    width: 100%;
+}
+
+.sample-logo-align {
+     width: 100%;
+ }
+
+.circle-logo {
+    border-radius: 50%;
+}
+
+.square-logo {
+    border-radius: 10px;
+}
+
+.m-inline-s {
+    float: left;
+    margin-inline-start: 20px;
+}
+
+.m-inline-e {
+    float: right;
+    margin-inline-end: 20px;
+}
+
+.bucket-container {
+    width: calc(100% / 5);
+    height: 100px;
+    float: left;
+}
+
+.bucket {
+    width: 85%;
+    height: 85%;
+    margin: auto;
+}
+
+.empty {
+    border: 1px dashed rgb(44, 44, 44);
+    border-radius: 10px;
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );
 }
 </style>

@@ -22007,6 +22007,232 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -22028,6 +22254,7 @@ __webpack_require__.r(__webpack_exports__);
       var cardTitle;
       var cardDescription;
       var logoAlign;
+      var logoShape;
       var cardSlots;
       var cardColour; // setting classes
 
@@ -22095,6 +22322,9 @@ __webpack_require__.r(__webpack_exports__);
       var logoHelper = $('#logo-helper');
       var logoHelpShow = $('#logo-helper-show');
       var logoHelpHide = $('#logo-helper-close');
+      var logoShapeHelper = $('#logo-shape-helper');
+      var logoShapeHelpShow = $('#logo-shape-helper-show');
+      var logoShapeHelpHide = $('#logo-shape-helper-close');
       var colourHelper = $('#colour-helper');
       var colourHelpShow = $('#colour-helper-show');
       var colourHelpHide = $('#colour-helper-close');
@@ -22106,6 +22336,8 @@ __webpack_require__.r(__webpack_exports__);
       var alignLeft = $('#align-left-opt');
       var alignCenter = $('#align-center-opt');
       var alignRight = $('#align-right-opt');
+      var circleLogo = $('#circle-logo');
+      var squareLogo = $('#square-logo');
       var stamp5 = $('#stamps-5');
       var stamp10 = $('#stamps-10');
       var stamp15 = $('#stamps-15');
@@ -22146,6 +22378,19 @@ __webpack_require__.r(__webpack_exports__);
       });
       alignRight.click(function () {
         logoHelper.fadeOut(200);
+      }); //      - Logo Shape
+
+      logoShapeHelpShow.click(function () {
+        logoShapeHelper.fadeIn(200);
+      });
+      logoShapeHelpHide.click(function () {
+        logoShapeHelper.fadeOut(200);
+      });
+      circleLogo.click(function () {
+        logoShapeHelper.fadeOut(200);
+      });
+      squareLogo.click(function () {
+        logoShapeHelper.fadeOut(200);
       }); //      - Number of stamps
 
       numHelpShow.click(function () {
@@ -22197,6 +22442,19 @@ __webpack_require__.r(__webpack_exports__);
         alignCenter.removeClass('active-btn'); // adding class to active button
 
         alignRight.addClass('active-btn');
+      }); // Setting shape of logo
+
+      circleLogo.click(function () {
+        // removing from other buttons
+        squareLogo.removeClass('active-btn'); // adding class to active button
+
+        circleLogo.addClass('active-btn');
+      });
+      squareLogo.click(function () {
+        // removing from other buttons
+        circleLogo.removeClass('active-btn'); // adding class to active button
+
+        squareLogo.addClass('active-btn');
       }); // Setting number of buckets for card
 
       stamp5.click(function () {
@@ -22220,7 +22478,14 @@ __webpack_require__.r(__webpack_exports__);
 
         stamp15.addClass('active-btn');
       }); // ~ Form Handling
-      // store text input
+      //      set defaults
+
+      cardTitle = "Untitled Card";
+      cardDescription = "This is the card Description";
+      logoAlign = "Left";
+      logoShape = "Square";
+      cardSlots = 5;
+      cardColour = colourPicker.val(); //      handling changes from user
 
       titleInput.change(function () {
         cardTitle = titleInput.val();
@@ -22237,6 +22502,12 @@ __webpack_require__.r(__webpack_exports__);
       alignRight.click(function () {
         logoAlign = "Right";
       });
+      circleLogo.click(function () {
+        logoShape = "Circle";
+      });
+      squareLogo.click(function () {
+        logoShape = "Square";
+      });
       stamp5.click(function () {
         cardSlots = 5;
       });
@@ -22248,15 +22519,112 @@ __webpack_require__.r(__webpack_exports__);
       });
       colourPicker.change(function () {
         cardColour = colourPicker.val();
-      }); // When move to builder, commit create data
+      }); // ~ Builder
+      // Variables
+
+      var logo = $('.sample-logo-container');
+      var logoPosition = $('.logo-align-container');
+      var cardHolder = $('.builder-card');
+      var stampRow1 = $('#stamp-row-1');
+      var stampRow2 = $('#stamp-row-2');
+      var stampRow3 = $('#stamp-row-3'); // When move to builder, commit create data
 
       btn2.click(function () {
-        // output form data
+        // output form data (Just output to console)
         console.log("Title: " + cardTitle);
         console.log("Description: " + cardDescription);
         console.log("Logo Alignment: " + logoAlign);
+        console.log("Logo Shape: " + logoShape);
         console.log("Num of stamps: " + cardSlots);
-        console.log("Background Colour: " + cardColour);
+        console.log("Background Colour: " + cardColour); // Making builder dynamic to create options
+        // ~ Logo Shape
+
+        if (logoShape === "Square") {
+          // remove incorrect class
+          logo.removeClass('circle-logo'); // add correct class
+
+          logo.addClass('square-logo');
+        }
+
+        if (logoShape === "Circle") {
+          // remove incorrect class
+          logo.removeClass('square-logo'); // add correct class
+
+          logo.addClass('circle-logo');
+        } // ~ Logo Align
+
+
+        if (logoAlign === "Left") {
+          // remove incorrect class
+          logoPosition.removeClass('logo-align-middle');
+          logoPosition.removeClass('logo-align-right');
+          logo.removeClass('logo-align-middle');
+          logo.removeClass('m-inline-e'); // add correct classes
+
+          logoPosition.addClass('logo-align-left');
+          logo.addClass('m-inline-s');
+        }
+
+        if (logoAlign === "Center") {
+          // remove incorrect class
+          logoPosition.removeClass('logo-align-left');
+          logoPosition.removeClass('logo-align-right');
+          logo.removeClass('m-inline-s');
+          logo.removeClass('m-inline-e'); // add correct classes
+
+          logoPosition.addClass('logo-align-middle');
+          logo.addClass('logo-align-middle');
+        }
+
+        if (logoAlign === "Right") {
+          // remove incorrect class
+          logoPosition.removeClass('logo-align-left');
+          logoPosition.removeClass('logo-align-middle');
+          logo.removeClass('m-inline-s');
+          logo.removeClass('logo-align-middle'); // add correct classes
+
+          logoPosition.addClass('logo-align-right');
+          logo.addClass('m-inline-e');
+        } //  ~ Stamp slots
+
+
+        if (cardSlots === 5) {
+          // showing correct rows
+          stampRow1.show();
+          stampRow2.hide();
+          stampRow3.hide(); // remove incorrect height class
+
+          cardHolder.removeClass('two-stamp-row-height');
+          cardHolder.removeClass('three-stamp-row-height'); // add correct height class
+
+          cardHolder.addClass('one-stamp-row-height');
+        }
+
+        if (cardSlots === 10) {
+          // showing correct rows
+          stampRow1.show();
+          stampRow2.show();
+          stampRow3.hide(); // remove incorrect height class
+
+          cardHolder.removeClass('one-stamp-row-height');
+          cardHolder.removeClass('three-stamp-row-height'); // add correct height class
+
+          cardHolder.addClass('two-stamp-row-height');
+        }
+
+        if (cardSlots === 15) {
+          // showing correct rows
+          stampRow1.show();
+          stampRow2.show();
+          stampRow3.show(); // remove incorrect height class
+
+          cardHolder.removeClass('one-stamp-row-height');
+          cardHolder.removeClass('two-stamp-row-height'); // add correct height class
+
+          cardHolder.addClass('three-stamp-row-height');
+        }
+
+        cardHolder.css("background-color", cardColour);
       });
     });
   }
@@ -27796,7 +28164,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 80%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 15%;\n    height: 450px;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: 85%;\n    height: 450px;\n    float: left;\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 100%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.shape-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 80%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 150px;\n    height: 475px;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: calc(100% - 150px);\n    height: 475px;\n    float: left;\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 100%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n.stamp-element-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 30px;\n            margin-block-start: 30px;\n    -webkit-margin-after: 30px;\n            margin-block-end: 30px;\n    text-align: center;\n}\n.stamp[data-v-99f0cd32] {\n    width: 60px;\n    height: 60px;\n}\n.stamp[data-v-99f0cd32]:hover {\n    cursor: pointer;\n}\n.card-holder[data-v-99f0cd32] {\n    width: 100%;\n}\n.builder-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.one-stamp-row-height[data-v-99f0cd32] {\n    height: 150px;\n}\n.two-stamp-row-height[data-v-99f0cd32] {\n    height: 250px;\n}\n.three-stamp-row-height[data-v-99f0cd32] {\n    height: 350px;\n}\n.stamp-logo-holder[data-v-99f0cd32] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 100px;\n}\n.logo-align-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 100px;\n}\n.logo-align-left[data-v-99f0cd32] {\n    float: left;\n}\n.logo-align-middle[data-v-99f0cd32] {\n    margin: auto;\n}\n.logo-align-right[data-v-99f0cd32] {\n    float: right;\n}\n.sample-logo-container[data-v-99f0cd32] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n}\n.sample-logo[data-v-99f0cd32] {\n    width: 100%;\n}\n.sample-logo-align[data-v-99f0cd32] {\n     width: 100%;\n}\n.circle-logo[data-v-99f0cd32] {\n    border-radius: 50%;\n}\n.square-logo[data-v-99f0cd32] {\n    border-radius: 10px;\n}\n.m-inline-s[data-v-99f0cd32] {\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.m-inline-e[data-v-99f0cd32] {\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.bucket-container[data-v-99f0cd32] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-99f0cd32] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.empty[data-v-99f0cd32] {\n    border: 1px dashed rgb(44, 44, 44);\n    border-radius: 10px;\n    backdrop-filter: blur(10px) saturate(200%);\n    -webkit-backdrop-filter: blur(10px) saturate(200%);\n    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -57434,6 +57802,144 @@ var render = function () {
                       { staticClass: "create-label alignMiddle subtitle" },
                       [
                         _vm._v(
+                          "\n                                    Logo Shape\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "logo-shape-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "logo-shape-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "logo-shape-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "stampt-input-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "shape-opt-container alignMiddle" },
+                      [
+                        _c("div", { staticClass: "opt-align" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "opt alignMiddle align-width",
+                              attrs: { id: "circle-logo" },
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "fa-solid fa-circle" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "shape-opt-container alignMiddle" },
+                      [
+                        _c("div", { staticClass: "opt-align" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "opt alignMiddle align-width",
+                              attrs: { id: "square-logo" },
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    attrs: { icon: "fa-solid fa-square" },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
                           "\n                                    Card Slots\n                                "
                         ),
                       ]
@@ -57494,7 +58000,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(8),
+                          _vm._m(9),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearFix" }),
                         ]
@@ -57828,7 +58334,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(9),
+                          _vm._m(10),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearFix" }),
                         ]
@@ -57838,13 +58344,13 @@ var render = function () {
                     _c("div", { staticClass: "clearFix" }),
                   ]),
                   _vm._v(" "),
-                  _vm._m(10),
+                  _vm._m(11),
                 ]),
               ]),
               _vm._v(" "),
-              _vm._m(11),
-              _vm._v(" "),
               _vm._m(12),
+              _vm._v(" "),
+              _vm._m(13),
             ]),
           ]),
         ]),
@@ -58076,6 +58582,18 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-container details" }, [
       _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
         _vm._v(
+          "\n                                                A logo can be placed on the left, middle or right side of a loyalty card.\n                                                The logo used is the one uploaded when creating your business account, to change\n                                                this, simply upload a different image in the profile tab.\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
           "\n                                                The card slots refer to the number of 'buckets' - a fancy word for areas -\n                                                available to you when in the builder. Each bucket doesn't have to be filled\n                                                with a stamp element, but the more buckets a card has, the more precise a\n                                                design can be! You have the option of 5, 10 or 15 buckets.\n                                            "
         ),
       ]),
@@ -58137,11 +58655,270 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "build-content" }, [
         _c("div", { staticClass: "stamp-element-container alignMiddle" }, [
-          _c("div", { staticClass: "element-card" }),
+          _c(
+            "div",
+            {
+              staticClass: "element-card",
+              staticStyle: { overflow: "scroll" },
+            },
+            [
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/grey/1.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/grey/2.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/grey/3.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/black/1.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/black/2.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/black/3.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/white/1.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/white/2.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "stamp-element-row" }, [
+                _c("img", {
+                  staticClass: "stamp",
+                  attrs: {
+                    src: "/img/stamps/white/3.png",
+                    alt: "Stamp Style 3",
+                  },
+                }),
+              ]),
+            ]
+          ),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-element-container alignMiddle" }, [
-          _c("div", { staticClass: "element-card" }),
+          _c("div", { staticClass: "element-card alignMiddle" }, [
+            _c("div", { staticClass: "card-holder" }, [
+              _c("div", { staticClass: "builder-card" }, [
+                _c("div", { staticClass: "stamp-logo-holder" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "stamp-logo-container logo-row",
+                      attrs: { id: "logo-row" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "logo-align-container alignMiddle" },
+                        [
+                          _c("div", { staticClass: "sample-logo-align" }, [
+                            _c(
+                              "div",
+                              { staticClass: "sample-logo-container" },
+                              [
+                                _c("img", {
+                                  staticClass: "sample-logo",
+                                  attrs: {
+                                    src: "/img/stamps/sample-logo.jpg",
+                                    alt: "A sample logo for a coffee shop",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "stamp-logo-container stamp-bucket-row",
+                      attrs: { id: "stamp-row-1" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearFix" }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "stamp-logo-container stamp-bucket-row",
+                      attrs: { id: "stamp-row-2" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearFix" }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "stamp-logo-container stamp-bucket-row",
+                      attrs: { id: "stamp-row-3" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "bucket-container alignMiddle" },
+                        [_c("div", { staticClass: "bucket empty" })]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearFix" }),
+                    ]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearFix" }),
+              ]),
+            ]),
+          ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "clearFix" }),
