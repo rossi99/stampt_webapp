@@ -7,7 +7,7 @@
                     <div class="sb-logo-bg alignMiddle">
                         <div class="sb-logo-align">
                             <router-link :to="{ name: 'home' }">
-                                <img src="/img/logo/icon.png" alt="Stampt Logo" class="logo-btn">
+                                <img src="/img/logo/compressed/small-icon.png" alt="Stampt Logo" class="logo-btn">
                             </router-link>
                         </div>
                     </div>

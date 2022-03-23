@@ -59,7 +59,7 @@
 
                     <div class="info-img-container alignMiddle">
                         <div id="img-align" style="margin: auto;">
-                            <img src="/img/landing/infographic.png" alt="Rewards Screen" class="info-img">
+                            <img src="/img/landing/compressed/infographic.png" alt="Rewards Screen" class="info-img">
                         </div>
                     </div>
 
