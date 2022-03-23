@@ -1257,7 +1257,7 @@ export default {
         Sidebar,
         draggable
     },
-    mounted() {
+    mounted: function () {
         // ~ Variables & Defaults
         // Section Vars
         let btn1 = $('#btn-1');
@@ -1271,7 +1271,6 @@ export default {
         let preview = $('.preview-container');
 
         // Loading Screen Vars
-        let showLoading = false;
         let loadingScreen = $('.loading-screen-container')
 
         // Create Form Vars
@@ -1338,7 +1337,7 @@ export default {
         let titleOfCard = $('.preview-title');
         let descOfCard = $('.preview-desc');
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             setDefaults();
         });
 
@@ -1421,7 +1420,7 @@ export default {
 
         // Setting the logo alignment
         function setLogoAlignment() {
-            switch(logoAlign) {
+            switch (logoAlign) {
                 case "Left":
                     logoPosition.removeClass('logo-align-middle');
                     logoPosition.removeClass('logo-align-right');
@@ -1617,7 +1616,7 @@ export default {
             titleOfCard.text(cardTitle);
             descOfCard.text(cardDescription);
 
-            switch (cardSlots){
+            switch (cardSlots) {
                 case 5:
                     previewStampRow1.show();
                     previewStampRow2.hide();
@@ -1710,20 +1709,15 @@ export default {
         }
 
         // Create Btn Clicked
-        btn1.click(function() {
+        btn1.click(function () {
             clickCreate();
         });
 
         // Builder Button Clicked
-        btn2.click(function() {
+        btn2.click(function () {
             // ~ Show Preview Option
             previewSeparator.fadeIn(100);
             previewButton.fadeIn(100);
-
-            // ~ Set show loading to true
-            showLoading = true;
-
-            console.log(showLoading);
 
             clickBuilder();
         });
@@ -1734,11 +1728,11 @@ export default {
         });
 
         // Handling changes from user
-        titleInput.change(function() {
+        titleInput.change(function () {
             cardTitle = titleInput.val()
         });
 
-        descInput.change(function() {
+        descInput.change(function () {
             cardDescription = descInput.val()
         });
 
@@ -1778,12 +1772,12 @@ export default {
         });
 
         // Setting background colour of card
-        colourInput.change(function() {
+        colourInput.change(function () {
             cardColour = colourInput.val()
         });
 
         // Setting font colour of card
-        fontInput.change(function() {
+        fontInput.change(function () {
             fontColour = fontInput.val()
         });
 
@@ -2563,6 +2557,10 @@ export default {
     margin-inline-end: 20px;
 }
 
+.opacity-effect {
+    opacity: 20%;
+}
+
 .bucket-container {
     width: calc(100% / 5);
     height: 100px;
@@ -2639,7 +2637,7 @@ export default {
     float: left;
     color: rgba(255, 255, 255, 0.125);
     border: 1px solid rgba(255, 255, 255, 0.125);
-    border-radius: 5px;
+    border-radius: 12px;
     transition: all 0.2s;
 }
 
@@ -2675,11 +2673,11 @@ export default {
 
 .loading-screen-container {
     display: none;
-
     position: fixed;
     z-index: 1000;
     width: calc(100% - 200px);
     height: 100%;
+    background: rgba(20,20,20,0.5);
 }
 
 .loading-logo {
