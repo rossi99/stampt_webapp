@@ -22759,6 +22759,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -22782,7 +22803,8 @@ __webpack_require__.r(__webpack_exports__);
     var build = $('.build-container');
     var preview = $('.preview-container'); // Loading Screen Vars
 
-    var loadingScreen = $('.loading-screen-container'); // Create Form Vars
+    var loadingScreen = $('.loading-screen-container');
+    var numberOfClicks = 0; // Create Form Vars
 
     var cardTitle;
     var cardDescription;
@@ -22841,13 +22863,34 @@ __webpack_require__.r(__webpack_exports__);
     var previewStampRow2 = $('#preview-stamp-row-2');
     var titleDesc = $('.preview-txt-container');
     var titleOfCard = $('.preview-title');
-    var descOfCard = $('.preview-desc');
+    var descOfCard = $('.preview-desc'); // Forms Vars
+
+    var formCardTitle = $('#final-card-title');
+    var formCardDesc = $('#final-card-desc');
+    var formLogoPosition = $('#final-logo-position');
+    var formLogoShape = $('#final-logo-shape');
+    var formNumberOfStamps = $('#final-number-of-stamps');
+    var formBackgroundColour = $('#final-background-colour');
+    var formFontColour = $('#final-font-colour');
+    var Slot1 = $('#stamp-slot-1');
+    var Slot2 = $('#stamp-slot-2');
+    var Slot3 = $('#stamp-slot-3');
+    var Slot4 = $('#stamp-slot-4');
+    var Slot5 = $('#stamp-slot-5');
+    var Slot6 = $('#stamp-slot-6');
+    var Slot7 = $('#stamp-slot-7');
+    var Slot8 = $('#stamp-slot-8');
+    var Slot9 = $('#stamp-slot-9');
+    var Slot10 = $('#stamp-slot-10');
+    var publishBtn = $('#publish-button');
     $(document).ready(function () {
       setDefaults();
     }); // loading screen
 
     function showLoadingScreen() {
-      loadingScreen.fadeIn(10);
+      if (numberOfClicks < 1) {
+        loadingScreen.fadeIn(10);
+      }
     }
 
     function hideLoadingScreen() {
@@ -23067,7 +23110,9 @@ __webpack_require__.r(__webpack_exports__);
 
       cardHolder.css("background-color", cardColour); // ~ Font Colour
 
-      titleDesc.css("color", fontColour); // ~ Hide loading Screen
+      titleDesc.css("color", fontColour);
+      numberOfClicks += 1;
+      console.log(numberOfClicks); // ~ Hide loading Screen
 
       hideLoadingScreen();
     }
@@ -23092,12 +23137,23 @@ __webpack_require__.r(__webpack_exports__);
       logoShape = "Square";
       cardSlots = 5;
       cardColour = colourInput.val();
-      fontColour = fontInput.val(); // setting classes
+      fontColour = fontInput.val();
+      Slot1.val(0);
+      Slot2.val(0);
+      Slot3.val(0);
+      Slot4.val(0);
+      Slot5.val(0);
+      Slot6.val(0);
+      Slot7.val(0);
+      Slot8.val(0);
+      Slot9.val(0);
+      Slot10.val(0); // setting classes
 
       btn1.addClass('active-btn');
       btn1Txt.addClass('active-txt');
       create.fadeIn(250);
-    }
+    } // Show preview of card
+
 
     function cardPreview() {
       titleOfCard.text(cardTitle);
@@ -23119,15 +23175,36 @@ __webpack_require__.r(__webpack_exports__);
           break;
       }
 
-      previewCard.css("background-color", cardColour); // Form Data
+      previewCard.css("background-color", cardColour); // Setting Form Data
 
-      console.log(cardTitle);
-      console.log(cardDescription);
-      console.log(logoAlign);
-      console.log(logoShape);
-      console.log(cardSlots);
-      console.log(cardColour);
-      console.log(fontColour);
+      formCardTitle.val(cardTitle);
+      formCardDesc.val(cardDescription);
+      formLogoPosition.val(logoAlign);
+      formLogoShape.val(logoShape);
+      formNumberOfStamps.val(cardSlots);
+      formBackgroundColour.val(cardColour);
+      formFontColour.val(fontColour);
+    } // Show Form Data
+
+
+    function showFormData() {
+      console.log("Card Title: " + formCardTitle.val());
+      console.log("Card Desc: " + formCardDesc.val());
+      console.log("Card Logo Position: " + formLogoPosition.val());
+      console.log("Card Logo Shape: " + formLogoShape.val());
+      console.log("Card Num of stamps: " + formNumberOfStamps.val());
+      console.log("Card background colour: " + formBackgroundColour.val());
+      console.log("Card font colour: " + formFontColour.val());
+      console.log("Slot 1: " + Slot1.val());
+      console.log("Slot 2: " + Slot2.val());
+      console.log("Slot 3: " + Slot3.val());
+      console.log("Slot 4: " + Slot4.val());
+      console.log("Slot 5: " + Slot5.val());
+      console.log("Slot 6: " + Slot6.val());
+      console.log("Slot 7: " + Slot7.val());
+      console.log("Slot 8: " + Slot8.val());
+      console.log("Slot 9: " + Slot9.val());
+      console.log("Slot 10: " + Slot10.val());
     } // Fading in helper
     // Functions to show and hide
     // ~ Title
@@ -23340,6 +23417,9 @@ __webpack_require__.r(__webpack_exports__);
     fontInput.click(function () {
       fontHide();
     });
+    publishBtn.click(function () {
+      showFormData();
+    });
   },
   data: function data() {
     return {
@@ -23370,6 +23450,26 @@ __webpack_require__.r(__webpack_exports__);
       window.console.log(evt);
     },
     clearStamps: function clearStamps() {
+      var clearOneInput = $('#stamp-slot-1');
+      var clearTwoInput = $('#stamp-slot-2');
+      var clearThreeInput = $('#stamp-slot-3');
+      var clearFourInput = $('#stamp-slot-4');
+      var clearFiveInput = $('#stamp-slot-5');
+      var clearSixInput = $('#stamp-slot-6');
+      var clearSevenInput = $('#stamp-slot-7');
+      var clearEightInput = $('#stamp-slot-8');
+      var clearNineInput = $('#stamp-slot-9');
+      var clearTenInput = $('#stamp-slot-10');
+      clearOneInput.val(0);
+      clearTwoInput.val(0);
+      clearThreeInput.val(0);
+      clearFourInput.val(0);
+      clearFiveInput.val(0);
+      clearSixInput.val(0);
+      clearSevenInput.val(0);
+      clearEightInput.val(0);
+      clearNineInput.val(0);
+      clearTenInput.val(0);
       this.arrA = [];
       this.arrB = [];
       this.arrC = [];
@@ -23384,7 +23484,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     arrA: function arrA(val) {
-      var bucketA = document.getElementById("bucketA"); // remove empty class
+      var bucketA = document.getElementById("bucketA");
+      var slotOneInput = $('#stamp-slot-1'); // remove empty class
 
       if (val.length > 0) {
         bucketA.classList.remove("empty");
@@ -23395,10 +23496,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrA.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrA.length > 0) {
+        slotOneInput.val(this.arrA[0].id);
+      } else {
+        slotOneInput.val(0);
       }
     },
     arrB: function arrB(val) {
-      var bucketB = document.getElementById("bucketB"); // remove empty class
+      var bucketB = document.getElementById("bucketB");
+      var slotTwoInput = $('#stamp-slot-2'); // remove empty class
 
       if (val.length > 0) {
         bucketB.classList.remove("empty");
@@ -23409,10 +23518,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrB.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrB.length > 0) {
+        slotTwoInput.val(this.arrB[0].id);
+      } else {
+        slotTwoInput.val(0);
       }
     },
     arrC: function arrC(val) {
-      var bucketC = document.getElementById("bucketC"); // remove empty class
+      var bucketC = document.getElementById("bucketC");
+      var slotThreeInput = $('#stamp-slot-3'); // remove empty class
 
       if (val.length > 0) {
         bucketC.classList.remove("empty");
@@ -23423,10 +23540,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrC.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrC.length > 0) {
+        slotThreeInput.val(this.arrC[0].id);
+      } else {
+        slotThreeInput.val(0);
       }
     },
     arrD: function arrD(val) {
-      var bucketD = document.getElementById("bucketD"); // remove empty class
+      var bucketD = document.getElementById("bucketD");
+      var slotFourInput = $('#stamp-slot-4'); // remove empty class
 
       if (val.length > 0) {
         bucketD.classList.remove("empty");
@@ -23437,10 +23562,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrD.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrD.length > 0) {
+        slotFourInput.val(this.arrD[0].id);
+      } else {
+        slotFourInput.val(0);
       }
     },
     arrE: function arrE(val) {
-      var bucketE = document.getElementById("bucketE"); // remove empty class
+      var bucketE = document.getElementById("bucketE");
+      var slotFiveInput = $('#stamp-slot-5'); // remove empty class
 
       if (val.length > 0) {
         bucketE.classList.remove("empty");
@@ -23451,10 +23584,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrE.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrE.length > 0) {
+        slotFiveInput.val(this.arrE[0].id);
+      } else {
+        slotFiveInput.val(0);
       }
     },
     arrF: function arrF(val) {
-      var bucketF = document.getElementById("bucketF"); // remove empty class
+      var bucketF = document.getElementById("bucketF");
+      var slotSixInput = $('#stamp-slot-6'); // remove empty class
 
       if (val.length > 0) {
         bucketF.classList.remove("empty");
@@ -23465,10 +23606,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrF.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrF.length > 0) {
+        slotSixInput.val(this.arrF[0].id);
+      } else {
+        slotSixInput.val(0);
       }
     },
     arrG: function arrG(val) {
-      var bucketG = document.getElementById("bucketG"); // remove empty class
+      var bucketG = document.getElementById("bucketG");
+      var slotSevenInput = $('#stamp-slot-7'); // remove empty class
 
       if (val.length > 0) {
         bucketG.classList.remove("empty");
@@ -23479,10 +23628,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrG.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrG.length > 0) {
+        slotSevenInput.val(this.arrG[0].id);
+      } else {
+        slotSevenInput.val(0);
       }
     },
     arrH: function arrH(val) {
-      var bucketH = document.getElementById("bucketH"); // remove empty class
+      var bucketH = document.getElementById("bucketH");
+      var slotEightInput = $('#stamp-slot-8'); // remove empty class
 
       if (val.length > 0) {
         bucketH.classList.remove("empty");
@@ -23493,10 +23650,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrH.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrH.length > 0) {
+        slotEightInput.val(this.arrH[0].id);
+      } else {
+        slotEightInput.val(0);
       }
     },
     arrI: function arrI(val) {
-      var bucketI = document.getElementById("bucketI"); // remove empty class
+      var bucketI = document.getElementById("bucketI");
+      var slotNineInput = $('#stamp-slot-9'); // remove empty class
 
       if (val.length > 0) {
         bucketI.classList.remove("empty");
@@ -23507,10 +23672,18 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrI.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrI.length > 0) {
+        slotNineInput.val(this.arrI[0].id);
+      } else {
+        slotNineInput.val(0);
       }
     },
     arrJ: function arrJ(val) {
-      var bucketJ = document.getElementById("bucketJ"); // remove empty class
+      var bucketJ = document.getElementById("bucketJ");
+      var slotTenInput = $('#stamp-slot-10'); // remove empty class
 
       if (val.length > 0) {
         bucketJ.classList.remove("empty");
@@ -23521,6 +23694,13 @@ __webpack_require__.r(__webpack_exports__);
 
       if (val.length > 1) {
         this.arrJ.pop();
+      } // Assigning Stamp value to form
+
+
+      if (this.arrJ.length > 0) {
+        slotTenInput.val(this.arrJ[0].id);
+      } else {
+        slotTenInput.val(0);
       }
     }
   }
@@ -29060,7 +29240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n#preview-section-divider[data-v-99f0cd32] {\n    display: none;\n}\n#preview-section-btn[data-v-99f0cd32] {\n    display: none;\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.build-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.preview-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.shape-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 50%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 160px);\n}\n.preview-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 200px);\n}\n.preview-button-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 150px;\n    height: 100%;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: calc(100% - 150px);\n    height: 100%;\n    float: left;\n}\n.element-panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n}\n.draggable-element-container[data-v-99f0cd32] {\n    height: calc(85% - 20px);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.clear-card-container[data-v-99f0cd32] {\n    height: 15%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.clear-stamps-btn[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.clear-card-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border-radius: 2px;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n.stamp-element-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 20px;\n            margin-block-start: 20px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    text-align: center;\n}\n.stamp[data-v-99f0cd32] {\n    width: 70px;\n    height: 70px;\n}\n.stamp-element-row > .stamp[data-v-99f0cd32]:hover {\n    cursor: pointer;\n}\n.card-holder[data-v-99f0cd32] {\n    width: 100%;\n}\n.builder-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.one-stamp-row-height[data-v-99f0cd32] {\n    height: 150px;\n}\n.two-stamp-row-height[data-v-99f0cd32] {\n    height: 250px;\n}\n.preview-one-row-height[data-v-99f0cd32] {\n    height: calc(150px + 65px);\n}\n.preview-two-row-height[data-v-99f0cd32] {\n    height: calc(250px + 65px);\n}\n.stamp-logo-holder[data-v-99f0cd32] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 100px;\n}\n.logo-align-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 100px;\n}\n.logo-align-left[data-v-99f0cd32] {\n    float: left;\n}\n.logo-align-middle[data-v-99f0cd32] {\n    margin: auto;\n}\n.logo-align-right[data-v-99f0cd32] {\n    float: right;\n}\n.sample-logo-container[data-v-99f0cd32] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n}\n.sample-logo[data-v-99f0cd32] {\n    width: 100%;\n}\n.sample-logo-align[data-v-99f0cd32] {\n     width: 100%;\n}\n.circle-logo[data-v-99f0cd32] {\n    border-radius: 50%;\n}\n.square-logo[data-v-99f0cd32] {\n    border-radius: 10px;\n}\n.m-inline-s[data-v-99f0cd32] {\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.m-inline-e[data-v-99f0cd32] {\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.opacity-effect[data-v-99f0cd32] {\n    opacity: 20%;\n}\n.bucket-container[data-v-99f0cd32] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-99f0cd32] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.empty[data-v-99f0cd32] {\n    border: 1px dashed rgb(44, 44, 44);\n    border-radius: 10px;\n    backdrop-filter: blur(10px) saturate(200%);\n    -webkit-backdrop-filter: blur(10px) saturate(200%);\n    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );\n}\n.drop-area[data-v-99f0cd32] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-99f0cd32] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.preview-card-container[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.preview-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.preview-txt-container[data-v-99f0cd32] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-99f0cd32] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-99f0cd32] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-99f0cd32] {\n    text-align: left;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.cancel-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 40px;\n    float: left;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.submit-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 40px;\n    float: right;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.cancel-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.submit-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.btn-text-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.loading-screen-container[data-v-99f0cd32] {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    width: calc(100% - 200px);\n    height: 100%;\n    background: rgba(20,20,20,0.5);\n}\n.loading-logo[data-v-99f0cd32] {\n    width: 100px;\n    -webkit-margin-after: 10px;\n            margin-block-end: 10px;\n    -webkit-animation: rotation-data-v-99f0cd32 8s infinite linear;\n            animation: rotation-data-v-99f0cd32 8s infinite linear;\n}\n@-webkit-keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n@keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n#preview-section-divider[data-v-99f0cd32] {\n    display: none;\n}\n#preview-section-btn[data-v-99f0cd32] {\n    display: none;\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.build-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.preview-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.shape-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 50%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 160px);\n}\n.preview-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 200px);\n}\n.preview-button-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 150px;\n    height: 100%;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: calc(100% - 150px);\n    height: 100%;\n    float: left;\n}\n.element-panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n}\n.draggable-element-container[data-v-99f0cd32] {\n    height: calc(85% - 20px);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.clear-card-container[data-v-99f0cd32] {\n    height: 15%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.clear-stamps-btn[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.clear-card-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border-radius: 2px;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n.stamp-element-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 20px;\n            margin-block-start: 20px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    text-align: center;\n}\n.stamp[data-v-99f0cd32] {\n    width: 70px;\n    height: 70px;\n}\n.stamp-element-row > .stamp[data-v-99f0cd32]:hover {\n    cursor: pointer;\n}\n.card-holder[data-v-99f0cd32] {\n    width: 100%;\n}\n.builder-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.one-stamp-row-height[data-v-99f0cd32] {\n    height: 150px;\n}\n.two-stamp-row-height[data-v-99f0cd32] {\n    height: 250px;\n}\n.preview-one-row-height[data-v-99f0cd32] {\n    height: calc(150px + 65px);\n}\n.preview-two-row-height[data-v-99f0cd32] {\n    height: calc(250px + 65px);\n}\n.stamp-logo-holder[data-v-99f0cd32] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 100px;\n}\n.logo-align-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 100px;\n}\n.logo-align-left[data-v-99f0cd32] {\n    float: left;\n}\n.logo-align-middle[data-v-99f0cd32] {\n    margin: auto;\n}\n.logo-align-right[data-v-99f0cd32] {\n    float: right;\n}\n.sample-logo-container[data-v-99f0cd32] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n}\n.sample-logo[data-v-99f0cd32] {\n    width: 100%;\n}\n.sample-logo-align[data-v-99f0cd32] {\n     width: 100%;\n}\n.circle-logo[data-v-99f0cd32] {\n    border-radius: 50%;\n}\n.square-logo[data-v-99f0cd32] {\n    border-radius: 10px;\n}\n.m-inline-s[data-v-99f0cd32] {\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.m-inline-e[data-v-99f0cd32] {\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.opacity-effect[data-v-99f0cd32] {\n    opacity: 20%;\n}\n.bucket-container[data-v-99f0cd32] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-99f0cd32] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.empty[data-v-99f0cd32] {\n    border: 1px dashed rgb(44, 44, 44);\n    border-radius: 10px;\n    backdrop-filter: blur(10px) saturate(200%);\n    -webkit-backdrop-filter: blur(10px) saturate(200%);\n    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );\n}\n.drop-area[data-v-99f0cd32] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-99f0cd32] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.preview-card-container[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.preview-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.preview-txt-container[data-v-99f0cd32] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-99f0cd32] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-99f0cd32] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-99f0cd32] {\n    font-size: 14px;\n    text-align: left;\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.cancel-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: left;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.submit-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: right;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.cancel-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.submit-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.btn-text-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.loading-screen-container[data-v-99f0cd32] {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    width: calc(100% - 200px);\n    height: 100%;\n}\n.loading-logo[data-v-99f0cd32] {\n    width: 100px;\n    -webkit-margin-after: 10px;\n            margin-block-end: 10px;\n    -webkit-animation: rotation-data-v-99f0cd32 2s infinite linear;\n            animation: rotation-data-v-99f0cd32 2s infinite linear;\n}\n@-webkit-keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n@keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -59361,7 +59541,6 @@ var render = function () {
                                                 list: _vm.arrA,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59449,7 +59628,6 @@ var render = function () {
                                                 list: _vm.arrB,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59537,7 +59715,6 @@ var render = function () {
                                                 list: _vm.arrC,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59625,7 +59802,6 @@ var render = function () {
                                                 list: _vm.arrD,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59713,7 +59889,6 @@ var render = function () {
                                                 list: _vm.arrE,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59813,7 +59988,6 @@ var render = function () {
                                                 list: _vm.arrF,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59901,7 +60075,6 @@ var render = function () {
                                                 list: _vm.arrG,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -59989,7 +60162,6 @@ var render = function () {
                                                 list: _vm.arrH,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -60077,7 +60249,6 @@ var render = function () {
                                                 list: _vm.arrI,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -60165,7 +60336,6 @@ var render = function () {
                                                 list: _vm.arrJ,
                                                 group: "cardItem",
                                               },
-                                              on: { change: _vm.log },
                                             },
                                             [
                                               _c(
@@ -60944,27 +61114,168 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "submit-btn-container alignMiddle" },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "btn-text-align" },
-                        [
-                          _c("font-awesome-icon", {
-                            staticClass: "l-icon-spacing",
-                            attrs: {
-                              icon: "fa-solid fa-arrow-up-from-bracket",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Publish Card")]),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                  _c("form", [
+                    _c("input", {
+                      attrs: {
+                        id: "final-card-title",
+                        type: "hidden",
+                        name: "card-title",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-card-desc",
+                        type: "hidden",
+                        name: "card-decs",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-logo-position",
+                        type: "hidden",
+                        name: "logo-position",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-logo-shape",
+                        type: "hidden",
+                        name: "logo-shape",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-number-of-stamps",
+                        type: "hidden",
+                        name: "number-of-stamps",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-background-colour",
+                        type: "hidden",
+                        name: "background-colour",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-font-colour",
+                        type: "hidden",
+                        name: "font-colour",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-1",
+                        type: "hidden",
+                        name: "slot-1",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-2",
+                        type: "hidden",
+                        name: "slot-2",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-3",
+                        type: "hidden",
+                        name: "slot-3",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-4",
+                        type: "hidden",
+                        name: "slot-4",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-5",
+                        type: "hidden",
+                        name: "slot-5",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-6",
+                        type: "hidden",
+                        name: "slot-6",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-7",
+                        type: "hidden",
+                        name: "slot-7",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-8",
+                        type: "hidden",
+                        name: "slot-8",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-9",
+                        type: "hidden",
+                        name: "slot-9",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "stamp-slot-10",
+                        type: "hidden",
+                        name: "slot-10",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "submit-btn-container alignMiddle" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "btn-text-align",
+                            attrs: { id: "publish-button" },
+                          },
+                          [
+                            _c("font-awesome-icon", {
+                              staticClass: "l-icon-spacing",
+                              attrs: {
+                                icon: "fa-solid fa-arrow-up-from-bracket",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("Publish Card")]),
+                          ],
+                          1
+                        ),
+                      ]
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -61146,21 +61457,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "loading-screen-container alignMiddle" }, [
-      _c("div", { staticClass: "centerScreen" }, [
-        _c("img", {
-          staticClass: "loading-logo",
-          attrs: {
-            src: "/img/logo/compressed/small-icon.png",
-            alt: "Stampt Logo",
-          },
-        }),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Hold tight!")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("We are currently putting your card together!")]),
-      ]),
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "loading-screen-container alignMiddle dark-glass-effect",
+        staticStyle: {
+          "border-top-right-radius": "0",
+          "border-bottom-right-radius": "0",
+          "border-bottom-left-radius": "0",
+        },
+      },
+      [
+        _c("div", { staticClass: "centerScreen" }, [
+          _c("img", {
+            staticClass: "loading-logo",
+            attrs: {
+              src: "/img/logo/compressed/small-icon.png",
+              alt: "Stampt Logo",
+            },
+          }),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Hold tight!")]),
+          _vm._v(" "),
+          _c("p", [_vm._v("We are currently putting your card together!")]),
+        ]),
+      ]
+    )
   },
   function () {
     var _vm = this

@@ -96,7 +96,8 @@
                     </div>
 
                     <div class="form-container">
-                        <div class="loading-screen-container alignMiddle">
+                        <div class="loading-screen-container alignMiddle dark-glass-effect"
+                             style="border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
                             <div class="centerScreen">
                                 <img src="/img/logo/compressed/small-icon.png" alt="Stampt Logo" class="loading-logo">
                                 <h3>Hold tight!</h3>
@@ -590,7 +591,7 @@
                                                     <div class="stamp-logo-container stamp-bucket-row" id="stamp-row-1">
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketA">
-                                                                <draggable class="drop-area alignMiddle" :list="arrA" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrA" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrA" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -618,7 +619,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketB">
-                                                                <draggable class="drop-area alignMiddle" :list="arrB" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrB" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrB" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -646,7 +647,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketC">
-                                                                <draggable class="drop-area alignMiddle" :list="arrC" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrC" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrC" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -674,7 +675,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketD">
-                                                                <draggable class="drop-area alignMiddle" :list="arrD" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrD" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrD" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -702,7 +703,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketE">
-                                                                <draggable class="drop-area alignMiddle" :list="arrE" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrE" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrE" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -734,7 +735,7 @@
                                                     <div class="stamp-logo-container stamp-bucket-row" id="stamp-row-2">
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketF">
-                                                                <draggable class="drop-area alignMiddle" :list="arrF" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrF" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrF" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -762,7 +763,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketG">
-                                                                <draggable class="drop-area alignMiddle" :list="arrG" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrG" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrG" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -790,7 +791,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketH">
-                                                                <draggable class="drop-area alignMiddle" :list="arrH" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrH" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrH" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -818,7 +819,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketI">
-                                                                <draggable class="drop-area alignMiddle" :list="arrI" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrI" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrI" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -846,7 +847,7 @@
 
                                                         <div class="bucket-container alignMiddle">
                                                             <div class="bucket empty" id="bucketJ">
-                                                                <draggable class="drop-area alignMiddle" :list="arrJ" group="cardItem" @change="log">
+                                                                <draggable class="drop-area alignMiddle" :list="arrJ" group="cardItem">
                                                                     <div class="bucket-align">
                                                                         <div v-for="element in arrJ" :key="element.id">
                                                                             <div v-if="element.id === 1">
@@ -1228,12 +1229,32 @@
                                     </div>
                                 </div>
 
-                                <div class="submit-btn-container alignMiddle">
-                                    <div class="btn-text-align">
-                                        <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
-                                        <span>Publish Card</span>
+                                <form>
+                                    <input id="final-card-title" type="hidden" name="card-title">
+                                    <input id="final-card-desc" type="hidden" name="card-decs">
+                                    <input id="final-logo-position" type="hidden" name="logo-position">
+                                    <input id="final-logo-shape" type="hidden" name="logo-shape">
+                                    <input id="final-number-of-stamps" type="hidden" name="number-of-stamps">
+                                    <input id="final-background-colour" type="hidden" name="background-colour">
+                                    <input id="final-font-colour" type="hidden" name="font-colour">
+                                    <input id="stamp-slot-1" type="hidden" name="slot-1">
+                                    <input id="stamp-slot-2" type="hidden" name="slot-2">
+                                    <input id="stamp-slot-3" type="hidden" name="slot-3">
+                                    <input id="stamp-slot-4" type="hidden" name="slot-4">
+                                    <input id="stamp-slot-5" type="hidden" name="slot-5">
+                                    <input id="stamp-slot-6" type="hidden" name="slot-6">
+                                    <input id="stamp-slot-7" type="hidden" name="slot-7">
+                                    <input id="stamp-slot-8" type="hidden" name="slot-8">
+                                    <input id="stamp-slot-9" type="hidden" name="slot-9">
+                                    <input id="stamp-slot-10" type="hidden" name="slot-10">
+
+                                    <div class="submit-btn-container alignMiddle">
+                                        <div class="btn-text-align" id="publish-button">
+                                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
+                                            <span>Publish Card</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -1271,7 +1292,8 @@ export default {
         let preview = $('.preview-container');
 
         // Loading Screen Vars
-        let loadingScreen = $('.loading-screen-container')
+        let loadingScreen = $('.loading-screen-container');
+        let numberOfClicks = 0;
 
         // Create Form Vars
         let cardTitle;
@@ -1337,13 +1359,35 @@ export default {
         let titleOfCard = $('.preview-title');
         let descOfCard = $('.preview-desc');
 
+        // Forms Vars
+        let formCardTitle = $('#final-card-title');
+        let formCardDesc = $('#final-card-desc');
+        let formLogoPosition = $('#final-logo-position');
+        let formLogoShape = $('#final-logo-shape');
+        let formNumberOfStamps = $('#final-number-of-stamps');
+        let formBackgroundColour = $('#final-background-colour');
+        let formFontColour = $('#final-font-colour');
+        let Slot1 = $('#stamp-slot-1');
+        let Slot2 = $('#stamp-slot-2');
+        let Slot3 = $('#stamp-slot-3');
+        let Slot4 = $('#stamp-slot-4');
+        let Slot5 = $('#stamp-slot-5');
+        let Slot6 = $('#stamp-slot-6');
+        let Slot7 = $('#stamp-slot-7');
+        let Slot8 = $('#stamp-slot-8');
+        let Slot9 = $('#stamp-slot-9');
+        let Slot10 = $('#stamp-slot-10');
+        let publishBtn = $('#publish-button');
+
         $(document).ready(function () {
             setDefaults();
         });
 
         // loading screen
         function showLoadingScreen() {
-            loadingScreen.fadeIn(10);
+            if (numberOfClicks < 1 ) {
+                loadingScreen.fadeIn(10);
+            }
         }
 
         function hideLoadingScreen() {
@@ -1550,7 +1594,7 @@ export default {
 
         function clickBuilder() {
             // show loading
-            showLoadingScreen()
+            showLoadingScreen();
 
             // Show form for create
             fadeInBuild();
@@ -1575,6 +1619,10 @@ export default {
 
             // ~ Font Colour
             titleDesc.css("color", fontColour);
+
+            numberOfClicks += 1;
+
+            console.log(numberOfClicks);
 
             // ~ Hide loading Screen
             hideLoadingScreen();
@@ -1603,7 +1651,16 @@ export default {
             cardSlots = 5
             cardColour = colourInput.val()
             fontColour = fontInput.val()
-
+            Slot1.val(0);
+            Slot2.val(0);
+            Slot3.val(0);
+            Slot4.val(0);
+            Slot5.val(0);
+            Slot6.val(0);
+            Slot7.val(0);
+            Slot8.val(0);
+            Slot9.val(0);
+            Slot10.val(0);
 
             // setting classes
             btn1.addClass('active-btn')
@@ -1612,6 +1669,7 @@ export default {
             create.fadeIn(250)
         }
 
+        // Show preview of card
         function cardPreview() {
             titleOfCard.text(cardTitle);
             descOfCard.text(cardDescription);
@@ -1633,14 +1691,35 @@ export default {
 
             previewCard.css("background-color", cardColour);
 
-            // Form Data
-            console.log(cardTitle);
-            console.log(cardDescription);
-            console.log(logoAlign);
-            console.log(logoShape);
-            console.log(cardSlots);
-            console.log(cardColour);
-            console.log(fontColour);
+            // Setting Form Data
+            formCardTitle.val(cardTitle);
+            formCardDesc.val(cardDescription);
+            formLogoPosition.val(logoAlign);
+            formLogoShape.val(logoShape);
+            formNumberOfStamps.val(cardSlots);
+            formBackgroundColour.val(cardColour);
+            formFontColour.val(fontColour);
+        }
+
+        // Show Form Data
+        function showFormData() {
+            console.log("Card Title: " + formCardTitle.val());
+            console.log("Card Desc: " + formCardDesc.val());
+            console.log("Card Logo Position: " + formLogoPosition.val());
+            console.log("Card Logo Shape: " + formLogoShape.val());
+            console.log("Card Num of stamps: " + formNumberOfStamps.val());
+            console.log("Card background colour: " + formBackgroundColour.val());
+            console.log("Card font colour: " + formFontColour.val());
+            console.log("Slot 1: " + Slot1.val());
+            console.log("Slot 2: " + Slot2.val());
+            console.log("Slot 3: " + Slot3.val());
+            console.log("Slot 4: " + Slot4.val());
+            console.log("Slot 5: " + Slot5.val());
+            console.log("Slot 6: " + Slot6.val());
+            console.log("Slot 7: " + Slot7.val());
+            console.log("Slot 8: " + Slot8.val());
+            console.log("Slot 9: " + Slot9.val());
+            console.log("Slot 10: " + Slot10.val());
         }
 
         // Fading in helper
@@ -1895,6 +1974,10 @@ export default {
         fontInput.click(function () {
             fontHide();
         });
+
+        publishBtn.click(function () {
+            showFormData();
+        });
     },
     data() {
         return {
@@ -1919,7 +2002,30 @@ export default {
         log: function(evt) {
             window.console.log(evt);
         },
+
         clearStamps: function () {
+            let clearOneInput = $('#stamp-slot-1');
+            let clearTwoInput = $('#stamp-slot-2');
+            let clearThreeInput = $('#stamp-slot-3');
+            let clearFourInput = $('#stamp-slot-4');
+            let clearFiveInput = $('#stamp-slot-5');
+            let clearSixInput = $('#stamp-slot-6');
+            let clearSevenInput = $('#stamp-slot-7');
+            let clearEightInput = $('#stamp-slot-8');
+            let clearNineInput = $('#stamp-slot-9');
+            let clearTenInput = $('#stamp-slot-10');
+
+            clearOneInput.val(0);
+            clearTwoInput.val(0);
+            clearThreeInput.val(0);
+            clearFourInput.val(0);
+            clearFiveInput.val(0);
+            clearSixInput.val(0);
+            clearSevenInput.val(0);
+            clearEightInput.val(0);
+            clearNineInput.val(0);
+            clearTenInput.val(0);
+
             this.arrA = [];
             this.arrB = [];
             this.arrC = [];
@@ -1935,6 +2041,7 @@ export default {
     watch: {
         arrA: function (val) {
             let bucketA = document.getElementById("bucketA");
+            let slotOneInput = $('#stamp-slot-1');
 
             // remove empty class
             if (val.length > 0) {
@@ -1947,9 +2054,17 @@ export default {
             if (val.length > 1) {
                 this.arrA.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrA.length > 0) {
+                slotOneInput.val(this.arrA[0].id);
+            } else {
+                slotOneInput.val(0);
+            }
         },
         arrB: function (val) {
             let bucketB = document.getElementById("bucketB");
+            let slotTwoInput = $('#stamp-slot-2');
 
             // remove empty class
             if (val.length > 0) {
@@ -1962,9 +2077,17 @@ export default {
             if (val.length > 1) {
                 this.arrB.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrB.length > 0) {
+                slotTwoInput.val(this.arrB[0].id);
+            } else {
+                slotTwoInput.val(0);
+            }
         },
         arrC: function (val) {
             let bucketC = document.getElementById("bucketC");
+            let slotThreeInput = $('#stamp-slot-3');
 
             // remove empty class
             if (val.length > 0) {
@@ -1977,9 +2100,17 @@ export default {
             if (val.length > 1) {
                 this.arrC.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrC.length > 0) {
+                slotThreeInput.val(this.arrC[0].id);
+            } else {
+                slotThreeInput.val(0);
+            }
         },
         arrD: function (val) {
             let bucketD = document.getElementById("bucketD");
+            let slotFourInput = $('#stamp-slot-4');
 
             // remove empty class
             if (val.length > 0) {
@@ -1992,9 +2123,17 @@ export default {
             if (val.length > 1) {
                 this.arrD.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrD.length > 0) {
+                slotFourInput.val(this.arrD[0].id);
+            } else {
+                slotFourInput.val(0);
+            }
         },
         arrE: function (val) {
             let bucketE = document.getElementById("bucketE");
+            let slotFiveInput = $('#stamp-slot-5');
 
             // remove empty class
             if (val.length > 0) {
@@ -2007,9 +2146,17 @@ export default {
             if (val.length > 1) {
                 this.arrE.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrE.length > 0) {
+                slotFiveInput.val(this.arrE[0].id);
+            } else {
+                slotFiveInput.val(0);
+            }
         },
         arrF: function (val) {
             let bucketF = document.getElementById("bucketF");
+            let slotSixInput = $('#stamp-slot-6');
 
             // remove empty class
             if (val.length > 0) {
@@ -2022,9 +2169,17 @@ export default {
             if (val.length > 1) {
                 this.arrF.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrF.length > 0) {
+                slotSixInput.val(this.arrF[0].id);
+            } else {
+                slotSixInput.val(0);
+            }
         },
         arrG: function (val) {
             let bucketG = document.getElementById("bucketG");
+            let slotSevenInput = $('#stamp-slot-7');
 
             // remove empty class
             if (val.length > 0) {
@@ -2037,9 +2192,17 @@ export default {
             if (val.length > 1) {
                 this.arrG.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrG.length > 0) {
+                slotSevenInput.val(this.arrG[0].id);
+            } else {
+                slotSevenInput.val(0);
+            }
         },
         arrH: function (val) {
             let bucketH = document.getElementById("bucketH");
+            let slotEightInput = $('#stamp-slot-8');
 
             // remove empty class
             if (val.length > 0) {
@@ -2052,9 +2215,17 @@ export default {
             if (val.length > 1) {
                 this.arrH.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrH.length > 0) {
+                slotEightInput.val(this.arrH[0].id);
+            } else {
+                slotEightInput.val(0);
+            }
         },
         arrI: function (val) {
             let bucketI = document.getElementById("bucketI");
+            let slotNineInput = $('#stamp-slot-9');
 
             // remove empty class
             if (val.length > 0) {
@@ -2067,9 +2238,17 @@ export default {
             if (val.length > 1) {
                 this.arrI.pop();
             }
+
+            // Assigning Stamp value to form
+            if (this.arrI.length > 0) {
+                slotNineInput.val(this.arrI[0].id);
+            } else {
+                slotNineInput.val(0);
+            }
         },
         arrJ: function (val) {
             let bucketJ = document.getElementById("bucketJ");
+            let slotTenInput = $('#stamp-slot-10');
 
             // remove empty class
             if (val.length > 0) {
@@ -2081,6 +2260,13 @@ export default {
             // ensures only one item
             if (val.length > 1) {
                 this.arrJ.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrJ.length > 0) {
+                slotTenInput.val(this.arrJ[0].id);
+            } else {
+                slotTenInput.val(0);
             }
         }
     }
@@ -2626,14 +2812,19 @@ export default {
 }
 
 .preview-desc {
+    font-size: 14px;
     text-align: left;
-    margin-inline-start: 10px;
+    width: calc(100% - 20px);
+    margin-inline: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cancel-btn-container {
     width: 20%;
     min-width: 175px;
-    height: 40px;
+    height: 55px;
     float: left;
     color: rgba(255, 255, 255, 0.125);
     border: 1px solid rgba(255, 255, 255, 0.125);
@@ -2644,7 +2835,7 @@ export default {
 .submit-btn-container {
     width: 20%;
     min-width: 175px;
-    height: 40px;
+    height: 55px;
     float: right;
     color: rgba(255, 255, 255, 0.125);
     border: 1px solid rgba(255, 255, 255, 0.125);
@@ -2677,13 +2868,12 @@ export default {
     z-index: 1000;
     width: calc(100% - 200px);
     height: 100%;
-    background: rgba(20,20,20,0.5);
 }
 
 .loading-logo {
     width: 100px;
     margin-block-end: 10px;
-    animation: rotation 8s infinite linear;
+    animation: rotation 2s infinite linear;
 }
 
 @keyframes rotation {

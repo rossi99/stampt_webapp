@@ -16,7 +16,7 @@ body {
     background-color: #141414;
     margin: 0;
     font-family: "Nunito", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1.6;
     color: white;
@@ -162,7 +162,7 @@ p {
     background: none;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 1px;
     margin-inline: 10px;
     outline: none;
