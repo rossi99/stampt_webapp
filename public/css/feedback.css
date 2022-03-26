@@ -1,0 +1,194 @@
+/* -------------------------------------------------------------------------------------
+
+CSS file will hold design for feedback to user including:
+    - Success Message
+    - Error Message
+    - Warning Message
+    - Info Message
+
+<-- Below are examples of all messages that can be copied and used -->
+
+<div class="message-container" id="success_message" OR "error_message" OR "info_message" OR "warning_message">
+    {{-- Success Message --}}
+    <div class="success-message-container">
+        <div class="success-message">
+            <span class="far fa-check-circle success-message-icon-spacing"></span>
+            <span class="success-message-spacing">Item successfully added to cart!</span>
+        </div>
+    </div>
+
+    {{-- Error Message --}}
+    <div class="error-message-container">
+        <div class="error-message">
+            <span class="far fa-times-circle error-message-icon-spacing"></span>
+            <span class="error-message-spacing">Oops, an error occurred!</span>
+        </div>
+    </div>
+
+    {{-- Warning Message --}}
+    <div class="warning-message-container">
+        <div class="warning-message">
+            <span class="fas fa-exclamation-circle warning-message-icon-spacing"></span>
+            <span class="warning-message-spacing">Just be careful!</span>
+        </div>
+    </div>
+
+    {{-- Info Message --}}
+    <div class="info-message-container">
+        <div class="info-message">
+            <span class="fas fa-info-circle info-message-icon-spacing"></span>
+            <span class="info-message-spacing">Hey, here is some info!</span>
+        </div>
+    </div>
+</div>
+
+------------------------------------------------------------------------------------- */
+
+/* All feedback will be held in a message container */
+.message-container {
+    width: 100%;
+    height: 45px;
+
+    margin-block-end: 20px;
+}
+
+/* -------- Success Section -------- */
+.success-message-container {
+    width: 40%;
+    height: 45px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+
+    overflow: auto;
+}
+
+.success-message {
+    color: #155724;
+    font-size: 16px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.success-message-icon-spacing {
+    margin-inline-end: 5px;
+}
+
+.success-message-spacing {
+    margin-inline-start: 5px;
+}
+
+
+/* -------- Error Section -------- */
+.error-message-container {
+    width: 70%;
+    height: 45px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+
+    overflow: auto;
+}
+
+.error-message {
+    color: #721c24;
+    font-size: 16px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.error-message-icon-spacing {
+    margin-inline-end: 5px;
+}
+
+.error-message-spacing {
+    margin-inline-start: 5px;
+}
+
+
+/* -------- Warning Section -------- */
+.warning-message-container {
+    width: 40%;
+    height: 45px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 10px;
+
+    overflow: auto;
+}
+
+.warning-message {
+    color: #856404;
+    font-size: 16px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.warning-message-icon-spacing {
+    margin-inline-end: 5px;
+}
+
+.warning-message-spacing {
+    margin-inline-start: 5px;
+}
+
+
+/* -------- Info Section -------- */
+.info-message-container {
+    width: 40%;
+    height: 45px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 10px;
+
+    overflow: auto;
+}
+
+.info-message {
+    color: #0c548d;
+    font-size: 16px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.info-message-icon-spacing {
+    margin-inline-end: 5px;
+}
+
+.info-message-spacing {
+    margin-inline-start: 5px;
+}
+
+/* used for inputs that have errors */
+.is-invalid {
+    background-color: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+}
+
+.is-invalid-text {
+    color: red !important;
+}

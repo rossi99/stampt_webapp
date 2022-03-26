@@ -22,8 +22,7 @@ import {
     faQuestionCircle, faAlignCenter, faAlignLeft,
     faAlignRight, faCircle, faSquare,
     faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket
-
+    faArrowUpFromBracket, faInfo, faPlus
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -40,7 +39,7 @@ library.add(
     faQuestionCircle, faAlignCenter, faAlignLeft,
     faAlignRight, faCircle, faSquare,
     faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket
+    faArrowUpFromBracket, faInfo, faPlus
 )
 
 window.$ = JQuery;
@@ -51,10 +50,6 @@ Vue.config.productionTip = false
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('nav-header', navHeader)
 Vue.component('sideBar', sideBar)
-
-
-
-
 
 Vue.use(VueRouter)
 

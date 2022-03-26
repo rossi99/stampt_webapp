@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 // components for routes
 import home from "./components/landing/landing";
 import builder from "./components/card/builder";
+import marketplace from "./components/card/marketplace";
 
 const routes = [
     {
@@ -14,6 +15,11 @@ const routes = [
         path: "/builder",
         component: builder,
         name: "builder",
+    },
+    {
+        path: "/marketplace",
+        component: marketplace,
+        name: "marketplace",
     },
 ];
 

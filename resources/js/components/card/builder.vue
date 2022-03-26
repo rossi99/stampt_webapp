@@ -581,7 +581,7 @@
                                                         <div class="logo-align-container alignMiddle">
                                                             <div class="sample-logo-align">
                                                                 <div class="sample-logo-container">
-                                                                    <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                                    <img src="/img/stamps/compressed/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
                                                                 </div>
                                                             </div>
                                                         </div>

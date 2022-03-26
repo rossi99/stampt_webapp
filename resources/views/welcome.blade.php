@@ -19,6 +19,7 @@
 
         {{-- Styles --}}
         <link rel="stylesheet" href="{{ asset('css/base.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/feedback.css')}}">
 
         {{-- Scripts --}}
         <script src="{{ asset('js/app.js') }}" defer></script> {{-- defer means script will only run after page is loaded--}}
