@@ -20,9 +20,9 @@ import {
     faUser, faBars, faXmark, faCircleQuestion,
     faCircleXmark, faCreditCard, faStore,
     faQuestionCircle, faAlignCenter, faAlignLeft,
-    faAlignRight, faCircle, faSquare,
+    faAlignRight, faCircle, faCircleDot, faSquare,
     faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket, faInfo, faPlus
+    faArrowUpFromBracket, faInfo, faPlus, faEye
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -37,9 +37,9 @@ library.add(
     faTwitter, faInstagram, faCircleQuestion,
     faCircleXmark, faCreditCard, faStore,
     faQuestionCircle, faAlignCenter, faAlignLeft,
-    faAlignRight, faCircle, faSquare,
+    faAlignRight, faCircle, faCircleDot, faSquare,
     faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket, faInfo, faPlus
+    faArrowUpFromBracket, faInfo, faPlus, faEye
 )
 
 window.$ = JQuery;

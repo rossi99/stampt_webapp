@@ -16,7 +16,7 @@ body {
     background-color: #141414;
     margin: 0;
     font-family: "Nunito", sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
     color: white;
@@ -196,6 +196,15 @@ p {
 .stampt-input-color::-webkit-color-swatch {
     border: none;
     padding: 0;
+}
+
+.show {
+    display: block;
+}
+
+
+.hide {
+    display: none;
 }
 
 /* Responsive */

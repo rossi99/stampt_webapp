@@ -6,6 +6,8 @@ import builder from "./components/card/builder";
 import marketplace from "./components/card/marketplace";
 import singleCard from "./components/card/single-card";
 import faqs from "./components/faqs/faqs";
+import login from "./components/auth/login";
+import register from "./components/auth/register";
 
 const routes = [
     {
@@ -32,6 +34,16 @@ const routes = [
         path: "/faqs",
         component: faqs,
         name: "faqs",
+    },
+    {
+        path: "/login",
+        component: login,
+        name: "login",
+    },
+    {
+        path: "/register",
+        component: register,
+        name: "register",
     },
 ];
 
