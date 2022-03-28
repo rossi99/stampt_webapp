@@ -66,6 +66,7 @@ export default {
     width: 80px;
     height: 100vh;
     float: left;
+    z-index: 1000;
 }
 
 .sidebar {

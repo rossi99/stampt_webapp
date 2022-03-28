@@ -158,7 +158,6 @@
                                 </div>
                             </div>
 
-
                             <!-- Card Description -->
                             <div class="create-row">
                                 <div class="create-label-container">
@@ -199,6 +198,83 @@
                                 </div>
                             </div>
 
+                            <!-- Card Reward -->
+                            <div class="create-row">
+                                <div class="create-label-container">
+                                    <div class="create-label alignMiddle subtitle">
+                                        Reward
+                                    </div>
+
+                                    <div class="create-helper alignMiddle">
+                                        <div style="width: 100%; text-align: center;">
+                                            <font-awesome-icon icon="fa-solid fa-circle-question" class="help-btn" id="reward-helper-show"/>
+                                        </div>
+
+                                        <div class="helper-txt-container" id="reward-helper" style="display: none;">
+                                            <div class="close-container alignMiddle">
+                                                <div style="width: 100%; text-align: center;">
+                                                    <font-awesome-icon icon="fa-solid fa-circle-xmark" class="help-btn" id="reward-helper-close" />
+                                                </div>
+                                            </div>
+
+                                            <div class="text-container details">
+                                                <div style="padding: 5px; letter-spacing: 1px">
+                                                    The reward is the reason most customers will choose to take part in
+                                                    your loyalty card and so you can use this section to outline what it is
+                                                    exactly that they are working towards.
+                                                </div>
+                                            </div>
+
+                                            <div class="clearFix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+
+                                <div class="stampt-input-container">
+                                    <input type="text" id="reward-input" class="stampt-input" placeholder="What are your customers working towards?">
+                                </div>
+                            </div>
+
+                            <!-- Card Gain Reward -->
+                            <div class="create-row">
+                                <div class="create-label-container">
+                                    <div class="create-label alignMiddle subtitle">
+                                        Progress Method
+                                    </div>
+
+                                    <div class="create-helper alignMiddle">
+                                        <div style="width: 100%; text-align: center;">
+                                            <font-awesome-icon icon="fa-solid fa-circle-question" class="help-btn" id="gain-helper-show"/>
+                                        </div>
+
+                                        <div class="helper-txt-container" id="gain-helper" style="display: none;">
+                                            <div class="close-container alignMiddle">
+                                                <div style="width: 100%; text-align: center;">
+                                                    <font-awesome-icon icon="fa-solid fa-circle-xmark" class="help-btn" id="gain-helper-close" />
+                                                </div>
+                                            </div>
+
+                                            <div class="text-container details">
+                                                <div style="padding: 5px; letter-spacing: 1px">
+                                                    Most loyalty cards make it difficult for customers to know how they
+                                                    can gain progress within the schemes and so the section below allows
+                                                    you to outline what will gain your customers progress.
+                                                </div>
+                                            </div>
+
+                                            <div class="clearFix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+
+                                <div class="stampt-input-container">
+                                    <input type="text" id="gain-input" class="stampt-input" placeholder="What do your customers have to do to gain a stamp?">
+                                </div>
+                            </div>
 
                             <!-- Card Logo -->
                             <div class="create-row">
@@ -272,7 +348,6 @@
                                 </div>
                             </div>
 
-
                             <!-- Logo Shape -->
                             <div class="create-row">
                                 <div class="create-label-container">
@@ -332,7 +407,6 @@
                                     <div class="clearFix"></div>
                                 </div>
                             </div>
-
 
                             <!-- Card Squares -->
                             <div class="create-row">
@@ -423,7 +497,6 @@
                                     <div class="clearFix"></div>
                                 </div>
                             </div>
-
 
                             <!-- Background Colour -->
                             <div class="create-row">
@@ -1232,6 +1305,8 @@
                                 <form>
                                     <input id="final-card-title" type="hidden" name="card-title">
                                     <input id="final-card-desc" type="hidden" name="card-decs">
+                                    <input id="final-card-reward" type="hidden" name="card-reward">
+                                    <input id="final-card-gain" type="hidden" name="card-gain">
                                     <input id="final-logo-position" type="hidden" name="logo-position">
                                     <input id="final-logo-shape" type="hidden" name="logo-shape">
                                     <input id="final-number-of-stamps" type="hidden" name="number-of-stamps">
@@ -1298,6 +1373,8 @@ export default {
         // Create Form Vars
         let cardTitle;
         let cardDescription;
+        let cardReward;
+        let cardGain;
         let logoAlign;
         let logoShape;
         let cardSlots;
@@ -1313,6 +1390,14 @@ export default {
         let descHelpShow = $('#desc-helper-show');
         let descHelpHide = $('#desc-helper-close');
         let descInput = $('#desc-input');
+        let rewardHelper = $('#reward-helper');
+        let rewardHelpShow = $('#reward-helper-show');
+        let rewardHelpHide = $('#reward-helper-close');
+        let rewardInput = $('#reward-input');
+        let gainHelper = $('#gain-helper');
+        let gainHelpShow = $('#gain-helper-show');
+        let gainHelpHide = $('#gain-helper-close');
+        let gainInput = $('#gain-input');
         let logoHelper = $('#logo-helper');
         let logoHelpShow = $('#logo-helper-show');
         let logoHelpHide = $('#logo-helper-close');
@@ -1362,6 +1447,8 @@ export default {
         // Forms Vars
         let formCardTitle = $('#final-card-title');
         let formCardDesc = $('#final-card-desc');
+        let formCardReward = $('#final-card-reward');
+        let formCardGain = $('#final-card-gain');
         let formLogoPosition = $('#final-logo-position');
         let formLogoShape = $('#final-logo-shape');
         let formNumberOfStamps = $('#final-number-of-stamps');
@@ -1644,13 +1731,15 @@ export default {
         // Setting Form Defaults
         function setDefaults() {
             // Form defaults
-            cardTitle = "Untitled Card"
-            cardDescription = "Empty card Description"
-            logoAlign = "Left"
-            logoShape = "Square"
-            cardSlots = 5
-            cardColour = colourInput.val()
-            fontColour = fontInput.val()
+            cardTitle = "Untitled Card";
+            cardDescription = "Empty card Description";
+            cardReward = "No reward set";
+            cardGain = "Progression method unknown";
+            logoAlign = "Left";
+            logoShape = "Square";
+            cardSlots = 5;
+            cardColour = colourInput.val();
+            fontColour = fontInput.val();
             Slot1.val(0);
             Slot2.val(0);
             Slot3.val(0);
@@ -1694,6 +1783,8 @@ export default {
             // Setting Form Data
             formCardTitle.val(cardTitle);
             formCardDesc.val(cardDescription);
+            formCardReward.val(cardReward);
+            formCardGain.val(cardGain);
             formLogoPosition.val(logoAlign);
             formLogoShape.val(logoShape);
             formNumberOfStamps.val(cardSlots);
@@ -1705,6 +1796,8 @@ export default {
         function showFormData() {
             console.log("Card Title: " + formCardTitle.val());
             console.log("Card Desc: " + formCardDesc.val());
+            console.log("Card Reward: " + formCardReward.val());
+            console.log("Card Progress Method: " + formCardGain.val());
             console.log("Card Logo Position: " + formLogoPosition.val());
             console.log("Card Logo Shape: " + formLogoShape.val());
             console.log("Card Num of stamps: " + formNumberOfStamps.val());
@@ -1740,6 +1833,24 @@ export default {
 
         function descHide() {
             descHelper.fadeOut(200)
+        }
+
+        // ~ Reward
+        function rewardShow() {
+            rewardHelper.fadeIn(200)
+        }
+
+        function rewardHide() {
+            rewardHelper.fadeOut(200)
+        }
+
+        // ~ Gain Reward
+        function gainShow() {
+            gainHelper.fadeIn(200)
+        }
+
+        function gainHide() {
+            gainHelper.fadeOut(200)
         }
 
         // ~ Logo Position
@@ -1808,11 +1919,19 @@ export default {
 
         // Handling changes from user
         titleInput.change(function () {
-            cardTitle = titleInput.val()
+            cardTitle = titleInput.val();
         });
 
         descInput.change(function () {
-            cardDescription = descInput.val()
+            cardDescription = descInput.val();
+        });
+
+        rewardInput.change(function () {
+            cardReward = rewardInput.val();
+        });
+
+        gainInput.change(function () {
+            cardGain = gainInput.val();
         });
 
         // Selecting logo alignment for card
@@ -1852,12 +1971,12 @@ export default {
 
         // Setting background colour of card
         colourInput.change(function () {
-            cardColour = colourInput.val()
+            cardColour = colourInput.val();
         });
 
         // Setting font colour of card
         fontInput.change(function () {
-            fontColour = fontInput.val()
+            fontColour = fontInput.val();
         });
 
         // ~ Card Title
@@ -1884,6 +2003,32 @@ export default {
 
         descInput.click(function () {
             descHide();
+        });
+
+        // ~ Card Reward
+        rewardHelpShow.click(function () {
+            rewardShow();
+        });
+
+        rewardHelpHide.click(function () {
+            rewardHide();
+        });
+
+        rewardInput.click(function () {
+            rewardHide();
+        });
+
+        // ~ Card Gain Reward
+        gainHelpShow.click(function () {
+            gainShow();
+        });
+
+        gainHelpHide.click(function () {
+            gainHide();
+        });
+
+        gainInput.click(function () {
+            gainHide();
         });
 
         // ~ Card Logo
@@ -2741,10 +2886,6 @@ export default {
 .m-inline-e {
     float: right;
     margin-inline-end: 20px;
-}
-
-.opacity-effect {
-    opacity: 20%;
 }
 
 .bucket-container {

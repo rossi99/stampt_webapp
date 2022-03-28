@@ -50,11 +50,13 @@
                             <!-- Info container -->
                             <div class="info-container alignMiddle">
                                 <div class="btn-align">
-                                    <div class="info-btn alignMiddle">
-                                        <div class="icon-align">
-                                            <font-awesome-icon icon="fa-solid fa-info" />
+                                    <router-link :to="{ name: 'singleCard' }">
+                                        <div class="info-btn alignMiddle">
+                                            <div class="icon-align">
+                                                <font-awesome-icon icon="fa-solid fa-info" />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </router-link>
                                 </div>
                             </div>
 

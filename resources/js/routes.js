@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import home from "./components/landing/landing";
 import builder from "./components/card/builder";
 import marketplace from "./components/card/marketplace";
+import singleCard from "./components/card/single-card";
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
         path: "/marketplace",
         component: marketplace,
         name: "marketplace",
+    },
+    {
+        path: "/single-card",
+        component: singleCard,
+        name: "singleCard",
     },
 ];
 
