@@ -111,6 +111,10 @@ p {
     font-family: 'Comfortaa', cursive;
 }
 
+.email-link {
+    color: white;
+}
+
 /* All app content */
 .content {
     width: 95%;

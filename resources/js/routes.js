@@ -5,6 +5,7 @@ import home from "./components/landing/landing";
 import builder from "./components/card/builder";
 import marketplace from "./components/card/marketplace";
 import singleCard from "./components/card/single-card";
+import faqs from "./components/faqs/faqs";
 
 const routes = [
     {
@@ -26,6 +27,11 @@ const routes = [
         path: "/single-card",
         component: singleCard,
         name: "singleCard",
+    },
+    {
+        path: "/faqs",
+        component: faqs,
+        name: "faqs",
     },
 ];
 
