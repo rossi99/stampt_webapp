@@ -21554,6 +21554,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -21562,24 +21610,31 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     // Variables for login
     // ~ Account Pick
-    var customerOpt = $('#customer-select');
-    var businessOpt = $('#business-select');
-    var customerBtnActive = $('#customer-active');
-    var customerBtnInactive = $('#customer-inactive');
-    var businessBtnActive = $('#business-active');
-    var businessBtnInactive = $('#business-inactive'); // Setting Up Defaults
+    // ~ Password Reveal
+    var revealBtn = $('#reveal-password');
+    var passwordInput = $('#password'); // Functions
+    // ~ Set defaults
+
+    function setDefaults() {} // ~ Reveal Password
+
+
+    function revealPassword() {
+      if (passwordInput.attr('type', 'password')) {
+        passwordInput.attr('type', 'text');
+      } else {
+        passwordInput.attr('type', 'password');
+      }
+    } // Calling Functions
     // ~ Calling default function
+
 
     $(document).ready(function () {
       setDefaults();
-    }); // Functions
-    // ~ Set defaults
+    }); // ~ Reveal Password
 
-    function setDefaults() {
-      // ~ Setting Active options
-      customerBtnActive.show();
-      businessBtnInactive.show();
-    }
+    revealBtn.click(function () {
+      revealPassword();
+    });
   }
 });
 
@@ -21756,6 +21811,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -21764,12 +21859,18 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     // Variables for login
     // ~ Account Pick
-    // ~ Password Reveal
+    var customerSelect = $('#customer-select');
+    var businessSelect = $('#business-select');
+    var accountInput = $('#account-type'); // ~ Password Reveal
+
     var revealBtn = $('#reveal-password');
     var passwordInput = $('#password'); // Functions
     // ~ Set defaults
 
-    function setDefaults() {} // ~ Reveal Password
+    function setDefaults() {
+      customerSelect.css("color", "white");
+      accountInput.val("customer");
+    } // ~ Reveal Password
 
 
     function revealPassword() {
@@ -21778,6 +21879,20 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         passwordInput.attr('type', 'password');
       }
+    } // ~ Set account as business
+
+
+    function setCustomerAcc() {
+      businessSelect.css("color", "rgba(255, 255, 255, 0.125)");
+      customerSelect.css("color", "white");
+      accountInput.val("customer");
+    } // ~ Set account as business
+
+
+    function setBusinessAcc() {
+      customerSelect.css("color", "rgba(255, 255, 255, 0.125)");
+      businessSelect.css("color", "white");
+      accountInput.val("business");
     } // Calling Functions
     // ~ Calling default function
 
@@ -21788,6 +21903,16 @@ __webpack_require__.r(__webpack_exports__);
 
     revealBtn.click(function () {
       revealPassword();
+    }); // ~ Set Customer Account
+
+    customerSelect.click(function () {
+      setCustomerAcc();
+      console.log(accountInput.val());
+    }); // ~ Set Business Account
+
+    businessSelect.click(function () {
+      setBusinessAcc();
+      console.log(accountInput.val());
     });
   }
 });
@@ -30401,7 +30526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-6aa0b866] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-6aa0b866] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-6aa0b866] {\n    width: 100%;\n    height: 80px;\n}\n.auth-container[data-v-6aa0b866] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.auth-modal-align[data-v-6aa0b866] {\n    width: 100%;\n}\n.auth-modal[data-v-6aa0b866] {\n    width: 95%;\n    max-width: 300px;\n    margin: auto;\n    position: relative;\n}\n.auth-form[data-v-6aa0b866] {\n    width: 90%;\n    max-height: 450px;\n    overflow: scroll;\n    margin: auto;\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n}\n.logo-container[data-v-6aa0b866] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n    position: absolute;\n    transform: translate(-50%, -50%);\n    top: 0;\n    left: 50%;\n}\n.logo[data-v-6aa0b866] {\n    width: 70px;\n}\n.account-pick[data-v-6aa0b866] {\n    width: 100%;\n    margin-block: 15px;\n}\n.account-select[data-v-6aa0b866] {\n    width: 100%;\n    height: 30px;\n    margin-block: 5px;\n    transition: all 0.2s;\n}\n.account-select[data-v-6aa0b866]:hover {\n    cursor: pointer;\n    color: white;\n}\n.option-align[data-v-6aa0b866] {\n    width: 100%;\n}\n.input-container[data-v-6aa0b866] {\n    width: 100%;\n    margin-block: 15px;\n}\n.radio-btn-container[data-v-6aa0b866] {\n    width: 45px;\n    float: left;\n    text-align: center;\n}\n.radio-btn-value[data-v-6aa0b866] {\n    width: calc(100% - 45px);\n    float: left;\n}\n.opt-dot[data-v-6aa0b866] {\n    display: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-6aa0b866] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-6aa0b866] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-6aa0b866] {\n    width: 100%;\n    height: 80px;\n}\n.auth-container[data-v-6aa0b866] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.auth-modal-align[data-v-6aa0b866] {\n    width: 100%;\n}\n.auth-modal[data-v-6aa0b866] {\n    width: 95%;\n    max-width: 450px;\n    margin: auto;\n    position: relative;\n}\n.intro-container[data-v-6aa0b866] {\n    width: 95%;\n    margin: auto;\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.create-container[data-v-6aa0b866] {\n    width: 100%;\n    text-align: center;\n}\n.or-container[data-v-6aa0b866] {\n    width: 100%;\n    text-align: center;\n    font-size: 12px;\n    color: grey;\n    margin-block: 5px;\n}\n.login-container[data-v-6aa0b866] {\n    width: 100%;\n    text-align: center;\n}\n.auth-form[data-v-6aa0b866] {\n    width: 90%;\n    max-height: 400px;\n    overflow: scroll;\n    margin: auto;\n}\n.logo-container[data-v-6aa0b866] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n    position: absolute;\n    transform: translate(-50%, -50%);\n    top: 0;\n    left: 50%;\n}\n.logo[data-v-6aa0b866] {\n    width: 70px;\n}\n.account-data[data-v-6aa0b866] {\n    width: 100%;\n    -webkit-margin-after: 15px;\n            margin-block-end: 15px;\n}\n.input-container[data-v-6aa0b866] {\n    width: 100%;\n    margin-block: 15px;\n}\n.label-container[data-v-6aa0b866] {\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n}\n.label-container[data-v-6aa0b866]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.reveal-container[data-v-6aa0b866] {\n    width: 100%;\n}\n.password-input[data-v-6aa0b866] {\n    width: 85%;\n    float: left;\n}\n.reveal-btn-container[data-v-6aa0b866] {\n    width: 15%;\n    height: 45px;\n    float: right;\n}\n.reveal-align[data-v-6aa0b866] {\n    width: 100%;\n    height: 16px;\n    text-align: center;\n}\n.reveal[data-v-6aa0b866] {\n    font-size: 16px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.reveal[data-v-6aa0b866]:hover {\n    cursor: pointer;\n    color: white;\n}\n.submit-container[data-v-6aa0b866] {\n    width: 100%;\n    margin-block: 40px;\n    text-align: center;\n}\n.submit-btn[data-v-6aa0b866] {\n    width: 50%;\n    height: 40px;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 10px;\n    background: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    letter-spacing: 2px;\n    transition: all 0.2s;\n}\n.submit-btn[data-v-6aa0b866]:hover {\n    cursor: pointer;\n    border: 1px solid white;\n    color: white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30425,7 +30550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-e8907422] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-e8907422] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-e8907422] {\n    width: 100%;\n    height: 80px;\n}\n.auth-container[data-v-e8907422] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.auth-modal-align[data-v-e8907422] {\n    width: 100%;\n}\n.auth-modal[data-v-e8907422] {\n    width: 95%;\n    max-width: 300px;\n    margin: auto;\n    position: relative;\n}\n.auth-form[data-v-e8907422] {\n    width: 90%;\n    max-height: 450px;\n    overflow: scroll;\n    margin: auto;\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n}\n.logo-container[data-v-e8907422] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n    position: absolute;\n    transform: translate(-50%, -50%);\n    top: 0;\n    left: 50%;\n}\n.logo[data-v-e8907422] {\n    width: 70px;\n}\n.account-pick[data-v-e8907422] {\n    width: 100%;\n    margin-block: 15px;\n}\n.account-select[data-v-e8907422] {\n    width: 100%;\n    height: 30px;\n    margin-block: 5px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.account-select[data-v-e8907422]:hover {\n    cursor: pointer;\n    color: white;\n}\n.option-align[data-v-e8907422] {\n    width: 100%;\n}\n.input-container[data-v-e8907422] {\n    width: 100%;\n    margin-block: 15px;\n}\n.radio-btn-container[data-v-e8907422] {\n    width: 45px;\n    float: left;\n    text-align: center;\n}\n.radio-btn-value[data-v-e8907422] {\n    width: calc(100% - 45px);\n    float: left;\n}\n.reveal-container[data-v-e8907422] {\n    width: 100%;\n}\n.password-input[data-v-e8907422] {\n    width: 85%;\n    float: left;\n}\n.reveal-btn-container[data-v-e8907422] {\n    width: 15%;\n    height: 45px;\n    float: right;\n}\n.reveal-align[data-v-e8907422] {\n    width: 100%;\n    height: 16px;\n    text-align: center;\n}\n.reveal[data-v-e8907422] {\n    font-size: 16px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.reveal[data-v-e8907422]:hover {\n    cursor: pointer;\n    color: white;\n}\n.submit-container[data-v-e8907422] {\n    width: 100%;\n    margin-block: 20px;\n    text-align: center;\n}\n.submit-btn[data-v-e8907422] {\n    width: 70%;\n    height: 40px;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 10px;\n    background: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    letter-spacing: 2px;\n    transition: all 0.2s;\n}\n.submit-btn[data-v-e8907422]:hover {\n    cursor: pointer;\n    border: 1px solid white;\n    color: white;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-e8907422] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-e8907422] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-e8907422] {\n    width: 100%;\n    height: 80px;\n}\n.auth-container[data-v-e8907422] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.auth-modal-align[data-v-e8907422] {\n    width: 100%;\n}\n.auth-modal[data-v-e8907422] {\n    width: 95%;\n    max-width: 450px;\n    margin: auto;\n    position: relative;\n}\n.intro-container[data-v-e8907422] {\n    width: 95%;\n    margin: auto;\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.create-container[data-v-e8907422] {\n    width: 100%;\n    text-align: center;\n}\n.or-container[data-v-e8907422] {\n    width: 100%;\n    text-align: center;\n    font-size: 12px;\n    color: grey;\n    margin-block: 5px;\n}\n.login-container[data-v-e8907422] {\n    width: 100%;\n    text-align: center;\n}\n.auth-form[data-v-e8907422] {\n    width: 90%;\n    max-height: 400px;\n    overflow: scroll;\n    margin: auto;\n}\n.logo-container[data-v-e8907422] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n    position: absolute;\n    transform: translate(-50%, -50%);\n    top: 0;\n    left: 50%;\n}\n.logo[data-v-e8907422] {\n    width: 70px;\n}\n.account-data[data-v-e8907422] {\n    width: 100%;\n    -webkit-margin-after: 15px;\n            margin-block-end: 15px;\n}\n.account-select[data-v-e8907422] {\n    width: 100%;\n    height: 30px;\n    margin-block: 5px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.account-select[data-v-e8907422]:hover {\n    cursor: pointer;\n    color: white;\n}\n.option-align[data-v-e8907422] {\n    width: 100%;\n}\n.input-container[data-v-e8907422] {\n    width: 100%;\n    margin-block: 15px;\n}\n.label-container[data-v-e8907422] {\n    -webkit-margin-before: 40px;\n            margin-block-start: 40px;\n}\n.label-container[data-v-e8907422]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.radio-btn-container[data-v-e8907422] {\n    width: 45px;\n    float: left;\n    text-align: center;\n}\n.radio-btn-value[data-v-e8907422] {\n    width: calc(100% - 45px);\n    float: left;\n}\n.reveal-container[data-v-e8907422] {\n    width: 100%;\n}\n.password-input[data-v-e8907422] {\n    width: 85%;\n    float: left;\n}\n.reveal-btn-container[data-v-e8907422] {\n    width: 15%;\n    height: 45px;\n    float: right;\n}\n.reveal-align[data-v-e8907422] {\n    width: 100%;\n    height: 16px;\n    text-align: center;\n}\n.reveal[data-v-e8907422] {\n    font-size: 16px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.reveal[data-v-e8907422]:hover {\n    cursor: pointer;\n    color: white;\n}\n.submit-container[data-v-e8907422] {\n    width: 100%;\n    margin-block: 40px;\n    text-align: center;\n}\n.submit-btn[data-v-e8907422] {\n    width: 50%;\n    height: 40px;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 10px;\n    background: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    letter-spacing: 2px;\n    transition: all 0.2s;\n}\n.submit-btn[data-v-e8907422]:hover {\n    cursor: pointer;\n    border: 1px solid white;\n    color: white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -60394,7 +60519,103 @@ var render = function () {
     [
       _c("sidebar"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "sb-content-container" }, [
+        _c("div", { staticClass: "sb-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "auth-container alignMiddle" }, [
+            _c("div", { staticClass: "auth-modal-align" }, [
+              _c("div", { staticClass: "auth-modal dark-glass-effect" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "intro-container" }, [
+                  _c("div", { staticClass: "create-container" }, [
+                    _vm._v(
+                      "\n                                Welcome back to stampt!\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "or-container" }, [
+                    _vm._v(
+                      "\n                                OR\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "login-container" },
+                    [
+                      _vm._v(
+                        "\n                                If you dont have an account, register "
+                      ),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "email-link",
+                          attrs: { to: { name: "register" } },
+                        },
+                        [_vm._v("here")]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "auth-form" }, [
+                  _c("div", { staticClass: "account-data" }, [
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Email:\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Password:\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-container" }, [
+                      _c("div", { staticClass: "stampt-input-container" }, [
+                        _c("div", { staticClass: "reveal-container" }, [
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "reveal-btn-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "reveal-align" },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "reveal",
+                                    attrs: {
+                                      icon: "fa-solid fa-eye",
+                                      id: "reveal-password",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "clearFix" }),
     ],
@@ -60406,41 +60627,69 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sb-content-container" }, [
-      _c("div", { staticClass: "sb-content" }, [
-        _c("div", { staticClass: "title-container alignMiddle" }, [
-          _c("div", { staticClass: "title" }, [
-            _vm._v("\n                    stampt | login\n                "),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "auth-container alignMiddle" }, [
-          _c("div", { staticClass: "auth-modal-align" }, [
-            _c("div", { staticClass: "auth-modal dark-glass-effect" }, [
-              _c("div", { staticClass: "logo-container" }, [
-                _c("img", {
-                  staticClass: "logo",
-                  attrs: {
-                    src: "/img/logo/compressed/small-icon.png",
-                    alt: "Stampt Logo",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "auth-form" }, [
-                _c("div", { staticClass: "account-pick" }, [
-                  _c("div", { staticClass: "label-container" }, [
-                    _vm._v(
-                      "\n                                    Email:\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-container" }),
-                ]),
-              ]),
-            ]),
-          ]),
-        ]),
+    return _c("div", { staticClass: "title-container alignMiddle" }, [
+      _c("div", { staticClass: "title" }, [
+        _vm._v("\n                    stampt | login\n                "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "logo-container" }, [
+      _c("img", {
+        staticClass: "logo",
+        attrs: {
+          src: "/img/logo/compressed/small-icon.png",
+          alt: "Stampt Logo",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-container" }, [
+      _c("div", { staticClass: "stampt-input-container" }, [
+        _c("input", {
+          staticClass: "stampt-input",
+          attrs: {
+            type: "email",
+            id: "email",
+            name: "email",
+            placeholder: "Your email...",
+          },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "password-input" }, [
+      _c("input", {
+        staticClass: "stampt-input",
+        attrs: {
+          type: "password",
+          id: "password",
+          name: "password",
+          placeholder: "Your password...",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "submit-container" }, [
+      _c("button", { staticClass: "submit-btn", attrs: { type: "submit" } }, [
+        _vm._v(
+          "\n                                        Login\n                                    "
+        ),
       ]),
     ])
   },
@@ -60481,8 +60730,41 @@ var render = function () {
               _c("div", { staticClass: "auth-modal dark-glass-effect" }, [
                 _vm._m(1),
                 _vm._v(" "),
+                _c("div", { staticClass: "intro-container" }, [
+                  _c("div", { staticClass: "create-container" }, [
+                    _vm._v(
+                      "\n                                Welcome to stampt, lets create your account!\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "or-container" }, [
+                    _vm._v(
+                      "\n                                OR\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "login-container" },
+                    [
+                      _vm._v(
+                        "\n                                You can login "
+                      ),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "email-link",
+                          attrs: { to: { name: "login" } },
+                        },
+                        [_vm._v("here")]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
                 _c("div", { staticClass: "auth-form" }, [
-                  _c("div", { staticClass: "account-pick" }, [
+                  _c("div", { staticClass: "account-data" }, [
                     _c("div", { staticClass: "label-container" }, [
                       _vm._v(
                         "\n                                    Select account type:\n                                "
@@ -60551,14 +60833,48 @@ var render = function () {
                       ),
                     ]),
                     _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "hidden",
+                        id: "account-type",
+                        name: "accountType",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Profile Picture:\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
                     _vm._m(4),
                     _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Full Name:\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
                     _vm._m(5),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Email:\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Password:\n                                "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "input-container" }, [
                       _c("div", { staticClass: "stampt-input-container" }, [
                         _c("div", { staticClass: "reveal-container" }, [
-                          _vm._m(6),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "div",
@@ -60586,9 +60902,19 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(7),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Contact Number:\n                                "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _vm._m(8),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-container" }, [
+                      _vm._v(
+                        "\n                                    Address:\n                                "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _vm._m(9),
                     _vm._v(" "),
@@ -60658,36 +60984,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-container" }, [
-      _c("div", { staticClass: "stampt-input-container" }, [
+      _c("div", { staticClass: "stampt-input-container alignMiddle" }, [
         _c("input", {
-          staticClass: "stampt-input",
-          attrs: { type: "text", id: "full-name", placeholder: "Name" },
+          staticClass: "stampt-input-file",
+          attrs: { type: "file", id: "avatar", name: "avatarImg" },
         }),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-container" }, [
-      _c("div", { staticClass: "stampt-input-container" }, [
-        _c("input", {
-          staticClass: "stampt-input",
-          attrs: { type: "email", id: "email", placeholder: "Email" },
-        }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "password-input" }, [
-      _c("input", {
-        staticClass: "stampt-input",
-        attrs: { type: "password", id: "password", placeholder: "Password" },
-      }),
     ])
   },
   function () {
@@ -60699,9 +61001,10 @@ var staticRenderFns = [
         _c("input", {
           staticClass: "stampt-input",
           attrs: {
-            type: "password",
-            id: "confirm-password",
-            placeholder: "Re-enter Password",
+            type: "text",
+            id: "full-name",
+            name: "fullName",
+            placeholder: "Joe Bloggs",
           },
         }),
       ]),
@@ -60716,9 +61019,45 @@ var staticRenderFns = [
         _c("input", {
           staticClass: "stampt-input",
           attrs: {
-            type: "number",
+            type: "email",
+            id: "email",
+            name: "email",
+            placeholder: "example@email.com",
+          },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "password-input" }, [
+      _c("input", {
+        staticClass: "stampt-input",
+        attrs: {
+          type: "password",
+          id: "password",
+          name: "password",
+          placeholder: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-container" }, [
+      _c("div", { staticClass: "stampt-input-container" }, [
+        _c("input", {
+          staticClass: "stampt-input",
+          attrs: {
+            type: "tel",
             id: "contact-number",
-            placeholder: "Contact Number",
+            name: "phone",
+            pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
+            placeholder: "+(00) 0000000000",
           },
         }),
       ]),

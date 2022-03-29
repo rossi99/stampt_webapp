@@ -198,6 +198,17 @@ p {
     padding: 0;
 }
 
+.stampt-input-file {
+    width: calc(100% - 20px);
+    background: none;
+    color: white;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-inline: 10px;
+    outline: none;
+}
+
 .show {
     display: block;
 }

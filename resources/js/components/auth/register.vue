@@ -20,10 +20,23 @@
                                 <img src="/img/logo/compressed/small-icon.png" alt="Stampt Logo" class="logo">
                             </div>
 
-                            <div class="auth-form">
+                            <div class="intro-container">
+                                <div class="create-container">
+                                    Welcome to stampt, lets create your account!
+                                </div>
 
+                                <div class="or-container">
+                                    OR
+                                </div>
+
+                                <div class="login-container">
+                                    You can login <router-link :to="{ name: 'login' }" class="email-link">here</router-link>
+                                </div>
+                            </div>
+
+                            <div class="auth-form">
                                 <!-- Account Type Selector -->
-                                <div class="account-pick">
+                                <div class="account-data">
                                     <div class="label-container">
                                         Select account type:
                                     </div>
@@ -64,26 +77,52 @@
                                         </div>
                                     </div>
 
+                                    <!-- Account Type -->
+                                    <input type="hidden" id="account-type" name="accountType">
+
+                                    <!-- Avatar -->
+                                    <div class="label-container">
+                                        Profile Picture:
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="stampt-input-container alignMiddle">
+                                            <input type="file" id="avatar" name="avatarImg" class="stampt-input-file">
+                                        </div>
+                                    </div>
+
                                     <!-- Name -->
+                                    <div class="label-container">
+                                        Full Name:
+                                    </div>
+
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="full-name" class="stampt-input" placeholder="Name">
+                                            <input type="text" id="full-name" name="fullName" class="stampt-input" placeholder="Joe Bloggs">
                                         </div>
                                     </div>
 
                                     <!-- Email -->
+                                    <div class="label-container">
+                                        Email:
+                                    </div>
+
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="email" id="email" class="stampt-input" placeholder="Email">
+                                            <input type="email" id="email" name="email" class="stampt-input" placeholder="example@email.com">
                                         </div>
                                     </div>
 
                                     <!-- Password -->
+                                    <div class="label-container">
+                                        Password:
+                                    </div>
+
                                     <div class="input-container">
                                         <div class="stampt-input-container">
                                             <div class="reveal-container">
                                                 <div class="password-input">
-                                                    <input type="password" id="password" class="stampt-input" placeholder="Password">
+                                                    <input type="password" id="password" name="password" class="stampt-input" placeholder="">
                                                 </div>
 
                                                 <div class="reveal-btn-container alignMiddle">
@@ -97,21 +136,22 @@
                                         </div>
                                     </div>
 
-                                    <!-- Confirm Password -->
-                                    <div class="input-container">
-                                        <div class="stampt-input-container">
-                                            <input type="password" id="confirm-password" class="stampt-input" placeholder="Re-enter Password">
-                                        </div>
+                                    <!-- Contact number -->
+                                    <div class="label-container">
+                                        Contact Number:
                                     </div>
 
-                                    <!-- Contact number -->
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="number" id="contact-number" class="stampt-input" placeholder="Contact Number">
+                                            <input type="tel" id="contact-number" name="phone" class="stampt-input" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="+(00) 0000000000">
                                         </div>
                                     </div>
 
                                     <!-- Address Line 1 -->
+                                    <div class="label-container">
+                                        Address:
+                                    </div>
+
                                     <div class="input-container">
                                         <div class="stampt-input-container">
                                             <input type="text" id="address-one" class="stampt-input" placeholder="Address Line 1">
@@ -167,6 +207,10 @@ export default {
     mounted: function () {
         // Variables for login
         // ~ Account Pick
+        let customerSelect = $('#customer-select');
+        let businessSelect = $('#business-select');
+        let accountInput = $('#account-type');
+
         // ~ Password Reveal
         let revealBtn = $('#reveal-password');
         let passwordInput = $('#password');
@@ -174,7 +218,8 @@ export default {
         // Functions
         // ~ Set defaults
         function setDefaults() {
-
+            customerSelect.css("color" , "white");
+            accountInput.val("customer");
         }
 
         // ~ Reveal Password
@@ -186,6 +231,20 @@ export default {
             }
         }
 
+        // ~ Set account as business
+        function setCustomerAcc() {
+            businessSelect.css("color" , "rgba(255, 255, 255, 0.125)");
+            customerSelect.css("color" , "white");
+            accountInput.val("customer");
+        }
+
+        // ~ Set account as business
+        function setBusinessAcc() {
+            customerSelect.css("color" , "rgba(255, 255, 255, 0.125)");
+            businessSelect.css("color" , "white");
+            accountInput.val("business");
+        }
+
         // Calling Functions
         // ~ Calling default function
         $(document).ready(function () {
@@ -195,6 +254,18 @@ export default {
         // ~ Reveal Password
         revealBtn.click(function () {
             revealPassword();
+        });
+
+        // ~ Set Customer Account
+        customerSelect.click(function () {
+            setCustomerAcc();
+            console.log(accountInput.val());
+        });
+
+        // ~ Set Business Account
+        businessSelect.click(function () {
+            setBusinessAcc();
+            console.log(accountInput.val());
         });
     },
 };
@@ -229,17 +300,41 @@ export default {
 
 .auth-modal {
     width: 95%;
-    max-width: 300px;
+    max-width: 450px;
     margin: auto;
     position: relative;
 }
 
-.auth-form {
-    width: 90%;
-    max-height: 450px;
-    overflow: scroll;
+.intro-container {
+    width: 95%;
     margin: auto;
     margin-block-start: 40px;
+    margin-block-end: 20px;
+}
+
+.create-container {
+    width: 100%;
+    text-align: center;
+}
+
+.or-container {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    margin-block: 5px;
+}
+
+.login-container {
+    width: 100%;
+    text-align: center;
+}
+
+.auth-form {
+    width: 90%;
+    max-height: 400px;
+    overflow: scroll;
+    margin: auto;
 }
 
 .logo-container {
@@ -256,9 +351,9 @@ export default {
     width: 70px;
 }
 
-.account-pick {
+.account-data {
     width: 100%;
-    margin-block: 15px;
+    margin-block-end: 15px;
 }
 
 .account-select {
@@ -281,6 +376,14 @@ export default {
 .input-container {
     width: 100%;
     margin-block: 15px;
+}
+
+.label-container {
+    margin-block-start: 40px;
+}
+
+.label-container:first-child {
+    margin-block-start: 0;
 }
 
 .radio-btn-container {
@@ -328,12 +431,12 @@ export default {
 
 .submit-container {
     width: 100%;
-    margin-block: 20px;
+    margin-block: 40px;
     text-align: center;
 }
 
 .submit-btn {
-    width: 70%;
+    width: 50%;
     height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 10px;

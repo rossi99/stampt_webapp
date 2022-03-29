@@ -20,15 +20,63 @@
                                 <img src="/img/logo/compressed/small-icon.png" alt="Stampt Logo" class="logo">
                             </div>
 
+                            <div class="intro-container">
+                                <div class="create-container">
+                                    Welcome back to stampt!
+                                </div>
+
+                                <div class="or-container">
+                                    OR
+                                </div>
+
+                                <div class="login-container">
+                                    If you dont have an account, register <router-link :to="{ name: 'register' }" class="email-link">here</router-link>
+                                </div>
+                            </div>
+
                             <div class="auth-form">
                                 <!-- Account Type Selector -->
-                                <div class="account-pick">
+                                <div class="account-data">
+
+                                    <!-- Email -->
                                     <div class="label-container">
                                         Email:
                                     </div>
 
                                     <div class="input-container">
+                                        <div class="stampt-input-container">
+                                            <input type="email" id="email" name="email" class="stampt-input" placeholder="Your email...">
+                                        </div>
+                                    </div>
 
+                                    <!-- Password -->
+                                    <div class="label-container">
+                                        Password:
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="stampt-input-container">
+                                            <div class="reveal-container">
+                                                <div class="password-input">
+                                                    <input type="password" id="password" name="password" class="stampt-input" placeholder="Your password...">
+                                                </div>
+
+                                                <div class="reveal-btn-container alignMiddle">
+                                                    <div class="reveal-align">
+                                                        <font-awesome-icon icon="fa-solid fa-eye" class="reveal" id="reveal-password" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearFix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <div class="submit-container">
+                                        <button type="submit" class="submit-btn">
+                                            Login
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -52,26 +100,35 @@ export default {
     mounted: function () {
         // Variables for login
         // ~ Account Pick
-        let customerOpt = $('#customer-select');
-        let businessOpt = $('#business-select');
-        let customerBtnActive = $('#customer-active');
-        let customerBtnInactive = $('#customer-inactive');
-        let businessBtnActive = $('#business-active');
-        let businessBtnInactive = $('#business-inactive');
+        // ~ Password Reveal
+        let revealBtn = $('#reveal-password');
+        let passwordInput = $('#password');
 
-        // Setting Up Defaults
+        // Functions
+        // ~ Set defaults
+        function setDefaults() {
+
+        }
+
+        // ~ Reveal Password
+        function revealPassword() {
+            if (passwordInput.attr('type', 'password')) {
+                passwordInput.attr('type', 'text');
+            } else {
+                passwordInput.attr('type', 'password');
+            }
+        }
+
+        // Calling Functions
         // ~ Calling default function
         $(document).ready(function () {
             setDefaults();
         });
 
-        // Functions
-        // ~ Set defaults
-        function setDefaults() {
-            // ~ Setting Active options
-            customerBtnActive.show();
-            businessBtnInactive.show();
-        }
+        // ~ Reveal Password
+        revealBtn.click(function () {
+            revealPassword();
+        });
     },
 };
 </script>
@@ -105,17 +162,41 @@ export default {
 
 .auth-modal {
     width: 95%;
-    max-width: 300px;
+    max-width: 450px;
     margin: auto;
     position: relative;
 }
 
-.auth-form {
-    width: 90%;
-    max-height: 450px;
-    overflow: scroll;
+.intro-container {
+    width: 95%;
     margin: auto;
     margin-block-start: 40px;
+    margin-block-end: 20px;
+}
+
+.create-container {
+    width: 100%;
+    text-align: center;
+}
+
+.or-container {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    margin-block: 5px;
+}
+
+.login-container {
+    width: 100%;
+    text-align: center;
+}
+
+.auth-form {
+    width: 90%;
+    max-height: 400px;
+    overflow: scroll;
+    margin: auto;
 }
 
 .logo-container {
@@ -132,25 +213,9 @@ export default {
     width: 70px;
 }
 
-.account-pick {
+.account-data {
     width: 100%;
-    margin-block: 15px;
-}
-
-.account-select {
-    width: 100%;
-    height: 30px;
-    margin-block: 5px;
-    transition: all 0.2s;
-}
-
-.account-select:hover {
-    cursor: pointer;
-    color: white;
-}
-
-.option-align {
-    width: 100%;
+    margin-block-end: 15px;
 }
 
 .input-container {
@@ -158,18 +223,66 @@ export default {
     margin-block: 15px;
 }
 
-.radio-btn-container {
-    width: 45px;
+.label-container {
+    margin-block-start: 40px;
+}
+
+.label-container:first-child {
+    margin-block-start: 0;
+}
+
+.reveal-container {
+    width: 100%;
+}
+
+.password-input {
+    width: 85%;
     float: left;
+}
+
+.reveal-btn-container {
+    width: 15%;
+    height: 45px;
+    float: right;
+}
+
+.reveal-align {
+    width: 100%;
+    height: 16px;
     text-align: center;
 }
 
-.radio-btn-value {
-    width: calc(100% - 45px);
-    float: left;
+.reveal {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.125);
+    transition: all 0.2s;
 }
 
-.opt-dot {
-    display: none;
+.reveal:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.submit-container {
+    width: 100%;
+    margin-block: 40px;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 50%;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    border-radius: 10px;
+    background: #141414;
+    color: rgba(255, 255, 255, 0.125);
+    letter-spacing: 2px;
+    transition: all 0.2s;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
 }
 </style>
