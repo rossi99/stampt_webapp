@@ -35,7 +35,7 @@ class CreateLoyaltyCardsTable extends Migration
             $table->integer('cardSlotEight');
             $table->integer('cardSlotNine');
             $table->integer('cardSlotTen');
-            $table->string('status');
+            $table->string('cardStatus');
             $table->timestamps();
         });
     }

@@ -64,8 +64,8 @@ class loyaltyCardFactory extends Factory
         ];
 
         $status = [
-            'active',
-            'disabled'
+            'Active',
+            'Inactive'
         ];
 
         return [
@@ -89,7 +89,7 @@ class loyaltyCardFactory extends Factory
             'cardSlotEight' => Arr::random($stampSelector),
             'cardSlotNine' => Arr::random($stampSelector),
             'cardSlotTen' => Arr::random($stampSelector),
-            'status' => Arr::random($status),
+            'cardStatus' => Arr::random($status),
         ];
     }
 }

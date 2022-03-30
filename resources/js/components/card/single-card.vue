@@ -50,7 +50,7 @@
                                     <!-- Card Status -->
                                     <tr class="name-row">
                                         <td class="row-title">Status:</td>
-                                        <td class="row-data">{{ card.status }}</td>
+                                        <td class="row-data">{{ card.cardStatus }}</td>
                                     </tr>
 
                                     <!-- Card Owner -->
@@ -72,136 +72,7 @@
                         <div class="card-preview-container">
                             <div class="card-preview-content alignMiddle">
                                 <!-- Show if 5 stamps -->
-<!--                                <div class="one-row-card">-->
-<!--                                    &lt;!&ndash; logo and stamp container &ndash;&gt;-->
-<!--                                    <div class="stamp-logo-holder">-->
-
-<!--                                        &lt;!&ndash; Logo Row &ndash;&gt;-->
-<!--                                        &lt;!&ndash; Will check what logo align is set to &ndash;&gt;-->
-<!--                                        <div class="stamp-logo-container logo-row">-->
-<!--                                            &lt;!&ndash; Left align &ndash;&gt;-->
-<!--                                            <div class="logo-align-container-left alignMiddle">-->
-<!--                                                <div class="sample-logo-align">-->
-<!--                                                    &lt;!&ndash; Circle logo &ndash;&gt;-->
-<!--                                                    <div class="sample-logo-container circle-logo">-->
-<!--                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">-->
-<!--                                                    </div>-->
-
-<!--                                                    &lt;!&ndash; Square logo &ndash;&gt;-->
-<!--&lt;!&ndash;                                                    <div class="sample-logo-container square-logo">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            &lt;!&ndash; center align &ndash;&gt;-->
-<!--&lt;!&ndash;                                            <div class="logo-align-container-centre alignMiddle">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                <div class="sample-logo-align">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                    <div class="sample-logo-container">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
-
-<!--                                            &lt;!&ndash; right align &ndash;&gt;-->
-<!--&lt;!&ndash;                                            <div class="logo-align-container-right alignMiddle">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                <div class="sample-logo-align">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                    <div class="sample-logo-container">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
-<!--                                        </div>-->
-
-<!--                                        &lt;!&ndash; Card Text &ndash;&gt;-->
-<!--                                        &lt;!&ndash; Will be set to data from database &ndash;&gt;-->
-<!--                                        <div class="preview-txt-container">-->
-<!--                                            <div class="preview-title-container">-->
-<!--                                                <p class="preview-title">Coffee House</p>-->
-<!--                                            </div>-->
-
-<!--                                            <div class="preview-desc-container">-->
-<!--                                                <p class="preview-desc">Get 10 stamps and get a free coffee</p>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-
-<!--                                        &lt;!&ndash; Stamp Rows &ndash;&gt;-->
-<!--                                        &lt;!&ndash; Will check how many stamps, 5 = 1 row: &ndash;&gt;-->
-<!--                                        <div class="stamp-logo-container" id="one-row">-->
-<!--                                            &lt;!&ndash; Stamp 1 &ndash;&gt;-->
-<!--                                            <div class="bucket-container alignMiddle">-->
-<!--                                                <div class="bucket">-->
-<!--                                                    <div class="drop-area alignMiddle">-->
-<!--                                                        <div class="bucket-align">-->
-<!--                                                            <div>-->
-<!--                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            &lt;!&ndash; Stamp 2 &ndash;&gt;-->
-<!--                                            <div class="bucket-container alignMiddle">-->
-<!--                                                <div class="bucket">-->
-<!--                                                    <div class="drop-area alignMiddle">-->
-<!--                                                        <div class="bucket-align">-->
-<!--                                                            <div>-->
-<!--                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            &lt;!&ndash; Stamp 3 &ndash;&gt;-->
-<!--                                            <div class="bucket-container alignMiddle">-->
-<!--                                                <div class="bucket">-->
-<!--                                                    <div class="drop-area alignMiddle">-->
-<!--                                                        <div class="bucket-align">-->
-<!--                                                            <div>-->
-<!--                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            &lt;!&ndash; Stamp 4 &ndash;&gt;-->
-<!--                                            <div class="bucket-container alignMiddle">-->
-<!--                                                <div class="bucket">-->
-<!--                                                    <div class="drop-area alignMiddle">-->
-<!--                                                        <div class="bucket-align">-->
-<!--                                                            <div>-->
-<!--                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            &lt;!&ndash; Stamp 5 &ndash;&gt;-->
-<!--                                            <div class="bucket-container alignMiddle">-->
-<!--                                                <div class="bucket">-->
-<!--                                                    <div class="drop-area alignMiddle">-->
-<!--                                                        <div class="bucket-align">-->
-<!--                                                            <div>-->
-<!--                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            <div class="clearFix"></div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="clearFix"></div>-->
-<!--                                </div>-->
-
-                                <!-- Show if 10 stamps -->
-                                <div class="two-row-card">
+                                <div v-if="card.cardNumOfStamps === 5" class="one-row-card">
                                     <!-- logo and stamp container -->
                                     <div class="stamp-logo-holder">
 
@@ -209,60 +80,84 @@
                                         <!-- Will check what logo align is set to -->
                                         <div class="stamp-logo-container logo-row">
                                             <!-- Left align -->
-                                            <div class="logo-align-container-left alignMiddle">
+                                            <div v-if="card.cardLogoPosition === 'Left'" class="logo-align-container-left alignMiddle">
                                                 <div class="sample-logo-align">
                                                     <!-- Circle logo -->
-                                                    <div class="sample-logo-container circle-logo">
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-left-align circle-logo">
                                                         <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
                                                     </div>
 
                                                     <!-- Square logo -->
-                                                    <!-- <div class="sample-logo-container square-logo"> -->
-                                                    <!--  <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo"> -->
-                                                    <!-- </div> -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-left-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <!-- center align -->
-                                            <!-- <div class="logo-align-container-centre alignMiddle"> -->
-                                            <!--  <div class="sample-logo-align"> -->
-                                            <!--   <div class="sample-logo-container"> -->
-                                            <!--    <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo"> -->
-                                            <!--   </div> -->
-                                            <!--  </div> -->
-                                            <!-- </div> -->
+                                            <div v-if="card.cardLogoPosition === 'Center'" class="logo-align-container-centre alignMiddle">
+                                                <div class="sample-logo-align">
+                                                    <!-- Circle logo -->
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-center-align circle-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+
+                                                    <!-- Square logo -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-center-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <!-- right align -->
-                                            <!-- <div class="logo-align-container-right alignMiddle"> -->
-                                            <!--  <div class="sample-logo-align"> -->
-                                            <!--   <div class="sample-logo-container"> -->
-                                            <!--    <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo"> -->
-                                            <!--   </div> -->
-                                            <!--  </div> -->
-                                            <!-- </div> -->
+                                            <div v-if="card.cardLogoPosition === 'Right'" class="logo-align-container-right alignMiddle">
+                                                <div class="sample-logo-align">
+                                                    <!-- Circle logo -->
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-right-align circle-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+
+                                                    <!-- Square logo -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-right-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- Card Text -->
                                         <!-- Will be set to data from database -->
                                         <div class="preview-txt-container">
                                             <div class="preview-title-container">
-                                                <p class="preview-title">Coffee House</p>
+                                                <p class="preview-title">{{ card.cardTitle }}</p>
                                             </div>
 
                                             <div class="preview-desc-container">
-                                                <p class="preview-desc">Get 10 stamps and get a free coffee</p>
+                                                <p class="preview-desc">{{ card.cardDesc }}</p>
                                             </div>
                                         </div>
 
                                         <!-- Stamp Rows -->
-                                        <!-- Will check how many stamps, 10 = 2 row: -->
-                                        <div class="stamp-logo-container">
+                                        <!-- Will check how many stamps, 5 = 1 row: -->
+                                        <div class="stamp-logo-container" id="one-row">
                                             <!-- Stamp 1 -->
                                             <div class="bucket-container alignMiddle">
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotOne === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -275,7 +170,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotTwo === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -288,7 +195,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotThree === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -301,7 +220,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotFour === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -314,7 +245,220 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotFive === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 3">
+                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="clearFix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+
+                                <!-- Show if 10 stamps -->
+                                <div v-if="card.cardNumOfStamps === 10" class="two-row-card">
+                                    <!-- logo and stamp container -->
+                                    <div class="stamp-logo-holder">
+
+                                        <!-- Logo Row -->
+                                        <!-- Will check what logo align is set to -->
+                                        <div class="stamp-logo-container logo-row">
+                                            <!-- Left align -->
+                                            <div v-if="card.cardLogoPosition === 'Left'" class="logo-align-container-left alignMiddle">
+                                                <div class="sample-logo-align">
+                                                    <!-- Circle logo -->
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-left-align circle-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+
+                                                    <!-- Square logo -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-left-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- center align -->
+                                            <div v-if="card.cardLogoPosition === 'Center'" class="logo-align-container-centre alignMiddle">
+                                                <div class="sample-logo-align">
+                                                    <!-- Circle logo -->
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-center-align circle-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+
+                                                    <!-- Square logo -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-center-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- right align -->
+                                            <div v-if="card.cardLogoPosition === 'Right'" class="logo-align-container-right alignMiddle">
+                                                <div class="sample-logo-align">
+                                                    <!-- Circle logo -->
+                                                    <div v-if="card.cardLogoShape === 'Circle'" class="sample-logo-container logo-right-align circle-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+
+                                                    <!-- Square logo -->
+                                                    <div v-if="card.cardLogoShape === 'Square'" class="sample-logo-container logo-right-align square-logo">
+                                                        <img src="/img/stamps/sample-logo.jpg" alt="A sample logo for a coffee shop" class="sample-logo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card Text -->
+                                        <!-- Will be set to data from database -->
+                                        <div class="preview-txt-container">
+                                            <div class="preview-title-container">
+                                                <p class="preview-title">{{ card.cardTitle }}</p>
+                                            </div>
+
+                                            <div class="preview-desc-container">
+                                                <p class="preview-desc">{{ card.cardDesc }}</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Stamp Rows -->
+                                        <!-- Will check how many stamps, 10 = 2 row: -->
+                                        <div class="stamp-logo-container">
+                                            <!-- Stamp 1 -->
+                                            <div class="bucket-container alignMiddle">
+                                                <div class="bucket">
+                                                    <div class="drop-area alignMiddle">
+                                                        <div class="bucket-align">
+                                                            <div v-if="card.cardSlotOne === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotOne === 3">
+                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stamp 2 -->
+                                            <div class="bucket-container alignMiddle">
+                                                <div class="bucket">
+                                                    <div class="drop-area alignMiddle">
+                                                        <div class="bucket-align">
+                                                            <div v-if="card.cardSlotTwo === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTwo === 3">
+                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stamp 3 -->
+                                            <div class="bucket-container alignMiddle">
+                                                <div class="bucket">
+                                                    <div class="drop-area alignMiddle">
+                                                        <div class="bucket-align">
+                                                            <div v-if="card.cardSlotThree === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotThree === 3">
+                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stamp 4 -->
+                                            <div class="bucket-container alignMiddle">
+                                                <div class="bucket">
+                                                    <div class="drop-area alignMiddle">
+                                                        <div class="bucket-align">
+                                                            <div v-if="card.cardSlotFour === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFour === 3">
+                                                                <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stamp 5 -->
+                                            <div class="bucket-container alignMiddle">
+                                                <div class="bucket">
+                                                    <div class="drop-area alignMiddle">
+                                                        <div class="bucket-align">
+                                                            <div v-if="card.cardSlotFive === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotFive === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -327,7 +471,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotSix === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSix === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSix === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSix === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -340,7 +496,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotSeven === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSeven === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSeven === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotSeven === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -353,7 +521,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotEight === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotEight === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotEight === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotEight === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -366,7 +546,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotNine === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotNine === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotNine === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotNine === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -379,7 +571,19 @@
                                                 <div class="bucket">
                                                     <div class="drop-area alignMiddle">
                                                         <div class="bucket-align">
-                                                            <div>
+                                                            <div v-if="card.cardSlotTen === 0">
+                                                                <div class="stamp blank-stamp"></div>
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTen === 1">
+                                                                <img src="/img/stamps/compressed/grey/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTen === 2">
+                                                                <img src="/img/stamps/compressed/black/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
+                                                            </div>
+
+                                                            <div v-if="card.cardSlotTen === 3">
                                                                 <img src="/img/stamps/compressed/white/3.png" alt="This is the first style of stamp in a a grey colour" class="stamp">
                                                             </div>
                                                         </div>
@@ -399,7 +603,16 @@
                         <!-- Card Action -->
                         <div class="card-action-container">
                             <div class="action-btn-container">
-                                <div class="action-btn alignMiddle">
+                                <!-- If user navigates to inactive card -->
+                                <div v-if="card.cardStatus === 'Inactive'" class="action-btn inactive-btn alignMiddle">
+                                    <div class="btn-txt-align">
+                                        <span><font-awesome-icon icon="fa-solid fa-ban" class="l-icon-spacing" /></span>
+                                        <span>Sorry, this card is inactive!</span>
+                                    </div>
+                                </div>
+
+                                <!-- If user navigates to active card -->
+                                <div v-if="card.cardStatus === 'Active'" class="action-btn active-btn alignMiddle">
                                     <div class="btn-txt-align">
                                         <span><font-awesome-icon icon="fa-solid fa-plus" class="l-icon-spacing" /></span>
                                         <span>Add Card to Wallet</span>
@@ -543,6 +756,7 @@ export default {
 }
 
 /* Dynamic Logo classes */
+
 .logo-align-container-left {
     width: calc(100% / 3);
     height: 100px;
@@ -567,11 +781,24 @@ export default {
     width: 100%;
 }
 
+.logo-left-align {
+    float: left;
+}
+
+.logo-center-align {
+    margin: auto;
+}
+
+.logo-right-align {
+    float: right;
+}
+
 .sample-logo-container {
     width: 80px;
     height: 80px;
     overflow: hidden;
     border: 3px solid rgb(44, 44, 44);
+    background: #141414;
 }
 
 .sample-logo {
@@ -668,12 +895,20 @@ export default {
     transition: all 0.2s;
 }
 
-.action-btn:hover {
+.active-btn:hover {
     cursor: pointer;
     background-color: #d4edda;
     border: 2px solid #155724;
     border-radius: 10px;
     color: #155724;
+}
+
+.inactive-btn:hover {
+    cursor: not-allowed;
+    border: 2px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    border-radius: 10px;
 }
 
 .btn-txt-align {
