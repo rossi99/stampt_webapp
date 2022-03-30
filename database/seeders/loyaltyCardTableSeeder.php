@@ -15,7 +15,7 @@ class loyaltyCardTableSeeder extends Seeder
     public function run()
     {
         loyaltyCard::factory()
-            ->count(50)
+            ->count(25)
             ->create();
     }
 }

@@ -23317,6 +23317,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23352,7 +23353,8 @@ __webpack_require__.r(__webpack_exports__);
     var stampsRequired;
     var cardSlots;
     var cardColour;
-    var fontColour; // Helpers Vars
+    var fontColour;
+    var cardStatus; // Helpers Vars
 
     var titleHelper = $('#title-helper');
     var titleHelpShow = $('#title-helper-show');
@@ -23437,6 +23439,7 @@ __webpack_require__.r(__webpack_exports__);
     var Slot8 = $('#stamp-slot-8');
     var Slot9 = $('#stamp-slot-9');
     var Slot10 = $('#stamp-slot-10');
+    var formStatus = $('#card-status');
     var publishBtn = $('#publish-button');
     $(document).ready(function () {
       setDefaults();
@@ -23698,7 +23701,8 @@ __webpack_require__.r(__webpack_exports__);
       Slot7.val(0);
       Slot8.val(0);
       Slot9.val(0);
-      Slot10.val(0); // setting classes
+      Slot10.val(0);
+      cardStatus = "active"; // setting classes
 
       btn1.addClass('active-btn');
       btn1Txt.addClass('active-txt');
@@ -23738,6 +23742,7 @@ __webpack_require__.r(__webpack_exports__);
       formNumberOfStamps.val(cardSlots);
       formBackgroundColour.val(cardColour);
       formFontColour.val(fontColour);
+      formStatus.val(cardStatus);
     } // Show Form Data
 
 
@@ -23762,6 +23767,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log("Slot 8: " + Slot8.val());
       console.log("Slot 9: " + Slot9.val());
       console.log("Slot 10: " + Slot10.val());
+      console.log("Card Status: " + formStatus.val());
     } // Fading in helper
     // Functions to show and hide
     // ~ Title
@@ -24400,8 +24406,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    cardName: String,
-    stampsRequired: Number
+    id: Number,
+    cardTitle: String,
+    cardStampsRequired: Number
   }
 });
 
@@ -24420,8 +24427,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _nav_sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../nav/sidebar */ "./resources/js/components/nav/sidebar.vue");
 /* harmony import */ var _marketItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./marketItem */ "./resources/js/components/card/marketItem.vue");
-//
-//
 //
 //
 //
@@ -24947,7 +24952,20 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Sidebar: _nav_sidebar__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  mounted: function mounted() {}
+  data: function data() {
+    return {
+      card: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    var id = this.$route.params.id; // Get single card
+
+    axios.get("/api/loyaltyCards/".concat(id)).then(function (response) {
+      return _this.card = response.data;
+    });
+  }
 });
 
 /***/ }),
@@ -25594,7 +25612,7 @@ var routes = [{
   component: _components_card_marketplace__WEBPACK_IMPORTED_MODULE_2__["default"],
   name: "marketplace"
 }, {
-  path: "/single-card",
+  path: "/loyalty-cards/:id",
   component: _components_card_single_card__WEBPACK_IMPORTED_MODULE_3__["default"],
   name: "singleCard"
 }, {
@@ -64430,6 +64448,14 @@ var render = function () {
                       },
                     }),
                     _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "card-status",
+                        type: "hidden",
+                        name: "cardStatus",
+                      },
+                    }),
+                    _vm._v(" "),
                     _c(
                       "div",
                       { staticClass: "submit-btn-container alignMiddle" },
@@ -65045,7 +65071,7 @@ var render = function () {
         _c("div", { staticClass: "name-container alignMiddle" }, [
           _c("div", { staticClass: "name-align" }, [
             _c("div", { staticClass: "card-name main-txt" }, [
-              _vm._v(_vm._s(_vm.cardName)),
+              _vm._v(_vm._s(_vm.cardTitle)),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "business-name sub-txt" }, [
@@ -65061,7 +65087,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "num-stamp-text main-txt" }, [
-              _vm._v(_vm._s(_vm.stampsRequired)),
+              _vm._v(_vm._s(_vm.cardStampsRequired)),
             ]),
           ]),
         ]),
@@ -65071,20 +65097,26 @@ var render = function () {
             "div",
             { staticClass: "btn-align" },
             [
-              _c("router-link", { attrs: { to: { name: "singleCard" } } }, [
-                _c("div", { staticClass: "info-btn alignMiddle" }, [
-                  _c(
-                    "div",
-                    { staticClass: "icon-align" },
-                    [
-                      _c("font-awesome-icon", {
-                        attrs: { icon: "fa-solid fa-info" },
-                      }),
-                    ],
-                    1
-                  ),
-                ]),
-              ]),
+              _c(
+                "router-link",
+                {
+                  attrs: { to: { name: "singleCard", params: { id: _vm.id } } },
+                },
+                [
+                  _c("div", { staticClass: "info-btn alignMiddle" }, [
+                    _c(
+                      "div",
+                      { staticClass: "icon-align" },
+                      [
+                        _c("font-awesome-icon", {
+                          attrs: { icon: "fa-solid fa-info" },
+                        }),
+                      ],
+                      1
+                    ),
+                  ]),
+                ]
+              ),
             ],
             1
           ),
@@ -65181,15 +65213,19 @@ var render = function () {
               : _c(
                   "div",
                   _vm._l(_vm.cards, function (card) {
-                    return _c("market-item", {
-                      key: "Card ID: " + card.id,
-                      attrs: {
-                        cardName: card.cardTitle,
-                        stampsRequired: card.cardStampsRequired,
-                      },
-                    })
+                    return _c(
+                      "div",
+                      { key: "Card ID: " + card.id },
+                      [
+                        _c(
+                          "market-item",
+                          _vm._b({}, "market-item", card, false)
+                        ),
+                      ],
+                      1
+                    )
                   }),
-                  1
+                  0
                 ),
           ]),
         ]),
@@ -65255,19 +65291,91 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "sb-content-container" }, [
         _c("div", { staticClass: "sb-content" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "title-container alignMiddle" }, [
+            _c("div", { staticClass: "title" }, [
+              _vm._v(
+                "\n                        stampt | " +
+                  _vm._s(_vm.card.cardTitle) +
+                  "\n                    "
+              ),
+            ]),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "single-card-container" }, [
             _c("div", { staticClass: "page-intro" }, [
               _vm._v(
-                "\n                        This is // INSERT NAME //'s loyalty card. Check out all the details below including the reward,\n                        how many stamps you need to claim it and what is required to gain a stamp!\n                    "
+                "\n                        This is Example Busniess' loyalty card. Check out all the details below including the reward,\n                        how many stamps you need to claim it and what is required to gain a stamp!\n                    "
               ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-details-container" }, [
-              _vm._m(1),
+              _c("div", { staticClass: "card-data-container" }, [
+                _c("div", { staticClass: "data-table-container" }, [
+                  _c("table", { staticClass: "card-data" }, [
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [_vm._v("Name:")]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.cardTitle)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [
+                        _vm._v("Description:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.cardDesc)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [
+                        _vm._v("Reward:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.cardReward)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [
+                        _vm._v("How to gain:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.cardProgressMethod)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [
+                        _vm._v("Status:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.status)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("tr", { staticClass: "name-row" }, [
+                      _c("td", { staticClass: "row-title" }, [
+                        _vm._v("Created:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "row-data" }, [
+                        _vm._v(_vm._s(_vm.card.created_at)),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "card-action-container" }, [
                 _c("div", { staticClass: "action-btn-container" }, [
@@ -65304,70 +65412,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title-container alignMiddle" }, [
-      _c("div", { staticClass: "title" }, [
-        _vm._v(
-          "\n                        stampt | Coffee House\n                    "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-data-container" }, [
-      _c("div", { staticClass: "data-table-container" }, [
-        _c("table", { staticClass: "card-data" }, [
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Name:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [_vm._v("Coffee House")]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Description:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [
-              _vm._v("Get 10 stamps and get a free coffee"),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Reward:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [
-              _vm._v("A free coffee of your choice"),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("How to gain:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [
-              _vm._v("Earn a stamp with any purchase within any store"),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Status:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [_vm._v("Active")]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Owner:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [_vm._v("Example Business")]),
-          ]),
-          _vm._v(" "),
-          _c("tr", { staticClass: "name-row" }, [
-            _c("td", { staticClass: "row-title" }, [_vm._v("Created:")]),
-            _vm._v(" "),
-            _c("td", { staticClass: "row-data" }, [_vm._v("27 . 03 . 2022")]),
-          ]),
-        ]),
-      ]),
+    return _c("tr", { staticClass: "name-row" }, [
+      _c("td", { staticClass: "row-title" }, [_vm._v("Owner:")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "row-data" }, [_vm._v("Example Business")]),
     ])
   },
   function () {

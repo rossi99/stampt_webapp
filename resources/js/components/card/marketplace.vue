@@ -31,14 +31,12 @@
                             Hold on while we get all our cards ready!
                         </div>
                     </div>
+
                     <div v-else>
                         <!-- Repeat each row for each card-->
-                        <market-item
-                            v-for="card in cards"
-                            :key="'Card ID: ' + card.id"
-                            :cardName="card.cardTitle"
-                            :stampsRequired="card.cardStampsRequired">
-                        </market-item>
+                        <div v-for="card in cards" :key="'Card ID: ' + card.id">
+                            <market-item v-bind="card"></market-item>
+                        </div>
                     </div>
                 </div>
 

@@ -8,13 +8,13 @@
                 <!-- Card Builder Content-->
                 <div class="title-container alignMiddle">
                     <div class="title">
-                        stampt | Coffee House
+                        stampt | {{ card.cardTitle }}
                     </div>
                 </div>
 
                 <div class="single-card-container">
                     <div class="page-intro">
-                        This is // INSERT NAME //'s loyalty card. Check out all the details below including the reward,
+                        This is Example Busniess' loyalty card. Check out all the details below including the reward,
                         how many stamps you need to claim it and what is required to gain a stamp!
                     </div>
 
@@ -26,31 +26,31 @@
                                     <!-- Card Name -->
                                     <tr class="name-row">
                                         <td class="row-title">Name:</td>
-                                        <td class="row-data">Coffee House</td>
+                                        <td class="row-data">{{ card.cardTitle }}</td>
                                     </tr>
 
                                     <!-- Card Description -->
                                     <tr class="name-row">
                                         <td class="row-title">Description:</td>
-                                        <td class="row-data">Get 10 stamps and get a free coffee</td>
+                                        <td class="row-data">{{ card.cardDesc }}</td>
                                     </tr>
 
                                     <!-- Card Reward -->
                                     <tr class="name-row">
                                         <td class="row-title">Reward:</td>
-                                        <td class="row-data">A free coffee of your choice</td>
+                                        <td class="row-data">{{ card.cardReward }}</td>
                                     </tr>
 
                                     <!-- Card Reward -->
                                     <tr class="name-row">
                                         <td class="row-title">How to gain:</td>
-                                        <td class="row-data">Earn a stamp with any purchase within any store</td>
+                                        <td class="row-data">{{ card.cardProgressMethod }}</td>
                                     </tr>
 
                                     <!-- Card Status -->
                                     <tr class="name-row">
                                         <td class="row-title">Status:</td>
-                                        <td class="row-data">Active</td>
+                                        <td class="row-data">{{ card.status }}</td>
                                     </tr>
 
                                     <!-- Card Owner -->
@@ -62,7 +62,7 @@
                                     <!-- Card Status -->
                                     <tr class="name-row">
                                         <td class="row-title">Created:</td>
-                                        <td class="row-data">27 . 03 . 2022</td>
+                                        <td class="row-data">{{ card.created_at }}</td>
                                     </tr>
                                 </table>
                             </div>
@@ -423,9 +423,19 @@ export default {
     components: {
         Sidebar
     },
-    mounted: function () {
-
+    data() {
+      return {
+          card: null
+      };
     },
+    created() {
+        const id = this.$route.params.id;
+
+        // Get single card
+        axios
+            .get(`/api/loyaltyCards/${id}`)
+            .then(response => this.card = response.data);
+    }
 };
 </script>
 

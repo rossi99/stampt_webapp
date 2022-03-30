@@ -14,7 +14,7 @@
                 <!-- Card Name -->
                 <div class="name-container alignMiddle">
                     <div class="name-align">
-                        <div class="card-name main-txt">{{ cardName }}</div>
+                        <div class="card-name main-txt">{{ cardTitle }}</div>
                         <div class="business-name sub-txt">Created by: Example Company</div>
                     </div>
                 </div>
@@ -23,14 +23,14 @@
                 <div class="stamps-container alignMiddle">
                     <div class="stamp-align">
                         <div class="required-text sub-txt">Stamps:</div>
-                        <div class="num-stamp-text main-txt">{{ stampsRequired }}</div>
+                        <div class="num-stamp-text main-txt">{{ cardStampsRequired }}</div>
                     </div>
                 </div>
 
                 <!-- Info container -->
                 <div class="info-container alignMiddle">
                     <div class="btn-align">
-                        <router-link :to="{ name: 'singleCard' }">
+                        <router-link :to="{ name: 'singleCard', params: { id } }">
                             <div class="info-btn alignMiddle">
                                 <div class="icon-align">
                                     <font-awesome-icon icon="fa-solid fa-info" />
@@ -60,8 +60,9 @@
 <script>
 export default {
     props: {
-        cardName: String,
-        stampsRequired: Number
+        id: Number,
+        cardTitle: String,
+        cardStampsRequired: Number
     }
 };
 </script>

@@ -26,7 +26,7 @@ const routes = [
         name: "marketplace",
     },
     {
-        path: "/single-card",
+        path: "/loyalty-cards/:id",
         component: singleCard,
         name: "singleCard",
     },

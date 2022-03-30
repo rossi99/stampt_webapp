@@ -1363,6 +1363,7 @@
                                     <input id="stamp-slot-8" type="hidden" name="cardSlotEight">
                                     <input id="stamp-slot-9" type="hidden" name="cardSlotNine">
                                     <input id="stamp-slot-10" type="hidden" name="cardSlotTen">
+                                    <input id="card-status" type="hidden" name="cardStatus">
 
                                     <div class="submit-btn-container alignMiddle">
                                         <div class="btn-text-align" id="publish-button">
@@ -1422,6 +1423,7 @@ export default {
         let cardSlots;
         let cardColour;
         let fontColour;
+        let cardStatus;
 
         // Helpers Vars
         let titleHelper = $('#title-helper');
@@ -1511,6 +1513,7 @@ export default {
         let Slot8 = $('#stamp-slot-8');
         let Slot9 = $('#stamp-slot-9');
         let Slot10 = $('#stamp-slot-10');
+        let formStatus = $('#card-status');
         let publishBtn = $('#publish-button');
 
         $(document).ready(function () {
@@ -1790,12 +1793,13 @@ export default {
             Slot8.val(0);
             Slot9.val(0);
             Slot10.val(0);
+            cardStatus = "active";
 
             // setting classes
-            btn1.addClass('active-btn')
-            btn1Txt.addClass('active-txt')
+            btn1.addClass('active-btn');
+            btn1Txt.addClass('active-txt');
 
-            create.fadeIn(250)
+            create.fadeIn(250);
         }
 
         // Show preview of card
@@ -1831,6 +1835,7 @@ export default {
             formNumberOfStamps.val(cardSlots);
             formBackgroundColour.val(cardColour);
             formFontColour.val(fontColour);
+            formStatus.val(cardStatus);
         }
 
         // Show Form Data
@@ -1855,6 +1860,7 @@ export default {
             console.log("Slot 8: " + Slot8.val());
             console.log("Slot 9: " + Slot9.val());
             console.log("Slot 10: " + Slot10.val());
+            console.log("Card Status: " + formStatus.val());
         }
 
         // Fading in helper

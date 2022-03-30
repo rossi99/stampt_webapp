@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 /* GET: All loyalty Cards */
-Route::get('loyaltyCards', function (Request $request) {
-    return \App\Models\loyaltyCard::all();
+Route::get('loyaltyCards', function (Request $request, ) {
+    return \App\Models\loyaltyCard::all()->where('status', 'active');
 });
 
 /* GET: One loyalty card */

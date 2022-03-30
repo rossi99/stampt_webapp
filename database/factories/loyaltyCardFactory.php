@@ -63,6 +63,11 @@ class loyaltyCardFactory extends Factory
             0, 1, 2, 3
         ];
 
+        $status = [
+            'active',
+            'disabled'
+        ];
+
         return [
             'cardTitle' => $this->faker->name(),
             'cardDesc' => $this->faker->text(),
@@ -84,6 +89,7 @@ class loyaltyCardFactory extends Factory
             'cardSlotEight' => Arr::random($stampSelector),
             'cardSlotNine' => Arr::random($stampSelector),
             'cardSlotTen' => Arr::random($stampSelector),
+            'status' => Arr::random($status),
         ];
     }
 }
