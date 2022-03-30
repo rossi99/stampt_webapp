@@ -21,58 +21,25 @@
                         added directly into your wallet.
                     </div>
 
-                    <!-- Repeat each row for each card-->
-                    <div class="card-row">
-                        <div class="card-container dark-glass-effect">
-                            <!-- Business & Card Logo-->
-                            <div class="logo-container alignMiddle">
-                                <div class="logo-align">
-                                    <img src="/img/stamps/compressed/sample-logo.jpg" alt="A sample logo for a coffee shop" class="logo">
-                                </div>
-                            </div>
-
-                            <!-- Card Name -->
-                            <div class="name-container alignMiddle">
-                                <div class="name-align">
-                                    <div class="card-name main-txt">Coffee House: Free Coffee</div>
-                                    <div class="business-name sub-txt">Created by: Example Business</div>
-                                </div>
-                            </div>
-
-                            <!-- Number of stamps -->
-                            <div class="stamps-container alignMiddle">
-                                <div class="stamp-align">
-                                    <div class="required-text sub-txt">Stamps:</div>
-                                    <div class="num-stamp-text main-txt">10</div>
-                                </div>
-                            </div>
-
-                            <!-- Info container -->
-                            <div class="info-container alignMiddle">
-                                <div class="btn-align">
-                                    <router-link :to="{ name: 'singleCard' }">
-                                        <div class="info-btn alignMiddle">
-                                            <div class="icon-align">
-                                                <font-awesome-icon icon="fa-solid fa-info" />
-                                            </div>
-                                        </div>
-                                    </router-link>
-                                </div>
-                            </div>
-
-                            <!-- Quick Join container -->
-                            <div class="quick-join-container alignMiddle">
-                                <div class="btn-align">
-                                    <div class="quick-join-btn alignMiddle">
-                                        <div class="icon-align">
-                                            <font-awesome-icon icon="fa-solid fa-plus" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="clearFix"></div>
+                    <!-- Cards Loading -->
+                    <div v-if="loading" class="loading-cards-container">
+                        <div class="loading-logo-container">
+                            <img src="/img/logo/compressed/small-icon.png" alt="Stampt Logo" class="loading-logo">
                         </div>
+
+                        <div class="loading-msg-container">
+                            Hold on while we get all our cards ready!
+                        </div>
+                    </div>
+                    <div v-else>
+                        <!-- Repeat each row for each card-->
+                        <market-item
+                            v-for="card in cards"
+                            :key="'Card ID: ' + card.id"
+                            :cardName="card.cardName"
+                            :createdBy="card.createdBy"
+                            :stampsRequired="card.stampsRequired">
+                        </market-item>
                     </div>
                 </div>
 
@@ -85,13 +52,49 @@
 
 <script>
 import Sidebar from "../nav/sidebar";
+import MarketItem from "./marketItem";
 
 export default {
     components: {
+        MarketItem,
         Sidebar
     },
-    mounted: function () {
+    data() {
+      return {
+          cards: null,
+          loading: false
+      };
+    },
+    created() {
+        this.loading = true;
 
+        setTimeout(() => {
+            this.cards = [
+                {
+                    id: 1,
+                    cardName: "Coffee House: Free Coffee",
+                    createdBy: "Example Business",
+                    stampsRequired: 3
+                },
+                {
+                    id: 2,
+                    cardName: "Free Portion of Chips",
+                    createdBy: "Parklands",
+                    stampsRequired: 5
+                },
+                {
+                    id: 3,
+                    cardName: "£10 off!",
+                    createdBy: "Cafe Riva",
+                    stampsRequired: 10
+                },
+            ];
+
+            this.loading = false;
+        }, 5000);
+    },
+    mounted: function () {
+        console.log("mounted");
     },
 };
 </script>
@@ -125,134 +128,24 @@ export default {
     color: white;
 }
 
-/* Card */
-.card-row {
-    width: 100%;
-    height: 80px;
-    margin-block-start: 30px;
-    margin-block-end: 30px;
-}
-
-.card-row:first-child {
-    margin-block-start: 15px;
-}
-
-.card-container {
-    width: 95%;
-    height: 100%;
-    margin: auto;
-}
-
-.main-txt {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.sub-txt {
-    font-size: 12px;
-    color: grey;
-}
-
-.logo-container {
-    width: 10%;
-    height: 75px;
-    float: left;
-}
-
-.logo-align {
-    width: 100%;
-    height: 55px;
-    text-align: center;
-}
-
-.logo {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-}
-
-.name-container {
-    width: 56%;
-    height: 75px;
-    float: left;
-}
-
-.name-align {
-    width: 100%;
-}
-
-.stamps-container {
-    width: 20%;
-    height: 75px;
-    float: left;
-}
-
-.stamp-align {
-    width: 100%;
-}
-
-.required-text {
+.loading-cards-container {
+    margin-block-start: 50px;
     width: 100%;
     text-align: center;
 }
 
-.num-stamp-text {
-    width: 100%;
-    text-align: center;
+.loading-logo {
+    width: 60px;
+    margin-block-end: 10px;
+    animation: rotation 2s infinite linear;
 }
 
-.info-container {
-    width: 7%;
-    height: 75px;
-    float: left;
-}
-
-.btn-align {
-    width: 100%;
-}
-
-.info-btn {
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    border: 1px solid grey;
-    border-radius: 50%;
-    color: grey;
-    transition: all 0.2s;
-}
-
-.info-btn:hover {
-    cursor: pointer;
-    background-color: #d1ecf1;
-    border: 1px solid #bee5eb;
-    color: #0c548d;
-}
-
-.quick-join-container {
-    width: 7%;
-    height: 75px;
-    float: left;
-}
-
-.quick-join-btn {
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    border: 1px solid grey;
-    border-radius: 50%;
-    color: grey;
-    transition: all 0.2s;
-}
-
-.quick-join-btn:hover {
-    cursor: pointer;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
-}
-
-.icon-align {
-    width: 100%;
-    text-align: center;
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
 </style>
