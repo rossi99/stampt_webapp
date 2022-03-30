@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/* GET: All loyalty Cards */
+Route::get('loyaltyCards', function (Request $request) {
+    return \App\Models\loyaltyCard::all();
+});
+
+/* GET: One loyalty card */
+Route::get('loyaltyCards/{id}', function (Request $request, $id) {
+    return \App\Models\loyaltyCard::findOrFail($id);
+});

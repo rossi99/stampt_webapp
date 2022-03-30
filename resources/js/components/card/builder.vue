@@ -408,6 +408,46 @@
                                 </div>
                             </div>
 
+                            <!-- Number of stamps required -->
+                            <div class="create-row">
+                                <div class="create-label-container">
+                                    <div class="create-label alignMiddle subtitle">
+                                        Stamps Required
+                                    </div>
+
+                                    <div class="create-helper alignMiddle">
+                                        <div style="width: 100%; text-align: center;">
+                                            <font-awesome-icon icon="fa-solid fa-circle-question" class="help-btn" id="required-helper-show"/>
+                                        </div>
+
+                                        <div class="helper-txt-container" id="required-helper" style="display: none;">
+                                            <div class="close-container alignMiddle">
+                                                <div style="width: 100%; text-align: center;">
+                                                    <font-awesome-icon icon="fa-solid fa-circle-xmark" class="help-btn" id="required-helper-close" />
+                                                </div>
+                                            </div>
+
+                                            <div class="text-container details">
+                                                <div style="padding: 5px; letter-spacing: 1px">
+                                                    The stamps required section will be used to attract potential customers as this
+                                                    will be shown on the marketplace. It should align with the number of stamps you
+                                                    have added in the builder section, so be careful that they match up as customers
+                                                    are less likely to join if the stamps needed are different to the stated figure.
+                                                </div>
+                                            </div>
+
+                                            <div class="clearFix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearFix"></div>
+                                </div>
+
+                                <div class="stampt-input-container">
+                                    <input type="number" min="1" max="10" id="required-input" class="stampt-input" placeholder="How many stamps will your card have?">
+                                </div>
+                            </div>
+
                             <!-- Card Squares -->
                             <div class="create-row">
                                 <div class="create-label-container">
@@ -1303,25 +1343,26 @@
                                 </div>
 
                                 <form>
-                                    <input id="final-card-title" type="hidden" name="card-title">
-                                    <input id="final-card-desc" type="hidden" name="card-decs">
-                                    <input id="final-card-reward" type="hidden" name="card-reward">
-                                    <input id="final-card-gain" type="hidden" name="card-gain">
-                                    <input id="final-logo-position" type="hidden" name="logo-position">
-                                    <input id="final-logo-shape" type="hidden" name="logo-shape">
-                                    <input id="final-number-of-stamps" type="hidden" name="number-of-stamps">
-                                    <input id="final-background-colour" type="hidden" name="background-colour">
-                                    <input id="final-font-colour" type="hidden" name="font-colour">
-                                    <input id="stamp-slot-1" type="hidden" name="slot-1">
-                                    <input id="stamp-slot-2" type="hidden" name="slot-2">
-                                    <input id="stamp-slot-3" type="hidden" name="slot-3">
-                                    <input id="stamp-slot-4" type="hidden" name="slot-4">
-                                    <input id="stamp-slot-5" type="hidden" name="slot-5">
-                                    <input id="stamp-slot-6" type="hidden" name="slot-6">
-                                    <input id="stamp-slot-7" type="hidden" name="slot-7">
-                                    <input id="stamp-slot-8" type="hidden" name="slot-8">
-                                    <input id="stamp-slot-9" type="hidden" name="slot-9">
-                                    <input id="stamp-slot-10" type="hidden" name="slot-10">
+                                    <input id="final-card-title" type="hidden" name="cardTitle">
+                                    <input id="final-card-desc" type="hidden" name="cardDesc">
+                                    <input id="final-card-reward" type="hidden" name="cardReward">
+                                    <input id="final-card-gain" type="hidden" name="cardProgressMethod">
+                                    <input id="final-logo-position" type="hidden" name="cardLogoPosition">
+                                    <input id="final-logo-shape" type="hidden" name="cardLogoShape">
+                                    <input id="final-stamps-required" type="hidden" name="cardStampsRequired">
+                                    <input id="final-number-of-stamps" type="hidden" name="cardNumOfStamps">
+                                    <input id="final-background-colour" type="hidden" name="cardBackgroundColour">
+                                    <input id="final-font-colour" type="hidden" name="cardFontColour">
+                                    <input id="stamp-slot-1" type="hidden" name="cardSlotOne">
+                                    <input id="stamp-slot-2" type="hidden" name="cardSlotTwo">
+                                    <input id="stamp-slot-3" type="hidden" name="cardSlotThree">
+                                    <input id="stamp-slot-4" type="hidden" name="cardSlotFour">
+                                    <input id="stamp-slot-5" type="hidden" name="cardSlotFive">
+                                    <input id="stamp-slot-6" type="hidden" name="cardSlotSix">
+                                    <input id="stamp-slot-7" type="hidden" name="cardSlotSeven">
+                                    <input id="stamp-slot-8" type="hidden" name="cardSlotEight">
+                                    <input id="stamp-slot-9" type="hidden" name="cardSlotNine">
+                                    <input id="stamp-slot-10" type="hidden" name="cardSlotTen">
 
                                     <div class="submit-btn-container alignMiddle">
                                         <div class="btn-text-align" id="publish-button">
@@ -1377,6 +1418,7 @@ export default {
         let cardGain;
         let logoAlign;
         let logoShape;
+        let stampsRequired;
         let cardSlots;
         let cardColour;
         let fontColour;
@@ -1404,6 +1446,10 @@ export default {
         let logoShapeHelper = $('#logo-shape-helper');
         let logoShapeHelpShow = $('#logo-shape-helper-show');
         let logoShapeHelpHide = $('#logo-shape-helper-close');
+        let requiredHelper = $('#required-helper');
+        let requiredHelpShow = $('#required-helper-show');
+        let requiredHelpHide = $('#required-helper-close');
+        let requiredInput = $('#required-input');
         let numHelper = $('#num-helper');
         let numHelpShow = $('#num-helper-show');
         let numHelpHide = $('#num-helper-close');
@@ -1451,6 +1497,7 @@ export default {
         let formCardGain = $('#final-card-gain');
         let formLogoPosition = $('#final-logo-position');
         let formLogoShape = $('#final-logo-shape');
+        let formStampsRequired = $('#final-stamps-required');
         let formNumberOfStamps = $('#final-number-of-stamps');
         let formBackgroundColour = $('#final-background-colour');
         let formFontColour = $('#final-font-colour');
@@ -1660,14 +1707,6 @@ export default {
             stamp10.addClass('active-btn')
         }
 
-        function fifteenStamp() {
-            cardSlots = 15
-
-            stamp10.removeClass('active-btn')
-            stamp5.removeClass('active-btn')
-            stamp15.addClass('active-btn')
-        }
-
         // Click Sections
         function clickCreate() {
             // Show form for create
@@ -1737,6 +1776,7 @@ export default {
             cardGain = "Progression method unknown";
             logoAlign = "Left";
             logoShape = "Square";
+            stampsRequired = 0;
             cardSlots = 5;
             cardColour = colourInput.val();
             fontColour = fontInput.val();
@@ -1787,6 +1827,7 @@ export default {
             formCardGain.val(cardGain);
             formLogoPosition.val(logoAlign);
             formLogoShape.val(logoShape);
+            formStampsRequired.val(stampsRequired);
             formNumberOfStamps.val(cardSlots);
             formBackgroundColour.val(cardColour);
             formFontColour.val(fontColour);
@@ -1800,6 +1841,7 @@ export default {
             console.log("Card Progress Method: " + formCardGain.val());
             console.log("Card Logo Position: " + formLogoPosition.val());
             console.log("Card Logo Shape: " + formLogoShape.val());
+            console.log("Card Stamps Required: " + formStampsRequired.val());
             console.log("Card Num of stamps: " + formNumberOfStamps.val());
             console.log("Card background colour: " + formBackgroundColour.val());
             console.log("Card font colour: " + formFontColour.val());
@@ -1871,6 +1913,15 @@ export default {
             logoShapeHelper.fadeOut(200)
         }
 
+        // ~ Required Stamps
+        function requiredShow() {
+            requiredHelper.fadeIn(200)
+        }
+
+        function requiredHide() {
+            requiredHelper.fadeOut(200)
+        }
+
         // ~ Num of stamps
         function stampShow() {
             numHelper.fadeIn(200)
@@ -1934,6 +1985,10 @@ export default {
             cardGain = gainInput.val();
         });
 
+        requiredInput.change(function () {
+            stampsRequired = requiredInput.val();
+        });
+
         // Selecting logo alignment for card
         alignLeft.click(function () {
             setLeftAlign();
@@ -1963,10 +2018,6 @@ export default {
 
         stamp10.click(function () {
             tenStamp();
-        });
-
-        stamp15.click(function () {
-            fifteenStamp();
         });
 
         // Setting background colour of card
@@ -2067,6 +2118,19 @@ export default {
 
         squareLogo.click(function () {
             logoShapeHide();
+        });
+
+        // ~ Logo Shape
+        requiredHelpShow.click(function () {
+            requiredShow();
+        });
+
+        requiredHelpHide.click(function () {
+            requiredHide();
+        });
+
+        requiredInput.click(function () {
+            requiredHide();
         });
 
         // ~ Number of stamps

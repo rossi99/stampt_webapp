@@ -15,7 +15,7 @@
                 <div class="name-container alignMiddle">
                     <div class="name-align">
                         <div class="card-name main-txt">{{ cardName }}</div>
-                        <div class="business-name sub-txt">Created by: {{ createdBy }}</div>
+                        <div class="business-name sub-txt">Created by: Example Company</div>
                     </div>
                 </div>
 
@@ -59,7 +59,10 @@
 
 <script>
 export default {
-    props: ['cardName','createdBy', 'stampsRequired'],
+    props: {
+        cardName: String,
+        stampsRequired: Number
+    }
 };
 </script>
 

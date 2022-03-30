@@ -23276,6 +23276,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23308,6 +23349,7 @@ __webpack_require__.r(__webpack_exports__);
     var cardGain;
     var logoAlign;
     var logoShape;
+    var stampsRequired;
     var cardSlots;
     var cardColour;
     var fontColour; // Helpers Vars
@@ -23334,6 +23376,10 @@ __webpack_require__.r(__webpack_exports__);
     var logoShapeHelper = $('#logo-shape-helper');
     var logoShapeHelpShow = $('#logo-shape-helper-show');
     var logoShapeHelpHide = $('#logo-shape-helper-close');
+    var requiredHelper = $('#required-helper');
+    var requiredHelpShow = $('#required-helper-show');
+    var requiredHelpHide = $('#required-helper-close');
+    var requiredInput = $('#required-input');
     var numHelper = $('#num-helper');
     var numHelpShow = $('#num-helper-show');
     var numHelpHide = $('#num-helper-close');
@@ -23377,6 +23423,7 @@ __webpack_require__.r(__webpack_exports__);
     var formCardGain = $('#final-card-gain');
     var formLogoPosition = $('#final-logo-position');
     var formLogoShape = $('#final-logo-shape');
+    var formStampsRequired = $('#final-stamps-required');
     var formNumberOfStamps = $('#final-number-of-stamps');
     var formBackgroundColour = $('#final-background-colour');
     var formFontColour = $('#final-font-colour');
@@ -23580,13 +23627,6 @@ __webpack_require__.r(__webpack_exports__);
       stamp5.removeClass('active-btn');
       stamp15.removeClass('active-btn');
       stamp10.addClass('active-btn');
-    }
-
-    function fifteenStamp() {
-      cardSlots = 15;
-      stamp10.removeClass('active-btn');
-      stamp5.removeClass('active-btn');
-      stamp15.addClass('active-btn');
     } // Click Sections
 
 
@@ -23645,6 +23685,7 @@ __webpack_require__.r(__webpack_exports__);
       cardGain = "Progression method unknown";
       logoAlign = "Left";
       logoShape = "Square";
+      stampsRequired = 0;
       cardSlots = 5;
       cardColour = colourInput.val();
       fontColour = fontInput.val();
@@ -23693,6 +23734,7 @@ __webpack_require__.r(__webpack_exports__);
       formCardGain.val(cardGain);
       formLogoPosition.val(logoAlign);
       formLogoShape.val(logoShape);
+      formStampsRequired.val(stampsRequired);
       formNumberOfStamps.val(cardSlots);
       formBackgroundColour.val(cardColour);
       formFontColour.val(fontColour);
@@ -23706,6 +23748,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log("Card Progress Method: " + formCardGain.val());
       console.log("Card Logo Position: " + formLogoPosition.val());
       console.log("Card Logo Shape: " + formLogoShape.val());
+      console.log("Card Stamps Required: " + formStampsRequired.val());
       console.log("Card Num of stamps: " + formNumberOfStamps.val());
       console.log("Card background colour: " + formBackgroundColour.val());
       console.log("Card font colour: " + formFontColour.val());
@@ -23775,6 +23818,15 @@ __webpack_require__.r(__webpack_exports__);
 
     function logoShapeHide() {
       logoShapeHelper.fadeOut(200);
+    } // ~ Required Stamps
+
+
+    function requiredShow() {
+      requiredHelper.fadeIn(200);
+    }
+
+    function requiredHide() {
+      requiredHelper.fadeOut(200);
     } // ~ Num of stamps
 
 
@@ -23831,6 +23883,9 @@ __webpack_require__.r(__webpack_exports__);
     });
     gainInput.change(function () {
       cardGain = gainInput.val();
+    });
+    requiredInput.change(function () {
+      stampsRequired = requiredInput.val();
     }); // Selecting logo alignment for card
 
     alignLeft.click(function () {
@@ -23855,9 +23910,6 @@ __webpack_require__.r(__webpack_exports__);
     });
     stamp10.click(function () {
       tenStamp();
-    });
-    stamp15.click(function () {
-      fifteenStamp();
     }); // Setting background colour of card
 
     colourInput.change(function () {
@@ -23935,6 +23987,16 @@ __webpack_require__.r(__webpack_exports__);
     });
     squareLogo.click(function () {
       logoShapeHide();
+    }); // ~ Logo Shape
+
+    requiredHelpShow.click(function () {
+      requiredShow();
+    });
+    requiredHelpHide.click(function () {
+      requiredHide();
+    });
+    requiredInput.click(function () {
+      requiredHide();
     }); // ~ Number of stamps
 
     numHelpShow.click(function () {
@@ -24337,7 +24399,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['cardName', 'createdBy', 'stampsRequired']
+  props: {
+    cardName: String,
+    stampsRequired: Number
+  }
 });
 
 /***/ }),
@@ -24406,7 +24471,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -24424,25 +24488,22 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.loading = true;
-    setTimeout(function () {
-      _this.cards = [{
-        id: 1,
-        cardName: "Coffee House: Free Coffee",
-        createdBy: "Example Business",
-        stampsRequired: 3
-      }, {
-        id: 2,
-        cardName: "Free Portion of Chips",
-        createdBy: "Parklands",
-        stampsRequired: 5
-      }, {
-        id: 3,
-        cardName: "£10 off!",
-        createdBy: "Cafe Riva",
-        stampsRequired: 10
-      }];
+    var p = new Promise(function (resolve, reject) {
+      console.log(resolve);
+      console.log(reject);
+      setTimeout(function () {
+        return resolve("Hello");
+      }, 3000);
+    }).then(function (result) {
+      return console.log("Success ".concat(result));
+    })["catch"](function (result) {
+      return console.log("Error ".concat(result));
+    });
+    console.log(p);
+    var request = axios.get("/api/loyaltyCards").then(function (response) {
+      _this.cards = response.data;
       _this.loading = false;
-    }, 5000);
+    });
   },
   mounted: function mounted() {
     console.log("mounted");
@@ -62032,6 +62093,86 @@ var render = function () {
                       { staticClass: "create-label alignMiddle subtitle" },
                       [
                         _vm._v(
+                          "\n                                    Stamps Required\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "create-helper alignMiddle" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "100%",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "help-btn",
+                            attrs: {
+                              icon: "fa-solid fa-circle-question",
+                              id: "required-helper-show",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "helper-txt-container",
+                          staticStyle: { display: "none" },
+                          attrs: { id: "required-helper" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "close-container alignMiddle" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    width: "100%",
+                                    "text-align": "center",
+                                  },
+                                },
+                                [
+                                  _c("font-awesome-icon", {
+                                    staticClass: "help-btn",
+                                    attrs: {
+                                      icon: "fa-solid fa-circle-xmark",
+                                      id: "required-helper-close",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(14),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearFix" }),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearFix" }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(15),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "create-row" }, [
+                  _c("div", { staticClass: "create-label-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "create-label alignMiddle subtitle" },
+                      [
+                        _vm._v(
                           "\n                                    Card Slots\n                                "
                         ),
                       ]
@@ -62092,7 +62233,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(14),
+                          _vm._m(16),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearFix" }),
                         ]
@@ -62315,7 +62456,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(15),
+                          _vm._m(17),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearFix" }),
                         ]
@@ -62325,7 +62466,7 @@ var render = function () {
                     _c("div", { staticClass: "clearFix" }),
                   ]),
                   _vm._v(" "),
-                  _vm._m(16),
+                  _vm._m(18),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "create-row" }, [
@@ -62395,7 +62536,7 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm._m(17),
+                          _vm._m(19),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearFix" }),
                         ]
@@ -62405,12 +62546,12 @@ var render = function () {
                     _c("div", { staticClass: "clearFix" }),
                   ]),
                   _vm._v(" "),
-                  _vm._m(18),
+                  _vm._m(20),
                 ]),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "fc build-container" }, [
-                _vm._m(19),
+                _vm._m(21),
                 _vm._v(" "),
                 _c("div", { staticClass: "build-content" }, [
                   _c(
@@ -62522,7 +62663,7 @@ var render = function () {
                         _c("div", { staticClass: "card-holder" }, [
                           _c("div", { staticClass: "builder-card" }, [
                             _c("div", { staticClass: "stamp-logo-holder" }, [
-                              _vm._m(20),
+                              _vm._m(22),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -63431,7 +63572,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "fc preview-container" }, [
-                _vm._m(21),
+                _vm._m(23),
                 _vm._v(" "),
                 _c("div", { staticClass: "fc-description" }, [
                   _vm._v(
@@ -63443,9 +63584,9 @@ var render = function () {
                   _c("div", { staticClass: "preview-card-container" }, [
                     _c("div", { staticClass: "preview-card" }, [
                       _c("div", { staticClass: "stamp-logo-holder" }, [
-                        _vm._m(22),
+                        _vm._m(24),
                         _vm._v(" "),
-                        _vm._m(23),
+                        _vm._m(25),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -64133,7 +64274,7 @@ var render = function () {
                       attrs: {
                         id: "final-card-title",
                         type: "hidden",
-                        name: "card-title",
+                        name: "cardTitle",
                       },
                     }),
                     _vm._v(" "),
@@ -64141,7 +64282,7 @@ var render = function () {
                       attrs: {
                         id: "final-card-desc",
                         type: "hidden",
-                        name: "card-decs",
+                        name: "cardDesc",
                       },
                     }),
                     _vm._v(" "),
@@ -64149,7 +64290,7 @@ var render = function () {
                       attrs: {
                         id: "final-card-reward",
                         type: "hidden",
-                        name: "card-reward",
+                        name: "cardReward",
                       },
                     }),
                     _vm._v(" "),
@@ -64157,7 +64298,7 @@ var render = function () {
                       attrs: {
                         id: "final-card-gain",
                         type: "hidden",
-                        name: "card-gain",
+                        name: "cardProgressMethod",
                       },
                     }),
                     _vm._v(" "),
@@ -64165,7 +64306,7 @@ var render = function () {
                       attrs: {
                         id: "final-logo-position",
                         type: "hidden",
-                        name: "logo-position",
+                        name: "cardLogoPosition",
                       },
                     }),
                     _vm._v(" "),
@@ -64173,7 +64314,15 @@ var render = function () {
                       attrs: {
                         id: "final-logo-shape",
                         type: "hidden",
-                        name: "logo-shape",
+                        name: "cardLogoShape",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        id: "final-stamps-required",
+                        type: "hidden",
+                        name: "cardStampsRequired",
                       },
                     }),
                     _vm._v(" "),
@@ -64181,7 +64330,7 @@ var render = function () {
                       attrs: {
                         id: "final-number-of-stamps",
                         type: "hidden",
-                        name: "number-of-stamps",
+                        name: "cardNumOfStamps",
                       },
                     }),
                     _vm._v(" "),
@@ -64189,7 +64338,7 @@ var render = function () {
                       attrs: {
                         id: "final-background-colour",
                         type: "hidden",
-                        name: "background-colour",
+                        name: "cardBackgroundColour",
                       },
                     }),
                     _vm._v(" "),
@@ -64197,7 +64346,7 @@ var render = function () {
                       attrs: {
                         id: "final-font-colour",
                         type: "hidden",
-                        name: "font-colour",
+                        name: "cardFontColour",
                       },
                     }),
                     _vm._v(" "),
@@ -64205,7 +64354,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-1",
                         type: "hidden",
-                        name: "slot-1",
+                        name: "cardSlotOne",
                       },
                     }),
                     _vm._v(" "),
@@ -64213,7 +64362,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-2",
                         type: "hidden",
-                        name: "slot-2",
+                        name: "cardSlotTwo",
                       },
                     }),
                     _vm._v(" "),
@@ -64221,7 +64370,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-3",
                         type: "hidden",
-                        name: "slot-3",
+                        name: "cardSlotThree",
                       },
                     }),
                     _vm._v(" "),
@@ -64229,7 +64378,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-4",
                         type: "hidden",
-                        name: "slot-4",
+                        name: "cardSlotFour",
                       },
                     }),
                     _vm._v(" "),
@@ -64237,7 +64386,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-5",
                         type: "hidden",
-                        name: "slot-5",
+                        name: "cardSlotFive",
                       },
                     }),
                     _vm._v(" "),
@@ -64245,7 +64394,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-6",
                         type: "hidden",
-                        name: "slot-6",
+                        name: "cardSlotSix",
                       },
                     }),
                     _vm._v(" "),
@@ -64253,7 +64402,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-7",
                         type: "hidden",
-                        name: "slot-7",
+                        name: "cardSlotSeven",
                       },
                     }),
                     _vm._v(" "),
@@ -64261,7 +64410,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-8",
                         type: "hidden",
-                        name: "slot-8",
+                        name: "cardSlotEight",
                       },
                     }),
                     _vm._v(" "),
@@ -64269,7 +64418,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-9",
                         type: "hidden",
-                        name: "slot-9",
+                        name: "cardSlotNine",
                       },
                     }),
                     _vm._v(" "),
@@ -64277,7 +64426,7 @@ var render = function () {
                       attrs: {
                         id: "stamp-slot-10",
                         type: "hidden",
-                        name: "slot-10",
+                        name: "cardSlotTen",
                       },
                     }),
                     _vm._v(" "),
@@ -64665,6 +64814,35 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-container details" }, [
       _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
         _vm._v(
+          "\n                                                The stamps required section will be used to attract potential customers as this\n                                                will be shown on the marketplace. It should align with the number of stamps you\n                                                have added in the builder section, so be careful that they match up as customers\n                                                are less likely to join if the stamps needed are different to the stated figure.\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "stampt-input-container" }, [
+      _c("input", {
+        staticClass: "stampt-input",
+        attrs: {
+          type: "number",
+          min: "1",
+          max: "10",
+          id: "required-input",
+          placeholder: "How many stamps will your card have?",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-container details" }, [
+      _c("div", { staticStyle: { padding: "5px", "letter-spacing": "1px" } }, [
+        _vm._v(
           "\n                                                The card slots refer to the number of 'buckets' - a fancy word for areas -\n                                                available to you when in the builder. Each bucket doesn't have to be filled\n                                                with a stamp element, but the more buckets a card has, the more precise a\n                                                design can be! You have the option of 5, 10 or 15 buckets.\n                                            "
         ),
       ]),
@@ -64871,7 +65049,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "business-name sub-txt" }, [
-              _vm._v("Created by: " + _vm._s(_vm.createdBy)),
+              _vm._v("Created by: Example Company"),
             ]),
           ]),
         ]),
@@ -65006,9 +65184,8 @@ var render = function () {
                     return _c("market-item", {
                       key: "Card ID: " + card.id,
                       attrs: {
-                        cardName: card.cardName,
-                        createdBy: card.createdBy,
-                        stampsRequired: card.stampsRequired,
+                        cardName: card.cardTitle,
+                        stampsRequired: card.cardStampsRequired,
                       },
                     })
                   }),

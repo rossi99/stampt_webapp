@@ -36,9 +36,8 @@
                         <market-item
                             v-for="card in cards"
                             :key="'Card ID: ' + card.id"
-                            :cardName="card.cardName"
-                            :createdBy="card.createdBy"
-                            :stampsRequired="card.stampsRequired">
+                            :cardName="card.cardTitle"
+                            :stampsRequired="card.cardStampsRequired">
                         </market-item>
                     </div>
                 </div>
@@ -68,30 +67,21 @@ export default {
     created() {
         this.loading = true;
 
-        setTimeout(() => {
-            this.cards = [
-                {
-                    id: 1,
-                    cardName: "Coffee House: Free Coffee",
-                    createdBy: "Example Business",
-                    stampsRequired: 3
-                },
-                {
-                    id: 2,
-                    cardName: "Free Portion of Chips",
-                    createdBy: "Parklands",
-                    stampsRequired: 5
-                },
-                {
-                    id: 3,
-                    cardName: "£10 off!",
-                    createdBy: "Cafe Riva",
-                    stampsRequired: 10
-                },
-            ];
+        const p = new Promise((resolve, reject) => {
+            console.log(resolve);
+            console.log(reject);
 
+            setTimeout(() => resolve("Hello"), 3000);
+        })
+            .then(result => console.log(`Success ${result}`))
+            .catch(result => console.log(`Error ${result}`));
+
+        console.log(p);
+
+        const request = axios.get("/api/loyaltyCards").then(response => {
+            this.cards = response.data;
             this.loading = false;
-        }, 5000);
+        });
     },
     mounted: function () {
         console.log("mounted");
