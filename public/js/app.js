@@ -25160,6 +25160,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -25167,16 +25179,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      card: null
+      card: null,
+      loading: false
     };
   },
   created: function created() {
     var _this = this;
 
-    var id = this.$route.params.id; // Get single card
+    var id = this.$route.params.id;
+    this.loading = true; // Get single card
 
     axios.get("/api/loyaltyCards/".concat(id)).then(function (response) {
-      return _this.card = response.data;
+      _this.card = response.data;
+      _this.loading = false;
     });
   }
 });
@@ -31016,7 +31031,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-02db3841] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-02db3841] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-02db3841] {\n    width: 100%;\n    height: 80px;\n}\n.single-card-container[data-v-02db3841] {\n    width: 100%;\n    height: calc(100vh - 80px);\n    overflow: scroll;\n}\n.page-intro[data-v-02db3841] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.card-details-container[data-v-02db3841] {\n    -webkit-margin-before: 30px;\n            margin-block-start: 30px;\n}\n\n/* Card Data Container */\n.card-data-container[data-v-02db3841] {\n    margin-block: 30px;\n}\n.data-table-container[data-v-02db3841] {\n    width: 100%;\n}\n.card-data[data-v-02db3841] {\n    width: 100%;\n    border-collapse: collapse;\n}\n.name-row[data-v-02db3841] {\n    width: 100%;\n    height: 50px;\n}\n.row-title[data-v-02db3841] {\n    width: 15%;\n}\n.row-data[data-v-02db3841] {\n    width: 85%;\n}\n\n/* Loyalty Card */\n.card-preview-container[data-v-02db3841] {\n    margin-block: 30px;\n}\n.card-preview-content[data-v-02db3841] {\n    width: 100%;\n    height: 500px;\n}\n.one-row-card[data-v-02db3841] {\n    width: 500px;\n    min-height: calc(150px + 65px);\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.two-row-card[data-v-02db3841] {\n    width: 500px;\n    min-height: calc(250px + 65px);\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.stamp-logo-holder[data-v-02db3841] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-02db3841] {\n    width: 100%;\n    height: 100px;\n}\n\n/* Dynamic Logo classes */\n.logo-align-container-left[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.logo-align-container-centre[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    margin: auto;\n}\n.logo-align-container-right[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.sample-logo-align[data-v-02db3841] {\n    width: 100%;\n}\n.logo-left-align[data-v-02db3841] {\n    float: left;\n}\n.logo-center-align[data-v-02db3841] {\n    margin: auto;\n}\n.logo-right-align[data-v-02db3841] {\n    float: right;\n}\n.sample-logo-container[data-v-02db3841] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n    background: #141414;\n}\n.sample-logo[data-v-02db3841] {\n    width: 100%;\n}\n.square-logo[data-v-02db3841] {\n    border-radius: 10px;\n}\n.circle-logo[data-v-02db3841] {\n    border-radius: 50%;\n}\n\n/* Text on card */\n.preview-txt-container[data-v-02db3841] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-02db3841] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-02db3841] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-02db3841] {\n    font-size: 14px;\n    text-align: left;\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.stamp-logo-container[data-v-02db3841] {\n    width: 100%;\n    height: 100px;\n}\n.bucket-container[data-v-02db3841] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-02db3841] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.drop-area[data-v-02db3841] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-02db3841] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.stamp[data-v-02db3841] {\n    width: 70px;\n    height: 70px;\n}\n\n/* Card action container */\n.card-action-container[data-v-02db3841] {\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.action-btn-container[data-v-02db3841] {\n    width: 90%;\n    max-width: 300px;\n    margin: auto;\n}\n.action-btn[data-v-02db3841] {\n    width: 100%;\n    height: 50px;\n    background-color: #141414;\n    border: 1px solid grey;\n    border-radius: 10px;\n    color: grey;\n    transition: all 0.2s;\n}\n.active-btn[data-v-02db3841]:hover {\n    cursor: pointer;\n    background-color: #d4edda;\n    border: 2px solid #155724;\n    border-radius: 10px;\n    color: #155724;\n}\n.inactive-btn[data-v-02db3841]:hover {\n    cursor: not-allowed;\n    border: 2px solid #999999;\n    background-color: #cccccc;\n    color: #666666;\n    border-radius: 10px;\n}\n.btn-txt-align[data-v-02db3841] {\n    width: 100%;\n    text-align: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-02db3841] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-02db3841] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-02db3841] {\n    width: 100%;\n    height: 80px;\n}\n.single-card-container[data-v-02db3841] {\n    width: 100%;\n    height: calc(100vh - 80px);\n    overflow: scroll;\n}\n.page-intro[data-v-02db3841] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.card-details-container[data-v-02db3841] {\n    -webkit-margin-before: 30px;\n            margin-block-start: 30px;\n}\n\n/* Card Data Container */\n.card-data-container[data-v-02db3841] {\n    margin-block: 30px;\n}\n.data-table-container[data-v-02db3841] {\n    width: 100%;\n}\n.card-data[data-v-02db3841] {\n    width: 100%;\n    border-collapse: collapse;\n}\n.name-row[data-v-02db3841] {\n    width: 100%;\n    height: 50px;\n}\n.row-title[data-v-02db3841] {\n    width: 15%;\n}\n.row-data[data-v-02db3841] {\n    width: 85%;\n}\n\n/* Loyalty Card */\n.card-preview-container[data-v-02db3841] {\n    margin-block: 30px;\n}\n.card-preview-content[data-v-02db3841] {\n    width: 100%;\n    height: 500px;\n}\n.one-row-card[data-v-02db3841] {\n    width: 500px;\n    min-height: calc(150px + 65px);\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.two-row-card[data-v-02db3841] {\n    width: 500px;\n    min-height: calc(250px + 65px);\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.stamp-logo-holder[data-v-02db3841] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-02db3841] {\n    width: 100%;\n    height: 100px;\n}\n\n/* Dynamic Logo classes */\n.logo-align-container-left[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.logo-align-container-centre[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    margin: auto;\n}\n.logo-align-container-right[data-v-02db3841] {\n    width: calc(100% / 3);\n    height: 100px;\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.sample-logo-align[data-v-02db3841] {\n    width: 100%;\n}\n.logo-left-align[data-v-02db3841] {\n    float: left;\n}\n.logo-center-align[data-v-02db3841] {\n    margin: auto;\n}\n.logo-right-align[data-v-02db3841] {\n    float: right;\n}\n.sample-logo-container[data-v-02db3841] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n    background: #141414;\n}\n.sample-logo[data-v-02db3841] {\n    width: 100%;\n}\n.square-logo[data-v-02db3841] {\n    border-radius: 10px;\n}\n.circle-logo[data-v-02db3841] {\n    border-radius: 50%;\n}\n\n/* Text on card */\n.preview-txt-container[data-v-02db3841] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-02db3841] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-02db3841] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-02db3841] {\n    font-size: 14px;\n    text-align: left;\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.stamp-logo-container[data-v-02db3841] {\n    width: 100%;\n    height: 100px;\n}\n.bucket-container[data-v-02db3841] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-02db3841] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.drop-area[data-v-02db3841] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-02db3841] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.stamp[data-v-02db3841] {\n    width: 70px;\n    height: 70px;\n}\n\n/* Card action container */\n.card-action-container[data-v-02db3841] {\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.action-btn-container[data-v-02db3841] {\n    width: 90%;\n    max-width: 300px;\n    margin: auto;\n}\n.action-btn[data-v-02db3841] {\n    width: 100%;\n    height: 50px;\n    background-color: #141414;\n    border: 1px solid grey;\n    border-radius: 10px;\n    color: grey;\n    transition: all 0.2s;\n}\n.active-btn[data-v-02db3841]:hover {\n    cursor: pointer;\n    background-color: #d4edda;\n    border: 2px solid #155724;\n    border-radius: 10px;\n    color: #155724;\n}\n.inactive-btn[data-v-02db3841]:hover {\n    cursor: not-allowed;\n    border: 2px solid #999999;\n    background-color: #cccccc;\n    color: #666666;\n    border-radius: 10px;\n}\n.btn-txt-align[data-v-02db3841] {\n    width: 100%;\n    text-align: center;\n}\n.loading-cards-container[data-v-02db3841] {\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    width: 100%;\n    text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -65515,1527 +65530,1955 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "single-card-container" }, [
-            _c("div", { staticClass: "page-intro" }, [
-              _vm._v(
-                "\n                    This is Example Busniess' loyalty card. Check out all the details below including the reward,\n                    how many stamps you need to claim it and what is required to gain a stamp!\n                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-details-container" }, [
-              _c("div", { staticClass: "card-data-container" }, [
-                _c("div", { staticClass: "data-table-container" }, [
-                  _c("table", { staticClass: "card-data" }, [
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [_vm._v("Name:")]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.cardTitle)),
+            _vm.loading
+              ? _c("div", { staticClass: "loading-cards-container" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "loading-msg-container" }, [
+                    _vm._v(
+                      "\n                        Hold on while we get all our cards ready!\n                    "
+                    ),
+                  ]),
+                ])
+              : _c("div", [
+                  _c("div", { staticClass: "page-intro" }, [
+                    _vm._v(
+                      "\n                        This is Example Business' loyalty card. Check out all the details below including the reward,\n                        how many stamps you need to claim it and what is required to gain a stamp!\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-details-container" }, [
+                    _c("div", { staticClass: "card-data-container" }, [
+                      _c("div", { staticClass: "data-table-container" }, [
+                        _c("table", { staticClass: "card-data" }, [
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Name:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.cardTitle)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Description:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.cardDesc)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Reward:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.cardReward)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("How to gain:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.cardProgressMethod)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Status:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.cardStatus)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Created:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.created_at)),
+                            ]),
+                          ]),
+                        ]),
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [
-                        _vm._v("Description:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.cardDesc)),
-                      ]),
+                    _c("div", { staticClass: "card-preview-container" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card-preview-content alignMiddle" },
+                        [
+                          _vm.card.cardNumOfStamps === 5
+                            ? _c("div", { staticClass: "one-row-card" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-logo-holder" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "stamp-logo-container logo-row",
+                                      },
+                                      [
+                                        _vm.card.cardLogoPosition === "Left"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-left alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-left-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-left-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.card.cardLogoPosition === "Center"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-centre alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-center-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-center-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.card.cardLogoPosition === "Right"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-right alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-right-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-right-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "preview-txt-container" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "preview-title-container",
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "preview-title" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.card.cardTitle)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "preview-desc-container",
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "preview-desc" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.card.cardDesc)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "stamp-logo-container",
+                                        attrs: { id: "one-row" },
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotOne ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotTwo ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotThree === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotFour === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotFive === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "clearFix" }),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "clearFix" }),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.card.cardNumOfStamps === 10
+                            ? _c("div", { staticClass: "two-row-card" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "stamp-logo-holder" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "stamp-logo-container logo-row",
+                                      },
+                                      [
+                                        _vm.card.cardLogoPosition === "Left"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-left alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-left-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-left-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.card.cardLogoPosition === "Center"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-centre alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-center-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-center-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.card.cardLogoPosition === "Right"
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "logo-align-container-right alignMiddle",
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "sample-logo-align",
+                                                  },
+                                                  [
+                                                    _vm.card.cardLogoShape ===
+                                                    "Circle"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-right-align circle-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.card.cardLogoShape ===
+                                                    "Square"
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "sample-logo-container logo-right-align square-logo",
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "sample-logo",
+                                                              attrs: {
+                                                                src: "/img/stamps/sample-logo.jpg",
+                                                                alt: "A sample logo for a coffee shop",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "preview-txt-container" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "preview-title-container",
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "preview-title" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.card.cardTitle)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "preview-desc-container",
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "preview-desc" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(_vm.card.cardDesc)
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "stamp-logo-container" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotOne ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotOne ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotTwo ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTwo ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotThree === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotThree === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotFour === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFour === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotFive === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotFive === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotSix ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotSix ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotSix ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotSix ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotSeven === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotSeven === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotSeven === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotSeven === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotEight === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotEight === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotEight === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotEight === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card
+                                                          .cardSlotNine === 0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotNine === 1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotNine === 2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card
+                                                          .cardSlotNine === 3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bucket-container alignMiddle",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "bucket" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "drop-area alignMiddle",
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "bucket-align",
+                                                      },
+                                                      [
+                                                        _vm.card.cardSlotTen ===
+                                                        0
+                                                          ? _c("div", [
+                                                              _c("div", {
+                                                                staticClass:
+                                                                  "stamp blank-stamp",
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTen ===
+                                                        1
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/grey/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTen ===
+                                                        2
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/black/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                        _vm._v(" "),
+                                                        _vm.card.cardSlotTen ===
+                                                        3
+                                                          ? _c("div", [
+                                                              _c("img", {
+                                                                staticClass:
+                                                                  "stamp",
+                                                                attrs: {
+                                                                  src: "/img/stamps/compressed/white/3.png",
+                                                                  alt: "This is the first style of stamp in a a grey colour",
+                                                                },
+                                                              }),
+                                                            ])
+                                                          : _vm._e(),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "clearFix" }),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "clearFix" }),
+                              ])
+                            : _vm._e(),
+                        ]
+                      ),
                     ]),
                     _vm._v(" "),
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [
-                        _vm._v("Reward:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.cardReward)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [
-                        _vm._v("How to gain:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.cardProgressMethod)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [
-                        _vm._v("Status:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.cardStatus)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("tr", { staticClass: "name-row" }, [
-                      _c("td", { staticClass: "row-title" }, [
-                        _vm._v("Created:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "row-data" }, [
-                        _vm._v(_vm._s(_vm.card.created_at)),
+                    _c("div", { staticClass: "card-action-container" }, [
+                      _c("div", { staticClass: "action-btn-container" }, [
+                        _vm.card.cardStatus === "Inactive"
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "action-btn inactive-btn alignMiddle",
+                              },
+                              [
+                                _c("div", { staticClass: "btn-txt-align" }, [
+                                  _c(
+                                    "span",
+                                    [
+                                      _c("font-awesome-icon", {
+                                        staticClass: "l-icon-spacing",
+                                        attrs: { icon: "fa-solid fa-ban" },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _vm._v("Sorry, this card is inactive!"),
+                                  ]),
+                                ]),
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.card.cardStatus === "Active"
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "action-btn active-btn alignMiddle",
+                              },
+                              [
+                                _c("div", { staticClass: "btn-txt-align" }, [
+                                  _c(
+                                    "span",
+                                    [
+                                      _c("font-awesome-icon", {
+                                        staticClass: "l-icon-spacing",
+                                        attrs: { icon: "fa-solid fa-plus" },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("span", [_vm._v("Add Card to Wallet")]),
+                                ]),
+                              ]
+                            )
+                          : _vm._e(),
                       ]),
                     ]),
                   ]),
                 ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-preview-container" }, [
-                _c("div", { staticClass: "card-preview-content alignMiddle" }, [
-                  _vm.card.cardNumOfStamps === 5
-                    ? _c("div", { staticClass: "one-row-card" }, [
-                        _c("div", { staticClass: "stamp-logo-holder" }, [
-                          _c(
-                            "div",
-                            { staticClass: "stamp-logo-container logo-row" },
-                            [
-                              _vm.card.cardLogoPosition === "Left"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-left alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-left-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-left-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.card.cardLogoPosition === "Center"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-centre alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-center-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-center-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.card.cardLogoPosition === "Right"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-right alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-right-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-right-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "preview-txt-container" }, [
-                            _c(
-                              "div",
-                              { staticClass: "preview-title-container" },
-                              [
-                                _c("p", { staticClass: "preview-title" }, [
-                                  _vm._v(_vm._s(_vm.card.cardTitle)),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "preview-desc-container" },
-                              [
-                                _c("p", { staticClass: "preview-desc" }, [
-                                  _vm._v(_vm._s(_vm.card.cardDesc)),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "stamp-logo-container",
-                              attrs: { id: "one-row" },
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "bucket-container alignMiddle" },
-                                [
-                                  _c("div", { staticClass: "bucket" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "drop-area alignMiddle" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "bucket-align" },
-                                          [
-                                            _vm.card.cardSlotOne === 0
-                                              ? _c("div", [
-                                                  _c("div", {
-                                                    staticClass:
-                                                      "stamp blank-stamp",
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotOne === 1
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/grey/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotOne === 2
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/black/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotOne === 3
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/white/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "bucket-container alignMiddle" },
-                                [
-                                  _c("div", { staticClass: "bucket" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "drop-area alignMiddle" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "bucket-align" },
-                                          [
-                                            _vm.card.cardSlotTwo === 0
-                                              ? _c("div", [
-                                                  _c("div", {
-                                                    staticClass:
-                                                      "stamp blank-stamp",
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotTwo === 1
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/grey/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotTwo === 2
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/black/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotTwo === 3
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/white/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "bucket-container alignMiddle" },
-                                [
-                                  _c("div", { staticClass: "bucket" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "drop-area alignMiddle" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "bucket-align" },
-                                          [
-                                            _vm.card.cardSlotThree === 0
-                                              ? _c("div", [
-                                                  _c("div", {
-                                                    staticClass:
-                                                      "stamp blank-stamp",
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotThree === 1
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/grey/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotThree === 2
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/black/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotThree === 3
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/white/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "bucket-container alignMiddle" },
-                                [
-                                  _c("div", { staticClass: "bucket" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "drop-area alignMiddle" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "bucket-align" },
-                                          [
-                                            _vm.card.cardSlotFour === 0
-                                              ? _c("div", [
-                                                  _c("div", {
-                                                    staticClass:
-                                                      "stamp blank-stamp",
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFour === 1
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/grey/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFour === 2
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/black/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFour === 3
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/white/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "bucket-container alignMiddle" },
-                                [
-                                  _c("div", { staticClass: "bucket" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "drop-area alignMiddle" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "bucket-align" },
-                                          [
-                                            _vm.card.cardSlotFive === 0
-                                              ? _c("div", [
-                                                  _c("div", {
-                                                    staticClass:
-                                                      "stamp blank-stamp",
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFive === 1
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/grey/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFive === 2
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/black/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            _vm.card.cardSlotFive === 3
-                                              ? _c("div", [
-                                                  _c("img", {
-                                                    staticClass: "stamp",
-                                                    attrs: {
-                                                      src: "/img/stamps/compressed/white/3.png",
-                                                      alt: "This is the first style of stamp in a a grey colour",
-                                                    },
-                                                  }),
-                                                ])
-                                              : _vm._e(),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "clearFix" }),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "clearFix" }),
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.card.cardNumOfStamps === 10
-                    ? _c("div", { staticClass: "two-row-card" }, [
-                        _c("div", { staticClass: "stamp-logo-holder" }, [
-                          _c(
-                            "div",
-                            { staticClass: "stamp-logo-container logo-row" },
-                            [
-                              _vm.card.cardLogoPosition === "Left"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-left alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-left-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-left-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.card.cardLogoPosition === "Center"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-centre alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-center-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-center-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.card.cardLogoPosition === "Right"
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "logo-align-container-right alignMiddle",
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "sample-logo-align" },
-                                        [
-                                          _vm.card.cardLogoShape === "Circle"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-right-align circle-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardLogoShape === "Square"
-                                            ? _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "sample-logo-container logo-right-align square-logo",
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass: "sample-logo",
-                                                    attrs: {
-                                                      src: "/img/stamps/sample-logo.jpg",
-                                                      alt: "A sample logo for a coffee shop",
-                                                    },
-                                                  }),
-                                                ]
-                                              )
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  )
-                                : _vm._e(),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "preview-txt-container" }, [
-                            _c(
-                              "div",
-                              { staticClass: "preview-title-container" },
-                              [
-                                _c("p", { staticClass: "preview-title" }, [
-                                  _vm._v(_vm._s(_vm.card.cardTitle)),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "preview-desc-container" },
-                              [
-                                _c("p", { staticClass: "preview-desc" }, [
-                                  _vm._v(_vm._s(_vm.card.cardDesc)),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "stamp-logo-container" }, [
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotOne === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotOne === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotOne === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotOne === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotTwo === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTwo === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTwo === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTwo === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotThree === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotThree === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotThree === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotThree === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotFour === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFour === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFour === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFour === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotFive === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFive === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFive === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotFive === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotSix === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSix === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSix === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSix === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotSeven === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSeven === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSeven === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotSeven === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotEight === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotEight === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotEight === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotEight === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotNine === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotNine === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotNine === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotNine === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "bucket-container alignMiddle" },
-                              [
-                                _c("div", { staticClass: "bucket" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "drop-area alignMiddle" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "bucket-align" },
-                                        [
-                                          _vm.card.cardSlotTen === 0
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass:
-                                                    "stamp blank-stamp",
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTen === 1
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/grey/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTen === 2
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/black/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _vm.card.cardSlotTen === 3
-                                            ? _c("div", [
-                                                _c("img", {
-                                                  staticClass: "stamp",
-                                                  attrs: {
-                                                    src: "/img/stamps/compressed/white/3.png",
-                                                    alt: "This is the first style of stamp in a a grey colour",
-                                                  },
-                                                }),
-                                              ])
-                                            : _vm._e(),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "clearFix" }),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "clearFix" }),
-                      ])
-                    : _vm._e(),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-action-container" }, [
-                _c("div", { staticClass: "action-btn-container" }, [
-                  _vm.card.cardStatus === "Inactive"
-                    ? _c(
-                        "div",
-                        { staticClass: "action-btn inactive-btn alignMiddle" },
-                        [
-                          _c("div", { staticClass: "btn-txt-align" }, [
-                            _c(
-                              "span",
-                              [
-                                _c("font-awesome-icon", {
-                                  staticClass: "l-icon-spacing",
-                                  attrs: { icon: "fa-solid fa-ban" },
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v("Sorry, this card is inactive!"),
-                            ]),
-                          ]),
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.card.cardStatus === "Active"
-                    ? _c(
-                        "div",
-                        { staticClass: "action-btn active-btn alignMiddle" },
-                        [
-                          _c("div", { staticClass: "btn-txt-align" }, [
-                            _c(
-                              "span",
-                              [
-                                _c("font-awesome-icon", {
-                                  staticClass: "l-icon-spacing",
-                                  attrs: { icon: "fa-solid fa-plus" },
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Add Card to Wallet")]),
-                          ]),
-                        ]
-                      )
-                    : _vm._e(),
-                ]),
-              ]),
-            ]),
           ]),
         ]),
       ]),
@@ -67046,6 +67489,20 @@ var render = function () {
   )
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "loading-logo-container" }, [
+      _c("img", {
+        staticClass: "loading-logo",
+        attrs: {
+          src: "/img/logo/compressed/small-icon.png",
+          alt: "Stampt Logo",
+        },
+      }),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
