@@ -193,8 +193,18 @@
                                     <div class="clearFix"></div>
                                 </div>
 
-                                <div class="stampt-input-container">
-                                    <input type="text" id="desc-input" class="stampt-input" placeholder="Tell me all about this loyalty card!">
+                                <div class="stampt-input-container" id="desc-container">
+                                    <input type="text"
+                                           id="desc-input"
+                                           class="stampt-input"
+                                           placeholder="Tell me all about this loyalty card!"
+                                           v-model='message'
+                                           @keyup='remainCharCount()'
+                                    >
+                                </div>
+
+                                <div class="character-count-container">
+                                    <span>{{ remainCharactersText }}</span>
                                 </div>
                             </div>
 
@@ -1395,6 +1405,28 @@ export default {
         Sidebar,
         draggable
     },
+    data() {
+        return {
+            cardElements: [
+                { name: "grey-stamp", id: 1 },
+                { name: "black-stamp", id: 2 },
+                { name: "white-stamp", id: 3 },
+            ],
+            arrA: [],
+            arrB: [],
+            arrC: [],
+            arrD: [],
+            arrE: [],
+            arrF: [],
+            arrG: [],
+            arrH: [],
+            arrI: [],
+            arrJ: [],
+            message: "",
+            maxCharacter: 191,
+            remainCharactersText: "Remaining 191 characters."
+        };
+    },
     mounted: function () {
         // ~ Variables & Defaults
         // Section Vars
@@ -2194,25 +2226,6 @@ export default {
             showFormData();
         });
     },
-    data() {
-        return {
-            cardElements: [
-                { name: "grey-stamp", id: 1 },
-                { name: "black-stamp", id: 2 },
-                { name: "white-stamp", id: 3 },
-            ],
-            arrA: [],
-            arrB: [],
-            arrC: [],
-            arrD: [],
-            arrE: [],
-            arrF: [],
-            arrG: [],
-            arrH: [],
-            arrI: [],
-            arrJ: [],
-        };
-    },
     methods: {
         log: function(evt) {
             window.console.log(evt);
@@ -2251,6 +2264,20 @@ export default {
             this.arrH = [];
             this.arrI = [];
             this.arrJ = [];
+        },
+
+        // Counting Characters
+        remainCharCount: function () {
+            if (this.message.length > this.maxCharacter) {
+                this.remainCharactersText = "Exceeded " + this.maxCharacter + " characters limit.";
+                $('#desc-container').addClass("input-error");
+                $('#desc-input').css("color", "#721c24");
+            } else {
+                let remainCharacters = this.maxCharacter - this.message.length;
+                this.remainCharactersText = "Remaining " + remainCharacters + " characters.";
+                $('#desc-container').removeClass("input-error");
+                $('#desc-input').css("color", "white");
+            }
         }
     },
     watch: {
@@ -3071,6 +3098,14 @@ export default {
 .btn-text-align {
     width: 100%;
     text-align: center;
+}
+
+.character-count-container {
+    width: calc(100% - 20px);
+    margin-inline: 10px;
+    margin-block: 10px;
+    color: grey;
+    font-size: 12px;
 }
 
 .loading-screen-container {
