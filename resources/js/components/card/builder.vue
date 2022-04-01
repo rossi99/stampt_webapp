@@ -154,7 +154,13 @@
                                 </div>
 
                                 <div class="stampt-input-container">
-                                    <input type="text" id="title-input" class="stampt-input" placeholder="What is your card called?">
+                                    <input type="text"
+                                           name="cardTitle"
+                                           id="title-input"
+                                           class="stampt-input"
+                                           placeholder="What is your card called?"
+                                           v-model="cardTitle"
+                                    >
                                 </div>
                             </div>
 
@@ -195,10 +201,11 @@
 
                                 <div class="stampt-input-container" id="desc-container">
                                     <input type="text"
+                                           name="cardDescription"
                                            id="desc-input"
                                            class="stampt-input"
                                            placeholder="Tell me all about this loyalty card!"
-                                           v-model='message'
+                                           v-model="cardDescription"
                                            @keyup='remainCharCount()'
                                     >
                                 </div>
@@ -243,7 +250,13 @@
                                 </div>
 
                                 <div class="stampt-input-container">
-                                    <input type="text" id="reward-input" class="stampt-input" placeholder="What are your customers working towards?">
+                                    <input type="text"
+                                           name="cardReward"
+                                           id="reward-input"
+                                           class="stampt-input"
+                                           placeholder="What are your customers working towards?"
+                                           v-model="cardReward"
+                                    >
                                 </div>
                             </div>
 
@@ -282,7 +295,13 @@
                                 </div>
 
                                 <div class="stampt-input-container">
-                                    <input type="text" id="gain-input" class="stampt-input" placeholder="What do your customers have to do to gain a stamp?">
+                                    <input type="text"
+                                           name="cardGain"
+                                           id="gain-input"
+                                           class="stampt-input"
+                                           placeholder="What do your customers have to do to gain a stamp?"
+                                           v-model="cardGain"
+                                    >
                                 </div>
                             </div>
 
@@ -324,7 +343,7 @@
                                     <!-- Logo opt | Left -->
                                     <div class="logo-opt-container alignMiddle">
                                         <div class="opt-align">
-                                            <div class="opt alignMiddle align-width" id="align-left-opt">
+                                            <div class="opt alignMiddle align-width" id="align-left-opt" @click="setAlignLeft">
                                                 <div class="icon-align">
                                                     <font-awesome-icon icon="fa-solid fa-align-left" />
                                                 </div>
@@ -335,7 +354,7 @@
                                     <!-- Logo opt | Center -->
                                     <div class="logo-opt-container alignMiddle">
                                         <div class="opt-align">
-                                            <div class="opt alignMiddle align-width" id="align-center-opt">
+                                            <div class="opt alignMiddle align-width" id="align-center-opt" @click="setAlignMiddle">
                                                 <div class="icon-align">
                                                     <font-awesome-icon icon="fa-solid fa-align-center" />
                                                 </div>
@@ -346,7 +365,7 @@
                                     <!-- Logo opt | Right -->
                                     <div class="logo-opt-container alignMiddle">
                                         <div class="opt-align">
-                                            <div class="opt alignMiddle align-width" id="align-right-opt">
+                                            <div class="opt alignMiddle align-width" id="align-right-opt" @click="setAlignRight">
                                                 <div class="icon-align">
                                                     <font-awesome-icon icon="fa-solid fa-align-right" />
                                                 </div>
@@ -395,7 +414,7 @@
                                     <!-- Logo Circle -->
                                     <div class="shape-opt-container alignMiddle">
                                         <div class="opt-align">
-                                            <div class="opt alignMiddle align-width" id="circle-logo">
+                                            <div class="opt alignMiddle align-width" id="circle-logo" @click="setShapeCircle">
                                                 <div class="icon-align">
                                                     <font-awesome-icon icon="fa-solid fa-circle" />
                                                 </div>
@@ -406,7 +425,7 @@
                                     <!-- Logo Square -->
                                     <div class="shape-opt-container alignMiddle">
                                         <div class="opt-align">
-                                            <div class="opt alignMiddle align-width" id="square-logo">
+                                            <div class="opt alignMiddle align-width" id="square-logo" @click="setShapeSquare">
                                                 <div class="icon-align">
                                                     <font-awesome-icon icon="fa-solid fa-square" />
                                                 </div>
@@ -454,7 +473,15 @@
                                 </div>
 
                                 <div class="stampt-input-container">
-                                    <input type="number" min="1" max="10" id="required-input" class="stampt-input" placeholder="How many stamps will your card have?">
+                                    <input type="number"
+                                           name="stampsRequired"
+                                           min="1"
+                                           max="10"
+                                           id="required-input"
+                                           class="stampt-input"
+                                           placeholder="How many stamps will your card have?"
+                                           v-model="stampsRequired"
+                                    >
                                 </div>
                             </div>
 
@@ -496,7 +523,7 @@
                                 <div class="stampt-input-container">
                                     <!-- 5 -->
                                     <div class="stamp-opt-container alignMiddle">
-                                        <div class="stamp-opt alignMiddle" id="stamps-5">
+                                        <div class="stamp-opt alignMiddle" id="stamps-5" @click="set5Slots">
                                             <div class="stamp-align">
                                                 <div class="stamp-illustration">
                                                     <div class="logo-stamp-row">
@@ -517,7 +544,7 @@
 
                                     <!-- 10 -->
                                     <div class="stamp-opt-container alignMiddle">
-                                        <div class="stamp-opt alignMiddle" id="stamps-10">
+                                        <div class="stamp-opt alignMiddle" id="stamps-10" @click="set10Slots">
                                             <div class="stamp-align">
                                                 <div class="stamp-illustration">
                                                     <div class="logo-stamp-row">
@@ -587,7 +614,11 @@
                                     <div class="colour-opt-container alignMiddle">
                                         <div class="opt-align">
                                             <div class="opt colour-width" id="colour-opt">
-                                                <input type="color" id="colour-input" class="stampt-input-color" value="#141414">
+                                                <input type="color"
+                                                       name="cardColour"
+                                                       id="colour-input"
+                                                       class="stampt-input-color"
+                                                       v-model="cardColour">
                                             </div>
                                         </div>
                                     </div>
@@ -632,7 +663,12 @@
                                     <div class="colour-opt-container alignMiddle">
                                         <div class="opt-align">
                                             <div class="opt colour-width" id="font-opt">
-                                                <input type="color" id="font-input" class="stampt-input-color" value="#FFFFFF">
+                                                <input type="color"
+                                                       name="fontColour"
+                                                       id="font-input"
+                                                       class="stampt-input-color"
+                                                       v-model="fontColour"
+                                                >
                                             </div>
                                         </div>
                                     </div>
@@ -661,7 +697,7 @@
                                     <div class="element-panel" style="overflow: scroll">
                                         <div class="draggable-element-container">
                                             <!-- Draggable Stamps -->
-                                            <draggable :list="cardElements" :group="{ name: 'cardItem', pull: 'clone', put: false }" @change="log">
+                                            <draggable :list="cardElements" :group="{ name: 'cardItem', pull: 'clone', put: false }">
                                                 <div class="stamp-element-row" v-for="element in cardElements" :key="element.id" style="cursor: move">
                                                     <!-- Grey Stamps -->
                                                     <div v-if="element.id === 1">
@@ -1407,6 +1443,7 @@ export default {
     },
     data() {
         return {
+            // Draggable Elements
             cardElements: [
                 { name: "grey-stamp", id: 1 },
                 { name: "black-stamp", id: 2 },
@@ -1422,10 +1459,337 @@ export default {
             arrH: [],
             arrI: [],
             arrJ: [],
-            message: "",
+
+            // Character Count
             maxCharacter: 191,
-            remainCharactersText: "Remaining 191 characters."
+            remainCharactersText: "Remaining 191 characters.",
+
+            // Form ( Dynamic )
+            cardTitle: "",
+            cardDescription: "",
+            cardReward: "",
+            cardGain: "",
+            logoAlign: "",
+            logoShape: "",
+            stampsRequired: 0,
+            cardSlots: 5,
+            cardColour: "#141414",
+            fontColour: "#FFFFFF",
+            Slot1: 0,
+            Slot2: 0,
+            Slot3: 0,
+            Slot4: 0,
+            Slot5: 0,
+            Slot6: 0,
+            Slot7: 0,
+            Slot8: 0,
+            Slot9: 0,
+            Slot10: 0,
+
+            // Form ( Dynamic )
+            cardStatus: "active"
         };
+    },
+    methods: {
+        // Form Methods
+        // ~ Set Logo Align
+        setAlignLeft: function () {
+            this.logoAlign = "Left";
+        },
+        setAlignMiddle: function () {
+            this.logoAlign = "Center";
+        },
+        setAlignRight: function () {
+            this.logoAlign = "Right";
+        },
+
+        // ~ Set Logo Shape
+        setShapeCircle: function () {
+            this.logoShape = "Circle";
+        },
+        setShapeSquare: function () {
+            this.logoShape = "Square";
+        },
+
+        // ~ Set Card Slots Shape
+        set5Slots: function () {
+            this.cardSlots = 5;
+        },
+        set10Slots: function () {
+            this.cardSlots = 10;
+        },
+
+        // Clearing Builder
+        clearStamps: function () {
+            let clearOneInput = $('#stamp-slot-1');
+            let clearTwoInput = $('#stamp-slot-2');
+            let clearThreeInput = $('#stamp-slot-3');
+            let clearFourInput = $('#stamp-slot-4');
+            let clearFiveInput = $('#stamp-slot-5');
+            let clearSixInput = $('#stamp-slot-6');
+            let clearSevenInput = $('#stamp-slot-7');
+            let clearEightInput = $('#stamp-slot-8');
+            let clearNineInput = $('#stamp-slot-9');
+            let clearTenInput = $('#stamp-slot-10');
+
+            clearOneInput.val(0);
+            clearTwoInput.val(0);
+            clearThreeInput.val(0);
+            clearFourInput.val(0);
+            clearFiveInput.val(0);
+            clearSixInput.val(0);
+            clearSevenInput.val(0);
+            clearEightInput.val(0);
+            clearNineInput.val(0);
+            clearTenInput.val(0);
+
+            this.arrA = [];
+            this.arrB = [];
+            this.arrC = [];
+            this.arrD = [];
+            this.arrE = [];
+            this.arrF = [];
+            this.arrG = [];
+            this.arrH = [];
+            this.arrI = [];
+            this.arrJ = [];
+        },
+
+        // Counting Characters
+        remainCharCount: function () {
+            if (this.cardDescription.length > this.maxCharacter) {
+                this.remainCharactersText = "Exceeded " + this.maxCharacter + " characters limit.";
+                $('#desc-container').addClass("input-error");
+                $('#desc-input').css("color", "#721c24");
+            } else {
+                let remainCharacters = this.maxCharacter - this.cardDescription.length;
+                this.remainCharactersText = "Remaining " + remainCharacters + " characters.";
+                $('#desc-container').removeClass("input-error");
+                $('#desc-input').css("color", "white");
+            }
+        }
+    },
+    watch: {
+        arrA: function (val) {
+            let bucketA = document.getElementById("bucketA");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketA.classList.remove("empty");
+            } else {
+                bucketA.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrA.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrA.length > 0) {
+                this.Slot1 = this.arrA[0].id;
+            } else {
+                this.Slot1 = 0;
+            }
+        },
+        arrB: function (val) {
+            let bucketB = document.getElementById("bucketB");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketB.classList.remove("empty");
+            } else {
+                bucketB.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrB.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrB.length > 0) {
+                this.Slot2 = this.arrB[0].id;
+            } else {
+                this.Slot2 = 0;
+            }
+        },
+        arrC: function (val) {
+            let bucketC = document.getElementById("bucketC");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketC.classList.remove("empty");
+            } else {
+                bucketC.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrC.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrC.length > 0) {
+                this.Slot3 = this.arrC[0].id;
+            } else {
+                this.Slot3 = 0;
+            }
+        },
+        arrD: function (val) {
+            let bucketD = document.getElementById("bucketD");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketD.classList.remove("empty");
+            } else {
+                bucketD.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrD.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrD.length > 0) {
+                this.Slot4 = this.arrD[0].id;
+            } else {
+                this.Slot4 = 0;
+            }
+        },
+        arrE: function (val) {
+            let bucketE = document.getElementById("bucketE");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketE.classList.remove("empty");
+            } else {
+                bucketE.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrE.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrE.length > 0) {
+                this.Slot5 = this.arrE[0].id;
+            } else {
+                this.Slot5 = 0;
+            }
+        },
+        arrF: function (val) {
+            let bucketF = document.getElementById("bucketF");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketF.classList.remove("empty");
+            } else {
+                bucketF.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrF.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrF.length > 0) {
+                this.Slot6 = this.arrF[0].id;
+            } else {
+                this.Slot6 = 0;
+            }
+        },
+        arrG: function (val) {
+            let bucketG = document.getElementById("bucketG");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketG.classList.remove("empty");
+            } else {
+                bucketG.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrG.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrG.length > 0) {
+                this.Slot7 = this.arrG[0].id;
+            } else {
+                this.Slot7 = 0;
+            }
+        },
+        arrH: function (val) {
+            let bucketH = document.getElementById("bucketH");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketH.classList.remove("empty");
+            } else {
+                bucketH.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrH.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrH.length > 0) {
+                this.Slot8 = this.arrH[0].id;
+            } else {
+                this.Slot8 = 0;
+            }
+        },
+        arrI: function (val) {
+            let bucketI = document.getElementById("bucketI");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketI.classList.remove("empty");
+            } else {
+                bucketI.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrI.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrI.length > 0) {
+                this.Slot9 = this.arrI[0].id;
+            } else {
+                this.Slot9 = 0;
+            }
+        },
+        arrJ: function (val) {
+            let bucketJ = document.getElementById("bucketJ");
+
+            // remove empty class
+            if (val.length > 0) {
+                bucketJ.classList.remove("empty");
+            } else {
+                bucketJ.classList.add("empty");
+            }
+
+            // ensures only one item
+            if (val.length > 1) {
+                this.arrJ.pop();
+            }
+
+            // Assigning Stamp value to form
+            if (this.arrJ.length > 0) {
+                this.Slot10 = this.arrJ[0].id;
+            } else {
+                this.Slot10 = 0;
+            }
+        }
     },
     mounted: function () {
         // ~ Variables & Defaults
@@ -1455,7 +1819,6 @@ export default {
         let cardSlots;
         let cardColour;
         let fontColour;
-        let cardStatus;
 
         // Helpers Vars
         let titleHelper = $('#title-helper');
@@ -1523,30 +1886,6 @@ export default {
         let titleDesc = $('.preview-txt-container');
         let titleOfCard = $('.preview-title');
         let descOfCard = $('.preview-desc');
-
-        // Forms Vars
-        let formCardTitle = $('#final-card-title');
-        let formCardDesc = $('#final-card-desc');
-        let formCardReward = $('#final-card-reward');
-        let formCardGain = $('#final-card-gain');
-        let formLogoPosition = $('#final-logo-position');
-        let formLogoShape = $('#final-logo-shape');
-        let formStampsRequired = $('#final-stamps-required');
-        let formNumberOfStamps = $('#final-number-of-stamps');
-        let formBackgroundColour = $('#final-background-colour');
-        let formFontColour = $('#final-font-colour');
-        let Slot1 = $('#stamp-slot-1');
-        let Slot2 = $('#stamp-slot-2');
-        let Slot3 = $('#stamp-slot-3');
-        let Slot4 = $('#stamp-slot-4');
-        let Slot5 = $('#stamp-slot-5');
-        let Slot6 = $('#stamp-slot-6');
-        let Slot7 = $('#stamp-slot-7');
-        let Slot8 = $('#stamp-slot-8');
-        let Slot9 = $('#stamp-slot-9');
-        let Slot10 = $('#stamp-slot-10');
-        let formStatus = $('#card-status');
-        let publishBtn = $('#publish-button');
 
         $(document).ready(function () {
             setDefaults();
@@ -1804,29 +2143,6 @@ export default {
 
         // Setting Form Defaults
         function setDefaults() {
-            // Form defaults
-            cardTitle = "Untitled Card";
-            cardDescription = "Empty card Description";
-            cardReward = "No reward set";
-            cardGain = "Progression method unknown";
-            logoAlign = "Left";
-            logoShape = "Square";
-            stampsRequired = 0;
-            cardSlots = 5;
-            cardColour = colourInput.val();
-            fontColour = fontInput.val();
-            Slot1.val(0);
-            Slot2.val(0);
-            Slot3.val(0);
-            Slot4.val(0);
-            Slot5.val(0);
-            Slot6.val(0);
-            Slot7.val(0);
-            Slot8.val(0);
-            Slot9.val(0);
-            Slot10.val(0);
-            cardStatus = "active";
-
             // setting classes
             btn1.addClass('active-btn');
             btn1Txt.addClass('active-txt');
@@ -1855,44 +2171,6 @@ export default {
             }
 
             previewCard.css("background-color", cardColour);
-
-            // Setting Form Data
-            formCardTitle.val(cardTitle);
-            formCardDesc.val(cardDescription);
-            formCardReward.val(cardReward);
-            formCardGain.val(cardGain);
-            formLogoPosition.val(logoAlign);
-            formLogoShape.val(logoShape);
-            formStampsRequired.val(stampsRequired);
-            formNumberOfStamps.val(cardSlots);
-            formBackgroundColour.val(cardColour);
-            formFontColour.val(fontColour);
-            formStatus.val(cardStatus);
-        }
-
-        // Show Form Data
-        function showFormData() {
-            console.log("Card Title: " + formCardTitle.val());
-            console.log("Card Desc: " + formCardDesc.val());
-            console.log("Card Reward: " + formCardReward.val());
-            console.log("Card Progress Method: " + formCardGain.val());
-            console.log("Card Logo Position: " + formLogoPosition.val());
-            console.log("Card Logo Shape: " + formLogoShape.val());
-            console.log("Card Stamps Required: " + formStampsRequired.val());
-            console.log("Card Num of stamps: " + formNumberOfStamps.val());
-            console.log("Card background colour: " + formBackgroundColour.val());
-            console.log("Card font colour: " + formFontColour.val());
-            console.log("Slot 1: " + Slot1.val());
-            console.log("Slot 2: " + Slot2.val());
-            console.log("Slot 3: " + Slot3.val());
-            console.log("Slot 4: " + Slot4.val());
-            console.log("Slot 5: " + Slot5.val());
-            console.log("Slot 6: " + Slot6.val());
-            console.log("Slot 7: " + Slot7.val());
-            console.log("Slot 8: " + Slot8.val());
-            console.log("Slot 9: " + Slot9.val());
-            console.log("Slot 10: " + Slot10.val());
-            console.log("Card Status: " + formStatus.val());
         }
 
         // Fading in helper
@@ -2221,296 +2499,6 @@ export default {
         fontInput.click(function () {
             fontHide();
         });
-
-        publishBtn.click(function () {
-            showFormData();
-        });
-    },
-    methods: {
-        log: function(evt) {
-            window.console.log(evt);
-        },
-
-        clearStamps: function () {
-            let clearOneInput = $('#stamp-slot-1');
-            let clearTwoInput = $('#stamp-slot-2');
-            let clearThreeInput = $('#stamp-slot-3');
-            let clearFourInput = $('#stamp-slot-4');
-            let clearFiveInput = $('#stamp-slot-5');
-            let clearSixInput = $('#stamp-slot-6');
-            let clearSevenInput = $('#stamp-slot-7');
-            let clearEightInput = $('#stamp-slot-8');
-            let clearNineInput = $('#stamp-slot-9');
-            let clearTenInput = $('#stamp-slot-10');
-
-            clearOneInput.val(0);
-            clearTwoInput.val(0);
-            clearThreeInput.val(0);
-            clearFourInput.val(0);
-            clearFiveInput.val(0);
-            clearSixInput.val(0);
-            clearSevenInput.val(0);
-            clearEightInput.val(0);
-            clearNineInput.val(0);
-            clearTenInput.val(0);
-
-            this.arrA = [];
-            this.arrB = [];
-            this.arrC = [];
-            this.arrD = [];
-            this.arrE = [];
-            this.arrF = [];
-            this.arrG = [];
-            this.arrH = [];
-            this.arrI = [];
-            this.arrJ = [];
-        },
-
-        // Counting Characters
-        remainCharCount: function () {
-            if (this.message.length > this.maxCharacter) {
-                this.remainCharactersText = "Exceeded " + this.maxCharacter + " characters limit.";
-                $('#desc-container').addClass("input-error");
-                $('#desc-input').css("color", "#721c24");
-            } else {
-                let remainCharacters = this.maxCharacter - this.message.length;
-                this.remainCharactersText = "Remaining " + remainCharacters + " characters.";
-                $('#desc-container').removeClass("input-error");
-                $('#desc-input').css("color", "white");
-            }
-        }
-    },
-    watch: {
-        arrA: function (val) {
-            let bucketA = document.getElementById("bucketA");
-            let slotOneInput = $('#stamp-slot-1');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketA.classList.remove("empty");
-            } else {
-                bucketA.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrA.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrA.length > 0) {
-                slotOneInput.val(this.arrA[0].id);
-            } else {
-                slotOneInput.val(0);
-            }
-        },
-        arrB: function (val) {
-            let bucketB = document.getElementById("bucketB");
-            let slotTwoInput = $('#stamp-slot-2');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketB.classList.remove("empty");
-            } else {
-                bucketB.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrB.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrB.length > 0) {
-                slotTwoInput.val(this.arrB[0].id);
-            } else {
-                slotTwoInput.val(0);
-            }
-        },
-        arrC: function (val) {
-            let bucketC = document.getElementById("bucketC");
-            let slotThreeInput = $('#stamp-slot-3');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketC.classList.remove("empty");
-            } else {
-                bucketC.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrC.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrC.length > 0) {
-                slotThreeInput.val(this.arrC[0].id);
-            } else {
-                slotThreeInput.val(0);
-            }
-        },
-        arrD: function (val) {
-            let bucketD = document.getElementById("bucketD");
-            let slotFourInput = $('#stamp-slot-4');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketD.classList.remove("empty");
-            } else {
-                bucketD.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrD.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrD.length > 0) {
-                slotFourInput.val(this.arrD[0].id);
-            } else {
-                slotFourInput.val(0);
-            }
-        },
-        arrE: function (val) {
-            let bucketE = document.getElementById("bucketE");
-            let slotFiveInput = $('#stamp-slot-5');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketE.classList.remove("empty");
-            } else {
-                bucketE.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrE.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrE.length > 0) {
-                slotFiveInput.val(this.arrE[0].id);
-            } else {
-                slotFiveInput.val(0);
-            }
-        },
-        arrF: function (val) {
-            let bucketF = document.getElementById("bucketF");
-            let slotSixInput = $('#stamp-slot-6');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketF.classList.remove("empty");
-            } else {
-                bucketF.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrF.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrF.length > 0) {
-                slotSixInput.val(this.arrF[0].id);
-            } else {
-                slotSixInput.val(0);
-            }
-        },
-        arrG: function (val) {
-            let bucketG = document.getElementById("bucketG");
-            let slotSevenInput = $('#stamp-slot-7');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketG.classList.remove("empty");
-            } else {
-                bucketG.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrG.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrG.length > 0) {
-                slotSevenInput.val(this.arrG[0].id);
-            } else {
-                slotSevenInput.val(0);
-            }
-        },
-        arrH: function (val) {
-            let bucketH = document.getElementById("bucketH");
-            let slotEightInput = $('#stamp-slot-8');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketH.classList.remove("empty");
-            } else {
-                bucketH.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrH.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrH.length > 0) {
-                slotEightInput.val(this.arrH[0].id);
-            } else {
-                slotEightInput.val(0);
-            }
-        },
-        arrI: function (val) {
-            let bucketI = document.getElementById("bucketI");
-            let slotNineInput = $('#stamp-slot-9');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketI.classList.remove("empty");
-            } else {
-                bucketI.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrI.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrI.length > 0) {
-                slotNineInput.val(this.arrI[0].id);
-            } else {
-                slotNineInput.val(0);
-            }
-        },
-        arrJ: function (val) {
-            let bucketJ = document.getElementById("bucketJ");
-            let slotTenInput = $('#stamp-slot-10');
-
-            // remove empty class
-            if (val.length > 0) {
-                bucketJ.classList.remove("empty");
-            } else {
-                bucketJ.classList.add("empty");
-            }
-
-            // ensures only one item
-            if (val.length > 1) {
-                this.arrJ.pop();
-            }
-
-            // Assigning Stamp value to form
-            if (this.arrJ.length > 0) {
-                slotTenInput.val(this.arrJ[0].id);
-            } else {
-                slotTenInput.val(0);
-            }
-        }
     }
 };
 </script>

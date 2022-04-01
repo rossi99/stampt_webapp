@@ -83,7 +83,7 @@
                             <div class="card-preview-container">
                                 <div class="card-preview-content alignMiddle">
                                     <!-- Show if 5 stamps -->
-                                    <div v-if="card.numOfStamps === 5" class="one-row-card">
+                                    <div v-if="card.numOfStamps === 5" class="one-row-card" :style="{ background: `${card.background}` }">
                                         <!-- logo and stamp container -->
                                         <div class="stamp-logo-holder">
 
@@ -138,7 +138,7 @@
 
                                             <!-- Card Text -->
                                             <!-- Will be set to data from database -->
-                                            <div class="preview-txt-container">
+                                            <div class="preview-txt-container" :style="{ color: `${card.font}` }">
                                                 <div class="preview-title-container">
                                                     <p class="preview-title">{{ card.title }}</p>
                                                 </div>
@@ -284,7 +284,7 @@
                                     </div>
 
                                     <!-- Show if 10 stamps -->
-                                    <div v-if="card.numOfStamps === 10" class="two-row-card">
+                                    <div v-if="card.numOfStamps === 10" class="two-row-card" :style="{ background: `${card.background}` }">
                                         <!-- logo and stamp container -->
                                         <div class="stamp-logo-holder">
 
@@ -339,7 +339,7 @@
 
                                             <!-- Card Text -->
                                             <!-- Will be set to data from database -->
-                                            <div class="preview-txt-container">
+                                            <div class="preview-txt-container" :style="{ color: `${card.font}` }">
                                                 <div class="preview-title-container">
                                                     <p class="preview-title">{{ card.title }}</p>
                                                 </div>
