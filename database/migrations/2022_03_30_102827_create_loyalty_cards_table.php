@@ -14,7 +14,7 @@ class CreateLoyaltyCardsTable extends Migration
     public function up()
     {
         Schema::create('loyalty_cards', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('cardTitle');
             $table->text('cardDesc');
             $table->text('cardReward');
