@@ -158,8 +158,8 @@
                                            name="cardTitle"
                                            id="title-input"
                                            class="stampt-input"
-                                           placeholder="What is your card called?"
-                                           v-model="cardTitle"
+                                           placeholder="No Title Set..."
+                                           v-model="loyaltyCard.title"
                                     >
                                 </div>
                             </div>
@@ -204,8 +204,8 @@
                                            name="cardDescription"
                                            id="desc-input"
                                            class="stampt-input"
-                                           placeholder="Tell me all about this loyalty card!"
-                                           v-model="cardDescription"
+                                           placeholder="No description set..."
+                                           v-model="loyaltyCard.description"
                                            @keyup='remainCharCount()'
                                     >
                                 </div>
@@ -254,8 +254,8 @@
                                            name="cardReward"
                                            id="reward-input"
                                            class="stampt-input"
-                                           placeholder="What are your customers working towards?"
-                                           v-model="cardReward"
+                                           placeholder="No reward set..."
+                                           v-model="loyaltyCard.reward"
                                     >
                                 </div>
                             </div>
@@ -299,8 +299,8 @@
                                            name="cardGain"
                                            id="gain-input"
                                            class="stampt-input"
-                                           placeholder="What do your customers have to do to gain a stamp?"
-                                           v-model="cardGain"
+                                           placeholder="No progress method set..."
+                                           v-model="loyaltyCard.progressMethod"
                                     >
                                 </div>
                             </div>
@@ -479,8 +479,8 @@
                                            max="10"
                                            id="required-input"
                                            class="stampt-input"
-                                           placeholder="How many stamps will your card have?"
-                                           v-model="stampsRequired"
+                                           placeholder="No stamps set..."
+                                           v-model="loyaltyCard.stampsRequired"
                                     >
                                 </div>
                             </div>
@@ -618,7 +618,7 @@
                                                        name="cardColour"
                                                        id="colour-input"
                                                        class="stampt-input-color"
-                                                       v-model="cardColour">
+                                                       v-model="loyaltyCard.backgroundColour">
                                             </div>
                                         </div>
                                     </div>
@@ -667,7 +667,7 @@
                                                        name="fontColour"
                                                        id="font-input"
                                                        class="stampt-input-color"
-                                                       v-model="fontColour"
+                                                       v-model="loyaltyCard.fontColour"
                                                 >
                                             </div>
                                         </div>
@@ -697,22 +697,22 @@
                                     <div class="element-panel" style="overflow: scroll">
                                         <div class="draggable-element-container">
                                             <!-- Draggable Stamps -->
-                                            <draggable :list="cardElements" :group="{ name: 'cardItem', pull: 'clone', put: false }">
-                                                <div class="stamp-element-row" v-for="element in cardElements" :key="element.id" style="cursor: move">
+                                            <draggable :list="stamps" :group="{ name: 'cardItem', pull: 'clone', put: false }">
+                                                <div class="stamp-element-row" v-for="stamp in stamps" :key="stamp.id" style="cursor: move">
                                                     <!-- Grey Stamps -->
-                                                    <div v-if="element.id === 1">
+                                                    <div v-if="stamp.id === 1">
                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                              alt="This is the third style of stamp in a a grey colour"
                                                              class="stamp">
                                                     </div>
 
-                                                    <div v-if="element.id === 2">
+                                                    <div v-if="stamp.id === 2">
                                                         <img src="/img/stamps/compressed/black/3.png"
                                                              alt="This is the third style of stamp in a a black colour"
                                                              class="stamp">
                                                     </div>
 
-                                                    <div v-if="element.id === 3">
+                                                    <div v-if="stamp.id === 3">
                                                         <img src="/img/stamps/compressed/white/3.png"
                                                              alt="This is the third style of stamp in a a white colour"
                                                              class="stamp">
@@ -752,20 +752,20 @@
                                                             <div class="bucket empty" id="bucketA">
                                                                 <draggable class="drop-area alignMiddle" :list="arrA" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrA" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrA" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -780,20 +780,20 @@
                                                             <div class="bucket empty" id="bucketB">
                                                                 <draggable class="drop-area alignMiddle" :list="arrB" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrB" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrB" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -808,20 +808,20 @@
                                                             <div class="bucket empty" id="bucketC">
                                                                 <draggable class="drop-area alignMiddle" :list="arrC" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrC" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrC" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -836,20 +836,20 @@
                                                             <div class="bucket empty" id="bucketD">
                                                                 <draggable class="drop-area alignMiddle" :list="arrD" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrD" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrD" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -864,20 +864,20 @@
                                                             <div class="bucket empty" id="bucketE">
                                                                 <draggable class="drop-area alignMiddle" :list="arrE" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrE" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrE" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -896,20 +896,20 @@
                                                             <div class="bucket empty" id="bucketF">
                                                                 <draggable class="drop-area alignMiddle" :list="arrF" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrF" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrF" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -924,20 +924,20 @@
                                                             <div class="bucket empty" id="bucketG">
                                                                 <draggable class="drop-area alignMiddle" :list="arrG" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrG" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrG" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -952,20 +952,20 @@
                                                             <div class="bucket empty" id="bucketH">
                                                                 <draggable class="drop-area alignMiddle" :list="arrH" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrH" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrH" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -980,20 +980,20 @@
                                                             <div class="bucket empty" id="bucketI">
                                                                 <draggable class="drop-area alignMiddle" :list="arrI" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrI" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrI" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -1008,20 +1008,20 @@
                                                             <div class="bucket empty" id="bucketJ">
                                                                 <draggable class="drop-area alignMiddle" :list="arrJ" group="cardItem">
                                                                     <div class="bucket-align">
-                                                                        <div v-for="element in arrJ" :key="element.id">
-                                                                            <div v-if="element.id === 1">
+                                                                        <div v-for="stamp in arrJ" :key="stamp.id">
+                                                                            <div v-if="stamp.id === 1">
                                                                                 <img src="/img/stamps/compressed/grey/3.png"
                                                                                      alt="This is the first style of stamp in a a grey colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 2">
+                                                                            <div v-if="stamp.id === 2">
                                                                                 <img src="/img/stamps/compressed/black/3.png"
                                                                                      alt="This is the third style of stamp in a a black colour"
                                                                                      class="stamp">
                                                                             </div>
 
-                                                                            <div v-if="element.id === 3">
+                                                                            <div v-if="stamp.id === 3">
                                                                                 <img src="/img/stamps/compressed/white/3.png"
                                                                                      alt="This is the third style of stamp in a a white colour"
                                                                                      class="stamp">
@@ -1091,20 +1091,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrA" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrA" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1119,20 +1119,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrB" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrB" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1147,20 +1147,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrC" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrC" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1175,20 +1175,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrD" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrD" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1203,20 +1203,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrE" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrE" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1235,20 +1235,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrF" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrF" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1263,20 +1263,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrG" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrG" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1291,20 +1291,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrH" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrH" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1319,20 +1319,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrI" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrI" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1347,20 +1347,20 @@
                                                     <div class="bucket">
                                                         <div class="drop-area alignMiddle">
                                                             <div class="bucket-align">
-                                                                <div v-for="element in arrJ" :key="element.id">
-                                                                    <div v-if="element.id === 1">
+                                                                <div v-for="stamp in arrJ" :key="stamp.id">
+                                                                    <div v-if="stamp.id === 1">
                                                                         <img src="/img/stamps/compressed/grey/3.png"
                                                                              alt="This is the first style of stamp in a a grey colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 2">
+                                                                    <div v-if="stamp.id === 2">
                                                                         <img src="/img/stamps/compressed/black/3.png"
                                                                              alt="This is the third style of stamp in a a black colour"
                                                                              class="stamp">
                                                                     </div>
 
-                                                                    <div v-if="element.id === 3">
+                                                                    <div v-if="stamp.id === 3">
                                                                         <img src="/img/stamps/compressed/white/3.png"
                                                                              alt="This is the third style of stamp in a a white colour"
                                                                              class="stamp">
@@ -1388,36 +1388,12 @@
                                     </div>
                                 </div>
 
-                                <form>
-                                    <input id="final-card-title" type="hidden" name="cardTitle">
-                                    <input id="final-card-desc" type="hidden" name="cardDesc">
-                                    <input id="final-card-reward" type="hidden" name="cardReward">
-                                    <input id="final-card-gain" type="hidden" name="cardProgressMethod">
-                                    <input id="final-logo-position" type="hidden" name="cardLogoPosition">
-                                    <input id="final-logo-shape" type="hidden" name="cardLogoShape">
-                                    <input id="final-stamps-required" type="hidden" name="cardStampsRequired">
-                                    <input id="final-number-of-stamps" type="hidden" name="cardNumOfStamps">
-                                    <input id="final-background-colour" type="hidden" name="cardBackgroundColour">
-                                    <input id="final-font-colour" type="hidden" name="cardFontColour">
-                                    <input id="stamp-slot-1" type="hidden" name="cardSlotOne">
-                                    <input id="stamp-slot-2" type="hidden" name="cardSlotTwo">
-                                    <input id="stamp-slot-3" type="hidden" name="cardSlotThree">
-                                    <input id="stamp-slot-4" type="hidden" name="cardSlotFour">
-                                    <input id="stamp-slot-5" type="hidden" name="cardSlotFive">
-                                    <input id="stamp-slot-6" type="hidden" name="cardSlotSix">
-                                    <input id="stamp-slot-7" type="hidden" name="cardSlotSeven">
-                                    <input id="stamp-slot-8" type="hidden" name="cardSlotEight">
-                                    <input id="stamp-slot-9" type="hidden" name="cardSlotNine">
-                                    <input id="stamp-slot-10" type="hidden" name="cardSlotTen">
-                                    <input id="card-status" type="hidden" name="cardStatus">
-
-                                    <div class="submit-btn-container alignMiddle">
-                                        <div class="btn-text-align" id="publish-button">
-                                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
-                                            <span>Publish Card</span>
-                                        </div>
+                                <div class="submit-btn-container alignMiddle" @click.prevent="submit" :disabled="loading">
+                                    <div class="btn-text-align" id="publish-button">
+                                        <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
+                                        <span>Publish Card</span>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1444,7 +1420,7 @@ export default {
     data() {
         return {
             // Draggable Elements
-            cardElements: [
+            stamps: [
                 { name: "grey-stamp", id: 1 },
                 { name: "black-stamp", id: 2 },
                 { name: "white-stamp", id: 3 },
@@ -1465,58 +1441,72 @@ export default {
             remainCharactersText: "Remaining 191 characters.",
 
             // Form ( Dynamic )
-            cardTitle: "",
-            cardDescription: "",
-            cardReward: "",
-            cardGain: "",
-            logoAlign: "",
-            logoShape: "",
-            stampsRequired: 0,
-            cardSlots: 5,
-            cardColour: "#141414",
-            fontColour: "#FFFFFF",
-            Slot1: 0,
-            Slot2: 0,
-            Slot3: 0,
-            Slot4: 0,
-            Slot5: 0,
-            Slot6: 0,
-            Slot7: 0,
-            Slot8: 0,
-            Slot9: 0,
-            Slot10: 0,
+            loyaltyCard: {
+                title: "",
+                description: "",
+                reward: "",
+                progressMethod: "",
+                logoPosition: "Left",
+                logoShape: "Circle",
+                stampsRequired: 0,
+                stampSlots: 5,
+                backgroundColour: "#141414",
+                fontColour: "#FFFFFF",
+                status: "active",
+                slotOne: 0,
+                slotTwo: 0,
+                slotThree: 0,
+                slotFour: 0,
+                slotFive: 0,
+                slotSix: 0,
+                slotSeven: 0,
+                slotEight: 0,
+                slotNine: 0,
+                slotTen: 0
+            },
 
-            // Form ( Dynamic )
-            cardStatus: "active"
+            // loading & error handling
+            loading: false,
+            error: false
         };
     },
     methods: {
         // Form Methods
+        submit() {
+          this.loading = true;
+
+          axios
+              .post(`/api/loyaltyCards`, this.loyaltyCard)
+              .then(response => console.log(response))
+              .catch((err) => (this.error = true))
+              .then(() => (this.loading = false));
+        },
+
         // ~ Set Logo Align
         setAlignLeft: function () {
-            this.logoAlign = "Left";
+            this.loyaltyCard.logoPosition = "Left";
         },
         setAlignMiddle: function () {
-            this.logoAlign = "Center";
+            this.loyaltyCard.logoPosition = "Center";
         },
         setAlignRight: function () {
-            this.logoAlign = "Right";
+            this.loyaltyCard.logoPosition = "Right";
         },
 
         // ~ Set Logo Shape
         setShapeCircle: function () {
-            this.logoShape = "Circle";
+            this.loyaltyCard.logoShape = "Circle";
         },
         setShapeSquare: function () {
-            this.logoShape = "Square";
+            this.loyaltyCard.logoShape = "Square";
         },
 
         // ~ Set Card Slots Shape
         set5Slots: function () {
-            this.cardSlots = 5;
+            this.loyaltyCard.stampSlots = 5;
         },
         set10Slots: function () {
-            this.cardSlots = 10;
+            this.loyaltyCard.stampSlots = 10;
         },
 
         // Clearing Builder
@@ -1557,12 +1547,12 @@ export default {
 
         // Counting Characters
         remainCharCount: function () {
-            if (this.cardDescription.length > this.maxCharacter) {
+            if (this.loyaltyCard.description.length > this.maxCharacter) {
                 this.remainCharactersText = "Exceeded " + this.maxCharacter + " characters limit.";
                 $('#desc-container').addClass("input-error");
                 $('#desc-input').css("color", "#721c24");
             } else {
-                let remainCharacters = this.maxCharacter - this.cardDescription.length;
+                let remainCharacters = this.maxCharacter - this.loyaltyCard.description.length;
                 this.remainCharactersText = "Remaining " + remainCharacters + " characters.";
                 $('#desc-container').removeClass("input-error");
                 $('#desc-input').css("color", "white");
@@ -1587,9 +1577,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrA.length > 0) {
-                this.Slot1 = this.arrA[0].id;
+                this.loyaltyCard.slotOne = this.arrA[0].id;
             } else {
-                this.Slot1 = 0;
+                this.loyaltyCard.slotOne = 0;
             }
         },
         arrB: function (val) {
@@ -1609,9 +1599,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrB.length > 0) {
-                this.Slot2 = this.arrB[0].id;
+                this.loyaltyCard.slotTwo = this.arrB[0].id;
             } else {
-                this.Slot2 = 0;
+                this.loyaltyCard.slotTwo = 0;
             }
         },
         arrC: function (val) {
@@ -1631,9 +1621,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrC.length > 0) {
-                this.Slot3 = this.arrC[0].id;
+                this.loyaltyCard.slotThree = this.arrC[0].id;
             } else {
-                this.Slot3 = 0;
+                this.loyaltyCard.slotThree = 0;
             }
         },
         arrD: function (val) {
@@ -1653,9 +1643,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrD.length > 0) {
-                this.Slot4 = this.arrD[0].id;
+                this.loyaltyCard.slotFour = this.arrD[0].id;
             } else {
-                this.Slot4 = 0;
+                this.loyaltyCard.slotFour = 0;
             }
         },
         arrE: function (val) {
@@ -1675,9 +1665,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrE.length > 0) {
-                this.Slot5 = this.arrE[0].id;
+                this.loyaltyCard.slotFive = this.arrE[0].id;
             } else {
-                this.Slot5 = 0;
+                this.loyaltyCard.slotFive = 0;
             }
         },
         arrF: function (val) {
@@ -1697,9 +1687,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrF.length > 0) {
-                this.Slot6 = this.arrF[0].id;
+                this.loyaltyCard.slotSix = this.arrF[0].id;
             } else {
-                this.Slot6 = 0;
+                this.loyaltyCard.slotSix = 0;
             }
         },
         arrG: function (val) {
@@ -1719,9 +1709,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrG.length > 0) {
-                this.Slot7 = this.arrG[0].id;
+                this.loyaltyCard.slotSeven = this.arrG[0].id;
             } else {
-                this.Slot7 = 0;
+                this.loyaltyCard.slotSeven = 0;
             }
         },
         arrH: function (val) {
@@ -1741,9 +1731,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrH.length > 0) {
-                this.Slot8 = this.arrH[0].id;
+                this.loyaltyCard.slotEight = this.arrH[0].id;
             } else {
-                this.Slot8 = 0;
+                this.loyaltyCard.slotEight = 0;
             }
         },
         arrI: function (val) {
@@ -1763,9 +1753,9 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrI.length > 0) {
-                this.Slot9 = this.arrI[0].id;
+                this.loyaltyCard.slotNine = this.arrI[0].id;
             } else {
-                this.Slot9 = 0;
+                this.loyaltyCard.slotNine = 0;
             }
         },
         arrJ: function (val) {
@@ -1785,15 +1775,15 @@ export default {
 
             // Assigning Stamp value to form
             if (this.arrJ.length > 0) {
-                this.Slot10 = this.arrJ[0].id;
+                this.loyaltyCard.slotTen = this.arrJ[0].id;
             } else {
-                this.Slot10 = 0;
+                this.loyaltyCard.slotTen = 0;
             }
         }
     },
     mounted: function () {
-        // ~ Variables & Defaults
-        // Section Vars
+        // Variables & Defaults
+        // ~ Section Vars
         let btn1 = $('#btn-1');
         let btn2 = $('#btn-2');
         let btn3 = $('#btn-3');
@@ -1804,23 +1794,20 @@ export default {
         let build = $('.build-container');
         let preview = $('.preview-container');
 
-        // Loading Screen Vars
+        // ~ Loading Screen Vars
         let loadingScreen = $('.loading-screen-container');
         let numberOfClicks = 0;
 
-        // Create Form Vars
+        // ~ Create Form Vars
         let cardTitle;
         let cardDescription;
-        let cardReward;
-        let cardGain;
         let logoAlign;
         let logoShape;
-        let stampsRequired;
         let cardSlots;
         let cardColour;
         let fontColour;
 
-        // Helpers Vars
+        // ~ Helpers Vars
         let titleHelper = $('#title-helper');
         let titleHelpShow = $('#title-helper-show');
         let titleHelpHide = $('#title-helper-close');
@@ -1868,18 +1855,18 @@ export default {
         let fontHelpHide = $('#font-helper-close');
         let fontInput = $('#font-input');
 
-        // Builder And preview Vars
+        // ~ Builder And preview Vars
         let logo = $('.sample-logo-container');
         let logoPosition = $('.logo-align-container');
 
-        // Builder Vars
+        // ~ Builder Vars
         let cardHolder = $('.builder-card');
         let stampRow1 = $('#stamp-row-1');
         let stampRow2 = $('#stamp-row-2');
         let previewSeparator = $('#preview-section-divider');
         let previewButton = $('#preview-section-btn');
 
-        // Preview Card Vars
+        // ~ Preview Card Vars
         let previewCard = $('.preview-card');
         let previewStampRow1 = $('#preview-stamp-row-1');
         let previewStampRow2 = $('#preview-stamp-row-2');
@@ -1887,20 +1874,222 @@ export default {
         let titleOfCard = $('.preview-title');
         let descOfCard = $('.preview-desc');
 
-        $(document).ready(function () {
-            setDefaults();
+
+        // Helpers
+        // ~ Title
+        function titleShow() {
+            titleHelper.fadeIn(200)
+        }
+        function titleHide() {
+            titleHelper.fadeOut(200)
+        }
+
+        titleHelpShow.click(function () {
+            titleShow();
+        });
+        titleHelpHide.click(function () {
+            titleHide();
+        });
+        titleInput.click(function () {
+            titleHide();
         });
 
-        // loading screen
+
+        // ~ Description
+        function descShow() {
+            descHelper.fadeIn(200)
+        }
+        function descHide() {
+            descHelper.fadeOut(200)
+        }
+
+        descHelpShow.click(function () {
+            descShow();
+        });
+        descHelpHide.click(function () {
+            descHide();
+        });
+        descInput.click(function () {
+            descHide();
+        });
+
+
+        // ~ Reward
+        function rewardShow() {
+            rewardHelper.fadeIn(200)
+        }
+        function rewardHide() {
+            rewardHelper.fadeOut(200)
+        }
+
+        rewardHelpShow.click(function () {
+            rewardShow();
+        });
+        rewardHelpHide.click(function () {
+            rewardHide();
+        });
+        rewardInput.click(function () {
+            rewardHide();
+        });
+
+
+        // ~ Gain Reward
+        function gainShow() {
+            gainHelper.fadeIn(200)
+        }
+        function gainHide() {
+            gainHelper.fadeOut(200)
+        }
+
+        gainHelpShow.click(function () {
+            gainShow();
+        });
+        gainHelpHide.click(function () {
+            gainHide();
+        });
+        gainInput.click(function () {
+            gainHide();
+        });
+
+
+        // ~ Logo Position
+        function logoPosShow() {
+            logoHelper.fadeIn(200)
+        }
+        function logoPosHide() {
+            logoHelper.fadeOut(200)
+        }
+
+        logoHelpShow.click(function () {
+            logoPosShow();
+        });
+        logoHelpHide.click(function () {
+            logoPosHide();
+        });
+        alignLeft.click(function () {
+            logoPosHide();
+        });
+        alignCenter.click(function () {
+            logoPosHide()
+        });
+        alignRight.click(function () {
+            logoPosHide()
+        });
+
+
+        // ~ Logo Shape
+        function logoShapeShow() {
+            logoShapeHelper.fadeIn(200)
+        }
+        function logoShapeHide() {
+            logoShapeHelper.fadeOut(200)
+        }
+
+        logoShapeHelpShow.click(function () {
+            logoShapeShow();
+        });
+        logoShapeHelpHide.click(function () {
+            logoShapeHide();
+        });
+        circleLogo.click(function () {
+            logoShapeHide();
+        });
+        squareLogo.click(function () {
+            logoShapeHide();
+        });
+
+
+        // ~ Required Stamps
+        function requiredShow() {
+            requiredHelper.fadeIn(200)
+        }
+        function requiredHide() {
+            requiredHelper.fadeOut(200)
+        }
+
+        requiredHelpShow.click(function () {
+            requiredShow();
+        });
+        requiredHelpHide.click(function () {
+            requiredHide();
+        });
+        requiredInput.click(function () {
+            requiredHide();
+        });
+
+
+        // ~ Num of stamps
+        function stampShow() {
+            numHelper.fadeIn(200)
+        }
+        function stampHide() {
+            numHelper.fadeOut(200)
+        }
+
+        numHelpShow.click(function () {
+            stampShow();
+        });
+        numHelpHide.click(function () {
+            stampHide();
+        });
+        numInput.click(function () {
+            stampHide();
+        });
+        stamp5.click(function () {
+            stampHide();
+        });
+        stamp10.click(function () {
+            stampHide();
+        });
+
+
+        // ~ Colour picker
+        function colourShow() {
+            colourHelper.fadeIn(200)
+        }
+        function colourHide() {
+            colourHelper.fadeOut(200)
+        }
+
+        colourHelpShow.click(function () {
+            colourShow();
+        });
+        colourHelpHide.click(function () {
+            colourHide();
+        });
+        colourInput.click(function () {
+            colourHide();
+        });
+
+        // ~ Font picker
+        function fontShow() {
+            fontHelper.fadeIn(200)
+        }
+        function fontHide() {
+            fontHelper.fadeOut(200)
+        }
+
+        fontHelpShow.click(function () {
+            fontShow();
+        });
+        fontHelpHide.click(function () {
+            fontHide();
+        });
+        fontInput.click(function () {
+            fontHide();
+        });
+
+
+        // Loading screen
         function showLoadingScreen() {
             if (numberOfClicks < 1 ) {
                 loadingScreen.fadeIn(10);
             }
         }
-
         function hideLoadingScreen() {
             loadingScreen.delay(5000).fadeOut(10);
         }
+
 
         // Create Section
         function fadeInCreate() {
@@ -1908,69 +2097,176 @@ export default {
             preview.fadeOut(100);
             create.delay(250).fadeIn(250);
         }
+        function activateCreate() {
+            btn1.addClass('active-btn');
+            btn1Txt.addClass('active-txt');
+        }
+        function deactivateCreate() {
+            btn1.removeClass('active-btn');
+            btn1Txt.removeClass('active-txt');
+        }
+        function clickCreate() {
+            // Show form for create
+            fadeInCreate();
 
-        // Show Build Section
+            // Correct breadcrumb
+            activateCreate();
+            deactivateBuild();
+            deactivatePreview();
+        }
+        btn1.click(function () {
+            clickCreate();
+        });
+
+
+        // Build Section
         function fadeInBuild() {
             create.fadeOut(100);
             preview.fadeOut(100);
             build.delay(250).fadeIn(100);
         }
+        function activateBuild() {
+            btn2.addClass('active-btn');
+            btn2Txt.addClass('active-txt');
+        }
+        function deactivateBuild() {
+            btn2.removeClass('active-btn');
+            btn2Txt.removeClass('active-txt');
+        }
+        function clickBuilder() {
+            // show loading
+            showLoadingScreen();
 
-        // Show Preview Section
+            // Show form for create
+            fadeInBuild();
+
+            // Correct breadcrumb
+            activateBuild();
+            deactivateCreate();
+            deactivatePreview();
+
+            // Making builder dynamic to create options
+            // ~ Logo Shape
+            setLogoShape();
+
+            // ~ Logo Align
+            setLogoAlignment();
+
+            // ~ Stamp slots
+            setNumStamps();
+
+            // ~ Card Colour
+            cardHolder.css("background-color", cardColour);
+
+            // ~ Font Colour
+            titleDesc.css("color", fontColour);
+
+            // ~ Hide loading screen if element loaded in already
+            numberOfClicks += 1;
+
+            // ~ Hide loading Screen
+            hideLoadingScreen();
+        }
+        btn2.click(function () {
+            // ~ Show Preview Option
+            previewSeparator.fadeIn(100);
+            previewButton.fadeIn(100);
+
+            clickBuilder();
+        });
+
+
+        // Preview Section
+        function cardPreview() {
+            setTitleForPreview();
+            setDescForPreview();
+
+            switch (cardSlots) {
+                case 5:
+                    previewStampRow1.show();
+                    previewStampRow2.hide();
+                    previewCard.removeClass('preview-two-row-height');
+                    previewCard.addClass('preview-one-row-height');
+                    break;
+                case 10:
+                    previewStampRow1.show();
+                    previewStampRow2.show();
+                    previewCard.removeClass('preview-one-row-height');
+                    previewCard.addClass('preview-two-row-height');
+                    break;
+            }
+
+            previewCard.css("background-color", cardColour);
+        }
         function fadeInPreview() {
             create.fadeOut(100);
             build.fadeOut(100);
             preview.delay(250).fadeIn(100);
         }
-
-        // Activate Create Section
-        function activateCreate() {
-            btn1.addClass('active-btn');
-            btn1Txt.addClass('active-txt');
-        }
-
-        // Activate Create Section
-        function activateBuild() {
-            btn2.addClass('active-btn');
-            btn2Txt.addClass('active-txt');
-        }
-
-        // Activate Create Section
         function activatePreview() {
             btn3.addClass('active-btn');
             btn3Txt.addClass('active-txt');
         }
-
-        // Activate Create Section
-        function deactivateCreate() {
-            btn1.removeClass('active-btn');
-            btn1Txt.removeClass('active-txt');
-        }
-
-        // Activate Create Section
-        function deactivateBuild() {
-            btn2.removeClass('active-btn');
-            btn2Txt.removeClass('active-txt');
-        }
-
-        // Activate Create Section
         function deactivatePreview() {
             btn3.removeClass('active-btn');
             btn3Txt.removeClass('active-txt');
         }
+        function clickPreview() {
+            // Show form for create
+            fadeInPreview();
 
-        // Setting the logo shape
-        function setLogoShape() {
-            if (logoShape === "Square") {
-                logo.removeClass('circle-logo');
-                logo.addClass('square-logo');
-            } else {
-                logo.removeClass('square-logo');
-                logo.addClass('circle-logo');
-            }
+            // Correct breadcrumb
+            activatePreview();
+            deactivateCreate();
+            deactivateBuild();
+
+            // Card Info
+            cardPreview();
         }
+        btn3.click(function () {
+            clickPreview();
+        });
 
-        // Setting the logo alignment
+
+        // Card Building Functions
+        // ~ Title
+        function setTitleForPreview() {
+            titleOfCard.text(cardTitle);
+        }
+        titleInput.change(function () {
+            cardTitle = titleInput.val();
+        });
+
+        // ~ Description
+        function setDescForPreview() {
+            descOfCard.text(cardDescription);
+        }
+        descInput.change(function () {
+            cardDescription = descInput.val();
+        });
+
+        // ~ Logo Alignment
+        function setLeftAlign() {
+            logoAlign = "Left"
+
+            alignRight.removeClass('active-btn')
+            alignCenter.removeClass('active-btn')
+            alignLeft.addClass('active-btn')
+        }
+        function setCentreAlign() {
+            logoAlign = "Center"
+
+            alignRight.removeClass('active-btn')
+            alignLeft.removeClass('active-btn')
+            alignCenter.addClass('active-btn')
+        }
+        function setRightAlign() {
+            logoAlign = "Right"
+
+            alignLeft.removeClass('active-btn')
+            alignCenter.removeClass('active-btn')
+            alignRight.addClass('active-btn')
+        }
         function setLogoAlignment() {
             switch (logoAlign) {
                 case "Left":
@@ -2000,21 +2296,57 @@ export default {
             }
         }
 
-        // set number of stamps for card
+        alignLeft.click(function () {
+            setLeftAlign();
+        }); // Selecting logo alignment for card
+        alignCenter.click(function () {
+            setCentreAlign();
+        });
+        alignRight.click(function () {
+            setRightAlign();
+        });
+
+        // ~ Logo Shape
+        function setCircleShape() {
+            logoShape = "Circle";
+            squareLogo.removeClass('active-btn');
+            circleLogo.addClass('active-btn');
+        }
+        function setSquareShape() {
+            logoShape = "Square";
+            circleLogo.removeClass('active-btn');
+            squareLogo.addClass('active-btn');
+        }
+        function setLogoShape() {
+            if (logoShape === "Square") {
+                logo.removeClass('circle-logo');
+                logo.addClass('square-logo');
+            } else {
+                logo.removeClass('square-logo');
+                logo.addClass('circle-logo');
+            }
+        }
+
+        circleLogo.click(function () {
+            setCircleShape();
+        }); // Setting shape of logo
+        squareLogo.click(function () {
+            setSquareShape();
+        });
+
+        // ~ Stamp Slots
         function showFiveStamps() {
             stampRow1.show();
             stampRow2.hide();
             cardHolder.removeClass('two-stamp-row-height');
             cardHolder.addClass('one-stamp-row-height');
         }
-
         function showTenStamps() {
             stampRow1.show();
             stampRow2.show();
             cardHolder.removeClass('one-stamp-row-height');
             cardHolder.addClass('two-stamp-row-height');
         }
-
         function setNumStamps() {
             switch (cardSlots) {
                 case 5:
@@ -2025,46 +2357,6 @@ export default {
                     break;
             }
         }
-
-        // Apply Logo shape
-        function setCircleShape() {
-            logoShape = "Circle";
-            squareLogo.removeClass('active-btn');
-            circleLogo.addClass('active-btn');
-        }
-
-        function setSquareShape() {
-            logoShape = "Square";
-            circleLogo.removeClass('active-btn');
-            squareLogo.addClass('active-btn');
-        }
-
-        // Apply Alignment for logo
-        function setLeftAlign() {
-            logoAlign = "Left"
-
-            alignRight.removeClass('active-btn')
-            alignCenter.removeClass('active-btn')
-            alignLeft.addClass('active-btn')
-        }
-
-        function setCentreAlign() {
-            logoAlign = "Center"
-
-            alignRight.removeClass('active-btn')
-            alignLeft.removeClass('active-btn')
-            alignCenter.addClass('active-btn')
-        }
-
-        function setRightAlign() {
-            logoAlign = "Right"
-
-            alignLeft.removeClass('active-btn')
-            alignCenter.removeClass('active-btn')
-            alignRight.addClass('active-btn')
-        }
-
-        // Apply NUmber of stamps on card
         function fiveStamp() {
             cardSlots = 5
 
@@ -2072,7 +2364,6 @@ export default {
             stamp15.removeClass('active-btn')
             stamp5.addClass('active-btn')
         }
-
         function tenStamp() {
             cardSlots = 10
 
@@ -2081,423 +2372,56 @@ export default {
             stamp10.addClass('active-btn')
         }
 
-        // Click Sections
-        function clickCreate() {
-            // Show form for create
-            fadeInCreate();
+        stamp5.click(function () {
+            fiveStamp();
+        }); // Setting number of buckets for card
+        stamp10.click(function () {
+            tenStamp();
+        });
 
-            // Correct breadcrumb
-            activateCreate();
-            deactivateBuild();
-            deactivatePreview();
-        }
+        // ~ Colour Card
+        colourInput.change(function () {
+            cardColour = colourInput.val();
+        }); // Setting background colour
 
-        function clickBuilder() {
-            // show loading
-            showLoadingScreen();
+        // ~ Font Colour
+        fontInput.change(function () {
+            fontColour = fontInput.val();
+        }); // Setting font colour
 
-            // Show form for create
-            fadeInBuild();
 
-            // Correct breadcrumb
-            activateBuild();
-            deactivateCreate();
-            deactivatePreview();
-
-            // Making builder dynamic to create options
-            // ~ Logo Shape
-            setLogoShape();
-
-            // ~ Logo Align
-            setLogoAlignment();
-
-            // ~ Stamp slots
-            setNumStamps();
-
-            // ~ Card Colour
-            cardHolder.css("background-color", cardColour);
-
-            // ~ Font Colour
-            titleDesc.css("color", fontColour);
-
-            numberOfClicks += 1;
-
-            console.log(numberOfClicks);
-
-            // ~ Hide loading Screen
-            hideLoadingScreen();
-        }
-
-        function clickPreview() {
-            // Show form for create
-            fadeInPreview();
-
-            // Correct breadcrumb
-            activatePreview();
-            deactivateCreate();
-            deactivateBuild();
-
-            // Card Info
-            cardPreview();
-        }
-
-        // Setting Form Defaults
+        // Set defaults
         function setDefaults() {
             // setting classes
             btn1.addClass('active-btn');
             btn1Txt.addClass('active-txt');
 
+            // Set Title if blank
+            cardTitle = "Untitled Card";
+
+            // Set Desc if blank
+            cardDescription = "No description set, please set one in the Create section!"
+
+            // Set 1 stamp row
+            cardSlots = 5;
+
+            // Align Logo left
+            logoAlign = "Left";
+
+            // Set Circle Logo
+            logoShape = "Circle";
+
+            // Default background colour
+            cardColour = "#141414";
+
+            // Default font colour
+            fontColour = "#ffffff";
+
             create.fadeIn(250);
         }
 
-        // Show preview of card
-        function cardPreview() {
-            titleOfCard.text(cardTitle);
-            descOfCard.text(cardDescription);
-
-            switch (cardSlots) {
-                case 5:
-                    previewStampRow1.show();
-                    previewStampRow2.hide();
-                    previewCard.removeClass('preview-two-row-height');
-                    previewCard.addClass('preview-one-row-height');
-                    break;
-                case 10:
-                    previewStampRow1.show();
-                    previewStampRow2.show();
-                    previewCard.removeClass('preview-one-row-height');
-                    previewCard.addClass('preview-two-row-height');
-                    break;
-            }
-
-            previewCard.css("background-color", cardColour);
-        }
-
-        // Fading in helper
-        // Functions to show and hide
-        // ~ Title
-        function titleShow() {
-            titleHelper.fadeIn(200)
-        }
-
-        function titleHide() {
-            titleHelper.fadeOut(200)
-        }
-
-        // ~ Description
-        function descShow() {
-            descHelper.fadeIn(200)
-        }
-
-        function descHide() {
-            descHelper.fadeOut(200)
-        }
-
-        // ~ Reward
-        function rewardShow() {
-            rewardHelper.fadeIn(200)
-        }
-
-        function rewardHide() {
-            rewardHelper.fadeOut(200)
-        }
-
-        // ~ Gain Reward
-        function gainShow() {
-            gainHelper.fadeIn(200)
-        }
-
-        function gainHide() {
-            gainHelper.fadeOut(200)
-        }
-
-        // ~ Logo Position
-        function logoPosShow() {
-            logoHelper.fadeIn(200)
-        }
-
-        function logoPosHide() {
-            logoHelper.fadeOut(200)
-        }
-
-        // ~ Logo Shape
-        function logoShapeShow() {
-            logoShapeHelper.fadeIn(200)
-        }
-
-        function logoShapeHide() {
-            logoShapeHelper.fadeOut(200)
-        }
-
-        // ~ Required Stamps
-        function requiredShow() {
-            requiredHelper.fadeIn(200)
-        }
-
-        function requiredHide() {
-            requiredHelper.fadeOut(200)
-        }
-
-        // ~ Num of stamps
-        function stampShow() {
-            numHelper.fadeIn(200)
-        }
-
-        function stampHide() {
-            numHelper.fadeOut(200)
-        }
-
-        // ~ Colour picker
-        function colourShow() {
-            colourHelper.fadeIn(200)
-        }
-
-        function colourHide() {
-            colourHelper.fadeOut(200)
-        }
-
-        // ~ Font picker
-        function fontShow() {
-            fontHelper.fadeIn(200)
-        }
-
-        function fontHide() {
-            fontHelper.fadeOut(200)
-        }
-
-        // Create Btn Clicked
-        btn1.click(function () {
-            clickCreate();
-        });
-
-        // Builder Button Clicked
-        btn2.click(function () {
-            // ~ Show Preview Option
-            previewSeparator.fadeIn(100);
-            previewButton.fadeIn(100);
-
-            clickBuilder();
-        });
-
-        // Showing builder form
-        btn3.click(function () {
-            clickPreview();
-        });
-
-        // Handling changes from user
-        titleInput.change(function () {
-            cardTitle = titleInput.val();
-        });
-
-        descInput.change(function () {
-            cardDescription = descInput.val();
-        });
-
-        rewardInput.change(function () {
-            cardReward = rewardInput.val();
-        });
-
-        gainInput.change(function () {
-            cardGain = gainInput.val();
-        });
-
-        requiredInput.change(function () {
-            stampsRequired = requiredInput.val();
-        });
-
-        // Selecting logo alignment for card
-        alignLeft.click(function () {
-            setLeftAlign();
-        });
-
-        alignCenter.click(function () {
-            setCentreAlign();
-        });
-
-        alignRight.click(function () {
-            setRightAlign();
-        });
-
-        // Setting shape of logo
-        circleLogo.click(function () {
-            setCircleShape();
-        });
-
-        squareLogo.click(function () {
-            setSquareShape();
-        });
-
-        // Setting number of buckets for card
-        stamp5.click(function () {
-            fiveStamp();
-        });
-
-        stamp10.click(function () {
-            tenStamp();
-        });
-
-        // Setting background colour of card
-        colourInput.change(function () {
-            cardColour = colourInput.val();
-        });
-
-        // Setting font colour of card
-        fontInput.change(function () {
-            fontColour = fontInput.val();
-        });
-
-        // ~ Card Title
-        titleHelpShow.click(function () {
-            titleShow();
-        });
-
-        titleHelpHide.click(function () {
-            titleHide();
-        });
-
-        titleInput.click(function () {
-            titleHide();
-        });
-
-        // ~ Card Description
-        descHelpShow.click(function () {
-            descShow();
-        });
-
-        descHelpHide.click(function () {
-            descHide();
-        });
-
-        descInput.click(function () {
-            descHide();
-        });
-
-        // ~ Card Reward
-        rewardHelpShow.click(function () {
-            rewardShow();
-        });
-
-        rewardHelpHide.click(function () {
-            rewardHide();
-        });
-
-        rewardInput.click(function () {
-            rewardHide();
-        });
-
-        // ~ Card Gain Reward
-        gainHelpShow.click(function () {
-            gainShow();
-        });
-
-        gainHelpHide.click(function () {
-            gainHide();
-        });
-
-        gainInput.click(function () {
-            gainHide();
-        });
-
-        // ~ Card Logo
-        logoHelpShow.click(function () {
-            logoPosShow();
-        });
-
-        logoHelpHide.click(function () {
-            logoPosHide();
-        });
-
-        alignLeft.click(function () {
-            logoPosHide();
-        });
-
-        alignCenter.click(function () {
-            logoPosHide()
-        });
-
-        alignRight.click(function () {
-            logoPosHide()
-        });
-
-        // ~ Logo Shape
-        logoShapeHelpShow.click(function () {
-            logoShapeShow();
-        });
-
-        logoShapeHelpHide.click(function () {
-            logoShapeHide();
-        });
-
-        circleLogo.click(function () {
-            logoShapeHide();
-        });
-
-        squareLogo.click(function () {
-            logoShapeHide();
-        });
-
-        // ~ Logo Shape
-        requiredHelpShow.click(function () {
-            requiredShow();
-        });
-
-        requiredHelpHide.click(function () {
-            requiredHide();
-        });
-
-        requiredInput.click(function () {
-            requiredHide();
-        });
-
-        // ~ Number of stamps
-        numHelpShow.click(function () {
-            stampShow();
-        });
-
-        numHelpHide.click(function () {
-            stampHide();
-        });
-
-        numInput.click(function () {
-            stampHide();
-        });
-
-        stamp5.click(function () {
-            stampHide();
-        });
-
-        stamp10.click(function () {
-            stampHide();
-        });
-
-        stamp15.click(function () {
-            stampHide();
-        });
-
-        // ~ Card Colour
-        colourHelpShow.click(function () {
-            colourShow();
-        });
-
-        colourHelpHide.click(function () {
-            colourHide();
-        });
-
-        colourInput.click(function () {
-            colourHide();
-        });
-
-        // ~ Font Colour
-        fontHelpShow.click(function () {
-            fontShow();
-        });
-
-        fontHelpHide.click(function () {
-            fontHide();
-        });
-
-        fontInput.click(function () {
-            fontHide();
+        $(document).ready(function () {
+            setDefaults();
         });
     }
 };

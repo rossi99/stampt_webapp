@@ -15,27 +15,27 @@ class CreateLoyaltyCardsTable extends Migration
     {
         Schema::create('loyalty_cards', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cardTitle');
-            $table->text('cardDesc');
-            $table->text('cardReward');
-            $table->text('cardProgressMethod');
-            $table->string('cardLogoPosition');
-            $table->string('cardLogoShape');
-            $table->integer('cardStampsRequired');
-            $table->integer('cardNumOfStamps');
-            $table->string('cardBackgroundColour');
-            $table->string('cardFontColour');
-            $table->integer('cardSlotOne');
-            $table->integer('cardSlotTwo');
-            $table->integer('cardSlotThree');
-            $table->integer('cardSlotFour');
-            $table->integer('cardSlotFive');
-            $table->integer('cardSlotSix');
-            $table->integer('cardSlotSeven');
-            $table->integer('cardSlotEight');
-            $table->integer('cardSlotNine');
-            $table->integer('cardSlotTen');
-            $table->string('cardStatus');
+            $table->string('title');
+            $table->text('description');
+            $table->text('reward');
+            $table->text('progressMethod');
+            $table->string('logoPosition');
+            $table->string('logoShape');
+            $table->integer('stampsRequired');
+            $table->integer('stampSlots');
+            $table->string('backgroundColour');
+            $table->string('fontColour');
+            $table->string('status');
+            $table->integer('slotOne');
+            $table->integer('slotTwo');
+            $table->integer('slotThree');
+            $table->integer('slotFour');
+            $table->integer('slotFive');
+            $table->integer('slotSix');
+            $table->integer('slotSeven');
+            $table->integer('slotEight');
+            $table->integer('slotNine');
+            $table->integer('slotTen');
             $table->timestamps();
         });
     }

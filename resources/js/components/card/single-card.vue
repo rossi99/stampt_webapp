@@ -52,16 +52,16 @@
                                             <td class="row-data">{{ card.reward }}</td>
                                         </tr>
 
-                                        <!-- Card Stamps Needed -->
-                                        <tr class="name-row">
-                                            <td class="row-title">Stamps Needed:</td>
-                                            <td class="row-data">{{ card.stampsRequired }}</td>
-                                        </tr>
-
                                         <!-- Card Reward -->
                                         <tr class="name-row">
                                             <td class="row-title">How to gain:</td>
                                             <td class="row-data">{{ card.progressMethod }}</td>
+                                        </tr>
+
+                                        <!-- Card Stamps Needed -->
+                                        <tr class="name-row">
+                                            <td class="row-title">Stamps Needed:</td>
+                                            <td class="row-data">{{ card.stampsRequired }}</td>
                                         </tr>
 
                                         <!-- Card Status -->
@@ -83,7 +83,7 @@
                             <div class="card-preview-container">
                                 <div class="card-preview-content alignMiddle">
                                     <!-- Show if 5 stamps -->
-                                    <div v-if="card.numOfStamps === 5" class="one-row-card" :style="{ background: `${card.background}` }">
+                                    <div v-if="card.stampSlots === 5" class="one-row-card" :style="{ background: `${card.background}` }">
                                         <!-- logo and stamp container -->
                                         <div class="stamp-logo-holder">
 
@@ -284,7 +284,7 @@
                                     </div>
 
                                     <!-- Show if 10 stamps -->
-                                    <div v-if="card.numOfStamps === 10" class="two-row-card" :style="{ background: `${card.background}` }">
+                                    <div v-if="card.stampSlots === 10" class="two-row-card" :style="{ background: `${card.background}` }">
                                         <!-- logo and stamp container -->
                                         <div class="stamp-logo-holder">
 

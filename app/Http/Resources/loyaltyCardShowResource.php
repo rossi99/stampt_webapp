@@ -17,29 +17,29 @@ class loyaltyCardShowResource extends JsonResource
         return [
             // card info return
             'id' => $this->id,
-            'title' => $this->cardTitle,
-            'description' => $this->cardDesc,
-            'reward' => $this->cardReward,
-            'stampsRequired' => $this->cardStampsRequired,
-            'progressMethod' => $this->cardProgressMethod,
-            'status' => $this->cardStatus,
+            'title' => $this->title,
+            'description' => $this->description,
+            'reward' => $this->reward,
+            'progressMethod' => $this->progressMethod,
+            'stampsRequired' => $this->stampsRequired,
+            'status' => $this->status,
 
             // card layout return
-            'background' => $this->cardBackgroundColour,
-            'font' => $this->cardFontColour,
-            'logoPosition' => $this->cardLogoPosition,
-            'logoShape' => $this->cardLogoShape,
-            'numOfStamps' => $this->cardNumOfStamps,
-            'slotOne' => $this->cardSlotOne,
-            'slotTwo' => $this->cardSlotTwo,
-            'slotThree' => $this->cardSlotThree,
-            'slotFour' => $this->cardSlotFour,
-            'slotFive' => $this->cardSlotFive,
-            'slotSix' => $this->cardSlotSix,
-            'slotSeven' => $this->cardSlotSeven,
-            'slotEight' => $this->cardSlotEight,
-            'slotNine' => $this->cardSlotNine,
-            'slotTen' => $this->cardSlotTen
+            'backgroundColour' => $this->backgroundColour,
+            'fontColour' => $this->fontColour,
+            'logoPosition' => $this->logoPosition,
+            'logoShape' => $this->logoShape,
+            'stampSlots' => $this->stampSlots,
+            'slotOne' => $this->slotOne,
+            'slotTwo' => $this->slotTwo,
+            'slotThree' => $this->slotThree,
+            'slotFour' => $this->slotFour,
+            'slotFive' => $this->slotFive,
+            'slotSix' => $this->slotSix,
+            'slotSeven' => $this->slotSeven,
+            'slotEight' => $this->slotEight,
+            'slotNine' => $this->slotNine,
+            'slotTen' => $this->slotTen
         ];
     }
 }

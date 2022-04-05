@@ -16,8 +16,8 @@ class loyaltyCardIndexResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->cardTitle,
-            'stampsRequired' => $this->cardStampsRequired
+            'title' => $this->title,
+            'stampsRequired' => $this->stampsRequired
         ];
     }
 }

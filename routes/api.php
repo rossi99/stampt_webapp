@@ -23,3 +23,6 @@ Route::get('loyaltyCards', [\App\Http\Controllers\loyaltyCardController::class, 
 
 /* GET: One loyalty card */
 Route::get('loyaltyCards/{id}', [\App\Http\Controllers\loyaltyCardController::class, 'show']);
+
+/* Post: New loyalty card */
+Route::post('loyaltyCards', [\App\Http\Controllers\loyaltyCardController::class, 'store']);

@@ -10,6 +10,30 @@ class loyaltyCard extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'reward',
+        'progressMethod',
+        'logoPosition',
+        'logoShape',
+        'stampsRequired',
+        'stampSlots',
+        'backgroundColour',
+        'fontColour',
+        'status',
+        'slotOne',
+        'slotTwo',
+        'slotThree',
+        'slotFour',
+        'slotFive',
+        'slotSix',
+        'slotSeven',
+        'slotEight',
+        'slotNine',
+        'slotTen'
+    ];
+
     public function users(): BelongsTo
     {
         return $this->belongsTo(User::class);

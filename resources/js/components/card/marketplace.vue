@@ -65,7 +65,7 @@ export default {
     created() {
         this.loading = true;
 
-        const request = axios.get("/api/loyaltyCards").then(response => {
+        const request = axios.get(`/api/loyaltyCards`).then(response => {
             this.cards = response.data;
             this.loading = false;
         });

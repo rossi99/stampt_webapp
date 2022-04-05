@@ -23340,30 +23340,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23377,7 +23353,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // Draggable Elements
-      cardElements: [{
+      stamps: [{
         name: "grey-stamp",
         id: 1
       }, {
@@ -23401,55 +23377,71 @@ __webpack_require__.r(__webpack_exports__);
       maxCharacter: 191,
       remainCharactersText: "Remaining 191 characters.",
       // Form ( Dynamic )
-      cardTitle: "",
-      cardDescription: "",
-      cardReward: "",
-      cardGain: "",
-      logoAlign: "",
-      logoShape: "",
-      stampsRequired: 0,
-      cardSlots: 5,
-      cardColour: "#141414",
-      fontColour: "#FFFFFF",
-      Slot1: 0,
-      Slot2: 0,
-      Slot3: 0,
-      Slot4: 0,
-      Slot5: 0,
-      Slot6: 0,
-      Slot7: 0,
-      Slot8: 0,
-      Slot9: 0,
-      Slot10: 0,
-      // Form ( Dynamic )
-      cardStatus: "active"
+      loyaltyCard: {
+        title: "",
+        description: "",
+        reward: "",
+        progressMethod: "",
+        logoPosition: "Left",
+        logoShape: "Circle",
+        stampsRequired: 0,
+        stampSlots: 5,
+        backgroundColour: "#141414",
+        fontColour: "#FFFFFF",
+        status: "active",
+        slotOne: 0,
+        slotTwo: 0,
+        slotThree: 0,
+        slotFour: 0,
+        slotFive: 0,
+        slotSix: 0,
+        slotSeven: 0,
+        slotEight: 0,
+        slotNine: 0,
+        slotTen: 0
+      },
+      // loading & error handling
+      loading: false,
+      error: false
     };
   },
   methods: {
     // Form Methods
+    submit: function submit() {
+      var _this = this;
+
+      this.loading = true;
+      axios.post("/api/loyaltyCards", this.loyaltyCard).then(function (response) {
+        return console.log(response);
+      })["catch"](function (err) {
+        return _this.error = true;
+      }).then(function () {
+        return _this.loading = false;
+      });
+    },
     // ~ Set Logo Align
     setAlignLeft: function setAlignLeft() {
-      this.logoAlign = "Left";
+      this.loyaltyCard.logoPosition = "Left";
     },
     setAlignMiddle: function setAlignMiddle() {
-      this.logoAlign = "Center";
+      this.loyaltyCard.logoPosition = "Center";
     },
     setAlignRight: function setAlignRight() {
-      this.logoAlign = "Right";
+      this.loyaltyCard.logoPosition = "Right";
     },
     // ~ Set Logo Shape
     setShapeCircle: function setShapeCircle() {
-      this.logoShape = "Circle";
+      this.loyaltyCard.logoShape = "Circle";
     },
     setShapeSquare: function setShapeSquare() {
-      this.logoShape = "Square";
+      this.loyaltyCard.logoShape = "Square";
     },
     // ~ Set Card Slots Shape
     set5Slots: function set5Slots() {
-      this.cardSlots = 5;
+      this.loyaltyCard.stampSlots = 5;
     },
     set10Slots: function set10Slots() {
-      this.cardSlots = 10;
+      this.loyaltyCard.stampSlots = 10;
     },
     // Clearing Builder
     clearStamps: function clearStamps() {
@@ -23486,12 +23478,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Counting Characters
     remainCharCount: function remainCharCount() {
-      if (this.cardDescription.length > this.maxCharacter) {
+      if (this.loyaltyCard.description.length > this.maxCharacter) {
         this.remainCharactersText = "Exceeded " + this.maxCharacter + " characters limit.";
         $('#desc-container').addClass("input-error");
         $('#desc-input').css("color", "#721c24");
       } else {
-        var remainCharacters = this.maxCharacter - this.cardDescription.length;
+        var remainCharacters = this.maxCharacter - this.loyaltyCard.description.length;
         this.remainCharactersText = "Remaining " + remainCharacters + " characters.";
         $('#desc-container').removeClass("input-error");
         $('#desc-input').css("color", "white");
@@ -23515,9 +23507,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrA.length > 0) {
-        this.Slot1 = this.arrA[0].id;
+        this.loyaltyCard.slotOne = this.arrA[0].id;
       } else {
-        this.Slot1 = 0;
+        this.loyaltyCard.slotOne = 0;
       }
     },
     arrB: function arrB(val) {
@@ -23536,9 +23528,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrB.length > 0) {
-        this.Slot2 = this.arrB[0].id;
+        this.loyaltyCard.slotTwo = this.arrB[0].id;
       } else {
-        this.Slot2 = 0;
+        this.loyaltyCard.slotTwo = 0;
       }
     },
     arrC: function arrC(val) {
@@ -23557,9 +23549,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrC.length > 0) {
-        this.Slot3 = this.arrC[0].id;
+        this.loyaltyCard.slotThree = this.arrC[0].id;
       } else {
-        this.Slot3 = 0;
+        this.loyaltyCard.slotThree = 0;
       }
     },
     arrD: function arrD(val) {
@@ -23578,9 +23570,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrD.length > 0) {
-        this.Slot4 = this.arrD[0].id;
+        this.loyaltyCard.slotFour = this.arrD[0].id;
       } else {
-        this.Slot4 = 0;
+        this.loyaltyCard.slotFour = 0;
       }
     },
     arrE: function arrE(val) {
@@ -23599,9 +23591,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrE.length > 0) {
-        this.Slot5 = this.arrE[0].id;
+        this.loyaltyCard.slotFive = this.arrE[0].id;
       } else {
-        this.Slot5 = 0;
+        this.loyaltyCard.slotFive = 0;
       }
     },
     arrF: function arrF(val) {
@@ -23620,9 +23612,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrF.length > 0) {
-        this.Slot6 = this.arrF[0].id;
+        this.loyaltyCard.slotSix = this.arrF[0].id;
       } else {
-        this.Slot6 = 0;
+        this.loyaltyCard.slotSix = 0;
       }
     },
     arrG: function arrG(val) {
@@ -23641,9 +23633,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrG.length > 0) {
-        this.Slot7 = this.arrG[0].id;
+        this.loyaltyCard.slotSeven = this.arrG[0].id;
       } else {
-        this.Slot7 = 0;
+        this.loyaltyCard.slotSeven = 0;
       }
     },
     arrH: function arrH(val) {
@@ -23662,9 +23654,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrH.length > 0) {
-        this.Slot8 = this.arrH[0].id;
+        this.loyaltyCard.slotEight = this.arrH[0].id;
       } else {
-        this.Slot8 = 0;
+        this.loyaltyCard.slotEight = 0;
       }
     },
     arrI: function arrI(val) {
@@ -23683,9 +23675,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrI.length > 0) {
-        this.Slot9 = this.arrI[0].id;
+        this.loyaltyCard.slotNine = this.arrI[0].id;
       } else {
-        this.Slot9 = 0;
+        this.loyaltyCard.slotNine = 0;
       }
     },
     arrJ: function arrJ(val) {
@@ -23704,15 +23696,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
       if (this.arrJ.length > 0) {
-        this.Slot10 = this.arrJ[0].id;
+        this.loyaltyCard.slotTen = this.arrJ[0].id;
       } else {
-        this.Slot10 = 0;
+        this.loyaltyCard.slotTen = 0;
       }
     }
   },
   mounted: function mounted() {
-    // ~ Variables & Defaults
-    // Section Vars
+    // Variables & Defaults
+    // ~ Section Vars
     var btn1 = $('#btn-1');
     var btn2 = $('#btn-2');
     var btn3 = $('#btn-3');
@@ -23721,21 +23713,18 @@ __webpack_require__.r(__webpack_exports__);
     var btn3Txt = $('#btn-3-txt');
     var create = $('.create-container');
     var build = $('.build-container');
-    var preview = $('.preview-container'); // Loading Screen Vars
+    var preview = $('.preview-container'); // ~ Loading Screen Vars
 
     var loadingScreen = $('.loading-screen-container');
-    var numberOfClicks = 0; // Create Form Vars
+    var numberOfClicks = 0; // ~ Create Form Vars
 
     var cardTitle;
     var cardDescription;
-    var cardReward;
-    var cardGain;
     var logoAlign;
     var logoShape;
-    var stampsRequired;
     var cardSlots;
     var cardColour;
-    var fontColour; // Helpers Vars
+    var fontColour; // ~ Helpers Vars
 
     var titleHelper = $('#title-helper');
     var titleHelpShow = $('#title-helper-show');
@@ -23782,26 +23771,219 @@ __webpack_require__.r(__webpack_exports__);
     var fontHelper = $('#font-helper');
     var fontHelpShow = $('#font-helper-show');
     var fontHelpHide = $('#font-helper-close');
-    var fontInput = $('#font-input'); // Builder And preview Vars
+    var fontInput = $('#font-input'); // ~ Builder And preview Vars
 
     var logo = $('.sample-logo-container');
-    var logoPosition = $('.logo-align-container'); // Builder Vars
+    var logoPosition = $('.logo-align-container'); // ~ Builder Vars
 
     var cardHolder = $('.builder-card');
     var stampRow1 = $('#stamp-row-1');
     var stampRow2 = $('#stamp-row-2');
     var previewSeparator = $('#preview-section-divider');
-    var previewButton = $('#preview-section-btn'); // Preview Card Vars
+    var previewButton = $('#preview-section-btn'); // ~ Preview Card Vars
 
     var previewCard = $('.preview-card');
     var previewStampRow1 = $('#preview-stamp-row-1');
     var previewStampRow2 = $('#preview-stamp-row-2');
     var titleDesc = $('.preview-txt-container');
     var titleOfCard = $('.preview-title');
-    var descOfCard = $('.preview-desc');
-    $(document).ready(function () {
-      setDefaults();
-    }); // loading screen
+    var descOfCard = $('.preview-desc'); // Helpers
+    // ~ Title
+
+    function titleShow() {
+      titleHelper.fadeIn(200);
+    }
+
+    function titleHide() {
+      titleHelper.fadeOut(200);
+    }
+
+    titleHelpShow.click(function () {
+      titleShow();
+    });
+    titleHelpHide.click(function () {
+      titleHide();
+    });
+    titleInput.click(function () {
+      titleHide();
+    }); // ~ Description
+
+    function descShow() {
+      descHelper.fadeIn(200);
+    }
+
+    function descHide() {
+      descHelper.fadeOut(200);
+    }
+
+    descHelpShow.click(function () {
+      descShow();
+    });
+    descHelpHide.click(function () {
+      descHide();
+    });
+    descInput.click(function () {
+      descHide();
+    }); // ~ Reward
+
+    function rewardShow() {
+      rewardHelper.fadeIn(200);
+    }
+
+    function rewardHide() {
+      rewardHelper.fadeOut(200);
+    }
+
+    rewardHelpShow.click(function () {
+      rewardShow();
+    });
+    rewardHelpHide.click(function () {
+      rewardHide();
+    });
+    rewardInput.click(function () {
+      rewardHide();
+    }); // ~ Gain Reward
+
+    function gainShow() {
+      gainHelper.fadeIn(200);
+    }
+
+    function gainHide() {
+      gainHelper.fadeOut(200);
+    }
+
+    gainHelpShow.click(function () {
+      gainShow();
+    });
+    gainHelpHide.click(function () {
+      gainHide();
+    });
+    gainInput.click(function () {
+      gainHide();
+    }); // ~ Logo Position
+
+    function logoPosShow() {
+      logoHelper.fadeIn(200);
+    }
+
+    function logoPosHide() {
+      logoHelper.fadeOut(200);
+    }
+
+    logoHelpShow.click(function () {
+      logoPosShow();
+    });
+    logoHelpHide.click(function () {
+      logoPosHide();
+    });
+    alignLeft.click(function () {
+      logoPosHide();
+    });
+    alignCenter.click(function () {
+      logoPosHide();
+    });
+    alignRight.click(function () {
+      logoPosHide();
+    }); // ~ Logo Shape
+
+    function logoShapeShow() {
+      logoShapeHelper.fadeIn(200);
+    }
+
+    function logoShapeHide() {
+      logoShapeHelper.fadeOut(200);
+    }
+
+    logoShapeHelpShow.click(function () {
+      logoShapeShow();
+    });
+    logoShapeHelpHide.click(function () {
+      logoShapeHide();
+    });
+    circleLogo.click(function () {
+      logoShapeHide();
+    });
+    squareLogo.click(function () {
+      logoShapeHide();
+    }); // ~ Required Stamps
+
+    function requiredShow() {
+      requiredHelper.fadeIn(200);
+    }
+
+    function requiredHide() {
+      requiredHelper.fadeOut(200);
+    }
+
+    requiredHelpShow.click(function () {
+      requiredShow();
+    });
+    requiredHelpHide.click(function () {
+      requiredHide();
+    });
+    requiredInput.click(function () {
+      requiredHide();
+    }); // ~ Num of stamps
+
+    function stampShow() {
+      numHelper.fadeIn(200);
+    }
+
+    function stampHide() {
+      numHelper.fadeOut(200);
+    }
+
+    numHelpShow.click(function () {
+      stampShow();
+    });
+    numHelpHide.click(function () {
+      stampHide();
+    });
+    numInput.click(function () {
+      stampHide();
+    });
+    stamp5.click(function () {
+      stampHide();
+    });
+    stamp10.click(function () {
+      stampHide();
+    }); // ~ Colour picker
+
+    function colourShow() {
+      colourHelper.fadeIn(200);
+    }
+
+    function colourHide() {
+      colourHelper.fadeOut(200);
+    }
+
+    colourHelpShow.click(function () {
+      colourShow();
+    });
+    colourHelpHide.click(function () {
+      colourHide();
+    });
+    colourInput.click(function () {
+      colourHide();
+    }); // ~ Font picker
+
+    function fontShow() {
+      fontHelper.fadeIn(200);
+    }
+
+    function fontHide() {
+      fontHelper.fadeOut(200);
+    }
+
+    fontHelpShow.click(function () {
+      fontShow();
+    });
+    fontHelpHide.click(function () {
+      fontHide();
+    });
+    fontInput.click(function () {
+      fontHide();
+    }); // Loading screen
 
     function showLoadingScreen() {
       if (numberOfClicks < 1) {
@@ -23818,69 +24000,171 @@ __webpack_require__.r(__webpack_exports__);
       build.fadeOut(100);
       preview.fadeOut(100);
       create.delay(250).fadeIn(250);
-    } // Show Build Section
+    }
 
+    function activateCreate() {
+      btn1.addClass('active-btn');
+      btn1Txt.addClass('active-txt');
+    }
+
+    function deactivateCreate() {
+      btn1.removeClass('active-btn');
+      btn1Txt.removeClass('active-txt');
+    }
+
+    function clickCreate() {
+      // Show form for create
+      fadeInCreate(); // Correct breadcrumb
+
+      activateCreate();
+      deactivateBuild();
+      deactivatePreview();
+    }
+
+    btn1.click(function () {
+      clickCreate();
+    }); // Build Section
 
     function fadeInBuild() {
       create.fadeOut(100);
       preview.fadeOut(100);
       build.delay(250).fadeIn(100);
-    } // Show Preview Section
+    }
 
+    function activateBuild() {
+      btn2.addClass('active-btn');
+      btn2Txt.addClass('active-txt');
+    }
+
+    function deactivateBuild() {
+      btn2.removeClass('active-btn');
+      btn2Txt.removeClass('active-txt');
+    }
+
+    function clickBuilder() {
+      // show loading
+      showLoadingScreen(); // Show form for create
+
+      fadeInBuild(); // Correct breadcrumb
+
+      activateBuild();
+      deactivateCreate();
+      deactivatePreview(); // Making builder dynamic to create options
+      // ~ Logo Shape
+
+      setLogoShape(); // ~ Logo Align
+
+      setLogoAlignment(); // ~ Stamp slots
+
+      setNumStamps(); // ~ Card Colour
+
+      cardHolder.css("background-color", cardColour); // ~ Font Colour
+
+      titleDesc.css("color", fontColour); // ~ Hide loading screen if element loaded in already
+
+      numberOfClicks += 1; // ~ Hide loading Screen
+
+      hideLoadingScreen();
+    }
+
+    btn2.click(function () {
+      // ~ Show Preview Option
+      previewSeparator.fadeIn(100);
+      previewButton.fadeIn(100);
+      clickBuilder();
+    }); // Preview Section
+
+    function cardPreview() {
+      setTitleForPreview();
+      setDescForPreview();
+
+      switch (cardSlots) {
+        case 5:
+          previewStampRow1.show();
+          previewStampRow2.hide();
+          previewCard.removeClass('preview-two-row-height');
+          previewCard.addClass('preview-one-row-height');
+          break;
+
+        case 10:
+          previewStampRow1.show();
+          previewStampRow2.show();
+          previewCard.removeClass('preview-one-row-height');
+          previewCard.addClass('preview-two-row-height');
+          break;
+      }
+
+      previewCard.css("background-color", cardColour);
+    }
 
     function fadeInPreview() {
       create.fadeOut(100);
       build.fadeOut(100);
       preview.delay(250).fadeIn(100);
-    } // Activate Create Section
-
-
-    function activateCreate() {
-      btn1.addClass('active-btn');
-      btn1Txt.addClass('active-txt');
-    } // Activate Create Section
-
-
-    function activateBuild() {
-      btn2.addClass('active-btn');
-      btn2Txt.addClass('active-txt');
-    } // Activate Create Section
-
+    }
 
     function activatePreview() {
       btn3.addClass('active-btn');
       btn3Txt.addClass('active-txt');
-    } // Activate Create Section
-
-
-    function deactivateCreate() {
-      btn1.removeClass('active-btn');
-      btn1Txt.removeClass('active-txt');
-    } // Activate Create Section
-
-
-    function deactivateBuild() {
-      btn2.removeClass('active-btn');
-      btn2Txt.removeClass('active-txt');
-    } // Activate Create Section
-
+    }
 
     function deactivatePreview() {
       btn3.removeClass('active-btn');
       btn3Txt.removeClass('active-txt');
-    } // Setting the logo shape
+    }
 
+    function clickPreview() {
+      // Show form for create
+      fadeInPreview(); // Correct breadcrumb
 
-    function setLogoShape() {
-      if (logoShape === "Square") {
-        logo.removeClass('circle-logo');
-        logo.addClass('square-logo');
-      } else {
-        logo.removeClass('square-logo');
-        logo.addClass('circle-logo');
-      }
-    } // Setting the logo alignment
+      activatePreview();
+      deactivateCreate();
+      deactivateBuild(); // Card Info
 
+      cardPreview();
+    }
+
+    btn3.click(function () {
+      clickPreview();
+    }); // Card Building Functions
+    // ~ Title
+
+    function setTitleForPreview() {
+      titleOfCard.text(cardTitle);
+    }
+
+    titleInput.change(function () {
+      cardTitle = titleInput.val();
+    }); // ~ Description
+
+    function setDescForPreview() {
+      descOfCard.text(cardDescription);
+    }
+
+    descInput.change(function () {
+      cardDescription = descInput.val();
+    }); // ~ Logo Alignment
+
+    function setLeftAlign() {
+      logoAlign = "Left";
+      alignRight.removeClass('active-btn');
+      alignCenter.removeClass('active-btn');
+      alignLeft.addClass('active-btn');
+    }
+
+    function setCentreAlign() {
+      logoAlign = "Center";
+      alignRight.removeClass('active-btn');
+      alignLeft.removeClass('active-btn');
+      alignCenter.addClass('active-btn');
+    }
+
+    function setRightAlign() {
+      logoAlign = "Right";
+      alignLeft.removeClass('active-btn');
+      alignCenter.removeClass('active-btn');
+      alignRight.addClass('active-btn');
+    }
 
     function setLogoAlignment() {
       switch (logoAlign) {
@@ -23911,8 +24195,48 @@ __webpack_require__.r(__webpack_exports__);
           logo.addClass('m-inline-e');
           break;
       }
-    } // set number of stamps for card
+    }
 
+    alignLeft.click(function () {
+      setLeftAlign();
+    }); // Selecting logo alignment for card
+
+    alignCenter.click(function () {
+      setCentreAlign();
+    });
+    alignRight.click(function () {
+      setRightAlign();
+    }); // ~ Logo Shape
+
+    function setCircleShape() {
+      logoShape = "Circle";
+      squareLogo.removeClass('active-btn');
+      circleLogo.addClass('active-btn');
+    }
+
+    function setSquareShape() {
+      logoShape = "Square";
+      circleLogo.removeClass('active-btn');
+      squareLogo.addClass('active-btn');
+    }
+
+    function setLogoShape() {
+      if (logoShape === "Square") {
+        logo.removeClass('circle-logo');
+        logo.addClass('square-logo');
+      } else {
+        logo.removeClass('square-logo');
+        logo.addClass('circle-logo');
+      }
+    }
+
+    circleLogo.click(function () {
+      setCircleShape();
+    }); // Setting shape of logo
+
+    squareLogo.click(function () {
+      setSquareShape();
+    }); // ~ Stamp Slots
 
     function showFiveStamps() {
       stampRow1.show();
@@ -23938,43 +24262,7 @@ __webpack_require__.r(__webpack_exports__);
           showTenStamps();
           break;
       }
-    } // Apply Logo shape
-
-
-    function setCircleShape() {
-      logoShape = "Circle";
-      squareLogo.removeClass('active-btn');
-      circleLogo.addClass('active-btn');
     }
-
-    function setSquareShape() {
-      logoShape = "Square";
-      circleLogo.removeClass('active-btn');
-      squareLogo.addClass('active-btn');
-    } // Apply Alignment for logo
-
-
-    function setLeftAlign() {
-      logoAlign = "Left";
-      alignRight.removeClass('active-btn');
-      alignCenter.removeClass('active-btn');
-      alignLeft.addClass('active-btn');
-    }
-
-    function setCentreAlign() {
-      logoAlign = "Center";
-      alignRight.removeClass('active-btn');
-      alignLeft.removeClass('active-btn');
-      alignCenter.addClass('active-btn');
-    }
-
-    function setRightAlign() {
-      logoAlign = "Right";
-      alignLeft.removeClass('active-btn');
-      alignCenter.removeClass('active-btn');
-      alignRight.addClass('active-btn');
-    } // Apply NUmber of stamps on card
-
 
     function fiveStamp() {
       cardSlots = 5;
@@ -23988,359 +24276,49 @@ __webpack_require__.r(__webpack_exports__);
       stamp5.removeClass('active-btn');
       stamp15.removeClass('active-btn');
       stamp10.addClass('active-btn');
-    } // Click Sections
-
-
-    function clickCreate() {
-      // Show form for create
-      fadeInCreate(); // Correct breadcrumb
-
-      activateCreate();
-      deactivateBuild();
-      deactivatePreview();
     }
 
-    function clickBuilder() {
-      // show loading
-      showLoadingScreen(); // Show form for create
+    stamp5.click(function () {
+      fiveStamp();
+    }); // Setting number of buckets for card
 
-      fadeInBuild(); // Correct breadcrumb
+    stamp10.click(function () {
+      tenStamp();
+    }); // ~ Colour Card
 
-      activateBuild();
-      deactivateCreate();
-      deactivatePreview(); // Making builder dynamic to create options
-      // ~ Logo Shape
+    colourInput.change(function () {
+      cardColour = colourInput.val();
+    }); // Setting background colour
+    // ~ Font Colour
 
-      setLogoShape(); // ~ Logo Align
-
-      setLogoAlignment(); // ~ Stamp slots
-
-      setNumStamps(); // ~ Card Colour
-
-      cardHolder.css("background-color", cardColour); // ~ Font Colour
-
-      titleDesc.css("color", fontColour);
-      numberOfClicks += 1;
-      console.log(numberOfClicks); // ~ Hide loading Screen
-
-      hideLoadingScreen();
-    }
-
-    function clickPreview() {
-      // Show form for create
-      fadeInPreview(); // Correct breadcrumb
-
-      activatePreview();
-      deactivateCreate();
-      deactivateBuild(); // Card Info
-
-      cardPreview();
-    } // Setting Form Defaults
-
+    fontInput.change(function () {
+      fontColour = fontInput.val();
+    }); // Setting font colour
+    // Set defaults
 
     function setDefaults() {
       // setting classes
       btn1.addClass('active-btn');
-      btn1Txt.addClass('active-txt');
+      btn1Txt.addClass('active-txt'); // Set Title if blank
+
+      cardTitle = "Untitled Card"; // Set Desc if blank
+
+      cardDescription = "No description set, please set one in the Create section!"; // Set 1 stamp row
+
+      cardSlots = 5; // Align Logo left
+
+      logoAlign = "Left"; // Set Circle Logo
+
+      logoShape = "Circle"; // Default background colour
+
+      cardColour = "#141414"; // Default font colour
+
+      fontColour = "#ffffff";
       create.fadeIn(250);
-    } // Show preview of card
-
-
-    function cardPreview() {
-      titleOfCard.text(cardTitle);
-      descOfCard.text(cardDescription);
-
-      switch (cardSlots) {
-        case 5:
-          previewStampRow1.show();
-          previewStampRow2.hide();
-          previewCard.removeClass('preview-two-row-height');
-          previewCard.addClass('preview-one-row-height');
-          break;
-
-        case 10:
-          previewStampRow1.show();
-          previewStampRow2.show();
-          previewCard.removeClass('preview-one-row-height');
-          previewCard.addClass('preview-two-row-height');
-          break;
-      }
-
-      previewCard.css("background-color", cardColour);
-    } // Fading in helper
-    // Functions to show and hide
-    // ~ Title
-
-
-    function titleShow() {
-      titleHelper.fadeIn(200);
     }
 
-    function titleHide() {
-      titleHelper.fadeOut(200);
-    } // ~ Description
-
-
-    function descShow() {
-      descHelper.fadeIn(200);
-    }
-
-    function descHide() {
-      descHelper.fadeOut(200);
-    } // ~ Reward
-
-
-    function rewardShow() {
-      rewardHelper.fadeIn(200);
-    }
-
-    function rewardHide() {
-      rewardHelper.fadeOut(200);
-    } // ~ Gain Reward
-
-
-    function gainShow() {
-      gainHelper.fadeIn(200);
-    }
-
-    function gainHide() {
-      gainHelper.fadeOut(200);
-    } // ~ Logo Position
-
-
-    function logoPosShow() {
-      logoHelper.fadeIn(200);
-    }
-
-    function logoPosHide() {
-      logoHelper.fadeOut(200);
-    } // ~ Logo Shape
-
-
-    function logoShapeShow() {
-      logoShapeHelper.fadeIn(200);
-    }
-
-    function logoShapeHide() {
-      logoShapeHelper.fadeOut(200);
-    } // ~ Required Stamps
-
-
-    function requiredShow() {
-      requiredHelper.fadeIn(200);
-    }
-
-    function requiredHide() {
-      requiredHelper.fadeOut(200);
-    } // ~ Num of stamps
-
-
-    function stampShow() {
-      numHelper.fadeIn(200);
-    }
-
-    function stampHide() {
-      numHelper.fadeOut(200);
-    } // ~ Colour picker
-
-
-    function colourShow() {
-      colourHelper.fadeIn(200);
-    }
-
-    function colourHide() {
-      colourHelper.fadeOut(200);
-    } // ~ Font picker
-
-
-    function fontShow() {
-      fontHelper.fadeIn(200);
-    }
-
-    function fontHide() {
-      fontHelper.fadeOut(200);
-    } // Create Btn Clicked
-
-
-    btn1.click(function () {
-      clickCreate();
-    }); // Builder Button Clicked
-
-    btn2.click(function () {
-      // ~ Show Preview Option
-      previewSeparator.fadeIn(100);
-      previewButton.fadeIn(100);
-      clickBuilder();
-    }); // Showing builder form
-
-    btn3.click(function () {
-      clickPreview();
-    }); // Handling changes from user
-
-    titleInput.change(function () {
-      cardTitle = titleInput.val();
-    });
-    descInput.change(function () {
-      cardDescription = descInput.val();
-    });
-    rewardInput.change(function () {
-      cardReward = rewardInput.val();
-    });
-    gainInput.change(function () {
-      cardGain = gainInput.val();
-    });
-    requiredInput.change(function () {
-      stampsRequired = requiredInput.val();
-    }); // Selecting logo alignment for card
-
-    alignLeft.click(function () {
-      setLeftAlign();
-    });
-    alignCenter.click(function () {
-      setCentreAlign();
-    });
-    alignRight.click(function () {
-      setRightAlign();
-    }); // Setting shape of logo
-
-    circleLogo.click(function () {
-      setCircleShape();
-    });
-    squareLogo.click(function () {
-      setSquareShape();
-    }); // Setting number of buckets for card
-
-    stamp5.click(function () {
-      fiveStamp();
-    });
-    stamp10.click(function () {
-      tenStamp();
-    }); // Setting background colour of card
-
-    colourInput.change(function () {
-      cardColour = colourInput.val();
-    }); // Setting font colour of card
-
-    fontInput.change(function () {
-      fontColour = fontInput.val();
-    }); // ~ Card Title
-
-    titleHelpShow.click(function () {
-      titleShow();
-    });
-    titleHelpHide.click(function () {
-      titleHide();
-    });
-    titleInput.click(function () {
-      titleHide();
-    }); // ~ Card Description
-
-    descHelpShow.click(function () {
-      descShow();
-    });
-    descHelpHide.click(function () {
-      descHide();
-    });
-    descInput.click(function () {
-      descHide();
-    }); // ~ Card Reward
-
-    rewardHelpShow.click(function () {
-      rewardShow();
-    });
-    rewardHelpHide.click(function () {
-      rewardHide();
-    });
-    rewardInput.click(function () {
-      rewardHide();
-    }); // ~ Card Gain Reward
-
-    gainHelpShow.click(function () {
-      gainShow();
-    });
-    gainHelpHide.click(function () {
-      gainHide();
-    });
-    gainInput.click(function () {
-      gainHide();
-    }); // ~ Card Logo
-
-    logoHelpShow.click(function () {
-      logoPosShow();
-    });
-    logoHelpHide.click(function () {
-      logoPosHide();
-    });
-    alignLeft.click(function () {
-      logoPosHide();
-    });
-    alignCenter.click(function () {
-      logoPosHide();
-    });
-    alignRight.click(function () {
-      logoPosHide();
-    }); // ~ Logo Shape
-
-    logoShapeHelpShow.click(function () {
-      logoShapeShow();
-    });
-    logoShapeHelpHide.click(function () {
-      logoShapeHide();
-    });
-    circleLogo.click(function () {
-      logoShapeHide();
-    });
-    squareLogo.click(function () {
-      logoShapeHide();
-    }); // ~ Logo Shape
-
-    requiredHelpShow.click(function () {
-      requiredShow();
-    });
-    requiredHelpHide.click(function () {
-      requiredHide();
-    });
-    requiredInput.click(function () {
-      requiredHide();
-    }); // ~ Number of stamps
-
-    numHelpShow.click(function () {
-      stampShow();
-    });
-    numHelpHide.click(function () {
-      stampHide();
-    });
-    numInput.click(function () {
-      stampHide();
-    });
-    stamp5.click(function () {
-      stampHide();
-    });
-    stamp10.click(function () {
-      stampHide();
-    });
-    stamp15.click(function () {
-      stampHide();
-    }); // ~ Card Colour
-
-    colourHelpShow.click(function () {
-      colourShow();
-    });
-    colourHelpHide.click(function () {
-      colourHide();
-    });
-    colourInput.click(function () {
-      colourHide();
-    }); // ~ Font Colour
-
-    fontHelpShow.click(function () {
-      fontShow();
-    });
-    fontHelpHide.click(function () {
-      fontHide();
-    });
-    fontInput.click(function () {
-      fontHide();
+    $(document).ready(function () {
+      setDefaults();
     });
   }
 });
@@ -61792,8 +61770,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.cardTitle,
-                          expression: "cardTitle",
+                          value: _vm.loyaltyCard.title,
+                          expression: "loyaltyCard.title",
                         },
                       ],
                       staticClass: "stampt-input",
@@ -61801,15 +61779,19 @@ var render = function () {
                         type: "text",
                         name: "cardTitle",
                         id: "title-input",
-                        placeholder: "What is your card called?",
+                        placeholder: "No Title Set...",
                       },
-                      domProps: { value: _vm.cardTitle },
+                      domProps: { value: _vm.loyaltyCard.title },
                       on: {
                         input: function ($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.cardTitle = $event.target.value
+                          _vm.$set(
+                            _vm.loyaltyCard,
+                            "title",
+                            $event.target.value
+                          )
                         },
                       },
                     }),
@@ -61905,8 +61887,8 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.cardDescription,
-                            expression: "cardDescription",
+                            value: _vm.loyaltyCard.description,
+                            expression: "loyaltyCard.description",
                           },
                         ],
                         staticClass: "stampt-input",
@@ -61914,9 +61896,9 @@ var render = function () {
                           type: "text",
                           name: "cardDescription",
                           id: "desc-input",
-                          placeholder: "Tell me all about this loyalty card!",
+                          placeholder: "No description set...",
                         },
-                        domProps: { value: _vm.cardDescription },
+                        domProps: { value: _vm.loyaltyCard.description },
                         on: {
                           keyup: function ($event) {
                             return _vm.remainCharCount()
@@ -61925,7 +61907,11 @@ var render = function () {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.cardDescription = $event.target.value
+                            _vm.$set(
+                              _vm.loyaltyCard,
+                              "description",
+                              $event.target.value
+                            )
                           },
                         },
                       }),
@@ -62020,8 +62006,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.cardReward,
-                          expression: "cardReward",
+                          value: _vm.loyaltyCard.reward,
+                          expression: "loyaltyCard.reward",
                         },
                       ],
                       staticClass: "stampt-input",
@@ -62029,15 +62015,19 @@ var render = function () {
                         type: "text",
                         name: "cardReward",
                         id: "reward-input",
-                        placeholder: "What are your customers working towards?",
+                        placeholder: "No reward set...",
                       },
-                      domProps: { value: _vm.cardReward },
+                      domProps: { value: _vm.loyaltyCard.reward },
                       on: {
                         input: function ($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.cardReward = $event.target.value
+                          _vm.$set(
+                            _vm.loyaltyCard,
+                            "reward",
+                            $event.target.value
+                          )
                         },
                       },
                     }),
@@ -62127,8 +62117,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.cardGain,
-                          expression: "cardGain",
+                          value: _vm.loyaltyCard.progressMethod,
+                          expression: "loyaltyCard.progressMethod",
                         },
                       ],
                       staticClass: "stampt-input",
@@ -62136,16 +62126,19 @@ var render = function () {
                         type: "text",
                         name: "cardGain",
                         id: "gain-input",
-                        placeholder:
-                          "What do your customers have to do to gain a stamp?",
+                        placeholder: "No progress method set...",
                       },
-                      domProps: { value: _vm.cardGain },
+                      domProps: { value: _vm.loyaltyCard.progressMethod },
                       on: {
                         input: function ($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.cardGain = $event.target.value
+                          _vm.$set(
+                            _vm.loyaltyCard,
+                            "progressMethod",
+                            $event.target.value
+                          )
                         },
                       },
                     }),
@@ -62544,8 +62537,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.stampsRequired,
-                          expression: "stampsRequired",
+                          value: _vm.loyaltyCard.stampsRequired,
+                          expression: "loyaltyCard.stampsRequired",
                         },
                       ],
                       staticClass: "stampt-input",
@@ -62555,15 +62548,19 @@ var render = function () {
                         min: "1",
                         max: "10",
                         id: "required-input",
-                        placeholder: "How many stamps will your card have?",
+                        placeholder: "No stamps set...",
                       },
-                      domProps: { value: _vm.stampsRequired },
+                      domProps: { value: _vm.loyaltyCard.stampsRequired },
                       on: {
                         input: function ($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.stampsRequired = $event.target.value
+                          _vm.$set(
+                            _vm.loyaltyCard,
+                            "stampsRequired",
+                            $event.target.value
+                          )
                         },
                       },
                     }),
@@ -62890,8 +62887,8 @@ var render = function () {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.cardColour,
-                                    expression: "cardColour",
+                                    value: _vm.loyaltyCard.backgroundColour,
+                                    expression: "loyaltyCard.backgroundColour",
                                   },
                                 ],
                                 staticClass: "stampt-input-color",
@@ -62900,13 +62897,19 @@ var render = function () {
                                   name: "cardColour",
                                   id: "colour-input",
                                 },
-                                domProps: { value: _vm.cardColour },
+                                domProps: {
+                                  value: _vm.loyaltyCard.backgroundColour,
+                                },
                                 on: {
                                   input: function ($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
-                                    _vm.cardColour = $event.target.value
+                                    _vm.$set(
+                                      _vm.loyaltyCard,
+                                      "backgroundColour",
+                                      $event.target.value
+                                    )
                                   },
                                 },
                               }),
@@ -63013,8 +63016,8 @@ var render = function () {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.fontColour,
-                                    expression: "fontColour",
+                                    value: _vm.loyaltyCard.fontColour,
+                                    expression: "loyaltyCard.fontColour",
                                   },
                                 ],
                                 staticClass: "stampt-input-color",
@@ -63023,13 +63026,17 @@ var render = function () {
                                   name: "fontColour",
                                   id: "font-input",
                                 },
-                                domProps: { value: _vm.fontColour },
+                                domProps: { value: _vm.loyaltyCard.fontColour },
                                 on: {
                                   input: function ($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
-                                    _vm.fontColour = $event.target.value
+                                    _vm.$set(
+                                      _vm.loyaltyCard,
+                                      "fontColour",
+                                      $event.target.value
+                                    )
                                   },
                                 },
                               }),
@@ -63065,7 +63072,7 @@ var render = function () {
                                 "draggable",
                                 {
                                   attrs: {
-                                    list: _vm.cardElements,
+                                    list: _vm.stamps,
                                     group: {
                                       name: "cardItem",
                                       pull: "clone",
@@ -63073,16 +63080,16 @@ var render = function () {
                                     },
                                   },
                                 },
-                                _vm._l(_vm.cardElements, function (element) {
+                                _vm._l(_vm.stamps, function (stamp) {
                                   return _c(
                                     "div",
                                     {
-                                      key: element.id,
+                                      key: stamp.id,
                                       staticClass: "stamp-element-row",
                                       staticStyle: { cursor: "move" },
                                     },
                                     [
-                                      element.id === 1
+                                      stamp.id === 1
                                         ? _c("div", [
                                             _c("img", {
                                               staticClass: "stamp",
@@ -63094,7 +63101,7 @@ var render = function () {
                                           ])
                                         : _vm._e(),
                                       _vm._v(" "),
-                                      element.id === 2
+                                      stamp.id === 2
                                         ? _c("div", [
                                             _c("img", {
                                               staticClass: "stamp",
@@ -63106,7 +63113,7 @@ var render = function () {
                                           ])
                                         : _vm._e(),
                                       _vm._v(" "),
-                                      element.id === 3
+                                      stamp.id === 3
                                         ? _c("div", [
                                             _c("img", {
                                               staticClass: "stamp",
@@ -63194,12 +63201,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrA,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63212,7 +63219,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63225,7 +63232,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63281,12 +63288,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrB,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63299,7 +63306,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63312,7 +63319,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63368,12 +63375,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrC,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63386,7 +63393,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63399,7 +63406,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63455,12 +63462,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrD,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63473,7 +63480,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63486,7 +63493,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63542,12 +63549,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrE,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63560,7 +63567,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63573,7 +63580,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63641,12 +63648,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrF,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63659,7 +63666,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63672,7 +63679,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63728,12 +63735,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrG,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63746,7 +63753,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63759,7 +63766,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63815,12 +63822,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrH,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63833,7 +63840,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63846,7 +63853,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63902,12 +63909,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrI,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63920,7 +63927,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63933,7 +63940,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -63989,12 +63996,12 @@ var render = function () {
                                                 { staticClass: "bucket-align" },
                                                 _vm._l(
                                                   _vm.arrJ,
-                                                  function (element) {
+                                                  function (stamp) {
                                                     return _c(
                                                       "div",
-                                                      { key: element.id },
+                                                      { key: stamp.id },
                                                       [
-                                                        element.id === 1
+                                                        stamp.id === 1
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -64007,7 +64014,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 2
+                                                        stamp.id === 2
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -64020,7 +64027,7 @@ var render = function () {
                                                             ])
                                                           : _vm._e(),
                                                         _vm._v(" "),
-                                                        element.id === 3
+                                                        stamp.id === 3
                                                           ? _c("div", [
                                                               _c("img", {
                                                                 staticClass:
@@ -64099,48 +64106,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrA, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrA, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64162,48 +64165,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrB, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrB, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64225,48 +64224,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrC, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrC, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64288,48 +64283,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrD, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrD, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64351,48 +64342,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrE, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrE, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64426,48 +64413,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrF, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrF, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64489,48 +64472,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrG, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrG, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64552,48 +64531,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrH, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrH, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64615,48 +64590,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrI, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrI, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64678,48 +64649,44 @@ var render = function () {
                                       _c(
                                         "div",
                                         { staticClass: "bucket-align" },
-                                        _vm._l(_vm.arrJ, function (element) {
-                                          return _c(
-                                            "div",
-                                            { key: element.id },
-                                            [
-                                              element.id === 1
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/grey/3.png",
-                                                        alt: "This is the first style of stamp in a a grey colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 2
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/black/3.png",
-                                                        alt: "This is the third style of stamp in a a black colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              element.id === 3
-                                                ? _c("div", [
-                                                    _c("img", {
-                                                      staticClass: "stamp",
-                                                      attrs: {
-                                                        src: "/img/stamps/compressed/white/3.png",
-                                                        alt: "This is the third style of stamp in a a white colour",
-                                                      },
-                                                    }),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          )
+                                        _vm._l(_vm.arrJ, function (stamp) {
+                                          return _c("div", { key: stamp.id }, [
+                                            stamp.id === 1
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/grey/3.png",
+                                                      alt: "This is the first style of stamp in a a grey colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 2
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/black/3.png",
+                                                      alt: "This is the third style of stamp in a a black colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            stamp.id === 3
+                                              ? _c("div", [
+                                                  _c("img", {
+                                                    staticClass: "stamp",
+                                                    attrs: {
+                                                      src: "/img/stamps/compressed/white/3.png",
+                                                      alt: "This is the third style of stamp in a a white colour",
+                                                    },
+                                                  }),
+                                                ])
+                                              : _vm._e(),
+                                          ])
                                         }),
                                         0
                                       ),
@@ -64760,200 +64727,39 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("form", [
-                    _c("input", {
-                      attrs: {
-                        id: "final-card-title",
-                        type: "hidden",
-                        name: "cardTitle",
+                  _c(
+                    "div",
+                    {
+                      staticClass: "submit-btn-container alignMiddle",
+                      attrs: { disabled: _vm.loading },
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.submit.apply(null, arguments)
+                        },
                       },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-card-desc",
-                        type: "hidden",
-                        name: "cardDesc",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-card-reward",
-                        type: "hidden",
-                        name: "cardReward",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-card-gain",
-                        type: "hidden",
-                        name: "cardProgressMethod",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-logo-position",
-                        type: "hidden",
-                        name: "cardLogoPosition",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-logo-shape",
-                        type: "hidden",
-                        name: "cardLogoShape",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-stamps-required",
-                        type: "hidden",
-                        name: "cardStampsRequired",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-number-of-stamps",
-                        type: "hidden",
-                        name: "cardNumOfStamps",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-background-colour",
-                        type: "hidden",
-                        name: "cardBackgroundColour",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "final-font-colour",
-                        type: "hidden",
-                        name: "cardFontColour",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-1",
-                        type: "hidden",
-                        name: "cardSlotOne",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-2",
-                        type: "hidden",
-                        name: "cardSlotTwo",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-3",
-                        type: "hidden",
-                        name: "cardSlotThree",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-4",
-                        type: "hidden",
-                        name: "cardSlotFour",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-5",
-                        type: "hidden",
-                        name: "cardSlotFive",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-6",
-                        type: "hidden",
-                        name: "cardSlotSix",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-7",
-                        type: "hidden",
-                        name: "cardSlotSeven",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-8",
-                        type: "hidden",
-                        name: "cardSlotEight",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-9",
-                        type: "hidden",
-                        name: "cardSlotNine",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "stamp-slot-10",
-                        type: "hidden",
-                        name: "cardSlotTen",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        id: "card-status",
-                        type: "hidden",
-                        name: "cardStatus",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "submit-btn-container alignMiddle" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "btn-text-align",
-                            attrs: { id: "publish-button" },
-                          },
-                          [
-                            _c("font-awesome-icon", {
-                              staticClass: "l-icon-spacing",
-                              attrs: {
-                                icon: "fa-solid fa-arrow-up-from-bracket",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Publish Card")]),
-                          ],
-                          1
-                        ),
-                      ]
-                    ),
-                  ]),
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "btn-text-align",
+                          attrs: { id: "publish-button" },
+                        },
+                        [
+                          _c("font-awesome-icon", {
+                            staticClass: "l-icon-spacing",
+                            attrs: {
+                              icon: "fa-solid fa-arrow-up-from-bracket",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Publish Card")]),
+                        ],
+                        1
+                      ),
+                    ]
+                  ),
                 ]),
               ]),
             ]),
@@ -65709,21 +65515,21 @@ var render = function () {
                           _vm._v(" "),
                           _c("tr", { staticClass: "name-row" }, [
                             _c("td", { staticClass: "row-title" }, [
-                              _vm._v("Stamps Needed:"),
-                            ]),
-                            _vm._v(" "),
-                            _c("td", { staticClass: "row-data" }, [
-                              _vm._v(_vm._s(_vm.card.stampsRequired)),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("tr", { staticClass: "name-row" }, [
-                            _c("td", { staticClass: "row-title" }, [
                               _vm._v("How to gain:"),
                             ]),
                             _vm._v(" "),
                             _c("td", { staticClass: "row-data" }, [
                               _vm._v(_vm._s(_vm.card.progressMethod)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", { staticClass: "name-row" }, [
+                            _c("td", { staticClass: "row-title" }, [
+                              _vm._v("Stamps Needed:"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "row-data" }, [
+                              _vm._v(_vm._s(_vm.card.stampsRequired)),
                             ]),
                           ]),
                           _vm._v(" "),
@@ -65747,7 +65553,7 @@ var render = function () {
                         "div",
                         { staticClass: "card-preview-content alignMiddle" },
                         [
-                          _vm.card.numOfStamps === 5
+                          _vm.card.stampSlots === 5
                             ? _c(
                                 "div",
                                 {
@@ -66438,7 +66244,7 @@ var render = function () {
                               )
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.card.numOfStamps === 10
+                          _vm.card.stampSlots === 10
                             ? _c(
                                 "div",
                                 {
