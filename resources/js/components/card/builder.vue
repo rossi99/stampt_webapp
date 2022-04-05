@@ -1381,17 +1381,30 @@
                             </div>
 
                             <div class="preview-button-container">
-                                <div class="cancel-btn-container alignMiddle">
-                                    <div class="btn-text-align">
-                                        <font-awesome-icon icon="fa-solid fa-trash" class="l-icon-spacing" />
-                                        <span>Discard Card</span>
+                                <div v-if="!error">
+                                    <div class="cancel-btn-container alignMiddle">
+                                        <div class="btn-text-align">
+                                            <font-awesome-icon icon="fa-solid fa-trash" class="l-icon-spacing" />
+                                            <span>Discard Card</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="submit-btn-container alignMiddle" @click.prevent="submit" :disabled="loading">
+                                        <div class="btn-text-align" id="publish-button">
+                                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
+                                            <span>Publish Card</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="submit-btn-container alignMiddle" @click.prevent="submit" :disabled="loading">
-                                    <div class="btn-text-align" id="publish-button">
-                                        <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
-                                        <span>Publish Card</span>
+                                <div v-else>
+                                    <div class="error-btn-container alignMiddle">
+                                        <div class="btn-text-align" id="error-button">
+                                            <div class="error-btn-txt">
+                                                <font-awesome-icon icon="fa-solid fa-circle-exclamation" class="l-icon-spacing" />
+                                                <span>An error occurred, please check the data entered!</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -3005,6 +3018,20 @@ export default {
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
     border-radius: 2px;
+}
+
+.error-btn-container {
+    margin: auto;
+    width: 50%;
+    color: #721c24;
+    border: 1px solid #721c24;
+    background-color: #f8d7da;
+    border-radius: 12px;
+    cursor: not-allowed;
+}
+
+.error-btn-txt {
+    padding: 10px;
 }
 
 .btn-text-align {

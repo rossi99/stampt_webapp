@@ -23340,6 +23340,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -25723,7 +25736,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // standa
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 /* Adding Icons */
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_5__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faXmark, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faTwitter, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faInstagram, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleQuestion, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCreditCard, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faStore, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faQuestionCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignCenter, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleDot, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faSquare, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faTrash, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faArrowUpFromBracket, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faInfo, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faEye, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBan);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_5__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faXmark, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faTwitter, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faInstagram, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleQuestion, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCreditCard, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faStore, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faQuestionCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignCenter, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAlignRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircle, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faCircleDot, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faSquare, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faAngleDoubleRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faTrash, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faArrowUpFromBracket, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faInfo, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faPlus, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faEye, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faBan, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__.faExclamationCircle);
 window.$ = (jquery__WEBPACK_IMPORTED_MODULE_1___default());
 vue__WEBPACK_IMPORTED_MODULE_9__["default"].config.productionTip = false; // global components
 
@@ -30938,7 +30951,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n#preview-section-divider[data-v-99f0cd32] {\n    display: none;\n}\n#preview-section-btn[data-v-99f0cd32] {\n    display: none;\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.build-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.preview-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.shape-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 50%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 160px);\n}\n.preview-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 200px);\n}\n.preview-button-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 150px;\n    height: 100%;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: calc(100% - 150px);\n    height: 100%;\n    float: left;\n}\n.element-panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n}\n.draggable-element-container[data-v-99f0cd32] {\n    height: calc(85% - 20px);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.clear-card-container[data-v-99f0cd32] {\n    height: 15%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.clear-stamps-btn[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.clear-card-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border-radius: 2px;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n.stamp-element-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 20px;\n            margin-block-start: 20px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    text-align: center;\n}\n.stamp[data-v-99f0cd32] {\n    width: 70px;\n    height: 70px;\n}\n.stamp-element-row > .stamp[data-v-99f0cd32]:hover {\n    cursor: pointer;\n}\n.card-holder[data-v-99f0cd32] {\n    width: 100%;\n}\n.builder-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.one-stamp-row-height[data-v-99f0cd32] {\n    height: 150px;\n}\n.two-stamp-row-height[data-v-99f0cd32] {\n    height: 250px;\n}\n.preview-one-row-height[data-v-99f0cd32] {\n    height: calc(150px + 65px);\n}\n.preview-two-row-height[data-v-99f0cd32] {\n    height: calc(250px + 65px);\n}\n.stamp-logo-holder[data-v-99f0cd32] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 100px;\n}\n.logo-align-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 100px;\n}\n.logo-align-left[data-v-99f0cd32] {\n    float: left;\n}\n.logo-align-middle[data-v-99f0cd32] {\n    margin: auto;\n}\n.logo-align-right[data-v-99f0cd32] {\n    float: right;\n}\n.sample-logo-container[data-v-99f0cd32] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n}\n.sample-logo[data-v-99f0cd32] {\n    width: 100%;\n}\n.sample-logo-align[data-v-99f0cd32] {\n     width: 100%;\n}\n.circle-logo[data-v-99f0cd32] {\n    border-radius: 50%;\n}\n.square-logo[data-v-99f0cd32] {\n    border-radius: 10px;\n}\n.m-inline-s[data-v-99f0cd32] {\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.m-inline-e[data-v-99f0cd32] {\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.bucket-container[data-v-99f0cd32] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-99f0cd32] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.empty[data-v-99f0cd32] {\n    border: 1px dashed rgb(44, 44, 44);\n    border-radius: 10px;\n    backdrop-filter: blur(10px) saturate(200%);\n    -webkit-backdrop-filter: blur(10px) saturate(200%);\n    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );\n}\n.drop-area[data-v-99f0cd32] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-99f0cd32] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.preview-card-container[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.preview-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.preview-txt-container[data-v-99f0cd32] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-99f0cd32] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-99f0cd32] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-99f0cd32] {\n    font-size: 14px;\n    text-align: left;\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.cancel-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: left;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.submit-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: right;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.cancel-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.submit-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.btn-text-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.character-count-container[data-v-99f0cd32] {\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    margin-block: 10px;\n    color: grey;\n    font-size: 12px;\n}\n.loading-screen-container[data-v-99f0cd32] {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    width: calc(100% - 200px);\n    height: 100%;\n}\n.loading-logo[data-v-99f0cd32] {\n    width: 100px;\n    -webkit-margin-after: 10px;\n            margin-block-end: 10px;\n    -webkit-animation: rotation-data-v-99f0cd32 2s infinite linear;\n            animation: rotation-data-v-99f0cd32 2s infinite linear;\n}\n@-webkit-keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n@keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sb-content-container[data-v-99f0cd32] {\n    width: calc(100% - 80px);\n    height: 100vh;\n    float: left;\n}\n.sb-content[data-v-99f0cd32] {\n    width: 95%;\n    height: 100vh;\n    margin: auto;\n}\n.title-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 80px;\n}\n.builder-container[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100vh - 80px);\n}\n.steps-container[data-v-99f0cd32] {\n    width: 200px;\n    height: calc(100vh - 80px);\n    float: left;\n}\n.form-container[data-v-99f0cd32] {\n    width: calc(100% - 200px);\n    height: calc(100vh - 80px);\n    float: left;\n    overflow: scroll;\n}\n.step-row[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n    margin-block: 10px;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.step-btn[data-v-99f0cd32]:hover {\n    color: white;\n    cursor: pointer;\n}\n.step-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.step-row[data-v-99f0cd32]:last-child {\n    -webkit-margin-after: 0;\n            margin-block-end: 0;\n}\n.step-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.step-btn-container[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    float: left;\n}\n.step-text-container[data-v-99f0cd32] {\n    width: calc(100% - 45px);\n    height: 45px;\n    float: left;\n}\n.step-btn[data-v-99f0cd32] {\n    width: 45px;\n    height: 45px;\n    border-radius: 50%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n}\n.btn-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.step-txt[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n}\n.separator-container[data-v-99f0cd32] {\n    width: 45px;\n}\n.separator[data-v-99f0cd32] {\n    width: 1px;\n    margin: auto;\n    height: 50px;\n    background: rgba(255, 255, 255, 0.125);\n}\n#preview-section-divider[data-v-99f0cd32] {\n    display: none;\n}\n#preview-section-btn[data-v-99f0cd32] {\n    display: none;\n}\n.active-btn[data-v-99f0cd32] {\n    background: white !important;\n    color: #111111 !important;\n    border: 1px solid white !important;\n}\n.active-txt[data-v-99f0cd32] {\n    color: white !important;\n}\n.fc[data-v-99f0cd32] {\n    display: none;\n}\n.build-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.preview-container[data-v-99f0cd32] {\n    height: calc(100vh - 80px);\n}\n.fc-heading-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 60px;\n}\n.fc-heading[data-v-99f0cd32] {\n    width: 100%;\n}\n.fc-description[data-v-99f0cd32] {\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    color: white;\n}\n.create-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 50px;\n            margin-block-start: 50px;\n    -webkit-margin-after: 50px;\n            margin-block-end: 50px;\n}\n.create-row[data-v-99f0cd32]:first-child {\n    -webkit-margin-before: 0;\n            margin-block-start: 0;\n}\n.create-label-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.create-label[data-v-99f0cd32] {\n    width: auto;\n    height: 55px;\n    float: left;\n}\n.create-helper[data-v-99f0cd32] {\n    width: 40px;\n    height: 55px;\n    float: left;\n    -webkit-margin-start: 15px;\n            margin-inline-start: 15px;\n    font-size: 18px;\n    position: relative;\n}\n.helper-txt-container[data-v-99f0cd32] {\n    min-width: 500px;\n    left: 0;\n    background-color: #d1ecf1;\n    border: 2px solid #bee5eb;\n    border-radius: 12px;\n    color: #0c548d;\n    position: absolute;\n}\n.close-container[data-v-99f0cd32] {\n    width: 36px;\n    height: 75px;\n    float: left;\n}\n.text-container[data-v-99f0cd32] {\n    width: calc(100% - 36px);\n    height: 75px;\n    float: left;\n    overflow: scroll;\n}\n.help-btn[data-v-99f0cd32] {\n    opacity: 0.5;\n    transition: all 0.2s;\n}\n.help-btn[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    opacity: 1;\n}\n.logo-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 85px;\n    float: left;\n}\n.shape-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 85px;\n    float: left;\n}\n.colour-opt-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 85px;\n}\n.stamp-opt-container[data-v-99f0cd32] {\n    width: calc(100% / 2);\n    height: 170px;\n    float: left;\n}\n.opt-align[data-v-99f0cd32] {\n    width: 100%;\n}\n.opt[data-v-99f0cd32] {\n    height: 60px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.align-width[data-v-99f0cd32] {\n    width: 60px;\n}\n.colour-width[data-v-99f0cd32] {\n    width: 120px;\n}\n.stamp-opt[data-v-99f0cd32] {\n    width: 50%;\n    height: 150px;\n    border: 1px solid rgba(255,255,255, 0.125);\n    color: rgba(255,255,255, 0.125);\n    background: #111111;\n    border-radius: 12px;\n    margin: auto;\n    transition: all 0.2s;\n    overflow: hidden;\n}\n.stamp-opt[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border: 1px solid rgba(255,255,255, 1);\n    color: rgba(255,255,255, 1);\n    background: rgba(255,255,255, 0.125);\n}\n.icon-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n    font-size: 20px;\n}\n.stamp-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.build-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 160px);\n}\n.preview-content[data-v-99f0cd32] {\n    width: 100%;\n    height: calc(100% - 200px);\n}\n.preview-button-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 55px;\n}\n.stamp-element-container[data-v-99f0cd32] {\n    width: 150px;\n    height: 100%;\n    float: left;\n}\n.card-element-container[data-v-99f0cd32] {\n    width: calc(100% - 150px);\n    height: 100%;\n    float: left;\n}\n.element-panel[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n}\n.draggable-element-container[data-v-99f0cd32] {\n    height: calc(85% - 20px);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n}\n.clear-card-container[data-v-99f0cd32] {\n    height: 15%;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n    color: rgba(255, 255, 255, 0.125);\n    transition: all 0.2s;\n}\n.clear-stamps-btn[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.clear-card-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    border-radius: 2px;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n}\n.element-card[data-v-99f0cd32] {\n    width: 95%;\n    height: 90%;\n    margin: auto;\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    background-color: #141414;\n}\n.stamp-element-row[data-v-99f0cd32] {\n    width: 100%;\n    -webkit-margin-before: 20px;\n            margin-block-start: 20px;\n    -webkit-margin-after: 20px;\n            margin-block-end: 20px;\n    text-align: center;\n}\n.stamp[data-v-99f0cd32] {\n    width: 70px;\n    height: 70px;\n}\n.stamp-element-row > .stamp[data-v-99f0cd32]:hover {\n    cursor: pointer;\n}\n.card-holder[data-v-99f0cd32] {\n    width: 100%;\n}\n.builder-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.one-stamp-row-height[data-v-99f0cd32] {\n    height: 150px;\n}\n.two-stamp-row-height[data-v-99f0cd32] {\n    height: 250px;\n}\n.preview-one-row-height[data-v-99f0cd32] {\n    height: calc(150px + 65px);\n}\n.preview-two-row-height[data-v-99f0cd32] {\n    height: calc(250px + 65px);\n}\n.stamp-logo-holder[data-v-99f0cd32] {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n}\n.stamp-logo-container[data-v-99f0cd32] {\n    width: 100%;\n    height: 100px;\n}\n.logo-align-container[data-v-99f0cd32] {\n    width: calc(100% / 3);\n    height: 100px;\n}\n.logo-align-left[data-v-99f0cd32] {\n    float: left;\n}\n.logo-align-middle[data-v-99f0cd32] {\n    margin: auto;\n}\n.logo-align-right[data-v-99f0cd32] {\n    float: right;\n}\n.sample-logo-container[data-v-99f0cd32] {\n    width: 80px;\n    height: 80px;\n    overflow: hidden;\n    border: 3px solid rgb(44, 44, 44);\n}\n.sample-logo[data-v-99f0cd32] {\n    width: 100%;\n}\n.sample-logo-align[data-v-99f0cd32] {\n     width: 100%;\n}\n.circle-logo[data-v-99f0cd32] {\n    border-radius: 50%;\n}\n.square-logo[data-v-99f0cd32] {\n    border-radius: 10px;\n}\n.m-inline-s[data-v-99f0cd32] {\n    float: left;\n    -webkit-margin-start: 20px;\n            margin-inline-start: 20px;\n}\n.m-inline-e[data-v-99f0cd32] {\n    float: right;\n    -webkit-margin-end: 20px;\n            margin-inline-end: 20px;\n}\n.bucket-container[data-v-99f0cd32] {\n    width: calc(100% / 5);\n    height: 100px;\n    float: left;\n}\n.bucket[data-v-99f0cd32] {\n    width: 85%;\n    height: 85%;\n    margin: auto;\n}\n.empty[data-v-99f0cd32] {\n    border: 1px dashed rgb(44, 44, 44);\n    border-radius: 10px;\n    backdrop-filter: blur(10px) saturate(200%);\n    -webkit-backdrop-filter: blur(10px) saturate(200%);\n    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );\n}\n.drop-area[data-v-99f0cd32] {\n    width: 100%;\n    height: 100%;\n}\n.bucket-align[data-v-99f0cd32] {\n    width: 100%;\n    height: 70px;\n    text-align: center;\n}\n.preview-card-container[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.preview-card[data-v-99f0cd32] {\n    width: 500px;\n    min-height: 150px;\n    background: #141414;\n    border-radius: 20px;\n    border: 3px solid rgb(44, 44, 44);\n    box-shadow: 0 0 50px 0 rgb(0, 0, 0, 0.5);\n    margin: auto;\n    position: relative;\n}\n.preview-txt-container[data-v-99f0cd32] {\n    width: 95%;\n    margin: auto;\n    margin-block: 5px;\n}\n.preview-title-container[data-v-99f0cd32] {\n    -webkit-margin-after: 5px;\n            margin-block-end: 5px;\n}\n.preview-title[data-v-99f0cd32] {\n    text-align: left;\n    font-size: 20px;\n    font-weight: 600;\n    -webkit-margin-start: 10px;\n            margin-inline-start: 10px;\n}\n.preview-desc[data-v-99f0cd32] {\n    font-size: 14px;\n    text-align: left;\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.cancel-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: left;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.submit-btn-container[data-v-99f0cd32] {\n    width: 20%;\n    min-width: 175px;\n    height: 55px;\n    float: right;\n    color: rgba(255, 255, 255, 0.125);\n    border: 1px solid rgba(255, 255, 255, 0.125);\n    border-radius: 12px;\n    transition: all 0.2s;\n}\n.cancel-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.submit-btn-container[data-v-99f0cd32]:hover {\n    cursor: pointer;\n    color: rgb(255, 255, 255);\n    border: 1px solid rgb(255, 255, 255);\n    border-radius: 2px;\n}\n.error-btn-container[data-v-99f0cd32] {\n    margin: auto;\n    width: 50%;\n    color: #721c24;\n    border: 1px solid #721c24;\n    background-color: #f8d7da;\n    border-radius: 12px;\n    cursor: not-allowed;\n}\n.error-btn-txt[data-v-99f0cd32] {\n    padding: 10px;\n}\n.btn-text-align[data-v-99f0cd32] {\n    width: 100%;\n    text-align: center;\n}\n.character-count-container[data-v-99f0cd32] {\n    width: calc(100% - 20px);\n    margin-inline: 10px;\n    margin-block: 10px;\n    color: grey;\n    font-size: 12px;\n}\n.loading-screen-container[data-v-99f0cd32] {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    width: calc(100% - 200px);\n    height: 100%;\n}\n.loading-logo[data-v-99f0cd32] {\n    width: 100px;\n    -webkit-margin-after: 10px;\n            margin-block-end: 10px;\n    -webkit-animation: rotation-data-v-99f0cd32 2s infinite linear;\n            animation: rotation-data-v-99f0cd32 2s infinite linear;\n}\n@-webkit-keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n@keyframes rotation-data-v-99f0cd32 {\nfrom {\n        transform: rotate(0deg);\n}\nto {\n        transform: rotate(359deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -64707,59 +64720,98 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "preview-button-container" }, [
-                  _c(
-                    "div",
-                    { staticClass: "cancel-btn-container alignMiddle" },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "btn-text-align" },
-                        [
-                          _c("font-awesome-icon", {
-                            staticClass: "l-icon-spacing",
-                            attrs: { icon: "fa-solid fa-trash" },
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Discard Card")]),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "submit-btn-container alignMiddle",
-                      attrs: { disabled: _vm.loading },
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.submit.apply(null, arguments)
-                        },
-                      },
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "btn-text-align",
-                          attrs: { id: "publish-button" },
-                        },
-                        [
-                          _c("font-awesome-icon", {
-                            staticClass: "l-icon-spacing",
-                            attrs: {
-                              icon: "fa-solid fa-arrow-up-from-bracket",
+                  !_vm.error
+                    ? _c("div", [
+                        _c(
+                          "div",
+                          { staticClass: "cancel-btn-container alignMiddle" },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "btn-text-align" },
+                              [
+                                _c("font-awesome-icon", {
+                                  staticClass: "l-icon-spacing",
+                                  attrs: { icon: "fa-solid fa-trash" },
+                                }),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Discard Card")]),
+                              ],
+                              1
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "submit-btn-container alignMiddle",
+                            attrs: { disabled: _vm.loading },
+                            on: {
+                              click: function ($event) {
+                                $event.preventDefault()
+                                return _vm.submit.apply(null, arguments)
+                              },
                             },
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Publish Card")]),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "btn-text-align",
+                                attrs: { id: "publish-button" },
+                              },
+                              [
+                                _c("font-awesome-icon", {
+                                  staticClass: "l-icon-spacing",
+                                  attrs: {
+                                    icon: "fa-solid fa-arrow-up-from-bracket",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Publish Card")]),
+                              ],
+                              1
+                            ),
+                          ]
+                        ),
+                      ])
+                    : _c("div", [
+                        _c(
+                          "div",
+                          { staticClass: "error-btn-container alignMiddle" },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "btn-text-align",
+                                attrs: { id: "error-button" },
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "error-btn-txt" },
+                                  [
+                                    _c("font-awesome-icon", {
+                                      staticClass: "l-icon-spacing",
+                                      attrs: {
+                                        icon: "fa-solid fa-circle-exclamation",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(
+                                        "An error occurred, please check the data entered!"
+                                      ),
+                                    ]),
+                                  ],
+                                  1
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]),
                 ]),
               ]),
             ]),
@@ -65559,7 +65611,7 @@ var render = function () {
                                 {
                                   staticClass: "one-row-card",
                                   style: {
-                                    background: "" + _vm.card.background,
+                                    background: "" + _vm.card.backgroundColour,
                                   },
                                 },
                                 [
@@ -65766,7 +65818,9 @@ var render = function () {
                                         "div",
                                         {
                                           staticClass: "preview-txt-container",
-                                          style: { color: "" + _vm.card.font },
+                                          style: {
+                                            color: "" + _vm.card.fontColour,
+                                          },
                                         },
                                         [
                                           _c(
@@ -66250,7 +66304,7 @@ var render = function () {
                                 {
                                   staticClass: "two-row-card",
                                   style: {
-                                    background: "" + _vm.card.background,
+                                    background: "" + _vm.card.backgroundColour,
                                   },
                                 },
                                 [
@@ -66457,7 +66511,9 @@ var render = function () {
                                         "div",
                                         {
                                           staticClass: "preview-txt-container",
-                                          style: { color: "" + _vm.card.font },
+                                          style: {
+                                            color: "" + _vm.card.fontColour,
+                                          },
                                         },
                                         [
                                           _c(

@@ -17,12 +17,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* import specific icons */
 import {
-    faUser, faBars, faXmark, faCircleQuestion,
-    faCircleXmark, faCreditCard, faStore,
-    faQuestionCircle, faAlignCenter, faAlignLeft,
-    faAlignRight, faCircle, faCircleDot, faSquare,
-    faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket, faInfo, faPlus, faEye, faBan
+    faUser, faBars, faXmark, faCircleQuestion, faCircleXmark, faCreditCard, faStore,
+    faQuestionCircle, faAlignCenter, faAlignLeft, faAlignRight, faCircle, faCircleDot, faSquare,
+    faAngleDoubleLeft, faAngleDoubleRight, faTrash, faArrowUpFromBracket, faInfo, faPlus, faEye, faBan,
+    faExclamationCircle
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -33,13 +31,10 @@ window.Vue = require('vue').default;
 
 /* Adding Icons */
 library.add(
-    faUser, faBars, faXmark, faFacebook,
-    faTwitter, faInstagram, faCircleQuestion,
-    faCircleXmark, faCreditCard, faStore,
-    faQuestionCircle, faAlignCenter, faAlignLeft,
-    faAlignRight, faCircle, faCircleDot, faSquare,
-    faAngleDoubleLeft, faAngleDoubleRight, faTrash,
-    faArrowUpFromBracket, faInfo, faPlus, faEye, faBan
+    faUser, faBars, faXmark, faFacebook, faTwitter, faInstagram, faCircleQuestion,
+    faCircleXmark, faCreditCard, faStore, faQuestionCircle, faAlignCenter, faAlignLeft,
+    faAlignRight, faCircle, faCircleDot, faSquare, faAngleDoubleLeft, faAngleDoubleRight, faTrash,
+    faArrowUpFromBracket, faInfo, faPlus, faEye, faBan, faExclamationCircle
 )
 
 window.$ = JQuery;
