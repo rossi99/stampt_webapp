@@ -4,6 +4,7 @@ require('./bootstrap');
 import router from "./routes"
 import VueRouter from "vue-router"
 import Vue from "vue"
+import Vuex from "vuex"
 import JQuery from 'jquery'
 
 // component imports
@@ -47,11 +48,12 @@ Vue.component('nav-header', navHeader)
 Vue.component('sideBar', sideBar)
 
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 const app = new Vue({
     el: '#app', // mounts vue into div with id of 'app'
     router,
     components: {
         "index": Index
-    },
+    }
 });

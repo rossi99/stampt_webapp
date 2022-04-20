@@ -45,7 +45,13 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="email" id="email" name="email" class="stampt-input" placeholder="Your email...">
+                                            <input type="email"
+                                                   id="email"
+                                                   name="email"
+                                                   class="stampt-input"
+                                                   placeholder="Enter your email..."
+                                                   v-model="email"
+                                            >
                                         </div>
                                     </div>
 
@@ -58,7 +64,13 @@
                                         <div class="stampt-input-container">
                                             <div class="reveal-container">
                                                 <div class="password-input">
-                                                    <input type="password" id="password" name="password" class="stampt-input" placeholder="Your password...">
+                                                    <input type="password"
+                                                           id="password"
+                                                           name="password"
+                                                           class="stampt-input"
+                                                           placeholder="Enter your password..."
+                                                           v-model="password"
+                                                    >
                                                 </div>
 
                                                 <div class="reveal-btn-container alignMiddle">
@@ -74,9 +86,20 @@
 
                                     <!-- Submit button -->
                                     <div class="submit-container">
-                                        <button type="submit" class="submit-btn">
+                                        <button type="submit"
+                                                class="submit-btn"
+                                                :disabled="loading"
+                                                @click.prevent="login"
+                                        >
                                             Login
                                         </button>
+                                    </div>
+
+                                    <div class="forgot-password-container">
+                                        <span>
+                                            Forgot your password? Reset it <router-link :to="{ name: 'register' }" class="email-link">here</router-link>
+                                        </span>
+
                                     </div>
                                 </div>
                             </div>
@@ -92,10 +115,46 @@
 
 <script>
 import Sidebar from "../nav/sidebar";
+import home from "../landing/landing";
+import {logIn} from "../../auth";
 
 export default {
     components: {
         Sidebar
+    },
+    data() {
+        return {
+            // Form ( Dynamic )
+            email: null,
+            password: null,
+
+            // loading & error handling
+            loading: false,
+            error: false
+        };
+    },
+    methods: {
+      async login() {
+          this.loading = true;
+          this.error = false;
+
+          // attempt login
+          try {
+              await axios.get('/sanctum/csrf-cookie');
+              await axios.post('/login', {
+                  email: this.email,
+                  password: this.password,
+              });
+
+              logIn();
+              await this.$store.dispatch("loadUser");
+              await this.$router.push({name: home});
+          } catch (error) {
+              this.error = true;
+          }
+
+          this.loading = false;
+      }
     },
     mounted: function () {
         // Variables for login
@@ -284,5 +343,11 @@ export default {
     cursor: pointer;
     border: 1px solid white;
     color: white;
+}
+
+.forgot-password-container {
+    width: 100%;
+    margin-block: 30px;
+    text-align: center;
 }
 </style>

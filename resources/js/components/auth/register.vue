@@ -87,7 +87,13 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container alignMiddle">
-                                            <input type="file" id="avatar" name="avatarImg" class="stampt-input-file">
+                                            <input
+                                                type="file"
+                                                name="avatarImg"
+                                                id="avatar"
+                                                class="stampt-input-file"
+                                                v-on:change="newUser.avatarSrc"
+                                            >
                                         </div>
                                     </div>
 
@@ -98,7 +104,13 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="full-name" name="fullName" class="stampt-input" placeholder="Joe Bloggs">
+                                            <input type="text"
+                                                   name="fullName"
+                                                   id="full-name"
+                                                   class="stampt-input"
+                                                   placeholder="Joe Bloggs"
+                                                   v-model="newUser.fullName"
+                                            >
                                         </div>
                                     </div>
 
@@ -109,7 +121,13 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="email" id="email" name="email" class="stampt-input" placeholder="example@email.com">
+                                            <input type="email"
+                                                   name="email"
+                                                   id="email"
+                                                   class="stampt-input"
+                                                   placeholder="example@email.com"
+                                                   v-model="newUser.email"
+                                            >
                                         </div>
                                     </div>
 
@@ -122,7 +140,13 @@
                                         <div class="stampt-input-container">
                                             <div class="reveal-container">
                                                 <div class="password-input">
-                                                    <input type="password" id="password" name="password" class="stampt-input" placeholder="">
+                                                    <input type="password"
+                                                           name="password"
+                                                           id="password"
+                                                           class="stampt-input"
+                                                           placeholder=""
+                                                           v-model="newUser.password"
+                                                    >
                                                 </div>
 
                                                 <div class="reveal-btn-container alignMiddle">
@@ -143,7 +167,14 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="tel" id="contact-number" name="phone" class="stampt-input" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="+(00) 0000000000">
+                                            <input type="tel"
+                                                   id="contact-number"
+                                                   name="phone"
+                                                   class="stampt-input"
+                                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                                   placeholder="+(00) 0000000000"
+                                                   v-model="newUser.contactNumber"
+                                            >
                                         </div>
                                     </div>
 
@@ -154,28 +185,52 @@
 
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="address-one" class="stampt-input" placeholder="Address Line 1">
+                                            <input type="text"
+                                                   name="addressLine1"
+                                                   id="address-one"
+                                                   class="stampt-input"
+                                                   placeholder="Address Line 1"
+                                                   v-model="newUser.addressLineOne"
+                                            >
                                         </div>
                                     </div>
 
                                     <!-- Address Line 2 ( Optional )-->
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="address-two" class="stampt-input" placeholder="Address Line 2 (Optional)">
+                                            <input type="text"
+                                                   name="addressLine2"
+                                                   id="address-two"
+                                                   class="stampt-input"
+                                                   placeholder="Address Line 2 (Optional)"
+                                                   v-model="newUser.addressLineTwo"
+                                            >
                                         </div>
                                     </div>
 
                                     <!-- Country / State -->
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="state" class="stampt-input" placeholder="County / State">
+                                            <input type="text"
+                                                   name="state"
+                                                   id="state"
+                                                   class="stampt-input"
+                                                   placeholder="County / State"
+                                                   v-model="newUser.addressState"
+                                            >
                                         </div>
                                     </div>
 
                                     <!-- Post / Zip Code -->
                                     <div class="input-container">
                                         <div class="stampt-input-container">
-                                            <input type="text" id="code" class="stampt-input" placeholder="Zip / Postcode">
+                                            <input type="text"
+                                                   name="zipcode"
+                                                   id="code"
+                                                   class="stampt-input"
+                                                   placeholder="Zip / Postcode"
+                                                   v-model="newUser.addressCode"
+                                            >
                                         </div>
                                     </div>
 
@@ -203,6 +258,27 @@ import Sidebar from "../nav/sidebar";
 export default {
     components: {
         Sidebar
+    },
+    data() {
+        return {
+            // Form ( Dynamic )
+            newUser: {
+                accountType: "customer",
+                avatarSrc: "",
+                fullName: "",
+                email: "",
+                password: "",
+                contactNumber: "",
+                addressLineOne: "",
+                addressLineTwo: "",
+                addressState: "",
+                addressCode: "",
+            },
+
+            // loading & error handling
+            loading: false,
+            error: false
+        };
     },
     mounted: function () {
         // Variables for login

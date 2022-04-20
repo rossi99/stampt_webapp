@@ -1,9 +1,16 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/* Fallback route - README.md: 'A Fallback Route' */
+Auth::routes();
+
+Route::middleware('auth')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+/* Fallback route */
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '^(?!api\/)[\/\w\.\,-]*');
-

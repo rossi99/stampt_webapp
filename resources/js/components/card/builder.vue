@@ -1465,7 +1465,7 @@ export default {
                 stampSlots: 5,
                 backgroundColour: "#141414",
                 fontColour: "#FFFFFF",
-                status: "active",
+                status: "Active",
                 slotOne: 0,
                 slotTwo: 0,
                 slotThree: 0,
