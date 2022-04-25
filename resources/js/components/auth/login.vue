@@ -147,8 +147,8 @@ export default {
               });
 
               logIn();
-              await this.$store.dispatch("loadUser");
-              await this.$router.push({name: home});
+              this.$store.dispatch("loadUser");
+              this.$router.push({name: 'home'});
           } catch (error) {
               this.error = true;
           }

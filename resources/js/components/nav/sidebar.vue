@@ -43,9 +43,17 @@
                 <!-- User -->
                 <div class="sb-btn-container alignMiddle">
                     <div class="sb-btn-align">
-                        <router-link :to="{ name: 'login' }" class="sb-option">
-                            <font-awesome-icon icon="fa-solid fa-user" />
-                        </router-link>
+                        <div v-if="!isLoggedIn">
+                            <router-link :to="{ name: 'login' }" class="sb-option">
+                                <font-awesome-icon icon="fa-solid fa-user" />
+                            </router-link>
+                        </div>
+
+                        <div v-if="isLoggedIn">
+                            <div @click.prevent="logout" class="sb-option">
+                                <font-awesome-icon icon="fa-solid fa-user-slash" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -56,8 +64,27 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-    name: "sidebar"
+    name: "sidebar",
+    computed: {
+        ...mapState({
+            isLoggedIn: "isLoggedIn"
+        })
+    },
+    methods: {
+        async logout() {
+            try {
+                axios.post("/logout");
+                this.$store.dispatch("logout");
+                this.$router.push({name: 'home'});
+            } catch (error) {
+                this.$store.dispatch("logout");
+                this.$router.push({name: 'home'});
+            }
+        }
+    }
 }
 </script>
 

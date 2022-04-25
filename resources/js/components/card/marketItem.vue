@@ -27,6 +27,19 @@
                     </div>
                 </div>
 
+                <!-- Quick Join container -->
+                <div v-if="isLoggedIn">
+                    <div class="quick-join-container alignMiddle">
+                        <div class="btn-align">
+                            <div class="quick-join-btn alignMiddle">
+                                <div class="icon-align">
+                                    <font-awesome-icon icon="fa-solid fa-plus" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Info container -->
                 <div class="info-container alignMiddle">
                     <div class="btn-align">
@@ -40,17 +53,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Join container -->
-                <div class="quick-join-container alignMiddle">
-                    <div class="btn-align">
-                        <div class="quick-join-btn alignMiddle">
-                            <div class="icon-align">
-                                <font-awesome-icon icon="fa-solid fa-plus" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="clearFix"></div>
             </div>
         </div>
@@ -58,12 +60,19 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     props: {
         id: Number,
         title: String,
         stampsRequired: Number
-    }
+    },
+    computed: {
+        ...mapState({
+            isLoggedIn: "isLoggedIn"
+        })
+    },
 };
 </script>
 

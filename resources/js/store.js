@@ -5,6 +5,9 @@ export default {
         isLoggedIn: false,
         user: {}
     },
+    getters: {
+        getUserId: state => state.user.id
+    },
     mutations: {
         setUser(state, payload) {
             state.user = payload;
@@ -21,7 +24,7 @@ export default {
                     commit("setUser", user);
                     commit("setLoggedIn", true);
                 } catch (error) {
-                    dispatch("logout")
+                    dispatch("logout");
                 }
             }
         },

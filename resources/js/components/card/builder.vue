@@ -1381,28 +1381,36 @@
                             </div>
 
                             <div class="preview-button-container">
-                                <div v-if="!error">
-                                    <div class="cancel-btn-container alignMiddle">
-                                        <div class="btn-text-align">
-                                            <font-awesome-icon icon="fa-solid fa-trash" class="l-icon-spacing" />
-                                            <span>Discard Card</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="submit-btn-container alignMiddle" @click.prevent="submit" :disabled="loading">
-                                        <div class="btn-text-align" id="publish-button">
-                                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
-                                            <span>Publish Card</span>
-                                        </div>
-                                    </div>
+                                <div v-if="!isLoggedIn">
+                                    Please login if you want to publish your card
                                 </div>
 
-                                <div v-else>
-                                    <div class="error-btn-container alignMiddle">
-                                        <div class="btn-text-align" id="error-button">
-                                            <div class="error-btn-txt">
-                                                <font-awesome-icon icon="fa-solid fa-circle-exclamation" class="l-icon-spacing" />
-                                                <span>An error occurred, please check the data entered!</span>
+                                <div v-if="isLoggedIn">
+                                    <div v-if="!error">
+                                        <router-link :to="{ name: 'home' }">
+                                            <div class="cancel-btn-container alignMiddle">
+                                                <div class="btn-text-align">
+                                                    <font-awesome-icon icon="fa-solid fa-trash" class="l-icon-spacing" />
+                                                    <span>Discard Card</span>
+                                                </div>
+                                            </div>
+                                        </router-link>
+
+                                        <div class="submit-btn-container alignMiddle" @click.prevent="submit" :disabled="loading">
+                                            <div class="btn-text-align" id="publish-button">
+                                                <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="l-icon-spacing" />
+                                                <span>Publish Card</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div v-else>
+                                        <div class="error-btn-container alignMiddle">
+                                            <div class="btn-text-align" id="error-button">
+                                                <div class="error-btn-txt">
+                                                    <font-awesome-icon icon="fa-solid fa-circle-exclamation" class="l-icon-spacing" />
+                                                    <span>An error occurred, please check the data entered!</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1421,6 +1429,7 @@
 <script>
 import Sidebar from "../nav/sidebar";
 import draggable from 'vuedraggable';
+import {mapState} from "vuex";
 
 export default {
     name: "clone",
@@ -1429,6 +1438,11 @@ export default {
     components: {
         Sidebar,
         draggable
+    },
+    computed: {
+        ...mapState({
+            isLoggedIn: "isLoggedIn"
+        })
     },
     data() {
         return {
@@ -1493,6 +1507,8 @@ export default {
               .then(response => console.log(response))
               .catch((err) => (this.error = true))
               .then(() => (this.loading = false));
+
+          this.$router.push({name: 'marketplace'});
         },
 
         // ~ Set Logo Align

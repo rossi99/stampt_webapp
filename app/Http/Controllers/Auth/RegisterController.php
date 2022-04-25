@@ -51,7 +51,7 @@ class RegisterController extends Controller
     {
         return Validator::make($user, [
             'accountType' => ['required', 'string'],
-            'avatarSrc' => ['required', 'image'],
+            'avatarSrc' => ['image'],
             'fullName' => ['required', 'max:191'],
             'email' => ['required', 'string', 'email', 'max:191', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],

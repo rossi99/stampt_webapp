@@ -8,6 +8,7 @@ import singleCard from "./components/card/single-card";
 import faqs from "./components/faqs/faqs";
 import login from "./components/auth/login";
 import register from "./components/auth/register";
+import dashboard from "./components/auth/dashboard";
 
 const routes = [
     {
@@ -44,6 +45,11 @@ const routes = [
         path: "/auth/register",
         component: register,
         name: "register",
+    },
+    {
+        path: "/dashboard",
+        component: dashboard,
+        name: "dashboard",
     },
 ];
 

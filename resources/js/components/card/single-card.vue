@@ -614,19 +614,29 @@
                             <!-- Card Action -->
                             <div class="card-action-container">
                                 <div class="action-btn-container">
-                                    <!-- If user navigates to inactive card -->
-                                    <div v-if="card.status === 'Inactive'" class="action-btn inactive-btn alignMiddle">
-                                        <div class="btn-txt-align">
-                                            <span><font-awesome-icon icon="fa-solid fa-ban" class="l-icon-spacing" /></span>
-                                            <span>Sorry, this card is inactive!</span>
+                                    <div v-if="isLoggedIn">
+                                        <!-- If user navigates to inactive card -->
+                                        <div v-if="card.status === 'Inactive'" class="action-btn inactive-btn alignMiddle">
+                                            <div class="btn-txt-align">
+                                                <span><font-awesome-icon icon="fa-solid fa-ban" class="l-icon-spacing" /></span>
+                                                <span>Sorry, this card is inactive!</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- If user navigates to active card -->
+                                        <div v-if="card.status === 'Active'" class="action-btn active-btn alignMiddle">
+                                            <div class="btn-txt-align">
+                                                <span><font-awesome-icon icon="fa-solid fa-plus" class="l-icon-spacing" /></span>
+                                                <span>Add Card to Wallet</span>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <!-- If user navigates to active card -->
-                                    <div v-if="card.status === 'Active'" class="action-btn active-btn alignMiddle">
-                                        <div class="btn-txt-align">
-                                            <span><font-awesome-icon icon="fa-solid fa-plus" class="l-icon-spacing" /></span>
-                                            <span>Add Card to Wallet</span>
+                                    <div v-if="!isLoggedIn">
+                                        <div class="action-btn inactive-btn alignMiddle">
+                                            <div class="btn-txt-align">
+                                                <span>Sign in to join this card!</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -643,10 +653,16 @@
 
 <script>
 import Sidebar from "../nav/sidebar";
+import {mapState} from "vuex";
 
 export default {
     components: {
         Sidebar
+    },
+    computed: {
+        ...mapState({
+            isLoggedIn: "isLoggedIn"
+        })
     },
     data() {
       return {

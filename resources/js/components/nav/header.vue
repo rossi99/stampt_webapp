@@ -27,11 +27,21 @@
 
                 <div class="action-container alignMiddle">
                     <div class="auth-container subtitle">
-                        <router-link :to="{ name: 'login' }" class="auth-btn">
-                            <div class="auth-btn-container">
-                                <span class="auth-btn-text">login</span>
+                        <div v-if="!isLoggedIn">
+                            <router-link :to="{ name: 'login' }" class="auth-btn">
+                                <div class="auth-btn-container">
+                                    <span class="auth-btn-text">login</span>
+                                </div>
+                            </router-link>
+                        </div>
+
+                        <div v-if="isLoggedIn">
+                            <div class="auth-btn" @click.prevent="logout">
+                                <div class="auth-btn-container">
+                                    <span class="auth-btn-text">logout</span>
+                                </div>
                             </div>
-                        </router-link>
+                        </div>
                     </div>
                 </div>
 
@@ -79,25 +89,27 @@
 
                         <div class="menu-option-container">
                             <div class="menu-option subtitle">
-                                <router-link :to="{ name: 'home' }" class="nav-option">marketplace</router-link>
+                                <router-link :to="{ name: 'marketplace' }" class="nav-option">marketplace</router-link>
                             </div>
                         </div>
 
                         <div class="menu-option-container">
                             <div class="menu-option subtitle">
-                                <router-link :to="{ name: 'home' }" class="nav-option">help</router-link>
+                                <router-link :to="{ name: 'faqs' }" class="nav-option">help</router-link>
                             </div>
                         </div>
 
                         <div class="menu-option-container">
                             <div class="menu-option subtitle">
-                                <router-link :to="{ name: 'home' }" class="nav-option">login</router-link>
-                            </div>
-                        </div>
+                                <div v-if="!isLoggedIn">
+                                    <router-link :to="{ name: 'login' }" class="nav-option">login</router-link>
+                                </div>
 
-                        <div class="menu-option-container">
-                            <div class="menu-option subtitle">
-                                <router-link :to="{ name: 'home' }" class="nav-option">contact</router-link>
+                                <div v-if="isLoggedIn">
+                                    <div @click.prevent="logout" class="nav-option">
+                                        logout
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -128,8 +140,10 @@
 </template>
 
 <script>
-    export default {
-        mounted () {
+import {mapState} from "vuex";
+
+export default {
+    mounted () {
             $(document).ready(function () {
                 $('.mobile-nav-menu-btn').click(function () {
                     // fading in menu
@@ -155,8 +169,23 @@
                     menuBars.fadeIn();
                 });
             });
+        },
+    computed: {
+        ...mapState({
+            isLoggedIn: "isLoggedIn"
+        })
+    },
+    methods: {
+        async logout() {
+            try {
+                axios.post("/logout");
+                this.$store.dispatch("logout");
+            } catch (error) {
+                this.$store.dispatch("logout");
+            }
         }
-    };
+    }
+};
 </script>
 
 <style scoped>
